@@ -1,7 +1,7 @@
 # popcorn-frontend
 
 ## style 가이드
-###1. 그리드
+###1. 그리드dd
 
 Device | Width | Column | Gutter
 ------------------------|---------
