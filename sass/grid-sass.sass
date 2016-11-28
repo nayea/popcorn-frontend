@@ -1,0 +1,83 @@
+// 테스트 중이다.
+@import vars
+@import placeholder
+@import functions
+@import mixins
+
+
+@if $gutter-position == "left"
+  .row [class*="-col-"]:first-child
+    margin:
+      left: 0
+@else if $gutter-position == "right"
+  .row [class*="-col-"]:last-child
+    margin:
+      right: 0
+@else if $gutter-position == "center"
+  .row [class*="-col-"]:first-child,
+    margin:
+      left: 0
+  .row [class*="-col-"]:last-child
+    margin:
+      right: 0
+
+.row.isolate [class*="-col-"]
+  margin-right: -100%
+
+.row
+  @extend %clearfix
+
+.readable-hidden,
+.a11y-hidden,
+.screen-off
+  overflow: hidden
+  width: 1px
+  height: 1px
+  padding: 0
+  margin: -1px
+  position: absolute
+  left: -99999px
+
+.dev
+ +font-rule( 21 )
+
++heading-rule()
+
+// @media only screen and (max-width: (#{$t-container-width}-1)*1px)
+//   +column-for( 4 , $m-container-width )
+
+// @media only screen and (min-width: $t-container-width*1px) and (max-width: (#{$d-container-width}-1)*1px)
+//   +column-for( 12 , $t-container-width )
+//
+// @media only screen and (min-width: $d-container-width*1px) and (max-width: (#{$lg-container-width}-1)*1px)
+//   +column-for( 12 , $d-container-width )
+//
+// @media only screen and (min-width: $lg-container-width*1px) and (max-width: (#{$xl-container-width}-1)*1px)
+//   +column-for( 12 , $lg-container-width )
+//
+// @media only screen and (min-width: $xl-container-width*1px)
+//   +column-for( 12 , $xl-container-width )
+
++respond-to($m-container-width)
+  +column-for( 4 , $m-container-width, false)
+  +isolate( 4 , $m-container-width, false)
+
+
++respond-to($t-container-width)
+  +column-for( 8 , $t-container-width, false, 10)
+  +isolate( 8 , $t-container-width, false, 10 )
+
++respond-to($d-container-width)
+  +column-for( 12 , $d-container-width, false, 100)
+  +isolate( 12 , $d-container-width, false, 100)
+
+// +respond-to($lg-container-width)
+//   +column-for( 12 , $lg-container-width , false)
+//   +isolate( 12 , $lg-container-width , false)
+//
+// +respond-to($xl-container-width)
+//   +column-for( 12 , $xl-container-width , false)
+//   +isolate( 12 , $xl-container-width , false)
+
+.error
+  +column-for( 1 , 0 , false, 0)
