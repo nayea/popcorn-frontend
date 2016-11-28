@@ -1,0 +1,14 @@
+{
+  "name": "popcorn",
+  "version": "1.0.0",
+  "description": "popcorn",
+  "scripts": {
+    "sass": "node-sass -w -r sass -o css --output-style expanded --source-map ./map",
+    "start": "npm run sass"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "",
+  "license": "MIT"
+}
