@@ -1,0 +1,42 @@
+@import modules/initialization/normalize
+@import config/vars
+@import config/placeholder
+@import config/helper
+@import theme/_button
+@import theme/commonstyle
+@import modules/grid/grid_functions
+@import modules/grid/grid_mixins
+
+// 초기화 ---------------------
+html
+  font-family: $spoqa-R
+  font-size: $basic-font-size
+
+figure
+  margin: 0
+
+ul
+  padding: 0
+  margin: 0
+
+li
+  list-style: none
+// ----------------------------
+
+.movie-info-steel-cut
+  background: url("http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1") no-repeat center
+  height: 400px
+  width: auto
+
+.grade
+  display: inline-block
+  ul
+    float: left
+    li
+      float: left
+
+.movie-info-sub
+  li
+    float: left
+    &::after
+      content: " | "
