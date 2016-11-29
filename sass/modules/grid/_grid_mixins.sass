@@ -1,0 +1,168 @@
+
+
+
+=column-for( $count, $container-width, $fluid , $padding: $container-padding )
+  $col : null
+  $gutter : null
+  $unit : null
+  $width : column-width( $count ,$container-width, $padding )
+  @if $fluid
+    $gutter : gutter-percent( $count, $container-width)
+    $unit : 1%
+  @else
+    $gutter : $gutter-width
+    $unit : 1px
+
+  %col-float
+    float: left
+
+  .container
+    @if $fluid
+      width: 100%
+    @else
+      width: container($width, $count)
+    box-sizing: content-box
+    padding:
+      left: $padding * 1px
+      right: $padding * 1px
+
+    @extend %margin-0-auto
+
+  @if $container-width == $m-container-width
+    $col: "m-"
+
+  @else if $container-width == $t-container-width
+    $col: "t-"
+
+  @else if $container-width == $d-container-width
+    $col: "d-"
+
+  .show-grid::before
+    background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, hsla(163, 64%, 49%, 0.2) $width * $unit, transparent $width*$unit, transparent ($width+$gutter)*$unit)
+    background-size: 1px 10px, ($width + $gutter )* $unit 1px
+
+  .#{$col}hidden
+    display: none
+
+  @for $i from 1 through $count
+    .#{$col}col-#{$i}
+      @extend .col-float
+      @if $fluid
+        width: (100 / ($count / $i) - $gutter) * $unit
+      @else
+        width: ( ( ( $width + $gutter ) * $i ) - $gutter ) * $unit
+
+      @if $gutter-position == "left"
+        margin-left: $gutter * $unit
+      @else if $gutter-position == "right"
+        margin-right: $gutter * $unit
+      @else if $gutter-position == "center"
+        margin-right: $gutter / 2 * $unit
+        margin-left: $gutter / 2 * $unit
+
+
+
+  @for $i from 1 through $count
+    .#{$col}prefix-#{$i}
+      @if $fluid
+        margin-left: 100 / ($count / $i)  * $unit
+      @else
+        margin-left: ( ( $width + $gutter ) * $i  ) * $unit
+
+
+
+  @for $i from 1 through $count
+    .#{$col}suffix-#{$i}
+      @if $fluid
+        margin-right: 100 / ($count / $i)  * $unit
+      @else
+        margin-right: ( ( $width + $gutter ) * $i  ) * $unit
+
+
+
+  @for $i from 1 through $count
+    .#{$col}push-#{$i}
+      @extend .col-postion-r
+      @if $fluid
+        left: 100 / ($count / $i)  * $unit
+      @else
+        left: ( ( $width + $gutter ) * $i  ) * $unit
+
+
+
+  @for $i from 1 through $count
+    .#{$col}pull-#{$i}
+      @extend .col-postion-r
+      @if $fluid
+        right: 100 / ($count / $i)  * $unit
+      @else
+        right: ( ( $width + $gutter ) * $i  ) * $unit
+
+
+
+
+=isolate ($count, $container-width , $fluid, $padding: $container-padding )
+  $col : null
+  $width : column-width( $count, $container-width, $padding )
+  $unit : null
+  @if $fluid
+    $unit : 1%
+  @else
+    $unit : 1px
+  @if $container-width == $m-container-width
+    $col: "m-"
+
+  @else if $container-width == $t-container-width
+    $col: "t-"
+
+  @else if $container-width == $d-container-width
+    $col: "d-"
+
+
+
+  $j: 0
+  @for $i from 1 through $count
+    $j: $j+1
+    .row.isolate .#{$col}order-#{$i}, .row.isolate .#{$col}o-#{$i}
+      @if $fluid
+        margin-left: 100 / ($count / $i)  * $unit
+      @else
+        margin-left: ( ( $width + $gutter-width ) * $j) * $unit
+
+
+
+
+
+
+=font-rule( $font-size )
+  font-size: font-size( $font-size )
+  line-height: line_height( $font-size )
+
+
+=heading-rule ()
+  @for $i from 1 through 6
+    h#{$i}
+      $font-size : heading-text($i)
+      font-size : font-size( $font-size )
+      line-height: line-height( $font-size )
+
+
+
+
+=respond-to($media)
+  @if $media == $m-container-width
+    $mobile-max: $t-container-width - 1
+    @media only screen and( max-width: ( $mobile-max ) * 1px )  
+      @content
+
+  @else if $media == $t-container-width
+    $mobile-max: $t-container-width * 1px
+    $tablet-max: ( $d-container-width - 1) * 1px
+    @media only screen and ( min-width: $mobile-max ) and ( max-width: $tablet-max )  
+      @content
+
+  @else if $media == $d-container-width
+    @media only screen and ( min-width: $d-container-width * 1px )  
+      @content
+
+
