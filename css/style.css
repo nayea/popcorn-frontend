@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -446,12 +447,85 @@ template {
   display: none;
 }
 
+/*----------------------------------------------------------- */
+/* 스타일 변수 */
+/*----------------------------------------------------------- */
 .col-float {
   float: left;
 }
 
 .col-postion-r {
   position: relative;
+}
+
+.button-B {
+  border-radius: 20px;
+  background-color: #1D8CF9;
+  color: #fff;
+  font-weight: 700;
+}
+
+.border-button-B {
+  box-sizing: border-box;
+  border: 1px solid #1D8CF9;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #1D8CF9;
+  font-weight: 700;
+}
+
+.border-button-Y {
+  box-sizing: border-box;
+  border: 1px solid #F8E71C;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #F8E71C;
+  font-weight: 700;
+}
+
+.indigator {
+  background: #ededed;
+  border-radius: 50%;
+}
+
+.indigator-active {
+  background: #1D8CF9;
+  border-radius: 20px;
+}
+
+.comment-button-border {
+  border: 1px solid #ededed;
+  background: #fff;
+  color: #484848;
+}
+
+.d-arrow-blue {
+  position: relative;
+  border: 1px solid #1D8CF9;
+  border-radius: 50%;
+  width: 49px;
+  height: 49px;
+  background: #fff;
+}
+
+.d-arrow-blue::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 15px;
+  background: url(../images/icon/icon-arrow-left-blue.svg) no-repeat;
+  background-size: 20px 15px;
+}
+
+.logo {
+  background: url("../images/logo.svg") no-repeat;
+}
+
+html {
+  font-family: SpoqaHanSans-Regular;
+  font-size: 14;
 }
 
 /*# sourceMappingURL=../map/style.css.map */
