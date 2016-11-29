@@ -1,0 +1,49 @@
+.button-B
+  border-radius: 20px
+  background-color: $color-blue
+  color: #fff
+  font-weight: 700
+
+.border-button-B
+  box-sizing: border-box
+  border: 1px solid $color-blue
+  border-radius: 20px
+  background-color: #fff
+  color: $color-blue
+  font-weight: 700
+
+.border-button-Y
+  box-sizing: border-box
+  border: 1px solid $color-yellow
+  border-radius: 20px
+  background-color: #fff
+  color: $color-yellow
+  font-weight: 700
+
+.indigator
+  background: $color-lightgray
+  border-radius: 50%
+
+.indigator-active
+  background: $color-blue
+  border-radius: 20px
+
+.comment-button-border
+  border: 1px solid $color-lightgray
+  background: #fff
+  color: $color-black
+
+.d-arrow-blue
+  position: relative
+  border: 1px solid $color-blue
+  border-radius: 50%
+  +size(49px)
+  background: #fff
+  &::after
+    position: absolute
+    content: ""
+    top: 50%
+    left: 50%
+    +size(20px 15px)
+    background: url(../images/icon/icon-arrow-left-blue.svg) no-repeat
+    background-size: 20px 15px
