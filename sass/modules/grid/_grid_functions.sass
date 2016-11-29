@@ -1,7 +1,7 @@
+
+
 @function column-width($n, $container-width, $padding: $container-padding )
   $result: floor((($container-width - ($padding*2)) - (($n - 1) * ($gutter-width))) / $n)
-  // @if $fluid
-  //   $result: percentage($result / $page-width)
   @return $result
 
 @function container($width, $count)
@@ -31,7 +31,7 @@
 
 
 @function heading-text($value)
-  $num : $basic_font_size
+  $num : $basic-font-size
   @for $i from $value through 6
     @if $i != 6
       $num : $num * $type_scale
@@ -40,9 +40,6 @@
 
 @function col-fluid($width, $gutter-width, $container-width, $count, $i, $fluid)
   @if $fluid
-    // $a : ( $container-width -  $container-padding * 2 ) / $count
-    // $b : $gutter-width * ($count -1) / $container-width
-    // @return ( $a - $b ) * 1%
     @return ( ( ( $width + $gutter-width ) * $i ) - $gutter-width ) * 1px
   @else
     @return ( ( ( $width + $gutter-width ) * $i ) - $gutter-width ) * 1px

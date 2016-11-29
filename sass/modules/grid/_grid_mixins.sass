@@ -1,3 +1,6 @@
+
+
+
 =column-for( $count, $container-width, $fluid , $padding: $container-padding )
   $col : null
   $gutter : null
@@ -18,13 +21,12 @@
       width: 100%
     @else
       width: container($width, $count)
-
+    box-sizing: content-box
     padding:
       left: $padding * 1px
       right: $padding * 1px
 
     @extend %margin-0-auto
-
 
   @if $container-width == $m-container-width
     $col: "m-"
@@ -35,11 +37,9 @@
   @else if $container-width == $d-container-width
     $col: "d-"
 
-  // @else if $container-width == $lg-container-width
-  //   $col: "lg-"
-  //
-  // @else if $container-width == $xl-container-width
-  //   $col: "xl-"
+  .show-grid::before
+    background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, hsla(163, 64%, 49%, 0.2) $width * $unit, transparent $width*$unit, transparent ($width+$gutter)*$unit)
+    background-size: 1px 10px, ($width + $gutter )* $unit 1px
 
   .#{$col}hidden
     display: none
@@ -118,11 +118,7 @@
   @else if $container-width == $d-container-width
     $col: "d-"
 
-  // @else if $container-width == $lg-container-width
-  //   $col: "lg-"
-  //
-  // @else if $container-width == $xl-container-width
-  //   $col: "xl-"
+
 
   $j: 0
   @for $i from 1 through $count
@@ -156,18 +152,17 @@
 =respond-to($media)
   @if $media == $m-container-width
     $mobile-max: $t-container-width - 1
-    @media only screen and ( max-width: ( $mobile-max ) * 1px )  {@content}
+    @media only screen and ( max-width: ( $mobile-max ) * 1px )  
+      @content
 
   @else if $media == $t-container-width
     $mobile-max: $t-container-width * 1px
     $tablet-max: ( $d-container-width - 1) * 1px
-    @media only screen and ( min-width: $mobile-max ) and ( max-width: $tablet-max )  {@content}
+    @media only screen and ( min-width: $mobile-max ) and ( max-width: $tablet-max )  
+      @content
 
   @else if $media == $d-container-width
-    @media only screen and ( min-width: $d-container-width * 1px )  {@content}
+    @media only screen and ( min-width: $d-container-width * 1px )  
+      @content
 
-  // @else if $media == $lg-container-width
-  //   @media only screen and ( min-width: $lg-container-width * 1px ) and ( max-width: ( $xl-container-width - 1 ) * 1px )  {@content}
 
-  // @else if $media == $xl-container-width
-  //   @media only screen and ( min-width: $xl-container-width * 1px )  {@content}
