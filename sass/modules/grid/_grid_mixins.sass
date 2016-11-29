@@ -152,7 +152,7 @@
 =respond-to($media)
   @if $media == $m-container-width
     $mobile-max: $t-container-width - 1
-    @media only screen and ( max-width: ( $mobile-max ) * 1px )  
+    @media only screen and( max-width: ( $mobile-max ) * 1px )  
       @content
 
   @else if $media == $t-container-width
