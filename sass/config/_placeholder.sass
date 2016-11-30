@@ -21,7 +21,6 @@
   transform: translate(-50%, -50%)
 
 .readable-hidden,
-.a11y-hidden,
 .screen-off
   overflow: hidden
   width: 1px
@@ -30,3 +29,36 @@
   margin: -1px
   position: absolute
   left: -99999px
+
+.a11y-hidden
+  position: absolute
+  left: -99999px
+
+// ------------------------------------------------------------------------------
+
+%reset-box-model
+  margin: 0
+  border: 0
+  padding: 0
+
+%button-reset
+  background: transparent
+  border: 0
+  padding: 0
+  margin: 0
+
+%reset-a
+  text-decoration: none
+
+%reset-list
+  list-style: none
+// ------------------------------------------------------------------------------
+
+%rwd-img 
+  width: 100%
+  height: auto
+
+%rwd-bg 
+  width: 100%
+  height: 0
+
