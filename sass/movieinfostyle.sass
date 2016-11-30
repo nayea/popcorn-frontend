@@ -12,8 +12,9 @@ html
   font-family: $spoqa-R
   font-size: $basic-font-size
 
-figure
-  margin: 0
+// figure
+//   margin: 0
+//
 
 ul
   padding: 0
@@ -21,22 +22,93 @@ ul
 
 li
   list-style: none
+
 // ----------------------------
 
-.movie-info-steel-cut
+.movie-info-group-wrapper
+  position: relative
   background: url("http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1") no-repeat center
   height: 400px
-  width: auto
+  width: 100vw
+  .container
+    position: relative
+    bottom: 0px
+
+.h400
+  height: 400px
+
+.movie-info-poster
+  position: absolute
+  bottom: -2.1875rem
+  border-radius: 10px
+  z-index: 1
+
+.movie-info-group
+  position: absolute
+  bottom: 0
+  margin-left: 10px
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent)
+
+
+
+
+
+
+
+
 
 .grade
   display: inline-block
-  ul
-    float: left
-    li
-      float: left
+  font-family: $spoqa-B
+  color: $color-yellow
+
+.starts
+
+.movie-info-list
+  // padding:
+  //   left: 1.25rem
+  // margin:
+  //   left: 0
+  // height: 8.75rem
+
+
+.movie-title
+  color: $color-yellow
+  span
+    font-size: 0.75rem
 
 .movie-info-sub
+  font-family: $spoqa-Thin
+  font-size: 0.625rem
+  color: #fff
   li
     float: left
     &::after
       content: " | "
+
+
+
++respond-to($m-container-width)
+  .m-arrow-button-size
+   +size(25px)
+   &::after
+    +size(10px 8px)
+    background-size: 10px 8px
+
+
+
++respond-to($t-container-width)
+  .t-arrow-button-size
+   +size(49px)
+   &::after
+    +size(20px 15px)
+    background-size: 20px 15px
+
+
+
++respond-to($d-container-width)
+  .d-arrow-button-size
+   +size(49px)
+   &::after
+    +size(20px 15px)
+    background-size: 20px 15px
