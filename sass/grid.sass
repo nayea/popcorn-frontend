@@ -39,16 +39,7 @@
 .row
   @extend %clearfix
 
-.readable-hidden,
-.a11y-hidden,
-.screen-off
-  overflow: hidden
-  width: 1px
-  height: 1px
-  padding: 0
-  margin: -1px
-  position: absolute
-  left: -99999px
+
 
 .dev
  +font-rule( 21 )
@@ -58,8 +49,8 @@
 
 
 +respond-to($m-container-width)
-  +column-for( 4 , $m-container-width, false)
-  +isolate( 4 , $m-container-width, false)
+  +column-for( 4 , $m-container-width, true)
+  +isolate( 4 , $m-container-width, true)
 
 
 +respond-to($t-container-width)

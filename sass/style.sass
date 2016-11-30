@@ -13,72 +13,153 @@ html
   font-family: $spoqa-R
   font-size: $basic-font-size
 
-// .header-logo
-  // width: 100%
-  // height: 0
-  // background-size: cover
-  // background: url(../images/logo.svg) no-repeat
-  // width: 143px
-  // height: 20px
-  // padding-bottom: 13.98%
 
 
-.header-menu
-  border: 0
-  width: 12px
-  height: 11px
+.container
+  position: relative
+
+%header-isolate
+  margin-right: -100%
+  float: left
+
+// header
+
+.logo-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    width: percentage(101/$m-container-width)
+    padding: percentage(16/$m-container-width) 0 0 percentage(36/$m-container-width)
+  +respond-to($t-container-width)
+    width: 125px
+    padding: 30px 0 0 46px
+  +respond-to($d-container-width)
+    width: 149px
+    padding: 38px 0 0 0
+
+.header-logo
+  @extend %rwd-bg 
+  display: block
+  padding-bottom: 19.46%
+  cursor: pointer
+  +respond-to($m-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($t-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($d-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+
+
+
+.header-menu-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(18/$m-container-width) 0 0 0
+    width: percentage(12/$m-container-width)
+  +respond-to($t-container-width)
+    position: absolute
+    top: 30px
+    left: 10px
+    width: 20px
+
+.header-menu-button
+  @extend %rwd-bg 
+  @extend %button-reset
   background: url(../images/icon/icon-hamburger.svg) no-repeat
-  margin-top: 1.25rem
-  margin-left: 0.625rem
+  background-size: contain
+  height: 20px
+  // padding-bottom: 100%
+  
 
-.header-search
-  border: 0
-  width: 12px
-  height: 12px
-  background: url(../images/icon/icon-search.svg) no-repeat
-  margin-top: 1.25rem
-  margin-left: 16.875rem
+.header
+  nav
+    position: absolute
+    top: 36px
+    left: 189px
+    ul
+      @extend %reset-list
+      @extend %reset-box-model
+      li
+        +font(size 16px)
+        float: left
+        margin-right: 40px 
+      a
+        @extend %reset-a
+  form
+    @extend %header-isolate
+    position: relative
+    +respond-to($m-container-width)
+      padding: percentage(15/$m-container-width) 0 0 percentage(280/$m-container-width)
+    +respond-to($t-container-width)
+      margin-top: 25px
+    +respond-to($d-container-width)
+      margin-top: 30px
+    input
+      +respond-to($m-container-width)
+        +font(size 12px)
+        padding: 8px 19px
+      +respond-to($t-container-width)
+        +size(295px 30px)
+        +font(size 12px)
+        padding: 8px 19px
+      +respond-to($d-container-width)
+        +size(295px 40px)
+        +font(size 14px)
+        padding: 9px 21px 14px 21px
+    button
+      @extend %button-reset
+      background: url(../images/icon/icon-search.svg) no-repeat
+      background-size: contain
+      +respond-to($m-container-width)
+        width: px2vw(12px,$m-container-width)
+        height: px2vw(12px,$m-container-width)
+      +respond-to($t-container-width)
+        +size(13px)
+        position: absolute
+        top: 7px
+        left: 260px
+      +respond-to($d-container-width)
+        +size(15px)
+        position: absolute
+        top: 12px
+        left: 260px
 
-.header-user-image
-  position: absolute
-  border: 0
-  border-radius: 50%
-  margin-top: 0.9375rem
-  margin-left: 18.375rem
 
-.header-user-info
-  border: 0
-  width: 8px
-  height: 4px
-  background: url(../images/icon/icon-down.svg) no-repeat
-  margin-top: 1.4375rem
-  margin-left: 19.9375rem
-  font-size: font-size($basic-font-size)
+.header-userinfo
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(15/$m-container-width) 0 0 percentage(304/$m-container-width)
+
+// +respond-to($m-container-width)
 
 
+//   .m-arrow-button-size
+//    +size(25px)
+//    &::after
+//     +size(10px 8px)
+//     background-size: 10px 8px
 
 
-+respond-to($m-container-width)
-  .m-arrow-button-size
-   +size(25px)
-   &::after
-    +size(10px 8px)
-    background-size: 10px 8px
+// +respond-to($t-container-width)
 
 
-
-+respond-to($t-container-width)
-  .t-arrow-button-size
-   +size(49px)
-   &::after
-    +size(20px 15px)
-    background-size: 20px 15px
+//   .t-arrow-button-size
+//    +size(49px)
+//    &::after
+//     +size(20px 15px)
+//     background-size: 20px 15px
 
 
 
-+respond-to($d-container-width)
-  .d-arrow-button-size
-   +size(49px)
-   &::after
-    +size(20px 15px)
-    background-size: 20px 15px
+// +respond-to($d-container-width)
+
+
+//   .d-arrow-button-size
+//    +size(49px)
+//    &::after
+//     +size(20px 15px)
+//     background-size: 20px 15px
