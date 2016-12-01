@@ -7,7 +7,7 @@
 .show-grid
   position: relative
 
-.show-grid::before 
+.show-grid::before
   content: ''
   position: absolute
   z-index: 1000
@@ -17,21 +17,21 @@
 
 
 
-@if $gutter-position == "left"
-  .row [class*="-col-"]:first-child
-    margin:
-      left: 0
-@else if $gutter-position == "right"
-  .row [class*="-col-"]:last-child
-    margin:
-      right: 0
-@else if $gutter-position == "center"
-  .row [class*="-col-"]:first-child,
-    margin:
-      left: 0
-  .row [class*="-col-"]:last-child
-    margin:
-      right: 0
+// @if $gutter-position == "left"
+//   .row [class*="-col-"]:first-child
+//     margin:
+//       left: 0
+// @else if $gutter-position == "right"
+//   .row [class*="-col-"]:last-child
+//     margin:
+//       right: 0
+// @else if $gutter-position == "center"
+//   .row [class*="-col-"]:first-child,
+//     margin:
+//       left: 0
+//   .row [class*="-col-"]:last-child
+//     margin:
+//       right: 0
 
 .row.isolate [class*="-col-"]
   margin-right: -100%
@@ -54,8 +54,8 @@
 
 
 +respond-to($t-container-width)
-  +column-for( 8 , $t-container-width, false, 10)
-  +isolate( 8 , $t-container-width, false, 10)
+  +column-for( 8 , $t-container-width, false)
+  +isolate( 8 , $t-container-width, false)
 
 +respond-to($d-container-width)
   +column-for( 12 , $d-container-width, false)

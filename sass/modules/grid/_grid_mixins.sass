@@ -18,13 +18,14 @@
 
   .container
     @if $fluid
+      // width: 94.285714286%
       width: 100%
     @else
       width: container($width, $count)
     box-sizing: content-box
-    padding:
-      left: $padding * 1px
-      right: $padding * 1px
+    // padding:
+    //   left: $padding * 1px
+    //   right: $padding * 1px
 
     @extend %margin-0-auto
 
@@ -37,9 +38,14 @@
   @else if $container-width == $d-container-width
     $col: "d-"
 
-  .show-grid::before
-    background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, hsla(163, 64%, 49%, 0.2) $width * $unit, transparent $width*$unit, transparent ($width+$gutter)*$unit)
-    background-size: 1px 10px, ($width + $gutter )* $unit 1px
+  @if $fluid
+    .show-grid::before
+      background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, transparent (($gutter-width / 2) / ($gutter-width + $width)) * 100% , hsla(163, 64%, 49%, 0.2) (($gutter-width / 2) / ($gutter-width + $width)) * 100%, hsla(163, 64%, 49%, 0.2) ((($gutter-width / 2) + $width) / ($gutter-width + $width)) * 100%, transparent ((($gutter-width / 2) + $width) / ($gutter-width + $width)) * 100%)
+      background-size: 1px 10px, (100 / $count) * $unit 1px
+  @else
+    .show-grid::before
+      background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, transparent ($gutter-width / 2) * $unit, hsla(163, 64%, 49%, 0.2) ($gutter-width / 2) * $unit, hsla(163, 64%, 49%, 0.2) ($gutter-width / 2 + $width) * $unit, transparent ($gutter-width / 2 + $width) * $unit)
+      background-size: 1px 10px, ($width + $gutter) * $unit 1px
 
   .#{$col}hidden
     display: none
@@ -152,17 +158,15 @@
 =respond-to($media)
   @if $media == $m-container-width
     $mobile-max: $t-container-width - 1
-    @media only screen and( max-width: ( $mobile-max ) * 1px )  
+    @media only screen and( max-width: ( $mobile-max ) * 1px )
       @content
 
   @else if $media == $t-container-width
     $mobile-max: $t-container-width * 1px
     $tablet-max: ( $d-container-width - 1) * 1px
-    @media only screen and ( min-width: $mobile-max ) and ( max-width: $tablet-max )  
+    @media only screen and ( min-width: $mobile-max ) and ( max-width: $tablet-max )
       @content
 
   @else if $media == $d-container-width
-    @media only screen and ( min-width: $d-container-width * 1px )  
+    @media only screen and ( min-width: $d-container-width * 1px )
       @content
-
-
