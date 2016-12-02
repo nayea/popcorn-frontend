@@ -82,7 +82,7 @@
 
   @for $i from 1 through $count
     .#{$col}push-#{$i}
-      @extend .col-postion-r
+      @extend .col-postion-a
       @if $fluid
         left: 100 / ($count / $i)  * $unit
       @else
@@ -92,7 +92,7 @@
 
   @for $i from 1 through $count
     .#{$col}pull-#{$i}
-      @extend .col-postion-r
+      @extend .col-postion-a
       @if $fluid
         right: 100 / ($count / $i)  * $unit
       @else

@@ -1,33 +1,217 @@
 <!DOCTYPE html>
 <!--[if !IE]><!-->
-	<html lang="ko-KR">
+  <html lang="ko-KR">
 <!--<![endif]-->
 <!--[if IE]><html lang="ko_KR" class="lt=ie10 ie9"<![endif]-->
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>popcorn</title>
-	<link rel="stylesheet" href="font/spoqaHanSans.css">
-	<link rel="stylesheet" href="css/grid.css">
-	<link rel="stylesheet" href="css/style.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>popcorn</title>
+  <link rel="stylesheet" href="font/spoqaHanSans.css">
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="lib/jquery.js"></script>
+  <script src="lib/jquery.easing.min.js"></script>
 </head>
 
 <body>
 
 <div class="container">
 
-	<header class="header m-">
-		<h1 class="header-logo"><a href="#">POPCORN</a></h1>
-		<button class="header-menu a11y">메뉴</button>
-		<button class="header-search a11y">검색</button>
-		<img class="header-user-image" src="http://placehold.it/20x20" alt="회원 이미지">
-		<button class="header-user-info a11y">사용자 정보</button>
-		<button class="st-arrow-blue d-arrow-button-size t-arrow-button-size m-arrow-button-size"></button>
-	</header>
+  <header class="row header">
+      <h1 class="logo-width">
+        <a href="#" class="header-logo" aria-label="popcorn"></a>
+      </h1>
 
+      <nav class="m-hidden t-hidden" role="navigation">
+        <ul>
+          <li><a href="#">금주의 박스오피스</a></li>
+          <li><a href="#">맞춤 추천</a></li>
+          <li><a href="#">영화 이야기</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-menu-width d-hidden">
+        <button type="button" class="header-menu-button" aria-label="메뉴"></button>
+      </div>
+
+      <form action="#" role="search" class="t-prefix-3 d-prefix-6">
+        <input type="search" class="st-search m-hidden" aria-labeledby="검색어 입력" placeholder="영화명, 장르, 배우명, 감독">
+        <button type="button" aria-label="검색"></button>
+      </form>
+
+     <div class="header-userinfo d-prefix-10">
+        <img class="st-user-image" src="images/user-1.jpg" alt="회원 이미지">
+       <a href="#"> 
+        <span class="header-user-name m-hidden">이나영</span>
+        <span class="header-user-selection" aria-label="로그인 정보 보기" role="button" tabindex="0"></span></a>
+     </div>
+  </header>
+  
 </div>
 
+
+  <section class="carousel">
+      <div id="main-carousel" aria-label="주요 영화 정보">
+      
+      <article data-label="팝콘 주요 영화 1">
+           <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h1>도둑들 <span>(The Thieves)</span></h1>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+                 <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                  <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+               </div>
+               <button type="button" class="st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 1" class="t-hidden d-hidden">
+          <img src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden d-hidden">
+          <img src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden t-hidden">
+      </article>
+      <article data-label="팝콘 주요 영화 2">
+      <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h1>도둑들 <span>(The Thieves)</span></h1>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+                 <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                  <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+               </div>
+               <button type="button" class="st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="t-hidden d-hidden">
+          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="m-hidden d-hidden">
+          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="m-hidden t-hidden">
+      </article>
+      <article data-label="금주 박스오피스 1위">
+      <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h1>도둑들 <span>(The Thieves)</span></h1>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+                 <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                  <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+               </div>
+               <button type="button" class="st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/minion.jpg" alt="금주 박스오피스 1위" class="t-hidden d-hidden">
+          <img src="images/main-carousel/minion.jpg" alt="금주 박스오피스 1위" class="m-hidden d-hidden">
+          <img src="images/main-carousel/minion.jpg" alt="금주 박스오피스 1위" class="m-hidden t-hidden">
+      </article>
+      <article data-label="금주 박스오피스 2위">
+      <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h1>도둑들 <span>(The Thieves)</span></h1>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+                 <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                  <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+               </div>
+               <button type="button" class="st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/m-bg.jpg" alt="금주 박스오피스 2위" class="t-hidden d-hidden">
+          <img src="images/main-carousel/t-bg.jpg" alt="금주 박스오피스 2위" class="m-hidden d-hidden">
+          <img src="images/main-carousel/d-bg.jpg" alt="금주 박스오피스 2위" class="m-hidden t-hidden">
+      </article>
+      <article data-label="금주 박스오피스 3위">
+      <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h1>도둑들 <span>(The Thieves)</span></h1>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+                 <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                  <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+               </div>
+               <button type="button" class="st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/m-bg.jpg" alt="금주 박스오피스 3위" class="t-hidden d-hidden">
+          <img src="images/main-carousel/t-bg.jpg" alt="금주 박스오피스 3위" class="m-hidden d-hidden">
+          <img src="images/main-carousel/d-bg.jpg" alt="금주 박스오피스 3위" class="m-hidden t-hidden">
+      </article>
+      </div>
+  </section>
+
+
+<script src="js/ui-carousel.js"></script>
 </body>
 
 </html>
+
+
