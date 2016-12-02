@@ -23,6 +23,9 @@ html
   float: left
 
 // header
+.header
+  position: fixed
+  z-index: 10000
 
 .logo-width
   @extend %reset-box-model
@@ -49,7 +52,7 @@ html
     background: url(../images/logo.svg) no-repeat
     background-size: contain
   +respond-to($d-container-width)
-    background: url(../images/logo.svg) no-repeat
+    background: url(../images/logo-white.svg) no-repeat
     background-size: contain
 
 
@@ -86,14 +89,22 @@ html
       li
         +font(size 16px)
         float: left
-        margin-right: 40px
+        padding-bottom: 5px 
+        margin-right: 20px
+        &:hover
+           border-bottom: 2px solid $color-yellow
+
       a
         @extend %reset-a
+        display: block
+        color: #fff
+        &:hover
+          color: $color-yellow
   form
     @extend %header-isolate
     position: relative
     +respond-to($m-container-width)
-      padding: percentage(15/$m-container-width) 0 0 percentage(280/$m-container-width)
+      padding: percentage(15/$m-container-width) 0 0 percentage(270/$m-container-width)
     +respond-to($t-container-width)
       margin-top: 25px
     +respond-to($d-container-width)
@@ -132,7 +143,260 @@ html
 .header-userinfo
   @extend %header-isolate
   +respond-to($m-container-width)
-    padding: percentage(15/$m-container-width) 0 0 percentage(304/$m-container-width)
+    padding: percentage(12/$m-container-width) 0 0 percentage(295/$m-container-width)
+  +respond-to($t-container-width)
+    padding: 25px 0 0 652px
+  +respond-to($d-container-width)
+    padding-top: 26px 
+  img
+    float: left
+    +respond-to($m-container-width)
+      width: px2vw(20px,$m-container-width)
+      height: px2vw(20px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(30px)
+    +respond-to($d-container-width)
+      +size(40px)
+  a
+    @extend %reset-a
+    display: block
+    float: left
+    cursor: pointer
+    +respond-to($m-container-width)
+      padding-left: px2vw(4px,$m-container-width)
+      color: $color-black
+    +respond-to($t-container-width)
+      padding: 6px 0 0 10px
+      +font(size 12px)
+      color: $color-black
+    +respond-to($d-container-width)
+      padding: 8px 0 0 15px
+      +font(size 14px)
+      color: #fff
+  & .header-user-selection
+    @extend %button-reset
+    display: inline-block
+    background: url("../images/icon/icon-down.svg") no-repeat
+    background-size: contain
+    +respond-to($m-container-width)
+      width: px2vw(8px,$m-container-width)
+      height: px2vw(4px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(15px 8px)
+      padding-left: 2px
+    +respond-to($d-container-width)
+      +size(15px 8px)
+      padding-left: 11px
+
+
+// carousel
+// .carousel
+//  overflow: hidden
+.ui-carousel
+  position: relative
+  overflow: hidden
+  background: #fff
+  margin:
+    left: auto
+    right: auto
+  +respond-to($m-container-width)
+    top: px2vw(50px,$m-container-width)
+    height: px2vw(310px,$m-container-width)
+  +respond-to($t-container-width)
+    height: 390px
+    top: 80px
+  +respond-to($d-container-width)
+    height: 740px
+  
+
+.ui-carousel-tabpanel-wrapper
+  position: absolute
+  top: 0
+  left: 0
+  .ui-carousel-tabpanel
+    float: left
+    width: 100vw
+    &>img
+      vertical-align: top
+      width: 100%
+      // height: auto
+      +respond-to($m-container-width)
+        height: px2vw(310px,$m-container-width)
+      +respond-to($t-container-width)
+        height: px2vw(390px,$t-container-width)
+      +respond-to($d-container-width)
+        height: px2vw(740px,$d-container-width)
+
+.ui-carousel-indicators
+  @extend %reset-list
+  @extend %reset-box-model
+  position: absolute
+  z-index: 1000
+  bottom: 30px
+  left: 50%
+  transform: translateX(-50%)
+  cursor: pointer
+  li
+    float: left
+    margin:
+      left: 8px
+      right: 8px
+
+.ui-carousel-tab
+  display: block
+  box-sizing: border-box
+  +respond-to($m-container-width)
+    width: px2vw(10px,$m-container-width)
+    height: px2vw(10px,$m-container-width)
+  +respond-to($t-container-width)
+    +size(13px)
+  +respond-to($d-container-width)
+    +size(15px)
+  &:hover
+    border: 1px solid $color-blue
+    box-shadow: inset 0 0 5px rgba($color-blue, 1)
+  &:active
+    position: relative
+    top: 2px
+
+.ui-carousel-button
+  @extend %button-reset
+  cursor: pointer
+  position: absolute
+  z-index: 1000
+  top: 50%
+  +size(49px)
+  &::after
+    +size(20px 15px)
+    background-size: 20px 15px
+.ui-carousel-button-prev
+  left: 40px
+.ui-carousel-button-next
+  right: 40px
+  transform: rotate(180deg)
+
+//carousel - content
+.ui-carousel-panels
+  position: relative
+.ui-carousel-movie-info
+  position: absolute
+  color: #fff
+  +respond-to($m-container-width)
+    top: px2vw(107px,$m-container-width)
+    left: 0
+  +respond-to($t-container-width)
+    width: 640px
+    top: 116px
+    left: 82px
+  +respond-to($d-container-width)
+    top: 168px
+    left: 84px
+  a
+    @extend %reset-a
+    display: block
+    cursor: pointer
+    >span
+      color: #fff
+      +respond-to($m-container-width)
+        font-size: px2vw(12px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 16px)
+      +respond-to($d-container-width)
+        +font(size 16px)
+  h1
+    @extend %reset-box-model
+    color: $color-yellow
+    +respond-to($m-container-width)
+      font-size: px2vw(24px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 32px)
+    +respond-to($d-container-width)
+      +font(size 48px)
+    span
+      color: $color-yellow
+      +respond-to($m-container-width)
+        font-size: px2vw(24px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 32px)
+      +respond-to($d-container-width)
+        +font(size 36px)
+  .stars
+    @extend %reset-box-model
+    +respond-to($t-container-width)
+      +size(190px 25px)
+      margin-top: 10px
+    +respond-to($d-container-width)
+      +size(210px 40px)
+    img
+      margin-right: 25px
+    span
+      color: $color-yellow
+      +respond-to($m-container-width)
+        font-size: px2vw(20px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 24px line-height 20px)
+      +respond-to($d-container-width)
+        +font(size 36px line-height 18px)
+  ul
+    @extend %reset-list
+    @extend %reset-box-model
+    li
+      color: #fff
+      display: inline-block
+      padding-right: 6px
+      +respond-to($m-container-width)
+        font-size: px2vw(10px,$m-container-width)
+      +respond-to($t-container-width)
+        padding-top: 17px
+        +font(size 14px)
+      +respond-to($d-container-width)
+        +font(size 24px)
+      &::after
+        content: ""
+        position: relative
+        left: 4px
+        border-right: 2px solid #fff
+      &:last-of-type::after
+        border: 0
+  button
+    +respond-to($m-container-width)
+      font-size: px2vw(12px,$m-container-width)
+      letter-spacing: -0.05em
+      padding: px2vw(7px,$m-container-width) px2vw(20px,$m-container-width)
+      margin:
+        top: px2vw(10px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 14px )
+      letter-spacing: -0.05em
+      padding: 7px 52px
+      margin:
+        top: 16px
+    +respond-to($d-container-width)
+      +font(size 18px )
+      letter-spacing: -0.05em
+      padding: 14px 92px
+      margin:
+        top: 34px
+
+
+  .video-thumbnail
+    +respond-to($t-container-width)
+      position: absolute
+      top: 33px
+      right: 0
+    +respond-to($d-container-width)
+      margin-top: 34px
+    // &::after
+    //   content: "dddd"
+    //   position: absolute
+    //   top: 0
+    //   left: 0
+    //   right: 0
+    //   bottom: 0
+    //   background: #000
+
+
+
 
 // +respond-to($m-container-width)
 
