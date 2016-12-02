@@ -71,7 +71,7 @@
   @for $i from 1 through $count
     .#{$col}prefix-#{$i}
       @if $fluid
-        margin-left: 100 / ($count / $i)  * $unit
+        margin-left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
         margin-left: ( ( $width + $gutter ) * $i  ) * $unit
 
@@ -80,7 +80,7 @@
   @for $i from 1 through $count
     .#{$col}suffix-#{$i}
       @if $fluid
-        margin-right: 100 / ($count / $i)  * $unit
+        margin-right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
         margin-right: ( ( $width + $gutter ) * $i  ) * $unit
 
@@ -90,7 +90,7 @@
     .#{$col}push-#{$i}
       @extend .col-postion-r
       @if $fluid
-        left: 100 / ($count / $i)  * $unit
+        left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
         left: ( ( $width + $gutter ) * $i  ) * $unit
 
@@ -100,7 +100,7 @@
     .#{$col}pull-#{$i}
       @extend .col-postion-r
       @if $fluid
-        right: 100 / ($count / $i)  * $unit
+        right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
         right: ( ( $width + $gutter ) * $i  ) * $unit
 
@@ -131,7 +131,7 @@
     $j: $j+1
     .row.isolate .#{$col}order-#{$i}, .row.isolate .#{$col}o-#{$i}
       @if $fluid
-        margin-left: 100 / ($count / $i)  * $unit
+        margin-left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
         margin-left: ( ( $width + $gutter-width ) * $j) * $unit
 
