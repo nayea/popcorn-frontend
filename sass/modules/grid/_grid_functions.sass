@@ -8,8 +8,6 @@
   $result: ( ( ( $width + $gutter-width ) * $count ) - $gutter-width + ($container-padding*2)) * 1px
   @return $result
 
-@function colum-percent()
-
 @function gutter-percent($count, $container-width)
   $result: floor( ( $gutter-width * ( $count - 1 ) / $container-width * 100 ) / ( $count - 1 ))
   @return $result

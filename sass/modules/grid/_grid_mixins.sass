@@ -7,7 +7,7 @@
   $unit : null
   $width : column-width( $count ,$container-width, $padding )
   @if $fluid
-    $gutter : gutter-percent( $count, $container-width)
+    $gutter : gutter-percent($count, $container-width)
     $unit : 1%
   @else
     $gutter : $gutter-width
@@ -21,7 +21,7 @@
       // width: 94.285714286%
       width: 100%
     @else
-      width: container($width, $count)
+      width: $container-width * $unit
     box-sizing: content-box
     // padding:
     //   left: $padding * 1px
@@ -40,12 +40,12 @@
 
   @if $fluid
     .show-grid::before
-      background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, transparent (($gutter-width / 2) / ($gutter-width + $width)) * 100% , hsla(163, 64%, 49%, 0.2) (($gutter-width / 2) / ($gutter-width + $width)) * 100%, hsla(163, 64%, 49%, 0.2) ((($gutter-width / 2) + $width) / ($gutter-width + $width)) * 100%, transparent ((($gutter-width / 2) + $width) / ($gutter-width + $width)) * 100%)
+      background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, transparent (($gutter-width / 2) / ($container-width / $count)) * 100% , hsla(163, 64%, 49%, 0.2) (($gutter-width / 2) / ($container-width / $count)) * 100%, hsla(163, 64%, 49%, 0.2) ((($container-width / $count)-($gutter-width / 2)) / ($container-width / $count)) * 100%, transparent ((($container-width / $count)-($gutter-width / 2)) / ($container-width / $count)) * 100%)
       background-size: 1px 10px, (100 / $count) * $unit 1px
   @else
     .show-grid::before
-      background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, transparent ($gutter-width / 2) * $unit, hsla(163, 64%, 49%, 0.2) ($gutter-width / 2) * $unit, hsla(163, 64%, 49%, 0.2) ($gutter-width / 2 + $width) * $unit, transparent ($gutter-width / 2 + $width) * $unit)
-      background-size: 1px 10px, ($width + $gutter) * $unit 1px
+      background: linear-gradient(transparent 9px, $grid-color 10px), linear-gradient(90deg, transparent ($gutter-width / 2) * $unit, hsla(163, 64%, 49%, 0.2) ($gutter-width / 2) * $unit, hsla(163, 64%, 49%, 0.2) (($container-width / $count) - ($gutter-width / 2)) * $unit, transparent (($container-width / $count) - ($gutter-width / 2)) * $unit)
+      background-size: 1px 10px, ($container-width / $count) * $unit 1px
 
   .#{$col}hidden
     display: none
@@ -54,9 +54,9 @@
     .#{$col}col-#{$i}
       @extend .col-float
       @if $fluid
-        width: (100 / ($count / $i) - $gutter) * $unit
+        width: (($container-width / ($count / $i)) - $gutter-width) / $container-width * 100%
       @else
-        width: ( ( ( $width + $gutter ) * $i ) - $gutter ) * $unit
+        width: ( ( ($container-width / $count) * $i ) - $gutter ) * $unit
 
       @if $gutter-position == "left"
         margin-left: $gutter * $unit
