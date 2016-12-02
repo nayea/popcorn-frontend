@@ -80,11 +80,20 @@
 .st-play-button
   @extend %arrow-button-style
   border: 1px solid #fff
-  backgroudn: transparent
+  background: transparent
   &::after
     @extend %content-center
-    contetn: ""
+    content: ""
     background: url("../images/icon/icon-play.svg") no-repeat
+
+.st-play-button-inverse
+  @extend %arrow-button-style
+  border: 1px solid #fff
+  background: transparent
+  &::after
+    @extend %content-center
+    content: ""
+    background: url("../images/icon/icon-play-inverse.svg") no-repeat
 
 
 
