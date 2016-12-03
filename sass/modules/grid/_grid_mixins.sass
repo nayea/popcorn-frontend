@@ -73,7 +73,7 @@
       @if $fluid
         margin-left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
-        margin-left: ( ( $width + $gutter ) * $i  ) * $unit
+        margin-left: ((($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
@@ -82,7 +82,7 @@
       @if $fluid
         margin-right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
-        margin-right: ( ( $width + $gutter ) * $i  ) * $unit
+        margin-right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
@@ -92,7 +92,7 @@
       @if $fluid
         left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
-        left: ( ( $width + $gutter ) * $i  ) * $unit
+        left: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
@@ -102,7 +102,7 @@
       @if $fluid
         right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
       @else
-        right: ( ( $width + $gutter ) * $i  ) * $unit
+        right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
