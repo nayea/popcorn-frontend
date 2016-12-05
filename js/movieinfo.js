@@ -2,7 +2,6 @@ var still = document.querySelector('.movie-still');
 var stillControlButtons = still.querySelectorAll('button');
 var stillView = still.querySelector('.movie-still-view');
 
-console.log(stillView);
 
 var changeStillView = function() {
   var stillImg = this.querySelector('img');
