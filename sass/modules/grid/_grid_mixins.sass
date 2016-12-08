@@ -77,32 +77,32 @@
 
 
 
-  @for $i from 1 through $count
-    .#{$col}suffix-#{$i}
-      @if $fluid
-        margin-right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
-      @else
-        margin-right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
+  // @for $i from 1 through $count
+  //   .#{$col}suffix-#{$i}
+  //     @if $fluid
+  //       margin-right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
+  //     @else
+  //       margin-right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
-  @for $i from 1 through $count
-    .#{$col}push-#{$i}
-      @extend .col-postion-a
-      @if $fluid
-        left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
-      @else
-        left: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
+  // @for $i from 1 through $count
+  //   .#{$col}push-#{$i}
+  //     @extend .col-postion-a
+  //     @if $fluid
+  //       left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
+  //     @else
+  //       left: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
-  @for $i from 1 through $count
-    .#{$col}pull-#{$i}
-      @extend .col-postion-a
-      @if $fluid
-        right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
-      @else
-        right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
+  // @for $i from 1 through $count
+  //   .#{$col}pull-#{$i}
+  //     @extend .col-postion-a
+  //     @if $fluid
+  //       right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
+  //     @else
+  //       right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
