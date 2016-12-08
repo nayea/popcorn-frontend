@@ -86,6 +86,7 @@
     content: ""
     background: url("../images/icon/icon-play.svg") no-repeat
 
+
 .st-play-button-inverse
   @extend %arrow-button-style
   border: 1px solid #fff
@@ -97,4 +98,12 @@
 
 
 
-
+// pop-close-button
+.st-pop-close-button
+  position: relative
+  background: transparent
+  border: 0
+  &::after
+    @extend %content-center
+    content: ""
+    background: url("../images/icon/icon-close.svg") no-repeat
