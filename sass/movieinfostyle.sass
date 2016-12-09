@@ -29,8 +29,11 @@ li
 
 button
   border: 0
-  padding: 0
+  // padding: 0
   cursor: pointer
+
+img
+  vertical-align: top
 
 // ----------------------------
 
@@ -187,19 +190,21 @@ button
 .movie-summary-heading
   font-family: $spoqa-B
   color: $color-blue
-  border-bottom: 1px solid $color-blue
   +respond-to($m-container-width)
     font-size: px2vw(16px, $m-container-width)
     margin:
       top: 65px
       left: px2vw(10px, $m-container-width)
     width: px2vw(87px, $m-container-width)
+    border-bottom: 1px solid $color-blue
   +respond-to($t-container-width)
     font-size: 20px
     margin-top: 10px
+    border-bottom: 2px solid $color-blue
   +respond-to($d-container-width)
     font-size: 20px
     margin-top: 10px
+    border-bottom: 2px solid $color-blue
 
 .movie-summary-paragraph
   color: $color-black
@@ -217,7 +222,6 @@ button
     margin-top: 5px
 
 
-
 // --------------------------------------------------------
 // 영화 배우 / 제작진
 // --------------------------------------------------------
@@ -226,7 +230,6 @@ button
   font-family: $spoqa-B
   color: $color-blue
   margin-bottom: 0
-  border-bottom: 1px solid $color-blue
   +respond-to($m-container-width)
     font-size: px2vw(16px, $m-container-width)
     margin:
@@ -234,14 +237,17 @@ button
       left: px2vw(10px, $m-container-width)
     width: px2vw(155px, $m-container-width)
     padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
   +respond-to($t-container-width)
     font-size: 20px
     margin-top: 30px
     padding-bottom: 10px
+    border-bottom: 2px solid $color-blue
   +respond-to($d-container-width)
     font-size: 20px
     margin-top: 50px
     padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
 
 .actor-image-wrap
   float: left
@@ -287,7 +293,6 @@ button
       margin-top: 20px
     +respond-to($d-container-width)
       margin-top: 15px
-
 
 .actor-info-wrap
   overflow: hidden
@@ -335,7 +340,6 @@ button
       font-size: 14px
 
 
-
 // --------------------------------------------------------
 // 영화 스틸컷
 // --------------------------------------------------------
@@ -344,231 +348,309 @@ button
   font-family: $spoqa-B
   color: $color-blue
   margin-bottom: 0
-  border-bottom: 1px solid $color-blue
   +respond-to($m-container-width)
     font-size: px2vw(16px, $m-container-width)
     margin:
       top: px2vw(30px, $m-container-width)
       left: px2vw(10px, $m-container-width)
-    width: px2vw(155px, $m-container-width)
+    width: px2vw(67px, $m-container-width)
     padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
   +respond-to($t-container-width)
     font-size: 20px
     margin-top: -110px
     padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
   +respond-to($d-container-width)
     font-size: 20px
     margin-top: 50px
     padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
 
 .movie-still-wrapper
   +respond-to($m-container-width)
     margin-top: px2vw(20px, $m-container-width)
   +respond-to($t-container-width)
-    margin-top: -45px
+    margin-top: -55px
   +respond-to($d-container-width)
     margin-top: -385px
 
-
-
 .movie-still-gallery
-  +respond-to($t-container-width)
-    width: 172px
-  +respond-to($d-container-width)
-    width: 295px
-  button
+  background: $color-lightgray
+  position: relative
+
+.movie-still-list
+  box-sizing: border-box
+  display: block
+  width: 90%
+  margin: 0 auto
+  li
+    box-sizing: border-box
+    width: 25%
     position: relative
     float: left
-    background: #000
-    overflow: hidden
-    +respond-to($m-container-width)
-      width: 25%
-      height: 70px
-    +respond-to($t-container-width)
-      width: 100%
-      height: 60px
-    +respond-to($d-container-width)
-      width: 100%
-      height: 100px
-    &:focus::before
-      content: ''
-      position: absolute
-      background: url(../images/icon/icon-check.svg) no-repeat
-      width: 26px
-      height: 20px
-      z-index: 100
-      +respond-to($m-container-width)
-        top: 50%
-        left: 50%
-        transform: translateX(-40%) translateY(-60%)
-      +respond-to($t-container-width)
-        top: 50%
-        left: 50%
-        transform: translateX(-50%) translateY(-60%)
-      +respond-to($d-container-width)
-        top: 50%
-        left: 50%
-        transform: translateX(-50%) translateY(-60%)
-    &:focus::after
-      content: ''
-      position: absolute
-      display: block
-      top: 0
-      width: 100%
-      height: 100%
-      background-color: rgba(0, 0, 0, 0.7)
-    &:focus
-      outline: none
+    display: inline-block
   img
-    +respond-to($m-container-width)
-      height: 100%
-      // width: 100%
-    +respond-to($t-container-width)
-      width: 100%
-    +respond-to($d-container-width)
-      width: 100%
+    position: relative
+    box-sizing: border-box
+    padding: 5% 2.5%
+    width: 100%
 
 .movie-still-view
-  +respond-to($t-container-width)
-    margin-left: -172px
-  +respond-to($d-container-width)
-    margin-left: -295px
   img
     +respond-to($m-container-width)
       width: 100%
     +respond-to($t-container-width)
-      width: 384px
-      height: 240px
+      width: 556px
     +respond-to($d-container-width)
-      width: 630px
-      height: 400px
+      width: 925px
+
+.movie-still-carousel-button
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  +respond-to($t-container-width)
+    margin-left: -1px
+  +respond-to($d-container-width)
+    left: 0
+
+  button
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    +respond-to($m-container-width)
+      +size(px2vw(12px, $m-container-width))
+      background-size: contain
+    +respond-to($t-container-width)
+      +size(20px)
+      background-size: contain
+    +respond-to($d-container-width)
+      +size(28px)
+
+.movie-still-carousel-prev-button
+  background: url(../images/icon/icon-arrow-left-gray.svg) no-repeat
+  // left: -2%
+  +respond-to($m-container-width)
+    left: -2%
+  +respond-to($t-container-width)
+    left: 6px
+  +respond-to($d-container-width)
+    left: 0
+
+.movie-still-carousel-next-button
+  background: url(../images/icon/icon-arrow-right-gray.svg) no-repeat
+  // right: -2%
+  +respond-to($m-container-width)
+    right: -2%
+  +respond-to($t-container-width)
+    right: 4px
+  +respond-to($d-container-width)
+    right: 20px
+
 
 // --------------------------------------------------------
 // 영화 예고편
 // --------------------------------------------------------
+.movie-video
+  +respond-to($m-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+  +respond-to($t-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+
 .movie-video-heading
   font-family: $spoqa-B
   color: $color-blue
   margin-bottom: 0
-  border-bottom: 1px solid $color-blue
   +respond-to($m-container-width)
     font-size: px2vw(16px, $m-container-width)
     margin:
       top: px2vw(30px, $m-container-width)
       left: px2vw(10px, $m-container-width)
-    width: px2vw(155px, $m-container-width)
+    width: px2vw(67px, $m-container-width)
     padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
   +respond-to($t-container-width)
     font-size: 20px
-    margin-top: -110px
     padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
+    margin-top: 50px
   +respond-to($d-container-width)
     font-size: 20px
-    margin-top: 50px
+    margin:
+     top: 50px
+     right: 1155px
+     bottom: 20px
     padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
 
-.movie-video-wrapper
-  position: relative
+.movie-video-view
   +respond-to($m-container-width)
     margin-top: px2vw(20px, $m-container-width)
   +respond-to($t-container-width)
+    margin-top: 20px
   +respond-to($d-container-width)
-
-
-.movie-video-gallery
-  background: $color-lightgray
-  position: relative
-
-.movie-video-list
-  box-sizing: border-box
-  margin: auto
-  width: 80%
-  li
-    float: left
-    +respond-to($m-container-width)
-      width: 25%
-    +respond-to($t-container-width)
-      width: 100%
-      height: 60px
-    +respond-to($d-container-width)
-      width: 100%
-      height: 100px
-    img
-      // position: absolute
-      box-sizing: border-box
-      top: 50%
-      +respond-to($m-container-width)
-        width: 100%
-        padding: 0 5%
-
-
-
-      +respond-to($t-container-width)
-        width: 100%
-      +respond-to($d-container-width)
-        width: 100%
-
-.movie-video-view
+    // float: none
   iframe
     width: 100%
     +respond-to($m-container-width)
-      height: px2vw(230px, $m-container-width)
+      height: px2vw(270px, $m-container-width)
     +respond-to($t-container-width)
+      height: 370px
     +respond-to($d-container-width)
+      height: 460px
 
-.movie-video-carousel-button
+// --------------------------------------------------------
+// 연관 영화
+// --------------------------------------------------------
+figure
+  margin: 0
+  padding: 0
+
+.movie-relative-heading
+  font-family: $spoqa-B
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(25px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    width: px2vw(67px, $m-container-width)
+    padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
+  +respond-to($t-container-width)
+    font-size: 20px
+    padding-bottom: 5px
+    margin:
+      top: 50px
+      left: 10px
+    width: 106px
+    border-bottom: 2px solid $color-blue
+  +respond-to($d-container-width)
+    display: block
+    padding-bottom: 5px
+    width: 105px
+    font-size: 20px
+    margin:
+      top: -57px
+      bottom: 20px
+    border-bottom: 2px solid $color-blue
+
+.movie-relative-list
+  +respond-to($m-container-width)
+    margin-top: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: 20px
+  +respond-to($d-container-width)
+    li
+      margin-bottom: 10px
+  img
+    width: 100%
+    +respond-to($d-container-width)
+      width: 105px
+      float: left
+  figcaption
+    float: left
+
+.movie-relative-title
+  font-family: $spoqa-R
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    width: 90%
+  +respond-to($t-container-width)
+    font-size: 14px
+  +respond-to($d-container-width)
+    font-size: 14px
+    margin:
+      top: 80px
+      left: 15px
+
+.movie-relative-grade-group
+  +respond-to($d-container-width)
+    margin-left: 15px
+  div
+    float: left
+
+.small-star
+  +respond-to($m-container-width)
+    +size(px2vw(9px, $m-container-width))
+    margin-right: px2vw(1px, $m-container-width)
+  +respond-to($t-container-width)
+    +size(10px)
+    margin-right: 5px
+  +respond-to($d-container-width)
+    +size(14px)
+    margin-right: 5px
+  background: url(../images/icon/icon-star.svg)
+  background-size: contain
+
+.small-non-star
+  +respond-to($m-container-width)
+    +size(px2vw(9px, $m-container-width))
+    margin-right: px2vw(1px, $m-container-width)
+  +respond-to($t-container-width)
+    +size(10px)
+    margin-right: 5px
+  +respond-to($d-container-width)
+    +size(14px)
+    margin-right: 5px
+  background: url(../images/icon/icon-star-border.svg)
+  background-size: contain
+
+.small-movie-grade
+  +respond-to($m-container-width)
+    font-size: px2vw(9px, $m-container-width)
+    padding-left: px2vw(2px, $m-container-width)
+    line-height: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 10px
+    padding-left: 5px
+    line-height: 10px
+  +respond-to($d-container-width)
+    font-size: 14px
+    padding-left: 5px
+    line-height: 14px
+
+.movie-relative-show-more-button
   position: absolute
-  top: 50%
-  transform: translateY(-50%)
-  button
-    position: absolute
-    top: 50%
-    transform: translateY(-50%)
-
-
-.movie-video-carousel-prev-button
-  left: 0
+  @extend .st-border-button-B
   +respond-to($m-container-width)
-    background: url(../images/icon/icon-arrow-left-gray.svg) no-repeat
-    width: px2vw(9px, $m-container-width)
-    height: px2vw(11px, $m-container-width)
-    background-size: contain
+    top: px2vw(28px, $m-container-width)
+    right: px2vw(10px, $m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    padding:
+      top: px2vw(5px, $m-container-width)
+      bottom: px2vw(3px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+      right: px2vw(10px, $m-container-width)
   +respond-to($t-container-width)
+    top: 42px
+    right: 10px
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 30px
+      right: 30px
   +respond-to($d-container-width)
+    top: 47px
+    right: 10px
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 30px
+      right: 30px
 
-.movie-video-carousel-next-button
-  right: 0
-  +respond-to($m-container-width)
-    background: url(../images/icon/icon-arrow-left-gray.svg) no-repeat
-    width: px2vw(9px, $m-container-width)
-    height: px2vw(11px, $m-container-width)
-    background-size: contain
-  +respond-to($t-container-width)
-  +respond-to($d-container-width)
 
 +respond-to($m-container-width)
 +respond-to($t-container-width)
 +respond-to($d-container-width)
-
-// +respond-to($m-container-width)
-//   .m-arrow-button-size
-//    +size(25px)
-//    &::after
-//     +size(10px 8px)
-//     background-size: 10px 8px
-//
-//
-// +respond-to($t-container-width)
-//   .t-arrow-button-size
-//    +size(49px)
-//    &::after
-//     +size(20px 15px)
-//     background-size: 20px 15px
-//
-//
-// +respond-to($d-container-width)
-//   .d-arrow-button-size
-//    +size(49px)
-//    &::after
-//     +size(20px 15px)
-//     background-size: 20px 15px

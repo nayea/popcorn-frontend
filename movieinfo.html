@@ -20,7 +20,7 @@
 
     <section class="movie-info">
       <div role="group" class="movie-info-group-wrapper">
-				<div class="container show- h400 row">
+				<div class="container show-grid h400 row">
 					<img class="movie-info-poster m-col-2 t-col-2 d-col-3" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="신비한 동물사전 포스터">
 					<div class="dumy t-col-8"></div>
 					<div role="group" class="movie-info-group m-col-4 t-col-8 d-col-12">
@@ -111,14 +111,36 @@
 				</li>
 			</ul>
 		</section>
-		<section class="movie-still container t-push-2">
+		<section class="movie-still container t-push-2 row">
 			<h1 class="movie-still-heading t-col-1 d-col-1 d-pull-2">스틸컷</h1>
 			<div class="movie-still-wrapper t-col-6 d-col-9 d-push-3">
-				<div class="movie-still-gallery m-col-4 t-push-4 d-push-6">
-					<button><img src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt=""></button>
-					<button><img src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt=""></button>
-					<button><img src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt=""></button>
-					<button><img src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt=""></button>
+				<div class="movie-still-gallery m-col-4">
+					<ul class="movie-still-list">
+						<li class="">
+								<a class="" href="#">
+									<img src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="최종 예고편">
+								</a>
+						</li>
+						<li class="">
+								<a class="" href="#">
+									<img src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="60초 예고편">
+								</a>
+						</li>
+						<li class="">
+								<a class="" href="#">
+									<img src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="30초 예고편">
+								</a>
+						</li>
+						<li class="">
+								<a class="" href="#">
+									<img src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="3차 예고편">
+								</a>
+						</li>
+					</ul>
+					<div class="movie-still-carousel-button m-col-4 t-col-6 d-col-9">
+						<button class="movie-still-carousel-prev-button"></button>
+						<button class="movie-still-carousel-next-button"></button>
+					</div>
 				</div>
 				<div class="movie-still-view m-col-4">
 					<img src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
@@ -127,40 +149,159 @@
 		</section>
 		<section class="movie-video container">
 			<h1 class="movie-video-heading t-col-1 d-col-1">예고편</h1>
-			<div class="movie-video-wrapper t-col-6 d-col-9">
-				<div class="movie-video-gallery m-col-4">
-					<ul class="movie-video-list">
-						<li class="">
-								<a href="">
-									<img src="http://img1.daumcdn.net/thumb/C141x99/?fname=http%3A%2F%2Ft1.daumcdn.net%2Ftvpot%2Fthumb%2Fvd602rZMZZ4Zwbewrejr11r%2Fthumb.png" alt="최종 예고편">
-								</a>
-						</li>
-						<li class="">
-								<a href="">
-									<img src="http://img1.daumcdn.net/thumb/C141x99/?fname=http%3A%2F%2Ft1.daumcdn.net%2Ftvpot%2Fthumb%2Fv0928P1QtQ1xXq1XP1e8tXo%2Fthumb.png" alt="60초 예고편">
-								</a>
-						</li>
-						<li class="">
-								<a href="">
-									<img src="http://img1.daumcdn.net/thumb/C141x99/?fname=http%3A%2F%2Ft1.daumcdn.net%2Ftvpot%2Fthumb%2Fv6068qKixBqisnKWPggASPn%2Fthumb.png" alt="30초 예고편">
-								</a>
-						</li>
-						<li class="">
-								<a href="">
-									<img src="http://img1.daumcdn.net/thumb/C141x99/?fname=http%3A%2F%2Ft1.daumcdn.net%2Ftvpot%2Fthumb%2Fv1bd48XukrggsmVW8skmWxC%2Fthumb.png" alt="3차 예고편">
-								</a>
-						</li>
-					</ul>
-					<div class="movie-video-carousel-button m-col-4">
-						<button class="movie-video-carousel-prev-button"></button>
-						<button class="movie-video-carousel-next-button"></button>
-					</div>
-				</div>
-				<div class="movie-video-view m-col-4">
-					<iframe title="<신비한 동물사전> 파이널 예고편" src="http://videofarm.daum.net/controller/video/viewer/Video.html?vid=vd602rZMZZ4Zwbewrejr11r&play_loc=undefined&alert=true" frameborder="0" scrolling="no" ></iframe>
-				</div>
+			<div class="movie-video-view m-col-4 t-col-8 d-col-9">
+				<iframe title="신비한 동물사전 파이널 예고편" src="http://videofarm.daum.net/controller/video/viewer/Video.html?vid=vd602rZMZZ4Zwbewrejr11r&play_loc=undefined&alert=true" frameborder="0" scrolling="no"></iframe>
 			</div>
-
+		</section>
+		<section class="movie-relative container">
+			<h1 class="movie-relative-heading d-col-1">연관 영화</h1>
+			<ul class="movie-relative-list d-col-3">
+				<li class="m-col-1 t-col-2"><a href="#">
+						<figure>
+							<img src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F146F1B10ACE2AE7DF12090" alt="해리포터와 마법사의 돌">
+							<figcaption>
+								<div class="movie-relative-title">해리포터와 마법사의 돌</div>
+								<div class="movie-relative-grade-group">
+									<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-non-star"></div>
+									<div class="small-movie-grade">3.9</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a></li>
+				<li class="m-col-1 t-col-2"><a href="#">
+						<figure>
+							<img src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F1440FB10AB826D7E83C135" alt="해리포터와 아즈카반의 죄수">
+							<figcaption>
+								<div class="movie-relative-title">해리포터와 아즈카반의 죄수</div>
+								<div class="movie-relative-grade-group">
+									<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-non-star"></div>
+									<div class="small-movie-grade">3.9</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a></li>
+				<li class="m-col-1 t-col-2"><a href="#">
+						<figure>
+							<img src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F11110210A9072D724CDD22" alt="해리포터와 불의 잔">
+							<figcaption>
+								<div class="movie-relative-title">해리포터와 불의 잔</div>
+								<div class="movie-relative-grade-group">
+									<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-non-star"></div>
+									<div class="small-movie-grade">3.9</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a></li>
+				<li class="m-col-1 t-col-2"><a href="#">
+						<figure>
+							<img src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F127492114A25CDD543C780" alt="해리포터와 혼혈왕자">
+							<figcaption>
+								<div class="movie-relative-title">해리포터와 혼혈왕자</div>
+								<div class="movie-relative-grade-group">
+									<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-star"></div>
+	      					<div class="small-non-star"></div>
+									<div class="small-movie-grade">3.9</div>
+								</div>
+							</figcaption>
+						</figure>
+					</a></li>
+			</ul>
+			<button class="movie-relative-show-more-button">더보기</button>
+		</section>
+		<section class="movie-comment container">
+			<h1 class="movie-comment-heading">평점</h1>
+			<ul class="movie-comment-list">
+				<li>
+					<img src="/" alt="">
+					<p></p>
+					<div class="star-group">
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-non-star"></div>
+						<div class="small-movie-grade">3.9</div>
+					</div>
+					<div class="write-info-group">
+						<span>2016.11.03 | 이나영</span>
+					</div>
+				</li>
+				<li>
+					<img src="/" alt="">
+					<p></p>
+					<div class="star-group">
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-non-star"></div>
+						<div class="small-movie-grade">3.9</div>
+					</div>
+					<div class="write-info-group">
+						<span>2016.11.03 | 이나영</span>
+					</div>
+				</li>
+				<li>
+					<img src="/" alt="">
+					<p></p>
+					<div class="star-group">
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-non-star"></div>
+						<div class="small-movie-grade">3.9</div>
+					</div>
+					<div class="write-info-group">
+						<span>2016.11.03 | 이나영</span>
+					</div>
+				</li>
+				<li>
+					<img src="/" alt="">
+					<p></p>
+					<div class="star-group">
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-non-star"></div>
+						<div class="small-movie-grade">3.9</div>
+					</div>
+					<div class="write-info-group">
+						<span>2016.11.03 | 이나영</span>
+					</div>
+				</li>
+				<li>
+					<img src="/" alt="">
+					<p></p>
+					<div class="star-group">
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-star"></div>
+						<div class="small-non-star"></div>
+						<div class="small-movie-grade">3.9</div>
+					</div>
+					<div class="write-info-group">
+						<span>2016.11.03 | 이나영</span>
+					</div>
+				</li>
+			</ul>
 		</section>
 
 

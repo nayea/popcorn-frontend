@@ -1,5 +1,5 @@
 var still = document.querySelector('.movie-still');
-var stillControlButtons = still.querySelectorAll('button');
+var stillControlButtons = still.querySelectorAll('a');
 var stillView = still.querySelector('.movie-still-view');
 
 
