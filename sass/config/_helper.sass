@@ -14,6 +14,27 @@
   -o-transition: $props
   transition: $props
 
+=transform($props: scale(1.1))
+  -webkit-transform: $props
+  -moz-transform: $props
+  -o-transform: $props
+  transform: $props
+
+=transform-style($props: preserve-3d )
+  -webkit-transform-style: $props
+  transform-style: $props
+
+=backface-visibility($props: hidden)
+  -webkit-backface-visibility: $props
+  backface-visibility: $props
+
+=flexbox($props: center)
+  display: -webkit-flex
+  display: flex
+  justify-content: $props
+  -webkit-justify-content: $props
+
+
 //----------------------------------------------
 // font style
 $basic-font-size: 14 !default
@@ -65,4 +86,6 @@ $font-properties: weight, style, variant, size, line-height, family;
 
 //px -> em
 
-
+// plus
+@function indexplus($num, $num)
+  @return deUnit($num) + deUnit($num)

@@ -3,12 +3,13 @@ var stillControlButtons = still.querySelectorAll('a');
 var stillView = still.querySelector('.movie-still-view');
 
 
-var changeStillView = function() {
+var changeStillView = function(e) {
   var stillImg = this.querySelector('img');
   var view = stillView.querySelector('img');
   var src = stillImg.getAttribute('src');
   var alt = stillImg.getAttribute('alt');
 
+  e.preventDefault();
   view.setAttribute('src', src);
   view.setAttribute('alt', alt);
 

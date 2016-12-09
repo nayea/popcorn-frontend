@@ -6,7 +6,7 @@
 // 폰트와 함께있는 버튼
 
 .st-button-B
-  border-radius: 20px
+  border-radius: 50px
   background-color: $color-blue
   color: #fff
   font-weight: 700
@@ -14,18 +14,22 @@
 .st-border-button-B
   box-sizing: border-box
   border: 1px solid $color-blue
-  border-radius: 20px
-  background-color: #fff
+  border-radius: 50px
+  background: transparent
   color: $color-blue
-  font-weight: 700
 
 .st-border-button-Y
   box-sizing: border-box
-  border: 1px solid $color-yellow
-  border-radius: 20px
-  background-color: #fff
+  border: 2px solid $color-yellow
+  border-radius: 50px
+  background: transparent
   color: $color-yellow
-  font-weight: 700
+  &:hover
+    background: $color-yellow
+    color: $color-black
+  &:active
+    position: relative
+    top: 2px
 
 // indigator style
 .st-indigator
@@ -35,6 +39,7 @@
 .st-indigator-active
   background: $color-blue
   border-radius: 20px
+  // box-shadow: 3px 3px 1px rgba($color-black, 1)
 
 
 //comment button style
@@ -48,7 +53,6 @@
 .st-arrow-lightgray
   @extend %arrow-button-style
   border: 1px solid $color-lightgray
-  background: #fff
   &::after
     @extend %content-center
     content: ""
@@ -57,7 +61,6 @@
 .st-arrow-linegray
   @extend %arrow-button-style
   border: 1px solid $color-linegray
-  background: #fff
   &::after
     @extend %content-center
     content: ""
@@ -67,7 +70,6 @@
 .st-arrow-blue
   @extend %arrow-button-style
   border: 1px solid $color-blue
-  background: #fff
   &::after
     @extend %content-center
     content: ""
@@ -78,12 +80,30 @@
 .st-play-button
   @extend %arrow-button-style
   border: 1px solid #fff
-  backgroudn: transparent
+  background: transparent
   &::after
     @extend %content-center
-    contetn: ""
+    content: ""
     background: url("../images/icon/icon-play.svg") no-repeat
 
 
+.st-play-button-inverse
+  @extend %arrow-button-style
+  border: 1px solid #fff
+  background: transparent
+  &::after
+    @extend %content-center
+    content: ""
+    background: url("../images/icon/icon-play-inverse.svg") no-repeat
 
 
+
+// pop-close-button
+.st-pop-close-button
+  position: relative
+  background: transparent
+  border: 0
+  &::after
+    @extend %content-center
+    content: ""
+    background: url("../images/icon/icon-close.svg") no-repeat
