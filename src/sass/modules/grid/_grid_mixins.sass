@@ -22,10 +22,10 @@
       width: 100%
     @else
       width: $container-width * $unit
-    box-sizing: content-box
+    box-sizing: border-box
     // padding:
-    //   left: $padding * 1px
-    //   right: $padding * 1px
+      // left: $padding * 1px
+      // right: $padding * 1px
 
     @extend %margin-0-auto
 
@@ -63,8 +63,12 @@
       @else if $gutter-position == "right"
         margin-right: $gutter * $unit
       @else if $gutter-position == "center"
-        margin-right: $gutter / 2 * $unit
-        margin-left: $gutter / 2 * $unit
+        @if $fluid
+          margin-right: (($gutter-width / 2) / $container-width) * 100%
+          margin-left: (($gutter-width / 2) / $container-width) * 100%
+        @else
+          margin-right: $gutter / 2 * $unit
+          margin-left: $gutter / 2 * $unit
 
 
 
@@ -77,33 +81,32 @@
 
 
 
-  // @for $i from 1 through $count
-  //   .#{$col}suffix-#{$i}
-  //     @if $fluid
-  //       margin-right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
-  //     @else
-  //       margin-right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
+  @for $i from 1 through $count
+    .#{$col}suffix-#{$i}
+      @if $fluid
+        margin-right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
+      @else
+        margin-right: ((($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
 
 
 
-  // @for $i from 1 through $count
-  //   .#{$col}push-#{$i}
-  //     @extend .col-postion-a
-  //     @if $fluid
-  //       left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
-  //     @else
-  //       left: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
+  @for $i from 1 through $count
+    .#{$col}push-#{$i}
+      @extend .col-postion-r
+      @if $fluid
+        left: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
+      @else
+        left: ((($container-width / $count) * $i)) * $unit
 
 
 
-  // @for $i from 1 through $count
-  //   .#{$col}pull-#{$i}
-  //     @extend .col-postion-a
-  //     @if $fluid
-  //       right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
-  //     @else
-  //       right: (($container-width / $count) * $i) + ($gutter-width / 2)) * $unit
-
+  @for $i from 1 through $count
+    .#{$col}pull-#{$i}
+      @extend .col-postion-r
+      @if $fluid
+        right: (($container-width / ($count / $i)) + ($gutter-width / 2)) / $container-width * 100%
+      @else
+        right: ((($container-width / $count) * $i)) * $unit
 
 
 

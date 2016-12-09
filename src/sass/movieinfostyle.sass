@@ -7,14 +7,18 @@
 @import modules/grid/grid_functions
 @import modules/grid/grid_mixins
 
+
 // 초기화 ---------------------
 html
   font-family: $spoqa-R
   font-size: $basic-font-size
 
-// figure
-//   margin: 0
-//
+p
+  margin-top: 0
+  margin-bottom: 0
+
+a
+  text-decoration: none
 
 ul
   padding: 0
@@ -23,8 +27,20 @@ ul
 li
   list-style: none
 
+button
+  border: 0
+  // padding: 0
+  cursor: pointer
+
+img
+  vertical-align: top
+
 // ----------------------------
 
+
+// --------------------------------------------------------
+// 영화 정보
+// --------------------------------------------------------
 .movie-info-group-wrapper
   position: relative
   background: url("http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1") no-repeat center
@@ -41,75 +57,600 @@ li
 
 .movie-info-poster
   position: absolute
-  bottom: -2.1875rem
+  +respond-to($m-container-width)
+    bottom: -10%
+  +respond-to($t-container-width)
+    bottom: -40px
+  +respond-to($d-container-width)
+    bottom: -240px
+  // bottom: -2.1875rem
   border-radius: 10px
   z-index: 1
+  box-shadow: 3px 3px 10px $color-black
 
 .movie-info-group
   position: absolute
   bottom: 0
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent)
-
-.t-col-8
-  height: 400px
-  background-color: tomato
-
-
-
-
-
-
-
-.grade
-  display: inline-block
-  font-family: $spoqa-B
-  color: $color-yellow
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 70%, transparent)
+  +respond-to($m-container-width)
+    height: px2vw(140, $m-container-width)
+  +respond-to($t-container-width)
+    height: 42.5%
+  +respond-to($d-container-width)
+    height: 42.5%
 
 .movie-info-list
-  // padding:
-  //   left: 1.25rem
-  // margin:
-  //   left: 0
-  // height: 8.75rem
-
+  +respond-to($m-container-width)
+    bottom: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: 10px
+    font-size: 20px
+  +respond-to($d-container-width)
+    margin-top: 10px
+    font-size: 20px
+  position: absolute
 
 .movie-title
+  font-family: $spoqa-B
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 32px
+  +respond-to($d-container-width)
+    font-size: 36px
   color: $color-yellow
   span
+    +respond-to($m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+    +respond-to($t-container-width)
+      margin-top: 10px
+      font-size: 14px
+    +respond-to($d-container-width)
+      margin-top: 5px
+      font-size: 16px
+    display: block
     font-size: 0.75rem
 
+.movie-grade-group
+  font-family: $spoqa-B
+  color: $color-yellow
+  position: relative
+  +respond-to($m-container-width)
+    margin-top: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: 10px
+    height: 20px
+  +respond-to($d-container-width)
+    margin-top: 10px
+    height: 20px
+  div
+    float: left
+
+.star
+  +respond-to($m-container-width)
+    +size(px2vw(15px, $m-container-width))
+    margin-right: px2vw(3px, $m-container-width)
+  +respond-to($t-container-width)
+    +size(20px)
+    margin-right: 5px
+  +respond-to($d-container-width)
+    +size(20px)
+    margin-right: 5px
+  background: url(../images/icon/icon-star.svg)
+  background-size: contain
+
+.non-star
+  +respond-to($m-container-width)
+    +size(px2vw(15px, $m-container-width))
+  +respond-to($t-container-width)
+    +size(20px)
+  +respond-to($d-container-width)
+    +size(20px)
+  background: url(../images/icon/icon-star-border.svg)
+  background-size: contain
+
+.movie-grade
+  +respond-to($m-container-width)
+    font-size: px2vw(14px, $m-container-width)
+    padding-left: px2vw(10px, $m-container-width)
+    line-height: px2vw(16px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 20px
+    padding-left: 20px
+    line-height: 20px
+  +respond-to($d-container-width)
+    font-size: 20px
+    padding-left: 20px
+    line-height: 20px
+  // position: relative
+  // top: 0
+
 .movie-info-sub
+  +respond-to($m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    margin-top:  px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 14px
+    margin-top: 10px
+  +respond-to($d-container-width)
+    font-size: 14px
+    margin-top: 10px
   font-family: $spoqa-Thin
-  font-size: 0.625rem
   color: #fff
   li
     float: left
     &::after
-      content: " | "
+      content: "|"
+      padding: 0.2em
 
+
+// --------------------------------------------------------
+// 영화 줄거리
+// --------------------------------------------------------
+.movie-summary-heading
+  font-family: $spoqa-B
+  color: $color-blue
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: 65px
+      left: px2vw(10px, $m-container-width)
+    width: px2vw(87px, $m-container-width)
+    border-bottom: 1px solid $color-blue
+  +respond-to($t-container-width)
+    font-size: 20px
+    margin-top: 10px
+    border-bottom: 2px solid $color-blue
+  +respond-to($d-container-width)
+    font-size: 20px
+    margin-top: 10px
+    border-bottom: 2px solid $color-blue
+
+.movie-summary-paragraph
+  color: $color-black
+  line-height: 1.5
+  text-align: justify
+  span
+    display: block
+  +respond-to($m-container-width)
+    font-size: px2vw(12px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 14px
+    margin-top: 5px
+  +respond-to($d-container-width)
+    font-size: 14px
+    margin-top: 5px
+
+
+// --------------------------------------------------------
+// 영화 배우 / 제작진
+// --------------------------------------------------------
+.movie-actor-heading
+  display: block
+  font-family: $spoqa-B
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(30px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    width: px2vw(155px, $m-container-width)
+    padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
+  +respond-to($t-container-width)
+    font-size: 20px
+    margin-top: 30px
+    padding-bottom: 10px
+    border-bottom: 2px solid $color-blue
+  +respond-to($d-container-width)
+    font-size: 20px
+    margin-top: 50px
+    padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
+
+.actor-image-wrap
+  float: left
+  position: relative
+  width: 60px
+  height: 60px
+  display: inline-block
+  overflow: hidden
+  border-radius: 10px
+  background-color: blue
+  +respond-to($m-container-width)
+    +size(px2vw(60px, $m-container-width))
+    img
+      width: 100%
+      position: absolute
+      top: -25%
+  +respond-to($t-container-width)
+    +size(60px)
+    img
+      width: 100%
+      position: absolute
+      top: -25%
+  +respond-to($d-container-width)
+    +size(85px)
+    img
+      width: 100%
+      position: absolute
+      top: -25%
+
+.movie-actor-list
+  +respond-to($m-container-width)
+    margin-left: px2vw(10px, $m-container-width)
+    margin-top: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+    margin-top: 100px
+  li
+    float: left
+    +respond-to($m-container-width)
+      margin-top: px2vw(10px, $m-container-width)
+      width: 50%
+    +respond-to($t-container-width)
+      margin-top: 20px
+    +respond-to($d-container-width)
+      margin-top: 15px
+
+.actor-info-wrap
+  overflow: hidden
+  +respond-to($m-container-width)
+    margin-left: px2vw(5px, $m-container-width)
+    margin-top: px2vw(5px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-left: 15px
+  +respond-to($d-container-width)
+    margin-left: 20px
+  color: $color-black
+  float: left
+  h2
+    font-family: $spoqa-R
+    font-weight: normal
+    color: $color-blue
+    margin: 0
+    +respond-to($m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+      margin-bottom: px2vw(5px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 14px
+    +respond-to($d-container-width)
+      font-size: 14px
+  div
+  .actor-role-info
+    +respond-to($m-container-width)
+      font-size: px2vw(10px, $m-container-width)
+      height: px2vw(10px, $m-container-width)
+      margin-bottom: px2vw(2px, $m-container-width)
+    +respond-to($t-container-width)
+      height: 10px
+      font-size: 10px
+      margin-bottom: 2px
+    +respond-to($d-container-width)
+      height: 10px
+      font-size: 12px
+      margin-bottom: 2px
+  .actor-name-info
+    +respond-to($m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 14px
+    +respond-to($d-container-width)
+      font-size: 14px
+
+
+// --------------------------------------------------------
+// 영화 스틸컷
+// --------------------------------------------------------
+.movie-still-heading
+  display: block
+  font-family: $spoqa-B
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(30px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    width: px2vw(67px, $m-container-width)
+    padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
+  +respond-to($t-container-width)
+    font-size: 20px
+    margin-top: -110px
+    padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
+  +respond-to($d-container-width)
+    font-size: 20px
+    margin-top: 50px
+    padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
+
+.movie-still-wrapper
+  +respond-to($m-container-width)
+    margin-top: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: -55px
+  +respond-to($d-container-width)
+    margin-top: -385px
+
+.movie-still-gallery
+  background: $color-lightgray
+  position: relative
+
+.movie-still-list
+  box-sizing: border-box
+  display: block
+  width: 90%
+  margin: 0 auto
+  li
+    box-sizing: border-box
+    width: 25%
+    position: relative
+    float: left
+    display: inline-block
+  img
+    position: relative
+    box-sizing: border-box
+    padding: 5% 2.5%
+    width: 100%
+
+.movie-still-view
+  img
+    +respond-to($m-container-width)
+      width: 100%
+    +respond-to($t-container-width)
+      width: 556px
+    +respond-to($d-container-width)
+      width: 925px
+
+.movie-still-carousel-button
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  +respond-to($t-container-width)
+    margin-left: -1px
+  +respond-to($d-container-width)
+    left: 0
+
+  button
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    +respond-to($m-container-width)
+      +size(px2vw(12px, $m-container-width))
+      background-size: contain
+    +respond-to($t-container-width)
+      +size(20px)
+      background-size: contain
+    +respond-to($d-container-width)
+      +size(28px)
+
+.movie-still-carousel-prev-button
+  background: url(../images/icon/icon-arrow-left-gray.svg) no-repeat
+  // left: -2%
+  +respond-to($m-container-width)
+    left: -2%
+  +respond-to($t-container-width)
+    left: 6px
+  +respond-to($d-container-width)
+    left: 0
+
+.movie-still-carousel-next-button
+  background: url(../images/icon/icon-arrow-right-gray.svg) no-repeat
+  // right: -2%
+  +respond-to($m-container-width)
+    right: -2%
+  +respond-to($t-container-width)
+    right: 4px
+  +respond-to($d-container-width)
+    right: 20px
+
+
+// --------------------------------------------------------
+// 영화 예고편
+// --------------------------------------------------------
+.movie-video
+  +respond-to($m-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+  +respond-to($t-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+
+.movie-video-heading
+  font-family: $spoqa-B
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(30px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    width: px2vw(67px, $m-container-width)
+    padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
+  +respond-to($t-container-width)
+    font-size: 20px
+    padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
+    margin-top: 50px
+  +respond-to($d-container-width)
+    font-size: 20px
+    margin:
+     top: 50px
+     right: 1155px
+     bottom: 20px
+    padding-bottom: 5px
+    border-bottom: 2px solid $color-blue
+
+.movie-video-view
+  +respond-to($m-container-width)
+    margin-top: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: 20px
+  +respond-to($d-container-width)
+    // float: none
+  iframe
+    width: 100%
+    +respond-to($m-container-width)
+      height: px2vw(270px, $m-container-width)
+    +respond-to($t-container-width)
+      height: 370px
+    +respond-to($d-container-width)
+      height: 460px
+
+// --------------------------------------------------------
+// 연관 영화
+// --------------------------------------------------------
+figure
+  margin: 0
+  padding: 0
+
+.movie-relative-heading
+  font-family: $spoqa-B
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(25px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    width: px2vw(67px, $m-container-width)
+    padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
+  +respond-to($t-container-width)
+    font-size: 20px
+    padding-bottom: 5px
+    margin:
+      top: 50px
+      left: 10px
+    width: 106px
+    border-bottom: 2px solid $color-blue
+  +respond-to($d-container-width)
+    display: block
+    padding-bottom: 5px
+    width: 105px
+    font-size: 20px
+    margin:
+      top: -57px
+      bottom: 20px
+    border-bottom: 2px solid $color-blue
+
+.movie-relative-list
+  +respond-to($m-container-width)
+    margin-top: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: 20px
+  +respond-to($d-container-width)
+    li
+      margin-bottom: 10px
+  img
+    width: 100%
+    +respond-to($d-container-width)
+      width: 105px
+      float: left
+  figcaption
+    float: left
+
+.movie-relative-title
+  font-family: $spoqa-R
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    width: 90%
+  +respond-to($t-container-width)
+    font-size: 14px
+  +respond-to($d-container-width)
+    font-size: 14px
+    margin:
+      top: 80px
+      left: 15px
+
+.movie-relative-grade-group
+  +respond-to($d-container-width)
+    margin-left: 15px
+  div
+    float: left
+
+.small-star
+  +respond-to($m-container-width)
+    +size(px2vw(9px, $m-container-width))
+    margin-right: px2vw(1px, $m-container-width)
+  +respond-to($t-container-width)
+    +size(10px)
+    margin-right: 5px
+  +respond-to($d-container-width)
+    +size(14px)
+    margin-right: 5px
+  background: url(../images/icon/icon-star.svg)
+  background-size: contain
+
+.small-non-star
+  +respond-to($m-container-width)
+    +size(px2vw(9px, $m-container-width))
+    margin-right: px2vw(1px, $m-container-width)
+  +respond-to($t-container-width)
+    +size(10px)
+    margin-right: 5px
+  +respond-to($d-container-width)
+    +size(14px)
+    margin-right: 5px
+  background: url(../images/icon/icon-star-border.svg)
+  background-size: contain
+
+.small-movie-grade
+  +respond-to($m-container-width)
+    font-size: px2vw(9px, $m-container-width)
+    padding-left: px2vw(2px, $m-container-width)
+    line-height: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 10px
+    padding-left: 5px
+    line-height: 10px
+  +respond-to($d-container-width)
+    font-size: 14px
+    padding-left: 5px
+    line-height: 14px
+
+.movie-relative-show-more-button
+  position: absolute
+  @extend .st-border-button-B
+  +respond-to($m-container-width)
+    top: px2vw(28px, $m-container-width)
+    right: px2vw(10px, $m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    padding:
+      top: px2vw(5px, $m-container-width)
+      bottom: px2vw(3px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+      right: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    top: 42px
+    right: 10px
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 30px
+      right: 30px
+  +respond-to($d-container-width)
+    top: 47px
+    right: 10px
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 30px
+      right: 30px
 
 
 +respond-to($m-container-width)
-  .m-arrow-button-size
-   +size(25px)
-   &::after
-    +size(10px 8px)
-    background-size: 10px 8px
-
-
-
 +respond-to($t-container-width)
-  .t-arrow-button-size
-   +size(49px)
-   &::after
-    +size(20px 15px)
-    background-size: 20px 15px
-
-
-
 +respond-to($d-container-width)
-  .d-arrow-button-size
-   +size(49px)
-   &::after
-    +size(20px 15px)
-    background-size: 20px 15px
