@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+  <html class="no-js" dir="ltr" lang="ko-KR" data-ng-app="PopcornListApp">
+<!--<![endif]-->
+<!--[if IE]><html lang="ko_KR" class="lt=ie10 ie9"<![endif]-->
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>popcorn</title>
+  <!-- <link rel="stylesheet" href="font/spoqaHanSans.css"> -->
+  <link rel="stylesheet" href="css/grid.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <!-- <script src="./js/lib/jquery.easing.min.js"></script> -->
+ <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
+<!-- <script src="../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script> -->
+   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1 class="logo-width">
+        <a href="#" class="header-logo" aria-label="popcorn"></a>
+      </h1>
+
+      <nav class="m-hidden t-hidden" role="navigation">
+        <ul>
+          <li><a class="header-menuname" href="#">금주의 박스오피스</a></li>
+          <li><a class="header-menuname" href="#">맞춤 추천</a></li>
+          <li><a class="header-menuname" href="#">영화 이야기</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-menu-width d-hidden">
+        <button type="button" class="header-menu-button" aria-label="메뉴"></button>
+      </div>
+
+      <form action="#" role="search" class="t-prefix-3 d-prefix-6">
+        <input type="search" class="st-search m-hidden" aria-labeledby="검색어 입력" placeholder="영화명, 장르, 배우명, 감독">
+        <button type="button" aria-label="검색"></button>
+      </form>
+
+     <div class="header-userinfo d-prefix-10">
+        <img class="st-user-image" src="images/user-1.jpg" alt="회원 이미지">
+       <a href="#"> 
+        <span class="header-user-name m-hidden">이나영</span>
+        <span class="header-user-selection" aria-label="로그인 정보 보기" role="button" tabindex="0"></span></a>
+        </div>
+     </div>
+  </header>
+  
+
+
+
+  <section class="carousel" data-ng-cloak data-ng-controller="ListController">
+      <div id="main-carousel" aria-label="주요 영화 정보">
+      
+      <article data-label="팝콘 주요 영화 1" data-ng-repeat="person in filteredPeople = (share_data.people)">
+           <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h2>{{person.name}} <span>({{person.country}})</span></h2>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>{{person.name}}</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+
+                <div class="video-thumbnail">
+                  <img data-ng-src="{{person.photo}}" src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                    <img data-ng-src="{{person.photo}}" src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
+               </div>
+               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+                 
+                  <div class="video-dim-background">
+                    <div class="video-pop">
+                          <div class="rwd-iframe-container">
+                            <iframe
+                                width="640"
+                                height="360"
+                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+                          </div>
+                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
+                </div>
+                 </div>
+
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img data-ng-src="{{movies.image}}" alt="팝콘 주요 영화 1" class="t-hidden d-hidden">
+          <img data-ng-src="{{movies.image}}" src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden d-hidden">
+          <img data-ng-src="{{movies.image}}" src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden t-hidden">
+      </article>
+
+       <article data-label="팝콘 주요 영화 2">
+           <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h2>도둑들 <span>(The Thieves)</span></h2>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+
+                <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
+               </div>
+               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+                 
+                  <div class="video-dim-background">
+                    <div class="video-pop">
+                          <div class="rwd-iframe-container">
+                            <iframe
+                                width="640"
+                                height="360"
+                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+                          </div>
+                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
+                </div>
+                 </div>
+
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="t-hidden d-hidden">
+          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="m-hidden d-hidden">
+          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="m-hidden t-hidden">
+      </article>
+
+       <article data-label="팝콘 주요 영화 3">
+           <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h2>도둑들 <span>(The Thieves)</span></h2>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+
+                <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
+               </div>
+               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+                 
+                  <div class="video-dim-background">
+                    <div class="video-pop">
+                          <div class="rwd-iframe-container">
+                            <iframe
+                                width="640"
+                                height="360"
+                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+                          </div>
+                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
+                </div>
+                 </div>
+
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 3" class="t-hidden d-hidden">
+          <img src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 3" class="m-hidden d-hidden">
+          <img src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 3" class="m-hidden t-hidden">
+      </article>
+
+       <article data-label="팝콘 주요 영화 4">
+           <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h2>도둑들 <span>(The Thieves)</span></h2>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+
+                <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
+               </div>
+               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+                 
+                  <div class="video-dim-background">
+                    <div class="video-pop">
+                          <div class="rwd-iframe-container">
+                            <iframe
+                                width="640"
+                                height="360"
+                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+                          </div>
+                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
+                </div>
+                 </div>
+
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 4" class="t-hidden d-hidden">
+          <img src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 4" class="m-hidden d-hidden">
+          <img src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 4" class="m-hidden t-hidden">
+      </article>
+
+       <article data-label="팝콘 주요 영화 5">
+           <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h2>도둑들 <span>(The Thieves)</span></h2>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>범죄, 액션, 드라마</li>
+                   <li>2일전 개봉</li>
+                   <li>135분</li>
+                   <li>한국</li>
+                   <li>15세 관람가</li>
+                 </ul>
+                 </a>
+
+                <div class="video-thumbnail">
+                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
+               </div>
+               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+                 
+                  <div class="video-dim-background">
+                    <div class="video-pop">
+                          <div class="rwd-iframe-container">
+                            <iframe
+                                width="640"
+                                height="360"
+                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+                          </div>
+                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
+                </div>
+                 </div>
+
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 5" class="t-hidden d-hidden">
+          <img src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 5" class="m-hidden d-hidden">
+          <img src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 5" class="m-hidden t-hidden">
+      </article>
+
+
+      </div>
+  </section>
+
+
+<div id="trigger1" class="spacer s0"></div>
+  <section class="ranking container">
+      <div class="row">
+        <h1>금주 박스 오피스</h1>
+        <div class="ranking-top3">
+         <h2 class="readable-hidden">금주 박스 오피스 top 3</h2>
+          <article id="sm-ranking-top1" class="ranking-first t-col-8 m-col-4">
+           <div class="ranking-movie-info">
+              <a href="#">
+                 <h3>도둑들 <span>(The Thieves)</span></h3>
+                 <div class="ranking-movie-info-desc">
+                   <ul>
+                     <li>예매율 1위</li>
+                     <li>2일전 개봉</li>
+                     <li>누적관객수 100만명</li>
+                   </ul>
+                   <ul role="presentation">
+                     <li>범죄, 액션, 드라마</li>
+                     <li>2일전 개봉</li>
+                     <li>135분</li>
+                     <li>한국</li>
+                     <li>15세 관람가</li>
+                   </ul>
+                 </div>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+                 </div>
+                 </a>
+           </div>
+            <img src="images/main-ranking/d-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-hidden t-hidden" width="525" height="580">
+            <img src="images/main-ranking/ t-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-hidden d-hidden" width="748" height="290">
+            <img src="images/main-ranking/m-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-top-img t-hidden d-hidden" width="330" height="300">
+          </article>
+          <article id="sm-ranking-top2" class="ranking-second t-col-4 m-col-4">
+            <div class="ranking-movie-info">
+              <a href="#">
+                 <h3>도둑들 <span>(The Thieves)</span></h3>
+                 <div class="ranking-movie-info-desc">
+                   <ul>
+                     <li>예매율 1위</li>
+                     <li>2일전 개봉</li>
+                     <li>누적관객수 100만명</li>
+                   </ul>
+                   <ul role="presentation">
+                     <li>범죄, 액션, 드라마</li>
+                     <li>2일전 개봉</li>
+                     <li>135분</li>
+                     <li>한국</li>
+                     <li>15세 관람가</li>
+                   </ul>
+                 </div>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+                 </div>
+                 </a>
+           </div>
+            <img src="images/main-ranking/d-thieves.jpg" alt="금주 박스오피스 2위" class="m-hidden t-hidden" width="420" height="290">
+            <img src="images/main-ranking/t-thieves.jpg" alt="금주 박스오피스 2위" class="m-hidden d-hidden" width="374" height="290">
+            <img src="images/main-ranking/m-thieves.jpg" alt="금주 박스오피스 2위" class="m-top-img d-hidden t-hidden" width="330" height="150">
+          </article>
+          <article id="sm-ranking-top3" class="ranking-second m-col-4">
+            <div class="ranking-movie-info">
+              <a href="#">
+                 <h3>도둑들 <span>(The Thieves)</span></h3>
+                 <div class="ranking-movie-info-desc">
+                   <ul>
+                     <li>예매율 1위</li>
+                     <li>2일전 개봉</li>
+                     <li>누적관객수 100만명</li>
+                   </ul>
+                   <ul role="presentation">
+                     <li>범죄, 액션, 드라마</li>
+                     <li>2일전 개봉</li>
+                     <li>135분</li>
+                     <li>한국</li>
+                     <li>15세 관람가</li>
+                   </ul>
+                 </div>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+                 </div>
+                 </a>
+           </div>
+            <img src="images/main-ranking/d-minion.jpg" alt="금주 박스오피스 3위" class="m-hidden t-hidden" width="420" height="290">
+            <img src="images/main-ranking/t-minion.jpg" alt="금주 박스오피스 3위" class="m-hidden d-hidden" width="374" height="290">
+            <img src="images/main-ranking/m-minion.jpg" alt="금주 박스오피스 3위" class="m-top-img d-hidden t-hidden" width="330" height="150">
+          </article>
+
+
+        </div>
+             <div class="ranking-boxoffice m-hidden t-hidden">
+              <h2 class="readable-hidden">금주 박스 오피스 top 10</h2>
+                 <ol role="presentation">
+                   <li><a href="#">해리포터와 불의 잔</a></li>
+                   <li><a href="#">도둑들</a></li>
+                   <li><a href="#">미니언즈</a></li>
+                   <li><a href="#">해리포터와 불의 잔</a></li>
+                   <li><a href="#">도둑들</a></li>
+                   <li><a href="#">미니언즈</a></li>
+                   <li><a href="#">해리포터와 불의 잔</a></li>
+                   <li><a href="#">도둑들</a></li>
+                   <li><a href="#">미니언즈</a></li>
+                   <li><a href="#">미니언즈</a></li>
+                 </ol>
+             </div>
+      </div>
+  </section>
+
+       <div class="spacer s2"></div>
+
+
+
+<section class="recommend clearfix">
+  <h1>맞춤 추천 영화</h1>
+  <div id="recommend-movie" data-label="맞춤 추천영화 best6">
+      <article data-label="맞춤 추천영화 1" class="">
+        <img class="face" src="images/main-recommend/d-bigfish.jpg" alt="빅피쉬">
+        <div class="recommend-movie-info face">
+            <h2>신비한 동물사전<span>(Fantastic Beats)</span></h2>
+            <div class="recommend-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+            </div>
+            <table>
+              <caption class="readable-hidden">영화 정보</caption>
+              <tr>
+                <th scope="row">개요</th>
+                <td>132분|영국,미국|판타지</td>
+              </tr>
+                <tr>
+                  <th scope="row">감독</th>
+                  <td>데이빗 예이츠</td>
+                </tr>
+                <tr>
+                  <th scope="row">출연</th>
+                  <td>에디 레드메인, 콜린 파렐</td>
+                </tr>
+              <tr>
+                  <th scope="row">등급</th>
+                <td>12세 관람가</td>
+              </tr>
+               <tr>
+                  <th scope="row">흥행</th>
+                 <td>누적관객 816,169명</td>
+               </tr>
+            </table>
+            <button type="button" class="st-button-B">더 많은 정보 보기</button>
+        </div>
+      </article>
+    <article data-label="맞춤 추천영화 2" class="">
+      <img class="face" src="images/main-recommend/d-doctor.jpg" alt="닥터스트레인지">
+       <div class="recommend-movie-info face">
+            <h2>신비한 동물사전<span>(Fantastic Beats)</span></h2>
+            <div class="recommend-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+            </div>
+            <table>
+              <caption class="readable-hidden">영화 정보</caption>
+              <tr>
+                <th scope="row">개요</th>
+                <td>132분|영국,미국|판타지</td>
+              </tr>
+                <tr>
+                  <th scope="row">감독</th>
+                  <td>데이빗 예이츠</td>
+                </tr>
+                <tr>
+                  <th scope="row">출연</th>
+                  <td>에디 레드메인, 콜린 파렐</td>
+                </tr>
+              <tr>
+                  <th scope="row">등급</th>
+                <td>12세 관람가</td>
+              </tr>
+               <tr>
+                  <th scope="row">흥행</th>
+                 <td>누적관객 816,169명</td>
+               </tr>
+            </table>
+            <button type="button" class="st-button-B">더 많은 정보 보기</button>
+        </div>
+    </article>
+    <article data-label="맞춤 추천영화 3" class="">
+      <img class="face" src="images/main-recommend/d-fantasticbeasts.jpg" alt="신비한동물사전">
+       <div class="recommend-movie-info face">
+            <h2>신비한 동물사전<span>(Fantastic Beats)</span></h2>
+            <div class="recommend-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+            </div>
+            <table>
+              <caption class="readable-hidden">영화 정보</caption>
+              <tr>
+                <th scope="row">개요</th>
+                <td>132분|영국,미국|판타지</td>
+              </tr>
+                <tr>
+                  <th scope="row">감독</th>
+                  <td>데이빗 예이츠</td>
+                </tr>
+                <tr>
+                  <th scope="row">출연</th>
+                  <td>에디 레드메인, 콜린 파렐</td>
+                </tr>
+              <tr>
+                  <th scope="row">등급</th>
+                <td>12세 관람가</td>
+              </tr>
+               <tr>
+                  <th scope="row">흥행</th>
+                 <td>누적관객 816,169명</td>
+               </tr>
+            </table>
+            <button type="button" class="st-button-B">더 많은 정보 보기</button>
+        </div>
+    </article>
+    <article data-label="맞춤 추천영화 4" class="">
+      <img class="face" src="images/main-recommend/d-her.jpg" alt="her">
+       <div class="recommend-movie-info face">
+            <h2>신비한 동물사전<span>(Fantastic Beats)</span></h2>
+            <div class="recommend-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+            </div>
+            <table>
+              <caption class="readable-hidden">영화 정보</caption>
+              <tr>
+                <th scope="row">개요</th>
+                <td>132분|영국,미국|판타지</td>
+              </tr>
+                <tr>
+                  <th scope="row">감독</th>
+                  <td>데이빗 예이츠</td>
+                </tr>
+                <tr>
+                  <th scope="row">출연</th>
+                  <td>에디 레드메인, 콜린 파렐</td>
+                </tr>
+              <tr>
+                  <th scope="row">등급</th>
+                <td>12세 관람가</td>
+              </tr>
+               <tr>
+                  <th scope="row">흥행</th>
+                 <td>누적관객 816,169명</td>
+               </tr>
+            </table>
+            <button type="button" class="st-button-B">더 많은 정보 보기</button>
+        </div>
+    </article>
+    <article data-label="맞춤 추천영화 5" class="">
+      <img class="face" src="images/main-recommend/d-kan.jpg" alt="내이름은 칸">
+       <div class="recommend-movie-info face">
+            <h2>신비한 동물사전<span>(Fantastic Beats)</span></h2>
+            <div class="recommend-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+            </div>
+            <table>
+              <caption class="readable-hidden">영화 정보</caption>
+              <tr>
+                <th scope="row">개요</th>
+                <td>132분|영국,미국|판타지</td>
+              </tr>
+                <tr>
+                  <th scope="row">감독</th>
+                  <td>데이빗 예이츠</td>
+                </tr>
+                <tr>
+                  <th scope="row">출연</th>
+                  <td>에디 레드메인, 콜린 파렐</td>
+                </tr>
+              <tr>
+                  <th scope="row">등급</th>
+                <td>12세 관람가</td>
+              </tr>
+               <tr>
+                  <th scope="row">흥행</th>
+                 <td>누적관객 816,169명</td>
+               </tr>
+            </table>
+            <button type="button" class="st-button-B">더 많은 정보 보기</button>
+        </div>
+    </article>
+    <article data-label="맞춤 추천영화 6" class="">
+      <img class="face" src="images/main-recommend/d-xman.jpg" alt="big fish">
+       <div class="recommend-movie-info face">
+            <h2>신비한 동물사전<span>(Fantastic Beats)</span></h2>
+            <div class="recommend-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+            </div>
+            <table>
+              <caption class="readable-hidden">영화 정보</caption>
+              <tr>
+                <th scope="row">개요</th>
+                <td>132분|영국,미국|판타지</td>
+              </tr>
+                <tr>
+                  <th scope="row">감독</th>
+                  <td>데이빗 예이츠</td>
+                </tr>
+                <tr>
+                  <th scope="row">출연</th>
+                  <td>에디 레드메인, 콜린 파렐</td>
+                </tr>
+              <tr>
+                  <th scope="row">등급</th>
+                <td>12세 관람가</td>
+              </tr>
+               <tr>
+                  <th scope="row">흥행</th>
+                 <td>누적관객 816,169명</td>
+               </tr>
+            </table>
+            <button type="button" class="st-button-B">더 많은 정보 보기</button>
+        </div>
+    </article>
+  </div>
+</section>
+
+<div class="review-magazine-bg">
+<div class="container">
+<section class="review">
+<div class="row">
+ <div class="review-comment-wraper d-col-3">
+  <h1>리뷰</h1>
+  <article class="review-comment d-col-3 t-col-4 m-col-4">
+    <a href="">
+      <img class="review-user-image" src="images/user-1.jpg" alt="회원" width="128" height="128">
+      <div class="review-user-comment d-col-2">
+         <time datetime="2016/09/22">2016.09.22</time>
+         <span class="review-user-name">이나영</span>
+         <h3 class="review-user-title">신비한 동물 사전</h3>
+          <div class="review-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+        </div>
+       <p class="review-desc">너무 재미있어요. 완전 추천합니다!!</p>
+      </div>
+    </a>
+  </article>
+
+ <article class="review-comment d-col-3 t-col-4 m-col-4">
+    <a href="">
+      <img class="review-user-image" src="images/user-1.jpg" alt="회원" width="128" height="128">
+      <div class="review-user-comment d-col-2">
+         <time datetime="2016/09/22">2016.09.22</time>
+         <span class="review-user-name">이나영</span>
+         <h3 class="review-user-title">신비한 동물 사전</h3>
+          <div class="review-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+        </div>
+       <p class="review-desc">너무 재미있어요. 완전 추천합니다!!</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="review-comment d-col-3 t-col-4 m-col-4">
+    <a href="">
+      <img class="review-user-image" src="images/user-1.jpg" alt="회원" width="128" height="128">
+      <div class="review-user-comment d-col-2">
+         <time datetime="2016/09/22">2016.09.22</time>
+         <span class="review-user-name">이나영</span>
+         <h3 class="review-user-title">신비한 동물 사전</h3>
+          <div class="review-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+        </div>
+       <p class="review-desc">너무 재미있어요. 완전 추천합니다!!</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="review-comment d-col-3 t-col-4 m-col-4">
+    <a href="">
+      <img class="review-user-image" src="images/user-1.jpg" alt="회원" width="128" height="128">
+      <div class="review-user-comment d-col-2">
+         <time datetime="2016/09/22">2016.09.22</time>
+         <span class="review-user-name">이나영</span>
+         <h3 class="review-user-title">신비한 동물 사전</h3>
+          <div class="review-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+        </div>
+       <p class="review-desc">너무 재미있어요. 완전 추천합니다!!</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="review-comment d-col-3 t-col-4 m-col-4">
+    <a href="#">
+      <img class="review-user-image" src="images/user-1.jpg" alt="회원" width="128" height="128">
+      <div class="review-user-comment d-col-2">
+         <time datetime="2016/09/22">2016.09.22</time>
+         <span class="review-user-name">이나영</span>
+         <h3 class="review-user-title">신비한 동물 사전</h3>
+          <div class="review-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+        </div>
+       <p class="review-desc">너무 재미있어요. 완전 추천합니다!!</p>
+      </div>
+    </a>
+  </article>
+
+  <article class="review-comment d-col-3 t-col-4 m-col-4">
+    <a href="">
+      <img class="review-user-image" src="images/user-1.jpg" alt="회원" width="128" height="128">
+      <div class="review-user-comment d-col-2">
+         <time datetime="2016/09/22">2016.09.22</time>
+         <span class="review-user-name">이나영</span>
+         <h3 class="review-user-title">신비한 동물 사전</h3>
+          <div class="review-stars">
+                   <img src="images/main-carousel/stars.png" alt="영화 평점">
+                   <span>3.9</span>
+        </div>
+       <p class="review-desc">너무 재미있어요. 완전 추천합니다!!</p>
+      </div>
+    </a>
+  </article>
+</div>
+</div>
+</section>
+
+<section class="magazine">
+    <div class="row">
+      <div class="d-col-9 t-col-8 m-col-4">
+        <h1>매거진</h1>
+        <div class="magazine-content-main t-col-8">
+          <a href="#">
+        <div class="magazine-content-main-image">
+            <img src="images/main-magazine/magazine-content-main.jpg" alt="매거진 콘텐츠" width="507" height="330">
+        </div>
+            <div class="magazine-content-main-info m-col-4">
+            <span>무비토크</span>
+             <time datetime="2016/09/22">2016.09.22</time>
+             <h3 class="magazine-content-main-title">끝까지 살아남아라<br>부산행 무빙 포토 예고편</h3>
+             <p class="magazine-content-main-desc">올여름 최고의 기대작 [부산행]의 행보가 심상치 않다. "역대 최고의 미드나잇 스크리닝"이라는 극찬을 받으며 칸 국제 영화제 최고의 화제작으로 포문을 연 전대미문의 재난 블록버스터 [부산행]이 7월 20일 개봉을 앞두고 네이버 무빙 포토 예고편을 독점 공개한다. 
+             영화 [부산행]은 전대미문 재난이 대한민국을 뒤덮은 가운데, 서울역을 출발한 부산행 열차에  ......</p>
+                     </div></a>
+        </div>
+
+        <div class="magazine-content">
+          <a href="#">
+          <div class="magazine-content-image">
+            <img src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
+          </div>
+            <div class="magazine-content-info">
+            <span>매거진</span>
+             <time datetime="2016/09/22">2016.09.22</time>
+             <h3 class="magazine-content-title">군도 민란의 시대 무비토크</h3>
+             <p class="magazine-content-desc">주역 배우들이 전해주는 현장 이야기</p>
+              </div>
+              </a>
+        </div>
+
+        <div class="magazine-content">
+          <a href="#">
+          <div class="magazine-content-image">
+            <img src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
+          </div>
+            <div class="magazine-content-info">
+            <span>매거진</span>
+             <time datetime="2016/09/22">2016.09.22</time>
+             <h3 class="magazine-content-title">군도 민란의 시대 무비토크</h3>
+             <p class="magazine-content-desc">주역 배우들이 전해주는 현장 이야기</p>
+              </div>
+              </a>
+        </div>
+
+        <div class="magazine-content">
+          <a href="#">
+          <div class="magazine-content-image">
+            <img src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
+          </div>
+            <div class="magazine-content-info">
+            <span>매거진</span>
+             <time datetime="2016/09/22">2016.09.22</time>
+             <h3 class="magazine-content-title">군도 민란의 시대 무비토크</h3>
+             <p class="magazine-content-desc">주역 배우들이 전해주는 현장 이야기</p>
+              </div>
+              </a>
+        </div>
+
+         
+
+
+      </div>
+    </div>
+</section>
+</div>
+</div>
+<footer class="footer">
+  <img src="images/icon/icon-github.svg" alt="github">
+</footer>
+
+<script src="js/main.bundle.js"></script>
+</body>
+
+</html>
+
+
+
+
+
