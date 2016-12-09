@@ -1,6 +1,6 @@
 'use strict';
 
-// let angular = require('angular');
+let angular = require('angular');
 
 angular
   .module('PopcornListApp')

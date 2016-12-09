@@ -1,4 +1,3 @@
-/*! config.js © yamoo9.net, 2016 */
 'use strict';
 
 // spritesmith-multi 환경설정에 필요한 모듈 로드
@@ -19,6 +18,7 @@ const PATHS = {
   'js'        : 'js',
   'images'    : 'images',
   'fonts'     : 'fonts',
+  'data'      : 'data',
   'iconfonts' : 'iconfonts',
   'sprites'   : 'sprites',
 };
@@ -38,6 +38,10 @@ let config = {
       'source' : `${PATHS.src}/${PATHS.fonts}/**/*.{eot,woff,woff2,ttf}`,
       'output' : `${PATHS.dist}/${PATHS.fonts}`
     },
+    'data' : {
+      'source' : `${PATHS.src}/${PATHS.data}/**/*`,
+      'output' : `${PATHS.dist}/${PATHS.data}`
+    },
     // 이미지 소스/출력 설정
     'images': {
       'source' : `${PATHS.src}/${PATHS.images}/**/*.{png,jpg,jpeg,gif,svg}`,
@@ -53,7 +57,7 @@ let config = {
       'source' : `${PATHS.src}/${PATHS.sprites}/**/*.png`,
       'output' : `${PATHS.src}/${PATHS.images}/${PATHS.sprites}`
     },
-    //소스(Source), 배포(Distribute), 빌드(Build) 디렉토리 경로
+    // 소스(Source), 배포(Distribute), 빌드(Build) 디렉토리 경로
     'src'   : PATHS.src,
     'dist'  : PATHS.dist,
     'build' : PATHS.build,
@@ -116,7 +120,7 @@ let config = {
     'iconfonts': {
       'fontName'       : 'icons',                     // 필수
       'prependUnicode' : true,                        // 권장 옵션
-      'formats'        : ['ttf', 'eot', 'woff'],      // 기본 값 , 'woff2', 'svg' 추가 가능
+      'formats'        : ['ttf', 'eot', 'woff', 'woff2'],      // 기본 값 , 'woff2', 'svg' 추가 가능
       'timestamp'      : Math.round(Date.now()/1000), // 관찰 중인 파일에 일관적으로 빌드할 경우 권장
     },
     'iconfontCss': {
@@ -178,10 +182,10 @@ let config = {
   /////////////////////
   // 생성 디렉토리/파일 제거
   'remove_list': [
-    'dist',
-    'build',
-    'src/fonts',
-    'src/images/sprites'
+    PATHS.dist,
+    PATHS.build,
+    `${PATHS.src}/${PATHS.fonts}`,
+    `${PATHS.src}/${PATHS.images}/${PATHS.sprites}`,
   ],
 
 };
