@@ -4,51 +4,42 @@
 @import modules/grid/grid_mixins
 
 
-.container[class*="show-"] 
+.show-grid
   position: relative
 
-.container[class*="show-"]::before 
+.show-grid::before
   content: ''
   position: absolute
   z-index: 1000
   top: 0
-  min-height: 100vh
+  min-height: 500vh
   width: 100%
 
 
 
-@if $gutter-position == "left"
-  .row [class*="-col-"]:first-child
-    margin:
-      left: 0
-@else if $gutter-position == "right"
-  .row [class*="-col-"]:last-child
-    margin:
-      right: 0
-@else if $gutter-position == "center"
-  .row [class*="-col-"]:first-child,
-    margin:
-      left: 0
-  .row [class*="-col-"]:last-child
-    margin:
-      right: 0
+// @if $gutter-position == "left"
+//   .row [class*="-col-"]:first-child
+//     margin:
+//       left: 10px
+// @else if $gutter-position == "right"
+//   .row [class*="-col-"]:last-child
+//     margin:
+//       right: 0
+// @else if $gutter-position == "center"
+//   .row [class*="-col-"]:first-child,
+//     margin:
+//       left: 0
+//   .row [class*="-col-"]:last-child
+//     margin:
+//       right: 0
 
 .row.isolate [class*="-col-"]
   margin-right: -100%
 
 .row
-  @extend %clearfix
+  @extend .clearfix
 
-.readable-hidden,
-.a11y-hidden,
-.screen-off
-  overflow: hidden
-  width: 1px
-  height: 1px
-  padding: 0
-  margin: -1px
-  position: absolute
-  left: -99999px
+
 
 .dev
  +font-rule( 21 )
@@ -58,13 +49,13 @@
 
 
 +respond-to($m-container-width)
-  +column-for( 4 , $m-container-width, false)
-  +isolate( 4 , $m-container-width, false)
+  +column-for( 4 , $m-container-width, true)
+  +isolate( 4 , $m-container-width, true)
 
 
 +respond-to($t-container-width)
-  +column-for( 8 , $t-container-width, false, 10)
-  +isolate( 8 , $t-container-width, false, 10)
+  +column-for( 8 , $t-container-width, false)
+  +isolate( 8 , $t-container-width, false)
 
 +respond-to($d-container-width)
   +column-for( 12 , $d-container-width, false)
@@ -74,3 +65,17 @@
 
 .error
   +column-for( 1 , 0 , false, 0)
+
+// container 사용하지 않아도 되는 그리드 추가 -> recommend사용
+.r-d-col-3
+  @extend %col-float
+  width: 295px
+  margin:
+    left: 10px
+    right: 10px
+.r-t-col-3
+  @extend %col-float
+  width: 268px
+  margin:
+    left: 10px
+    right: 10px
