@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>play</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Tablet" transform="translate(-581.000000, -300.000000)" fill="#FFFFFF">
+            <g id="Carousel" transform="translate(1.000000, 80.000000)">
+                <g id="play" transform="translate(580.000000, 220.000000)">
+                    <path d="M25,50 C38.8071187,50 50,38.8071187 50,25 C50,11.1928813 38.8071187,0 25,0 C11.1928813,0 0,11.1928813 0,25 C0,38.8071187 11.1928813,50 25,50 Z M34.5345732,22.9129459 L21.7019708,14.6680283 C21.3226015,14.4377087 20.8515256,14.4760812 20.4957474,14.4760812 C19.0726347,14.4760812 19.0789478,15.596507 19.0789478,15.8803617 L19.0789478,32.7320672 C19.0789478,32.9720434 19.0727178,34.1364324 20.4957474,34.1364324 C20.8515256,34.1364324 21.3226845,34.1746355 21.7019708,33.9444006 L34.5344901,25.6995677 C35.5877862,25.0604498 35.4057853,24.3062144 35.4057853,24.3062144 C35.4057853,24.3062144 35.5878693,23.5519791 34.5345732,22.9129459 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
