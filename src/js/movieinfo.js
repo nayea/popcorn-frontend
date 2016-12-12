@@ -23,6 +23,20 @@
   }
 })(this);
 
+(function($) {
+  $('.movie-comment-rating-button').click(function() {
+    if($(this).siblings('.movie-comment-rating-group').is(':hidden')) {
+      $(this).siblings('.movie-comment-rating-group').slideDown('fast');
+    } else {
+      $(this).siblings('.movie-comment-rating-group').slideUp('fast');
+    }
+  });
+
+  $('.movie-comment-submit-button').click(function() {
+    $(this).closest('.movie-comment-rating-group').slideUp('fast');
+  });
+})(jQuery);
+
 
 (function(global) {
   'use strict';
