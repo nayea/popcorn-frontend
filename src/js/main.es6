@@ -9,16 +9,19 @@ let angular = require('angular');
 // 의존 모듈 로드
 require('angular-resource');
 // require('ng-infinite-scroll');
-// require('spin');
-// require('angular-spinner');
+require('spin');
+require('angular-spinner');
 
 // App 모듈 정의 (의존 모듈 주입)
 let popcorn = angular.module('PopcornListApp', ['ngResource']);
 
 // 모듈 환경 설정
-popcorn.config(['$httpProvider', '$resourceProvider', ($httpProvider,$resourceProvider)=>{
+popcorn.config([
+	'$httpProvider', 
+	'$resourceProvider',
+	($httpProvider,$resourceProvider)=>{
 	// let token = 'Token dab1748ebaceb34ed6796bc3b7dc84741b77af54';
-	let token = 'Token 3f1da39edc95a632e0a066b78e704ebcb47552c1';
+	let token = 'Token ffa44753118e755c0c28070fcbcc6c9a048b99bf';
 	$httpProvider.defaults.headers.common['Authorization'] = token;
 	$resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
@@ -33,12 +36,29 @@ popcorn.config(['$httpProvider', '$resourceProvider', ($httpProvider,$resourcePr
 // require('./lib/scrollmagic/TweenMax.min.js')
 
 // Controllers
-require('./controllers/ListController');
-require('./controllers/DetailController');
+require('./controllers/carouselController');
+// require('./controllers/rankingController');
+// require('./controllers/DetailController');
+require('./controllers/recommendSelectController');
+require('./controllers/recommendCountryController');
+require('./controllers/recommendGradeController');
+
+
+
 // Services
-require('./services/ListDataShareService');
+require('./services/carouselDataShareService');
+// require('./services/rankingDataShareService');
+
+//recommend-select (genre, country, grade)
+require('./services/recommendSelectDataShareService');
+require('./services/recommendCountryDataShareService');
+require('./services/recommendGradeDataShareService');
+
+
 // Filters
 require('./filters/readingZeroFilter');
+
+
 
 // main-script
 require('./main-script/ui-carousel.js');
