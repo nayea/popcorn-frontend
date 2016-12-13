@@ -7,13 +7,13 @@ angular
   .controller('ListController',
     ['$scope', 'ListDataShareService', ($scope, ListDataShareService)=>{
 
-    // bipan 모델 데이터
+    // popcorn 모델 데이터
     $scope.share_data = ListDataShareService;
-
+    console.log($scope.share_data);
     // 컨트롤러 $scope 객체의 속성
     // $scope.search = {};
     $scope.search = '';
-    $scope.order  = 'name';
+    $scope.order  = 'id';
 
     // 컨트롤러 $scope 객체의 메소드
     $scope.selectPerson =function(person) {

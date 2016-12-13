@@ -3,8 +3,9 @@
 'use strict';
 
 var $widget = $('#main-carousel');
-var $tabpanel = $widget.children();
+var $tabpanel = $('#main-carousel article');
 
+console.log($tabpanel.length);
 // indicator template추가
 var $tablist = $('<ol role="tablist">');
 var template_indicators =[
@@ -176,7 +177,6 @@ function activeKeyboardNavigation(e){
 //  arrow-button으로 carousel 작동
 //-----------------------------------------------------------------
 var $buttons = $('.ui-carousel-button');
-var $buttons = $('.ui-carousel-button');
 $buttons.on('click', activeTabWidthButton);
 
 function activeTabWidthButton(){
@@ -248,3 +248,44 @@ $video_pop_close.on('click',function(){
 
 
 })(this,jQuery);
+
+
+(function(window, $){
+'use strict';
+
+var stealcuts = $('.ui-carousel-tabpanel >img');
+
+$.each(stealcuts,function(idx){
+  var stealcut_imgs = stealcuts.attr('data-ng-src');
+  console.log(stealcut_imgs);
+})
+
+
+// $.each(stealcut_imgs,function(idx){
+//   var stealcut_img = stealcut_imgs.eq(idx);
+  
+//   stealcut_img = replaceStr(stealcut_img, '[');
+//   stealcut_img = replaceStr(stealcut_img, ']');
+//   stealcut_img = replaceStr(stealcut_img, "'");
+//   alert(stealcut_img);
+// });
+
+// function replaceStr (a,b){
+
+//  var strlen = a.length;
+//   var strtmp='';
+//   for(var i = 0 ; i < strlen ; i++)
+//   {
+//     if (a.charAt(i) = b)
+//     {
+//       continue;
+//     }
+//     else
+//     {
+//       strtmp = strtmp + a.charAt(i);
+//     }
+//   }
+// return strtmp;
+// }
+
+})(this, jQuery);
