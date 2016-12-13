@@ -7,8 +7,6 @@ angular
   .module('PopcornListApp')
   .factory('Contact', ['$resource', function($resource){
     // let url = 'https://codecraftpro.com/api/samples/v1/contact/:id/'; // 서버단에서 주는  api 를 받아서 반환
-    // let url = 'http://popcorn-backend2-dev.ap-northeast-2.elasticbeanstalk.com/main/movie_recommends/carousel/';
-    // let url ='https://django-test.com/main/movie_recommends/carousel/';
     return $resource(
       'https://django-test.com/main/movie_recommends/carousel/',{},
       { 'get' : {method: 'GET', isArray: true}}
@@ -16,17 +14,16 @@ angular
   }])
  // $http를 넣어서 주입했던 모듈 확인이 가능함
   // .service('ListDataShareService', ['$http', 'Contact' , ($http, Contact)=>{
-  .service('ListDataShareService', ['Contact' , (Contact)=>{  
+  .service('carouselDataShareService', ['Contact' , (Contact)=>{  
      var _service = {
-        'selected_person' : null,
-        'people' : [],
-        'page' : 1,
-        'has_more' : true,
+        'selected_movie' : null,
+        'movies' : [],
+       // 'has_more' : true, // 다음 페이지가 있으면 true
         'is_loading' : false,
         'loadContacts' : ( ) =>{
            Contact.get((data)  =>{
-             angular.forEach(data, (person) => {
-                    _service.people.push(new Contact(person));
+             angular.forEach(data, (movie) => {
+                    _service.movies.push(new Contact(movie));
              });
         });
         }
