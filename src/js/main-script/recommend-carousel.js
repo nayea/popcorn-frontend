@@ -270,7 +270,6 @@ function readingZeroNum(idx) {
 
 
 $('.recommend-tabpanel-wrapper-small').on('click',function(){
-	console.log("ddd");
         $(this).find('.recommend-tabpanel').addClass('flipped').mouseleave(function(){
             $(this).removeClass('flipped');
         });

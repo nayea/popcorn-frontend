@@ -8,16 +8,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>popcorn</title>
+  <link rel="shortcut icon" href="images/icon/popcorn-logo-small.svg">
   <!-- <link rel="stylesheet" href="font/spoqaHanSans.css"> -->
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   <!-- <script src="./js/lib/jquery.easing.min.js"></script> -->
- <!--  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script src="./js/lib/scrollmagic/TweenMax.min.js"></script> -->
 <!-- <script src="../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script> -->
    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
+
+    <style>
+    /*.toggle-palette-button {
+      cursor: pointer;
+      position: fixed;
+      z-index: 100;
+      top: 20px;
+      right: 20px;
+      border: 1px solid #E6E6E6;
+      background: #fff;
+      padding: 0.8em 1.2em;
+      border-radius: 4px;
+    }*/
+    .color-palette {
+      position: relative;
+      z-index: 100;
+      float: left;
+      width: 10%;
+      min-height: 100vh;
+      padding: 1em;
+      background-color: #fff;
+      box-sizing: border-box;
+      box-shadow: 4px 0px 6px hsla(0, 0%, 32%, 0.2);
+    }
+    .color-palette label {
+      cursor: pointer;
+      display: block;
+      margin-bottom: 0.4em;
+    }
+    .violet-red { color: #ff4183; }
+    .dove-gray { color: #757575; }
+    .governor-bay { color: #5549a6; }
+    .mahogany { color: #cf4646; }
+    .navi-blue { color: #0163c4; }
+    .color-place {
+      position: relative;
+      float: left;
+      width: 90%;
+      min-height: 100vh;
+      background-color: {{bg_color}};
+    }
+    .color-place:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: '{{bg_color.toUpperCase()}}';
+      font-size: 100px;
+      letter-spacing: -0.03em;
+      color: #fff;
+      text-shadow: 0 0 3px hsla(0, 0%, 32%, 0.4);
+    }
+  </style>
 </head>
 
 <body>
@@ -28,11 +83,11 @@
         <a href="#" class="header-logo" aria-label="popcorn"></a>
       </h1>
 
-      <nav class="m-hidden t-hidden" role="navigation">
+      <nav class="header-scroll-menu m-hidden t-hidden">
         <ul>
-          <li><a class="header-menuname" href="#">금주의 박스오피스</a></li>
-          <li><a class="header-menuname" href="#">맞춤 추천</a></li>
-          <li><a class="header-menuname" href="#">영화 이야기</a></li>
+          <li><a class="header-menuname" href="#menu-ranking">금주의 박스오피스</a></li>
+          <li><a class="header-menuname" href="#menu-recommend">맞춤 추천</a></li>
+          <li><a class="header-menuname" href="#menu-comment">영화 이야기</a></li>
         </ul>
       </nav>
 
@@ -45,11 +100,15 @@
         <button type="button" aria-label="검색"></button>
       </form>
 
-     <div class="header-userinfo d-prefix-10">
+     <!-- <div class="header-userinfo d-prefix-10">
         <img class="st-user-image" src="images/user-1.jpg" alt="회원 이미지">
        <a href="#"> 
         <span class="header-user-name m-hidden">이나영</span>
         <span class="header-user-selection" aria-label="로그인 정보 보기" role="button" tabindex="0"></span></a>
+        </div> -->
+
+        <div class="header-in t-prefix-7 d-prefix-11">
+           <button class="header-in-button st-in-button">로그인</button>
         </div>
      </div>
   </header>
@@ -57,31 +116,32 @@
 
 
 
-  <section class="carousel" data-ng-cloak data-ng-controller="ListController">
-      <div id="main-carousel" aria-label="주요 영화 정보">
+  <section class="carousel" >
+      <div id="main-carousel" aria-label="주요 영화 정보" data-ng-cloak data-ng-controller="carouselController">
       
-      <article data-label="팝콘 주요 영화 1" data-ng-repeat="person in filteredPeople = (share_data.people)">
+      <article data-label="팝콘 주요 영화 1" data-ng-repeat="movie in filteredMovies=(share_data.movies | filter:search )">
+        
            <div class="container ui-carousel-panels">
              <div class="row ui-carousel-movie-info">
                <a href="#">
                  <span class="popcorn-label">[Popcorn 추천영화]</span>
-                 <h2>{{person.name}} <span>({{person.country}})</span></h2>
+                 <h2>{{movie.title_kor}}<span>({{movie.title_eng}})</span></h2>
                  <div class="stars">
                    <img src="images/main-carousel/stars.png" alt="">
                    <span>3.9</span>
                  </div>
                  <ul role="presentation">
-                   <li>{{person.name}}</li>
-                   <li>2일전 개봉</li>
-                   <li>135분</li>
-                   <li>한국</li>
-                   <li>15세 관람가</li>
+                   <li>{{movie.genre[0].content}}{{movie.genre[1].content}}</li>
+                   <li>{{movie.created_year}}</li>
+                   <li>{{movie.run_time}}</li>
+                   <li>{{movie.making_country[0].content}}</li>
+                   <li>{{movie.grade.content}}</li>
                  </ul>
                  </a>
 
                 <div class="video-thumbnail">
-                  <img data-ng-src="{{person.photo}}" src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
-                    <img data-ng-src="{{person.photo}}" src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+                  <img data-ng-src="{{movie.image_set[0].url}}" src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                    <img data-ng-src="{{movie.image_set[0].url}}" src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
                     <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
                </div>
                <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
@@ -89,10 +149,10 @@
                   <div class="video-dim-background">
                     <div class="video-pop">
                           <div class="rwd-iframe-container">
-                            <iframe
+                          <!--   <iframe
                                 width="640"
                                 height="360"
-                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe> -->
                           </div>
                           <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
                 </div>
@@ -101,202 +161,40 @@
                <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
              </div>
            </div>
-          <img data-ng-src="{{movies.image}}" alt="팝콘 주요 영화 1" class="t-hidden d-hidden">
-          <img data-ng-src="{{movies.image}}" src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden d-hidden">
-          <img data-ng-src="{{movies.image}}" src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden t-hidden">
+          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 1" class="t-hidden d-hidden">
+          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden d-hidden">
+          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden t-hidden">
       </article>
 
-       <article data-label="팝콘 주요 영화 2">
-           <div class="container ui-carousel-panels">
-             <div class="row ui-carousel-movie-info">
-               <a href="#">
-                 <span class="popcorn-label">[Popcorn 추천영화]</span>
-                 <h2>도둑들 <span>(The Thieves)</span></h2>
-                 <div class="stars">
-                   <img src="images/main-carousel/stars.png" alt="">
-                   <span>3.9</span>
-                 </div>
-                 <ul role="presentation">
-                   <li>범죄, 액션, 드라마</li>
-                   <li>2일전 개봉</li>
-                   <li>135분</li>
-                   <li>한국</li>
-                   <li>15세 관람가</li>
-                 </ul>
-                 </a>
 
-                <div class="video-thumbnail">
-                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
-                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
-                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
-               </div>
-               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
-                 
-                  <div class="video-dim-background">
-                    <div class="video-pop">
-                          <div class="rwd-iframe-container">
-                            <iframe
-                                width="640"
-                                height="360"
-                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
-                          </div>
-                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
-                </div>
-                 </div>
-
-               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
-             </div>
-           </div>
-          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="t-hidden d-hidden">
-          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="m-hidden d-hidden">
-          <img src="images/main-carousel/minion.jpg" alt="팝콘 주요 영화 2" class="m-hidden t-hidden">
-      </article>
-
-       <article data-label="팝콘 주요 영화 3">
-           <div class="container ui-carousel-panels">
-             <div class="row ui-carousel-movie-info">
-               <a href="#">
-                 <span class="popcorn-label">[Popcorn 추천영화]</span>
-                 <h2>도둑들 <span>(The Thieves)</span></h2>
-                 <div class="stars">
-                   <img src="images/main-carousel/stars.png" alt="">
-                   <span>3.9</span>
-                 </div>
-                 <ul role="presentation">
-                   <li>범죄, 액션, 드라마</li>
-                   <li>2일전 개봉</li>
-                   <li>135분</li>
-                   <li>한국</li>
-                   <li>15세 관람가</li>
-                 </ul>
-                 </a>
-
-                <div class="video-thumbnail">
-                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
-                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
-                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
-               </div>
-               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
-                 
-                  <div class="video-dim-background">
-                    <div class="video-pop">
-                          <div class="rwd-iframe-container">
-                            <iframe
-                                width="640"
-                                height="360"
-                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
-                          </div>
-                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
-                </div>
-                 </div>
-
-               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
-             </div>
-           </div>
-          <img src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 3" class="t-hidden d-hidden">
-          <img src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 3" class="m-hidden d-hidden">
-          <img src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 3" class="m-hidden t-hidden">
-      </article>
-
-       <article data-label="팝콘 주요 영화 4">
-           <div class="container ui-carousel-panels">
-             <div class="row ui-carousel-movie-info">
-               <a href="#">
-                 <span class="popcorn-label">[Popcorn 추천영화]</span>
-                 <h2>도둑들 <span>(The Thieves)</span></h2>
-                 <div class="stars">
-                   <img src="images/main-carousel/stars.png" alt="">
-                   <span>3.9</span>
-                 </div>
-                 <ul role="presentation">
-                   <li>범죄, 액션, 드라마</li>
-                   <li>2일전 개봉</li>
-                   <li>135분</li>
-                   <li>한국</li>
-                   <li>15세 관람가</li>
-                 </ul>
-                 </a>
-
-                <div class="video-thumbnail">
-                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
-                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
-                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
-               </div>
-               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
-                 
-                  <div class="video-dim-background">
-                    <div class="video-pop">
-                          <div class="rwd-iframe-container">
-                            <iframe
-                                width="640"
-                                height="360"
-                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
-                          </div>
-                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
-                </div>
-                 </div>
-
-               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
-             </div>
-           </div>
-          <img src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 4" class="t-hidden d-hidden">
-          <img src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 4" class="m-hidden d-hidden">
-          <img src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 4" class="m-hidden t-hidden">
-      </article>
-
-       <article data-label="팝콘 주요 영화 5">
-           <div class="container ui-carousel-panels">
-             <div class="row ui-carousel-movie-info">
-               <a href="#">
-                 <span class="popcorn-label">[Popcorn 추천영화]</span>
-                 <h2>도둑들 <span>(The Thieves)</span></h2>
-                 <div class="stars">
-                   <img src="images/main-carousel/stars.png" alt="">
-                   <span>3.9</span>
-                 </div>
-                 <ul role="presentation">
-                   <li>범죄, 액션, 드라마</li>
-                   <li>2일전 개봉</li>
-                   <li>135분</li>
-                   <li>한국</li>
-                   <li>15세 관람가</li>
-                 </ul>
-                 </a>
-
-                <div class="video-thumbnail">
-                  <img src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
-                    <img src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
-                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
-               </div>
-               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
-                 
-                  <div class="video-dim-background">
-                    <div class="video-pop">
-                          <div class="rwd-iframe-container">
-                            <iframe
-                                width="640"
-                                height="360"
-                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
-                          </div>
-                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
-                </div>
-                 </div>
-
-               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
-             </div>
-           </div>
-          <img src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 5" class="t-hidden d-hidden">
-          <img src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 5" class="m-hidden d-hidden">
-          <img src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 5" class="m-hidden t-hidden">
-      </article>
-
+       
 
       </div>
+    
   </section>
 
+<!-- <div data-ng-cloak data-ng-init="
+  bg_color='#5549a6';
+  is_hidden=!true;
+">
 
-<div id="trigger1" class="spacer s0"></div>
-  <section class="ranking container">
+ <button class="toggle-palette-button" type="button" data-ng-click="is_hidden=!is_hidden">
+    <span data-ng-show="!is_hidden">컬러 팔레트 감추기</span>
+    <span data-ng-show="is_hidden">컬러 팔레트 보이기</span>
+  </button>
+
+  <div class="color-palette" data-ng-hide="is_hidden">
+    <label class="violet-red"><input type="radio" data-ng-model="bg_color" value="#ff4183"> Violet Red</label>
+    <label class="dove-gray"><input type="radio" data-ng-model="bg_color" value="#757575"> Dove Gray</label>
+    <label class="governor-bay"><input type="radio" data-ng-model="bg_color" value="#5549a6"> Govenor Bay</label>
+    <label class="mahogany"><input type="radio" data-ng-model="bg_color" value="#cf4646"> Mahogany</label>
+    <label class="navi-blue"><input type="radio" data-ng-model="bg_color" value="#0163c4"> Navi Blue</label>
+  </div>
+
+  <div class="color-place"></div>
+</div> -->
+<!-- <div id="trigger1" class="spacer s0"></div> -->
+  <section class="ranking container" id="menu-ranking">
       <div class="row">
         <h1>금주 박스 오피스</h1>
         <div class="ranking-top3">
@@ -329,6 +227,7 @@
             <img src="images/main-ranking/ t-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-hidden d-hidden" width="748" height="290">
             <img src="images/main-ranking/m-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-top-img t-hidden d-hidden" width="330" height="300">
           </article>
+
           <article id="sm-ranking-top2" class="ranking-second t-col-4 m-col-4">
             <div class="ranking-movie-info">
               <a href="#">
@@ -390,7 +289,7 @@
         </div>
              <div class="ranking-boxoffice m-hidden t-hidden">
               <h2 class="readable-hidden">금주 박스 오피스 top 10</h2>
-                 <ol role="presentation">
+                 <ol role="presentation" class="ranking-boxoffice-ol">
                    <li><a href="#">해리포터와 불의 잔</a></li>
                    <li><a href="#">도둑들</a></li>
                    <li><a href="#">미니언즈</a></li>
@@ -410,8 +309,39 @@
 
 
 
-<section class="recommend clearfix">
+<section id="menu-recommend" class="recommend clearfix" data-ng-cloak data-ng-init= "accordian_tabs = {'switch_on': 'false'};">
   <h1>맞춤 추천 영화</h1>
+  <div class = "recommend-radio container" data-ng-switch="accordian_tabs.switch_on">
+     <button type="button" data-ng-click="accordian_tabs.switch_on = !accordian_tabs.switch_on" class="recommend-button st-border-button-B">맞춤 영화 설정</button>
+    
+        <div class="recommend-choice row" data-ng-show="accordian_tabs.switch_on">
+
+           <div class="recommend-choice-wrapper recommend-tabcontent-1" data-ng-controller="recommendSelectController">
+            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice"  data-ng-repeat="movie in filteredMovies=(recommendSelect_data.movies | filter:search )">
+             <input type="radio" id="{{movie.content}}" name="recommend-genre" value="{{movie.content}}"><label for="{{movie.content}}">{{movie.content}}<label>
+           </div>
+            <button type="button" class="recommend-choice-tablinks-next-1 recommend-choice-button st-button-B t-push-5 d-push-1">다음단계</button> 
+          </div>
+
+            <div class="recommend-choice-wrapper recommend-tabcontent-2" data-ng-controller="recommendCountryController">
+            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendCountry_data.movies | filter:search )">
+             <input type="radio" id="{{person.name}}" name="recommend-genre" value="{{person.name}}"><label for="{{person.name}}">{{movie.content}}<label>
+           </div>
+            <button type="button" class="recommend-choice-tablinks-prev-1 recommend-choice-button st-button-B t-push-4">이전단계</button> 
+            <button type="button" class="recommend-choice-tablinks-next-2 recommend-choice-button st-button-B t-push-4">다음단계</button> 
+          </div>
+           
+          <div class="recommend-choice-wrapper recommend-tabcontent-3" data-ng-controller="recommendGradeController">
+            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendGrade_data.movies | filter:search )">
+             <input type="radio" id="{{person.name}}" name="recommend-genre" value="{{person.name}}"><label for="{{person.name}}">{{movie.content}}<label>
+           </div>
+             <button type="button" class="recommend-choice-tablinks-prev-2 recommend-choice-button st-button-B t-push-4">이전단계</button> 
+             <button type="button" class="recommend-choice-tablinks-finish recommend-choice-button st-button-B t-push-4">완료</button> 
+          </div>
+  </div>
+   
+    </div>
+
   <div id="recommend-movie" data-label="맞춤 추천영화 best6">
       <article data-label="맞춤 추천영화 1" class="">
         <img class="face" src="images/main-recommend/d-bigfish.jpg" alt="빅피쉬">
@@ -620,7 +550,7 @@
   </div>
 </section>
 
-<div class="review-magazine-bg">
+<div class="review-magazine-bg" id="menu-comment">
 <div class="container">
 <section class="review">
 <div class="row">
@@ -729,7 +659,7 @@
     <div class="row">
       <div class="d-col-9 t-col-8 m-col-4">
         <h1>매거진</h1>
-        <div class="magazine-content-main t-col-8">
+        <div class="magazine-content-main">
           <a href="#">
         <div class="magazine-content-main-image">
             <img src="images/main-magazine/magazine-content-main.jpg" alt="매거진 콘텐츠" width="507" height="330">
@@ -786,17 +716,16 @@
         </div>
 
          
-
-
       </div>
     </div>
 </section>
 </div>
 </div>
+
+
 <footer class="footer">
   <img src="images/icon/icon-github.svg" alt="github">
 </footer>
-
 <script src="js/main.bundle.js"></script>
 </body>
 
