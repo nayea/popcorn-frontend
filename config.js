@@ -19,6 +19,7 @@ const PATHS = {
   'images'    : 'images',
   'fonts'     : 'fonts',
   'data'      : 'data',
+  'views'   : 'views',
   'iconfonts' : 'iconfonts',
   'sprites'   : 'sprites',
 };
@@ -41,6 +42,10 @@ let config = {
     'data' : {
       'source' : `${PATHS.src}/${PATHS.data}/**/*`,
       'output' : `${PATHS.dist}/${PATHS.data}`
+    },
+    'views' : {
+      'source' : `${PATHS.src}/${PATHS.views}/**/*.html`,
+      'output' : `${PATHS.dist}/${PATHS.views}`
     },
     // 이미지 소스/출력 설정
     'images': {
