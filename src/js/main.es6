@@ -17,7 +17,7 @@ let popcorn = angular.module('PopcornListApp', ['ngResource']);
 
 // 모듈 환경 설정
 popcorn.config([
-	'$httpProvider', 
+	'$httpProvider',
 	'$resourceProvider',
 	($httpProvider,$resourceProvider)=>{
 	// let token = 'Token dab1748ebaceb34ed6796bc3b7dc84741b77af54';
@@ -25,7 +25,6 @@ popcorn.config([
 	$httpProvider.defaults.headers.common['Authorization'] = token;
 	$resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
-
 
 
 // require('./lib/jquery.js');
@@ -67,3 +66,6 @@ require('./main-script/recommend-carousel.js');
 require('./main-script/recommend-choice.js');
 require('./main-script/ranking-hover.js');
 // require('./main-script/scroll-effect.js');
+
+// movie-info script
+require('./movie-info/movieinfo.js');
