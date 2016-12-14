@@ -42,7 +42,7 @@ popcorn.config(['$httpProvider', '$resourceProvider', ($httpProvider,$resourcePr
 // }]);
 
 // console.log(bipan);
-// 
+//
 // 모듈 환경설정
 // popcorn.config(['$httpProvider',function($httpProvider){
 // 	 $httpProvider.defaults.headers.common['Authorization'] = token;
@@ -68,3 +68,6 @@ require('./main-script/ui-carousel.js');
 require('./main-script/header-scroll.js');
 require('./main-script/recommend-carousel.js');
 require('./main-script/scroll-effect.js');
+
+// movie-info script
+require('./movie-info/movieinfo.js');

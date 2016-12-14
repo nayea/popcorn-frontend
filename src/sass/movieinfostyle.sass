@@ -30,7 +30,7 @@ li
 
 button
   border: 0
-  // padding: 0
+  padding: 0
   cursor: pointer
 
 img
@@ -451,12 +451,9 @@ img
 .actor-image-wrap
   float: left
   position: relative
-  width: 60px
-  height: 60px
   display: inline-block
   overflow: hidden
   border-radius: 10px
-  background-color: blue
   +respond-to($m-container-width)
     +size(px2vw(60px, $m-container-width))
     img
@@ -492,6 +489,7 @@ img
       margin-top: 20px
     +respond-to($d-container-width)
       margin-top: 15px
+      position: relative
 
 .actor-info-wrap
   overflow: hidden
@@ -515,6 +513,7 @@ img
     +respond-to($t-container-width)
       font-size: 14px
     +respond-to($d-container-width)
+      margin-top: 15px
       font-size: 14px
   div
   .actor-role-info
@@ -527,9 +526,14 @@ img
       font-size: 10px
       margin-bottom: 2px
     +respond-to($d-container-width)
-      height: 10px
+      position: absolute
       font-size: 12px
-      margin-bottom: 2px
+      top: 15px
+      left: 140px
+      width: 150px
+      // margin:
+      //   top: 10px
+      //   bottom: 2px
   .actor-name-info
     +respond-to($m-container-width)
       font-size: px2vw(12px, $m-container-width)
@@ -537,6 +541,7 @@ img
       font-size: 14px
     +respond-to($d-container-width)
       font-size: 14px
+      margin-top: 15px
 
 
 // --------------------------------------------------------
@@ -575,24 +580,41 @@ img
     margin-top: -385px
 
 .movie-still-gallery
-  background: $color-lightgray
-  position: relative
+  // background: #000
+  // position: relative
 
 .movie-still-list
-  box-sizing: border-box
-  display: block
-  width: 90%
-  margin: 0 auto
+  // box-sizing: border-box
+  // display: block
+  width: 100%
   li
-    box-sizing: border-box
     width: 25%
-    position: relative
     float: left
-    display: inline-block
+  button
+    position: relative
+    &:focus
+      outline: none
+    &:focus::before
+      content: ''
+      position: absolute
+      width: 26px
+      height: 20px
+      z-index: 100
+      background: url(../images/icon/icon-check.svg) no-repeat
+      top: 50%
+      left: 50%
+      transform: translateX(-50%) translateY(-60%)
+    &:focus::after
+      content: ''
+      position: absolute
+      display: block
+      top: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(0, 0, 0, 0.7)
   img
     position: relative
     box-sizing: border-box
-    padding: 5% 2.5%
     width: 100%
 
 .movie-still-view
@@ -855,6 +877,26 @@ figure
 // --------------------------------------------------------
 // 영화 평점
 // --------------------------------------------------------
+.movie-comment
+  +respond-to($m-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+  +respond-to($t-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+
+.movie-comment-wrap
+  +respond-to($d-container-width)
+    position: relative
+    float: left
+    width: 610px
+    margin-right: 10px
+    margin-left: 10px
+
 .movie-comment-heading
   font-family: $spoqa-B
   color: $color-blue
@@ -873,6 +915,7 @@ figure
     padding-bottom: 5px
     margin:
       top: 50px
+      bottom: 20px
       left: 10px
     width: 106px
     border-bottom: 2px solid $color-blue
@@ -882,11 +925,10 @@ figure
     width: 105px
     font-size: 20px
     margin:
-      top: -57px
       bottom: 20px
     border-bottom: 2px solid $color-blue
 
-.movie-comment-rating-button
+.movie-comment-add-button
   position: absolute
   @extend .st-border-button-B
   +respond-to($m-container-width)
@@ -900,43 +942,59 @@ figure
       right: px2vw(10px, $m-container-width)
   +respond-to($t-container-width)
     top: 42px
-    right: 10px
+    right: 110px
     font-size: 12px
     padding:
       top: 9px
       bottom: 7px
-      left: 30px
-      right: 30px
+      left: 15px
+      right: 15px
     margin-top: 10px
   +respond-to($d-container-width)
-    top: 47px
-    right: 10px
+    top: 10px
+    right: 100px
     font-size: 12px
     padding:
       top: 9px
       bottom: 7px
-      left: 30px
-      right: 30px
+      left: 15px
+      right: 15px
     margin-top: 10px
 
 .movie-comment-rating-group
+  border: 1px solid $color-blue
   position: relative
   display: none
+  +respond-to($d-container-width)
+    width: 610px
 
 .star-rating-group
   display: inline-block
   +respond-to($m-container-width)
     position: relative
     height: px2vw(15px, $m-container-width)
-    top: px2vw(5px, $m-container-width)
+    top: px2vw(4px, $m-container-width)
     left: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    margin:
+      top: 7px
+      bottom: 2px
+      left: 15px
+  +respond-to($d-container-width)
+    margin:
+      top: 7px
+      bottom: 2px
+      left: 15px
   svg
+    position: relative
+    vertical-align: top
     +respond-to($m-container-width)
       width: px2vw(15px, $m-container-width)
       height: px2vw(15px, $m-container-width)
 
 .comment-writing-group
   textarea
+    box-sizing: border-box
     position: relative
     padding: 0
     resize: none
@@ -946,41 +1004,88 @@ figure
       right: 0
       left: 0
     width: 100%
-    height: px2vw(70px, $m-container-width)
-    margin-top: px2vw(5px, $m-container-width)
-
-.movie-comment-rating-group
-  border: 1px solid $color-blue
-  +respond-to($m-container-width)
-    margin-bottom: px2vw(25px, $m-container-width)
+    +respond-to($m-container-width)
+      height: px2vw(70px, $m-container-width)
+      margin-top: px2vw(5px, $m-container-width)
+      padding: px2vw(5px, $m-container-width)
+    +respond-to($t-container-width)
+      height: 150px
+      padding: 10px
+    +respond-to($d-container-width)
+      height: 150px
+      padding: 10px
 
 .movie-comment-submit-button
   @extend .st-border-button-B
   position: absolute
   +respond-to($m-container-width)
-    top: px2vw(4px, $m-container-width)
+    top: 5%
     right: px2vw(10px, $m-container-width)
     font-size: px2vw(9px, $m-container-width)
     padding:
-      top: px2vw(4px, $m-container-width)
+      top: px2vw(3px, $m-container-width)
       bottom: px2vw(2px, $m-container-width)
       left: px2vw(5px, $m-container-width)
       right: px2vw(5px, $m-container-width)
   +respond-to($t-container-width)
+    top: 7px
+    right: 15px
+    font-size: 12px
+    padding:
+      top: 5px
+      bottom: 3px
+      left: 5px
+      right: 5px
   +respond-to($d-container-width)
+    top: 7px
+    right: 15px
+    font-size: 12px
+    padding:
+      top: 5px
+      bottom: 3px
+      left: 5px
+      right: 5px
 
+.movie-comment-list
+  +respond-to($m-container-width)
+    margin-top: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: 40px
+  // +respond-to($d-container-width)
 
 #star_rating label, #star_rating output
 	display: block
 	float: left
-	font-size: 1em
-	height: 1em
 	color: #F8E81C
 	cursor: pointer
 
-#star_rating output
-	font-size: 1.5em
-	padding: 0 1em
+.star-rating-group
+  position: relative
+
+#star_rating
+  +respond-to($m-container-width)
+    top: 0
+    width: px2vw(90px, $m-container-width)
+    height: px2vw(15px, $m-container-width)
+  +respond-to($t-container-width)
+    width: 130px
+  +respond-to($d-container-width)
+    width: 130px
+  position: relative
+  span
+    +respond-to($m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+      top: px2vw(-1px, $m-container-width)
+    +respond-to($t-container-width)
+      top: -1px
+    +respond-to($d-container-width)
+    position: absolute
+    right: 0
+    margin-left: 100px
+    opacity: 0
+  label:hover
+    span
+      opacity: 1
 
 #star_rating input:checked ~ label
 	color: #fff
@@ -992,26 +1097,14 @@ figure
 	color: #F8E81C
 
 #star_rating input:hover ~ label,
-#star_rating input:focus ~ label,
 #star_rating input[id="star0"] + label
 	color: #fff
 
 #star_rating input:hover + label,
-#star_rating input:focus + label
 	color: #F8E81C
 
 #star_rating [type="submit"]
 	float: none
-
-.movie-comment-submit-button
-  @extend .st-border-button-B
-
-.movie-comment-list
-  li
-    +respond-to($m-container-width)
-      // margin-bottom: px2vw(50px, $m-container-width)
-    +respond-to($t-container-width)
-    +respond-to($d-container-width)
 
 .movie-comment-user-image
   position: relative
@@ -1020,23 +1113,47 @@ figure
   z-index: 1
   +respond-to($m-container-width)
     +size(px2vw(50px, $m-container-width))
-    margin-left: px2vw(10px, $m-container-width)
+    margin:
+      top: px2vw(10px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
   +respond-to($t-container-width)
+    +size(50px)
+    margin:
+      top: 20px
+      left: 10px
   +respond-to($d-container-width)
+    +size(50px)
+    margin-top: 20px
 
 .movie-comment-right-group
-  padding:
-    top: px2vw(10px, $m-container-width)
-    bottom: px2vw(10px, $m-container-width)
-    left: px2vw(45px, $m-container-width)
-    right: px2vw(10px, $m-container-width)
   border: 1px solid $color-linegray
   border-radius: 10px
-  margin:
-    top: px2vw(-10px, $m-container-width)
-    bottom: px2vw(20px, $m-container-width)
-    left: px2vw(-25px, $m-container-width)
-
+  +respond-to($m-container-width)
+    margin:
+      top: px2vw(10px, $m-container-width)
+      // bottom: px2vw(20px, $m-container-width)
+      left: px2vw(-25px, $m-container-width)
+    padding:
+      top: px2vw(10px, $m-container-width)
+      // bottom: px2vw(10px, $m-container-width)
+      left: px2vw(30px, $m-container-width)
+      right: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    margin:
+      top: 10px
+      left: -25px
+    padding:
+      top: 10px
+      left: 60px
+      right: -20px
+  +respond-to($d-container-width)
+    margin:
+      top: 10px
+      left: -25px
+    padding:
+      top: 10px
+      left: 60px
+      right: 45px
 
 .movie-comment-paragraph
   +respond-to($m-container-width)
@@ -1044,8 +1161,10 @@ figure
     height: px2vw(50px, $m-container-width)
   +respond-to($t-container-width)
     font-size: 14px
+    height: 50px
   +respond-to($d-container-width)
     font-size: 14px
+    height: 50px
 
 .movie-comment-star-group
   display: block
@@ -1087,21 +1206,28 @@ figure
   +respond-to($t-container-width)
     font-size: 16px
     padding-left: 5px
-    line-height: 10px
+    line-height: 21px
   +respond-to($d-container-width)
     font-size: 16px
     padding-left: 5px
-    line-height: 14px
+    line-height: 21px
 
 .write-info-group
   span
+    display: block
     color: #989595
     +respond-to($m-container-width)
       font-size: px2vw(10px, $m-container-width)
     +respond-to($t-container-width)
       font-size: 12px
+      margin:
+        top: 10px
+        bottom: 20px
     +respond-to($d-container-width)
       font-size: 12px
+      margin:
+        top: 10px
+        bottom: 15px
 
 .movie-comment-show-more-button
   position: absolute
@@ -1126,7 +1252,314 @@ figure
       right: 30px
     margin-top: 10px
   +respond-to($d-container-width)
-    top: 47px
+    top: 10px
+    right: 0
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 30px
+      right: 30px
+    margin-top: 10px
+
+
+// --------------------------------------------------------
+// 영화 명대사
+// --------------------------------------------------------
+.movie-dialogue
+  +respond-to($m-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+  +respond-to($t-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+  +respond-to($d-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+
+.movie-dialogue-wrap
+  +respond-to($d-container-width)
+    position: relative
+    float: left
+    width: 525px
+    margin-right: 10px
+    margin-left: 95px
+
+.movie-dialogue-heading
+  font-family: $spoqa-B
+  color: $color-blue
+  margin-bottom: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(40px, $m-container-width)
+      bottom: px2vw(20px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    width: px2vw(67px, $m-container-width)
+    padding-bottom: px2vw(5px, $m-container-width)
+    border-bottom: 1px solid $color-blue
+  +respond-to($t-container-width)
+    font-size: 20px
+    padding-bottom: 5px
+    margin:
+      top: 50px
+      bottom: 20px
+      left: 10px
+    width: 106px
+    border-bottom: 2px solid $color-blue
+  +respond-to($d-container-width)
+    display: block
+    padding-bottom: 5px
+    width: 105px
+    font-size: 20px
+    margin:
+      bottom: 20px
+    border-bottom: 2px solid $color-blue
+
+.movie-dialogue-add-button
+  position: absolute
+  @extend .st-border-button-B
+  +respond-to($m-container-width)
+    top: px2vw(41px, $m-container-width)
+    right: px2vw(65px, $m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    padding:
+      top: px2vw(5px, $m-container-width)
+      bottom: px2vw(3px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+      right: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    top: 42px
+    right: 110px
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 15px
+      right: 15px
+    margin-top: 10px
+  +respond-to($d-container-width)
+    top: 10px
+    right: 100px
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 15px
+      right: 15px
+    margin-top: 10px
+
+.movie-dialogue-select-group
+  border: 1px solid $color-blue
+  position: relative
+  display: none
+  +respond-to($d-container-width)
+    width: 525px
+  input
+    box-sizing: border-box
+    width: 100%
+    margin: 0
+    padding: 0
+    border:
+      top: 1px solid $color-linegray
+      bottom: 0
+      right: 0
+      left: 0
+    +respond-to($m-container-width)
+      height: px2vw(25px, $m-container-width)
+      padding: px2vw(5px, $m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+    +respond-to($t-container-width)
+      height: 40px
+      padding: 10px
+    +respond-to($d-container-width)
+      height: 40px
+      padding: 10px
+
+.movie-dialogue-actor-select
+  display: block
+  border: 0
+  border-radius: 0
+  margin: 0
+  padding: 0
+  color: $color-black
+  appearance: none
+  width: 87%
+  background: #fff url(../images/icon/icon-down.svg) no-repeat 95% 50%
+  +respond-to($m-container-width)
+    font-size: px2vw(12px, $m-container-width)
+    height: px2vw(25px, $m-container-width)
+    padding-left: px2vw(10px, $m-container-width)
+    // margin: px2vw(5px, $m-container-width)
+  +respond-to($t-container-width)
+    height: 40px
+    padding:
+      top: 3px
+      left: 10px
+  +respond-to($d-container-width)
+    height: 40px
+    padding:
+      top: 3px
+      left: 10px
+
+// .actor-role-select
+//   color: $color-blue
+
+.movie-dialogue-submit-button
+  @extend .st-border-button-B
+  position: absolute
+  +respond-to($m-container-width)
+    top: 7%
+    right: px2vw(10px, $m-container-width)
+    font-size: px2vw(9px, $m-container-width)
+    padding:
+      top: px2vw(4px, $m-container-width)
+      bottom: px2vw(2px, $m-container-width)
+      left: px2vw(5px, $m-container-width)
+      right: px2vw(4px, $m-container-width)
+  +respond-to($t-container-width)
+    top: 7px
+    right: 15px
+    font-size: 12px
+    padding:
+      top: 5px
+      bottom: 3px
+      left: 5px
+      right: 5px
+  +respond-to($d-container-width)
+    top: 7px
+    right: 15px
+    font-size: 12px
+    padding:
+      top: 5px
+      bottom: 3px
+      left: 5px
+      right: 5px
+
+.movie-dialogue-list
+  +respond-to($t-container-width)
+    margin-top: 10px
+  li
+    +respond-to($t-container-width)
+      margin-top: 10px
+      margin-bottom: 10px
+
+.dialogue-actor-image-wrap
+  float: left
+  position: relative
+  display: inline-block
+  overflow: hidden
+  border-radius: 10px
+  +respond-to($m-container-width)
+    margin:
+      top: px2vw(10px, $m-container-width)
+      right: px2vw(10px, $m-container-width)
+    +size(px2vw(65px, $m-container-width))
+    img
+      width: 100%
+      position: absolute
+      top: -25%
+  +respond-to($t-container-width)
+    +size(85px)
+    margin:
+      left: 10px
+      // bottom: 20px
+    img
+      width: 100%
+      position: absolute
+      top: -25%
+  +respond-to($d-container-width)
+    +size(85px)
+    margin:
+      top: 10px
+      bottom: 10px
+      left: -10px
+    img
+      width: 100%
+      position: absolute
+      top: -25%
+
+.dialogue-content-wrap
+  position: relative
+  +respond-to($m-container-width)
+    margin-bottom: px2vw(30px, $m-container-width)
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+  p
+    +respond-to($m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+      margin:
+        top: px2vw(15px, $m-container-width)
+        bottom: px2vw(3px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 14px
+      margin:
+        top: 10px
+        left: 10px
+      height: 45px
+    +respond-to($d-container-width)
+      font-size: 14px
+      margin:
+        top: 10px
+        left: 20px
+      height: 45px
+
+.dialogue-actor-role
+  color: $color-blue
+  +respond-to($m-container-width)
+    font-size: px2vw(12px, $m-container-width)
+    line-height: px2vw(12px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 14px
+    margin-left: 10px
+  +respond-to($d-container-width)
+    font-size: 14px
+    margin-left: 20px
+
+.dialogue-actor-name
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(12px, $m-container-width)
+    line-height: px2vw(12px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 14px
+  +respond-to($d-container-width)
+    font-size: 14px
+
+.dialogue-writer-name
+  position: absolute
+  display: block
+  color: #989595
+  right: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    line-height: px2vw(10px, $m-container-width)
+    bottom: px2vw(-10px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 12px
+  +respond-to($d-container-width)
+    font-size: 12px
+
+.movie-dialogue-show-more-button
+  position: absolute
+  @extend .st-border-button-B
+  +respond-to($m-container-width)
+    top: px2vw(41px, $m-container-width)
+    right: px2vw(10px, $m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    padding:
+      top: px2vw(5px, $m-container-width)
+      bottom: px2vw(3px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+      right: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    top: 42px
     right: 10px
     font-size: 12px
     padding:
@@ -1135,6 +1568,27 @@ figure
       left: 30px
       right: 30px
     margin-top: 10px
+  +respond-to($d-container-width)
+    top: 10px
+    right: 0
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 30px
+      right: 30px
+    margin-top: 10px
+
+
+// --------------------------------------------------------
+// 푸 터
+// --------------------------------------------------------
+footer
+  width: 100vw
+  height: 50px
+  margin-top: 30px
+  background: $color-blue
+  +flexbox(center)
 
 +respond-to($m-container-width)
 +respond-to($t-container-width)

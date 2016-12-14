@@ -2,7 +2,7 @@
   'use strict';
 
   var still = document.querySelector('.movie-still');
-  var stillControlButtons = still.querySelectorAll('a');
+  var stillControlButtons = still.querySelectorAll('button');
   var stillView = still.querySelector('.movie-still-view');
 
 
@@ -24,7 +24,7 @@
 })(this);
 
 (function($) {
-  $('.movie-comment-rating-button').click(function() {
+  $('.movie-comment-add-button').click(function() {
     if($(this).siblings('.movie-comment-rating-group').is(':hidden')) {
       $(this).siblings('.movie-comment-rating-group').slideDown('fast');
     } else {
@@ -37,6 +37,19 @@
   });
 })(jQuery);
 
+(function($) {
+  $('.movie-dialogue-add-button').click(function() {
+    if($(this).siblings('.movie-dialogue-select-group').is(':hidden')) {
+      $(this).siblings('.movie-dialogue-select-group').slideDown('fast');
+    } else {
+      $(this).siblings('.movie-dialogue-select-group').slideUp('fast');
+    }
+  });
+
+  $('.movie-dialogue-submit-button').click(function() {
+    $(this).closest('.movie-dialogue-select-group').slideUp('fast');
+  });
+})(jQuery);
 
 (function(global) {
   'use strict';
