@@ -1,0 +1,53 @@
+  <section class="carousel" >
+      <div id="main-carousel" aria-label="주요 영화 정보" data-ng-cloak data-ng-controller="carouselController">
+      
+      <article data-label="팝콘 주요 영화 1" data-ng-repeat="movie in filteredMovies=(share_data.movies | filter:search )">
+        
+           <div class="container ui-carousel-panels">
+             <div class="row ui-carousel-movie-info">
+               <a href="#">
+                 <span class="popcorn-label">[Popcorn 추천영화]</span>
+                 <h2>{{movie.title_kor}}<span>({{movie.title_eng}})</span></h2>
+                 <div class="stars">
+                   <img src="images/main-carousel/stars.png" alt="">
+                   <span>3.9</span>
+                 </div>
+                 <ul role="presentation">
+                   <li>{{movie.genre[0].content}}{{movie.genre[1].content}}</li>
+                   <li>{{movie.created_year}}</li>
+                   <li>{{movie.run_time}}</li>
+                   <li>{{movie.making_country[0].content}}</li>
+                   <li>{{movie.grade.content}}</li>
+                 </ul>
+                 </a>
+
+                <div class="video-thumbnail">
+                  <img data-ng-src="{{movie.image_set[0].url}}" src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
+                    <img data-ng-src="{{movie.image_set[0].url}}" src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
+                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
+               </div>
+               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
+                 
+                  <div class="video-dim-background">
+                    <div class="video-pop">
+                          <div class="rwd-iframe-container">
+                            <iframe
+                                width="640"
+                                height="360"
+                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+                          </div>
+                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
+                </div>
+                 </div>
+
+               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </div>
+           </div>
+          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 1" class="t-hidden d-hidden">
+          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden d-hidden">
+          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden t-hidden">
+      </article>
+
+      </div>
+    
+  </section>

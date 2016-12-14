@@ -8,23 +8,44 @@ let angular = require('angular');
 
 // 의존 모듈 로드
 require('angular-resource');
+require('angular-ui-router')
 // require('ng-infinite-scroll');
-require('spin');
-require('angular-spinner');
+// require('spin');
+// require('angular-spinner');
 
 // App 모듈 정의 (의존 모듈 주입)
-let popcorn = angular.module('PopcornListApp', ['ngResource']);
+let popcorn = angular.module('PopcornListApp', [
+	'ngResource',
+	'ui.router',
+	]);
+
+
 
 // 모듈 환경 설정
 popcorn.config([
 	'$httpProvider', 
 	'$resourceProvider',
-	($httpProvider,$resourceProvider)=>{
-	// let token = 'Token dab1748ebaceb34ed6796bc3b7dc84741b77af54';
+	'$stateProvider',
+	'$urlRouterProvider',
+	($httpProvider,$resourceProvider,$stateProvider,$urlRouterProvider)=>{
+       
+      //$stateProvider
+ //      $stateProvider
+	// 	.state('list',{
+	// 		'url': '/',
+	// 		'templateUrl' : 'views/mainCarousel.html',
+	// 		'controller' : 'carouselController'
+	// });
+      
+      //$urlRouterProvider
+      // $urlRouterProvider.otherwise('/');
+
+      //ngResource
 	let token = 'Token ffa44753118e755c0c28070fcbcc6c9a048b99bf';
 	$httpProvider.defaults.headers.common['Authorization'] = token;
 	$resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
+
 
 
 
@@ -67,3 +88,5 @@ require('./main-script/recommend-carousel.js');
 require('./main-script/recommend-choice.js');
 require('./main-script/ranking-hover.js');
 // require('./main-script/scroll-effect.js');
+// 
+// require('../views/mainCarousel.html');
