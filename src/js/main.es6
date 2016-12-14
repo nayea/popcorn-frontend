@@ -23,7 +23,7 @@ let popcorn = angular.module('PopcornListApp', [
 
 // 모듈 환경 설정
 popcorn.config([
-	'$httpProvider', 
+	'$httpProvider',
 	'$resourceProvider',
 	'$stateProvider',
 	'$urlRouterProvider',
@@ -45,7 +45,6 @@ popcorn.config([
 	$httpProvider.defaults.headers.common['Authorization'] = token;
 	$resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
-
 
 
 
@@ -88,5 +87,8 @@ require('./main-script/recommend-carousel.js');
 require('./main-script/recommend-choice.js');
 require('./main-script/ranking-hover.js');
 // require('./main-script/scroll-effect.js');
-// 
-// require('../views/mainCarousel.html');
+
+
+// movie-info script
+require('./movie-info/movieinfo.js');
+
