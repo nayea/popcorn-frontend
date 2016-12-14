@@ -23,17 +23,36 @@ img
 %header-isolate
   margin-right: -100%
   float: left
+
 .h1-position
   +respond-to($m-container-width)
     font-size: px2vw(16px,$m-container-width)
     line-height: px2vw(80px,$m-container-width)
     height: px2vw(80px,$m-container-width)
   +respond-to($t-container-width)
-    +font(size 20px line-height 70px)
-    height: 80px
+    +font(size 20px line-height 140px)
+    height: 150px
   +respond-to($d-container-width)
-    +font(size 30px line-height 110px)
-    height: 120px
+    +font(size 30px line-height 190px)
+    height: 200px
+
+.button-size
+  +respond-to($m-container-width)
+    font-size: px2vw(11px,$m-container-width)
+    padding: px2vw(5px,$m-container-width) px2vw(10px,$m-container-width)
+  +respond-to($t-container-width)
+    +font(size 12px)
+    padding: 5px 20px
+  +respond-to($d-container-width)
+    +font(size 14px)
+    padding: 5px 20px
+
+ .spinner
+  p
+  position: relative
+    top: 40px
+    left: 50%
+    +transform(translateX(-50%))   
 
 // header
 
@@ -89,7 +108,7 @@ img
   // padding-bottom: 100%
 
 .header-bg-white
-  background: #fff
+  background: rgba(#fff,0.9)
 
 .header-bg-transparent
   backgroud: transparent
@@ -101,11 +120,13 @@ img
   +respond-to($m-container-width)
     height: px2vw(50px,$m-container-width)
     background: #fff
+    box-shadow: 2px 1px 3px #d7d7d7
   +respond-to($t-container-width)
     height: 80px
     background: #fff
+    box-shadow: 2px 1px 3px #d7d7d7
   +respond-to($d-container-width)
-    height: 100px
+    height: 80px
   nav
     position: absolute
     top: 36px
@@ -116,11 +137,8 @@ img
       li
         +font(size 16px)
         float: left
-        padding-bottom: 5px
+        padding-bottom: 15px
         margin-right: 20px
-        &:hover
-           border-bottom: 2px solid $color-yellow
-
       a
         @extend %reset-a
         display: block
@@ -131,7 +149,7 @@ img
     @extend %header-isolate
     position: relative
     +respond-to($m-container-width)
-      padding: percentage(15/$m-container-width) 0 0 percentage(270/$m-container-width)
+      padding: percentage(15/$m-container-width) 0 0 percentage(250/$m-container-width)
     +respond-to($t-container-width)
       margin-top: 25px
     +respond-to($d-container-width)
@@ -215,6 +233,22 @@ img
       +size(15px 8px)
       padding-left: 11px
 
+.header-in
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(12/$m-container-width) 0 0 percentage(275/$m-container-width)
+  +respond-to($t-container-width)
+    padding-top: 30px 
+  +respond-to($d-container-width)
+    padding-top: 30px
+  .header-in-button
+    color: $color-blue
+    +respond-to($t-container-width)
+      font-size: px2vw(9px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 12px)
+    +respond-to($d-container-width)
+      +font(size 14px)
 
 // carousel
 // .carousel
@@ -227,7 +261,7 @@ img
     left: auto
     right: auto
   +respond-to($m-container-width)
-    height: px2vw(310px,$m-container-width)
+    height: px2vw(230px,$m-container-width)
     padding-top: px2vw(50px,$m-container-width)
   +respond-to($t-container-width)
     height: 390px
@@ -321,7 +355,7 @@ img
   position: absolute
   color: #fff
   +respond-to($m-container-width)
-    top: px2vw(127px,$m-container-width)
+    top: px2vw(87px,$m-container-width)
     left: px2vw(10px,$m-container-width)
   +respond-to($t-container-width)
     width: 640px
@@ -346,19 +380,19 @@ img
     @extend %reset-box-model
     color: $color-yellow
     +respond-to($m-container-width)
-      font-size: px2vw(24px,$m-container-width)
+      font-size: px2vw(20px,$m-container-width)
     +respond-to($t-container-width)
       +font(size 32px)
     +respond-to($d-container-width)
-      +font(size 48px)
+      +font(size 40px)
     span
       color: $color-yellow
       +respond-to($m-container-width)
-        font-size: px2vw(24px,$m-container-width)
+        font-size: px2vw(10px,$m-container-width)
       +respond-to($t-container-width)
-        +font(size 32px)
+        +font(size 16px)
       +respond-to($d-container-width)
-        +font(size 36px)
+        +font(size 20px)
   .stars
     @extend %reset-box-model
     +respond-to($t-container-width)
@@ -371,11 +405,11 @@ img
     span
       color: $color-yellow
       +respond-to($m-container-width)
-        font-size: px2vw(20px,$m-container-width)
+        font-size: px2vw(16px,$m-container-width)
       +respond-to($t-container-width)
-        +font(size 24px line-height 20px)
+        +font(size 20px line-height 20px)
       +respond-to($d-container-width)
-        +font(size 36px line-height 18px)
+        +font(size 28px line-height 18px)
   ul
     @extend %reset-list
     @extend %reset-box-model
@@ -389,7 +423,7 @@ img
         padding-top: 17px
         +font(size 14px)
       +respond-to($d-container-width)
-        +font(size 24px)
+        +font(size 20px)
       &::after
         content: ""
         position: relative
@@ -399,7 +433,7 @@ img
         border: 0
   >button
     +respond-to($m-container-width)
-      font-size: px2vw(12px,$m-container-width)
+      font-size: px2vw(10px,$m-container-width)
       letter-spacing: -0.05em
       padding: px2vw(7px,$m-container-width) px2vw(20px,$m-container-width)
       margin:
@@ -521,32 +555,44 @@ img
 
 .ranking-boxoffice
   position: absolute
-  top: 130px
+  top: 200px
   right: 10px
   width: 295px
   height: 580px
   background: $color-blue
   // margin-right: -10px
-  opacity: 0
+  // opacity: 0
   ol
     @extend %reset-box-model
     padding: 20px 0 0 50px
   li
     color: #fff
-    padding: 15px
-    // &:hover::before
-    //   background: #076fd4
     a
       @extend %reset-a
+      position: relative
       display: block
       color: #fff
+      padding: 15px
+      z-index: 0
       &:hover
         color: $color-yellow
+      &::after
+        content: ''
+        z-index: -1
+        position: absolute
+        top: 0
+        left: -50px
+        width: 0
+        height: 0
+        background: #076fd4
+      &:hover::after
+        width: 295px
+        height: 54px
 
-.ranking-top3
-  opacity: 0
-  position: relative
-  margin-top: -20px
+// .ranking-top3
+
+//   position: relative
+//   margin-top: -20px
 
 .ranking-first
   position: relative
@@ -733,11 +779,77 @@ img
 .recommend
   width: 100vw
   overflow: hidden
-  // position: relative
+  position: relative
   h1
     @extend %reset-box-model
     @extend .h1-style
     @extend .h1-position
+
+
+.recommend-tabcontent-1
+  display: block
+.recommend-tabcontent-2
+  display: none
+.recommend-tabcontent-3
+  display: none
+
+.recommend-button
+  @extend .button-size
+  position: absolute
+  +respond-to($m-container-width)
+    top: px2vw(-50px,$m-container-width)
+    right: px2vw(20px,$m-container-width)
+  +respond-to($t-container-width)
+    top: -80px
+    right: 62px
+  +respond-to($d-container-width)
+    top: -110px
+    right: 68px
+
+.recommend-choice
+  +respond-to($m-container-width)
+    height: px2vw(280px,$m-container-width)
+  +respond-to($t-container-width)
+    height: 230px
+  +respond-to($d-container-width)
+    height: 200px
+
+
+.recommend-choice-wrapper
+  @extend .clearfix
+  padding-top: 20px
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  border-bottom: 1px solid $color-blue
+  border-top: 1px solid $color-blue
+
+
+
+.recommend-choice-button
+  @extend .button-size
+  margin: 20px 0
+  +respond-to($m-container-width)
+    margin-left: px2vw(10px,$m-container-width)
+ 
+
+
+.recommend-radio-choice
+  padding-top: 5px
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(11px,$m-container-width)
+  +respond-to($t-container-width)
+    +font(size 13px)
+  +respond-to($d-container-width)
+    +font(size 14px)
+  input
+    label
+      padding-right: 5px
+
+
+
 
 .recommend-carousel
   position: relative
@@ -906,6 +1018,7 @@ img
     +respond-to($m-container-width)
       height: px2vw(510px,$m-container-width)
     +respond-to($t-container-width)
+      width: 748px
       height: 330px
     +respond-to($d-container-width)
       width: 925px
@@ -972,7 +1085,7 @@ img
     +respond-to($t-container-width)
       width: 236px
       height: 260px
-      margin: 20px 5px 0 10px
+      margin: 20px 19px 0 0
     +respond-to($d-container-width)
       width: 295px
       height: 330px

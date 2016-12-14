@@ -6,10 +6,14 @@
 // 폰트와 함께있는 버튼
 
 .st-button-B
+  box-sizing: border-box
   border-radius: 50px
   background-color: $color-blue
+  border: 1px solid #fff
   color: #fff
-  font-weight: 700
+  &:hover
+    background: #fff
+    color: $color-blue
 
 .st-border-button-B
   box-sizing: border-box
@@ -17,6 +21,9 @@
   border-radius: 50px
   background: transparent
   color: $color-blue
+  &:hover
+    background: $color-blue
+    color: #fff
 
 .st-border-button-Y
   box-sizing: border-box
@@ -107,3 +114,11 @@
     @extend %content-center
     content: ""
     background: url("../images/icon/icon-close.svg") no-repeat
+
+
+// login, signup 버튼
+.st-in-button
+  border: 1px solid $color-blue
+  border-radius: 50px
+  background: transparent 
+  padding: 5px 15px
