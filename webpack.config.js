@@ -71,6 +71,7 @@ module.exports = {
     // ],
     'alias': {
       'spin' : 'spin.js',
+      'angular-auto-validate' : 'angular-auto-validate/dist/jcs-auto-validate'
       // 'jquery': 'jquery/dist/jquery.js'
     }
   }

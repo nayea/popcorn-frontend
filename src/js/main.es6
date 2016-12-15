@@ -10,7 +10,7 @@ let angular = require('angular');
 
 // 의존 모듈 로드
 require('angular-resource');
-require('angular-ui-router')
+require('angular-ui-router');
 // require('ng-infinite-scroll');
 // require('spin');
 // require('angular-spinner');
@@ -41,7 +41,7 @@ popcorn.config([
 	.state('edit',{
 			'url': '/detail/:id',
 			'templateUrl' : 'views/movieinfo.html',
-			'controller' : 'DetailController'
+			'controller' : 'moviedetailController'
 	});
 
       //$urlRouterProvider
@@ -58,22 +58,25 @@ popcorn.config([
 
 // Controllers
 require('./controllers/carouselController');
-// require('./controllers/rankingController');
-require('./controllers/DetailController');
+require('./controllers/rankingController');
+// require('./controllers/DetailController');
 require('./controllers/recommendSelectController');
 require('./controllers/recommendCountryController');
 require('./controllers/recommendGradeController');
+require('./controllers/moviedetailController');
 
 
 
 // Services
 require('./services/carouselDataShareService');
-// require('./services/rankingDataShareService');
+require('./services/rankingDataShareService');
 
 //recommend-select (genre, country, grade)
 require('./services/recommendSelectDataShareService');
 require('./services/recommendCountryDataShareService');
 require('./services/recommendGradeDataShareService');
+
+require('./services/moviedetailDataShareService');
 
 
 //directives
