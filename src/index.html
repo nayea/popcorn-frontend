@@ -102,7 +102,7 @@
 
      <!-- <div class="header-userinfo d-prefix-10">
         <img class="st-user-image" src="images/user-1.jpg" alt="회원 이미지">
-       <a href="#"> 
+       <a href="#">
         <span class="header-user-name m-hidden">이나영</span>
         <span class="header-user-selection" aria-label="로그인 정보 보기" role="button" tabindex="0"></span></a>
         </div> -->
@@ -112,15 +112,15 @@
         </div>
      </div>
   </header>
-  
+
 
 
 
   <section class="carousel" >
       <div id="main-carousel" aria-label="주요 영화 정보" data-ng-cloak data-ng-controller="carouselController">
-      
+
       <article data-label="팝콘 주요 영화 1" data-ng-repeat="movie in filteredMovies=(share_data.movies | filter:search )">
-        
+
            <div class="container ui-carousel-panels">
              <div class="row ui-carousel-movie-info">
                <a href="#">
@@ -145,7 +145,7 @@
                     <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
                </div>
                <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
-                 
+
                   <div class="video-dim-background">
                     <div class="video-pop">
                           <div class="rwd-iframe-container">
@@ -167,10 +167,10 @@
       </article>
 
 
-       
+
 
       </div>
-    
+
   </section>
 
 <!-- <div data-ng-cloak data-ng-init="
@@ -313,33 +313,33 @@
   <h1>맞춤 추천 영화</h1>
   <div class = "recommend-radio container" data-ng-switch="accordian_tabs.switch_on">
      <button type="button" data-ng-click="accordian_tabs.switch_on = !accordian_tabs.switch_on" class="recommend-button st-border-button-B">맞춤 영화 설정</button>
-    
+
         <div class="recommend-choice row" data-ng-show="accordian_tabs.switch_on">
 
            <div class="recommend-choice-wrapper recommend-tabcontent-1" data-ng-controller="recommendSelectController">
             <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice"  data-ng-repeat="movie in filteredMovies=(recommendSelect_data.movies | filter:search )">
              <input type="radio" id="{{movie.content}}" name="recommend-genre" value="{{movie.content}}"><label for="{{movie.content}}">{{movie.content}}<label>
            </div>
-            <button type="button" class="recommend-choice-tablinks-next-1 recommend-choice-button st-button-B t-push-5 d-push-1">다음단계</button> 
+            <button type="button" class="recommend-choice-tablinks-next-1 recommend-choice-button st-button-B t-push-5 d-push-1">다음단계</button>
           </div>
 
             <div class="recommend-choice-wrapper recommend-tabcontent-2" data-ng-controller="recommendCountryController">
             <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendCountry_data.movies | filter:search )">
              <input type="radio" id="{{person.name}}" name="recommend-genre" value="{{person.name}}"><label for="{{person.name}}">{{movie.content}}<label>
            </div>
-            <button type="button" class="recommend-choice-tablinks-prev-1 recommend-choice-button st-button-B t-push-4">이전단계</button> 
-            <button type="button" class="recommend-choice-tablinks-next-2 recommend-choice-button st-button-B t-push-4">다음단계</button> 
+            <button type="button" class="recommend-choice-tablinks-prev-1 recommend-choice-button st-button-B t-push-4">이전단계</button>
+            <button type="button" class="recommend-choice-tablinks-next-2 recommend-choice-button st-button-B t-push-4">다음단계</button>
           </div>
-           
+
           <div class="recommend-choice-wrapper recommend-tabcontent-3" data-ng-controller="recommendGradeController">
             <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendGrade_data.movies | filter:search )">
              <input type="radio" id="{{person.name}}" name="recommend-genre" value="{{person.name}}"><label for="{{person.name}}">{{movie.content}}<label>
            </div>
-             <button type="button" class="recommend-choice-tablinks-prev-2 recommend-choice-button st-button-B t-push-4">이전단계</button> 
-             <button type="button" class="recommend-choice-tablinks-finish recommend-choice-button st-button-B t-push-4">완료</button> 
+             <button type="button" class="recommend-choice-tablinks-prev-2 recommend-choice-button st-button-B t-push-4">이전단계</button>
+             <button type="button" class="recommend-choice-tablinks-finish recommend-choice-button st-button-B t-push-4">완료</button>
           </div>
   </div>
-   
+
     </div>
 
   <div id="recommend-movie" data-label="맞춤 추천영화 best6">
@@ -668,7 +668,7 @@
             <span>무비토크</span>
              <time datetime="2016/09/22">2016.09.22</time>
              <h3 class="magazine-content-main-title">끝까지 살아남아라<br>부산행 무빙 포토 예고편</h3>
-             <p class="magazine-content-main-desc">올여름 최고의 기대작 [부산행]의 행보가 심상치 않다. "역대 최고의 미드나잇 스크리닝"이라는 극찬을 받으며 칸 국제 영화제 최고의 화제작으로 포문을 연 전대미문의 재난 블록버스터 [부산행]이 7월 20일 개봉을 앞두고 네이버 무빙 포토 예고편을 독점 공개한다. 
+             <p class="magazine-content-main-desc">올여름 최고의 기대작 [부산행]의 행보가 심상치 않다. "역대 최고의 미드나잇 스크리닝"이라는 극찬을 받으며 칸 국제 영화제 최고의 화제작으로 포문을 연 전대미문의 재난 블록버스터 [부산행]이 7월 20일 개봉을 앞두고 네이버 무빙 포토 예고편을 독점 공개한다.
              영화 [부산행]은 전대미문 재난이 대한민국을 뒤덮은 가운데, 서울역을 출발한 부산행 열차에  ......</p>
                      </div></a>
         </div>
@@ -715,7 +715,7 @@
               </a>
         </div>
 
-         
+
       </div>
     </div>
 </section>
@@ -730,8 +730,3 @@
 </body>
 
 </html>
-
-
-
-
-
