@@ -9,7 +9,7 @@ angular
 
       // popcorn 모델 데이터
     $scope.recommendSelect_data = recommendSelectDataShareService;
-    console.log($scope.recommendSelect_data);
+    // console.log($scope.recommendSelect_data);
     // 컨트롤러 $scope 객체의 속성
     // $scope.search = {};
     $scope.search = '';
