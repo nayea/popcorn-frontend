@@ -51,6 +51,7 @@
   });
 })(jQuery);
 
+
 // (function(global) {
 //   'use strict';
 //
@@ -78,3 +79,4 @@
 //   	event.stopImmediatePropagation();
 //   });
 // })(this);
+

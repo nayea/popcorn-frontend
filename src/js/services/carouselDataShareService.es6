@@ -8,7 +8,7 @@ angular
   .factory('Contact', ['$resource', function($resource){
     // let url = 'https://codecraftpro.com/api/samples/v1/contact/:id/'; // 서버단에서 주는  api 를 받아서 반환
     return $resource(
-      'https://django-test.com/main/movie_recommends/carousel/',{},
+      'https://django-test.com/main/movie-recommends/carousel/',{},
       { 'get' : {method: 'GET', isArray: true}}
       );
   }])
@@ -18,7 +18,7 @@ angular
      var _service = {
         'selected_movie' : null,
         'movies' : [],
-       // 'has_more' : true, // 다음 페이지가 있으면 true
+       'has_more' : true, // 다음 페이지가 있으면 true
         'is_loading' : false,
         'loadContacts' : ( ) =>{
            Contact.get((data)  =>{
