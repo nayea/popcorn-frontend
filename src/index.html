@@ -8,71 +8,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>popcorn</title>
-  <link rel="shortcut icon" href="images/icon/popcorn-logo-small.svg">
-  <!-- <link rel="stylesheet" href="font/spoqaHanSans.css"> -->
+  <link rel="shortcut icon" href="images/logo-icon.png">
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-  <!-- <script src="./js/lib/jquery.easing.min.js"></script> -->
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-<script src="./js/lib/scrollmagic/TweenMax.min.js"></script> -->
-<!-- <script src="../node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script> -->
-   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
-
-    <style>
-    /*.toggle-palette-button {
-      cursor: pointer;
-      position: fixed;
-      z-index: 100;
-      top: 20px;
-      right: 20px;
-      border: 1px solid #E6E6E6;
-      background: #fff;
-      padding: 0.8em 1.2em;
-      border-radius: 4px;
-    }*/
-    .color-palette {
-      position: relative;
-      z-index: 100;
-      float: left;
-      width: 10%;
-      min-height: 100vh;
-      padding: 1em;
-      background-color: #fff;
-      box-sizing: border-box;
-      box-shadow: 4px 0px 6px hsla(0, 0%, 32%, 0.2);
-    }
-    .color-palette label {
-      cursor: pointer;
-      display: block;
-      margin-bottom: 0.4em;
-    }
-    .violet-red { color: #ff4183; }
-    .dove-gray { color: #757575; }
-    .governor-bay { color: #5549a6; }
-    .mahogany { color: #cf4646; }
-    .navi-blue { color: #0163c4; }
-    .color-place {
-      position: relative;
-      float: left;
-      width: 90%;
-      min-height: 100vh;
-      background-color: {{bg_color}};
-    }
-    .color-place:before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      content: '{{bg_color.toUpperCase()}}';
-      font-size: 100px;
-      letter-spacing: -0.03em;
-      color: #fff;
-      text-shadow: 0 0 3px hsla(0, 0%, 32%, 0.4);
-    }
-  </style>
+  <link rel="stylesheet" href="css/movieinfostyle.css">
 </head>
 
 <body>
@@ -115,84 +54,9 @@
 
 
 
-
-  <section class="carousel" >
-      <div id="main-carousel" aria-label="주요 영화 정보" data-ng-cloak data-ng-controller="carouselController">
-
-      <article data-label="팝콘 주요 영화 1" data-ng-repeat="movie in filteredMovies=(share_data.movies | filter:search )">
-
-           <div class="container ui-carousel-panels">
-             <div class="row ui-carousel-movie-info">
-               <a href="#">
-                 <span class="popcorn-label">[Popcorn 추천영화]</span>
-                 <h2>{{movie.title_kor}}<span>({{movie.title_eng}})</span></h2>
-                 <div class="stars">
-                   <img src="images/main-carousel/stars.png" alt="">
-                   <span>3.9</span>
-                 </div>
-                 <ul role="presentation">
-                   <li>{{movie.genre[0].content}}{{movie.genre[1].content}}</li>
-                   <li>{{movie.created_year}}</li>
-                   <li>{{movie.run_time}}</li>
-                   <li>{{movie.making_country[0].content}}</li>
-                   <li>{{movie.grade.content}}</li>
-                 </ul>
-                 </a>
-
-                <div class="video-thumbnail">
-                  <img data-ng-src="{{movie.image_set[0].url}}" src="images/main-carousel/t-carousel-thumbnail.jpg" alt="예고편" class="m-hidden d-hidden" width="234" height="152">
-                    <img data-ng-src="{{movie.image_set[0].url}}" src="images/main-carousel/d-carousel-thumbnail.jpg" alt="예고편" class="m-hidden t-hidden" width="315" height="200">
-                    <button class="video-play st-play-button-inverse m-hidden"><span class="readable-hidden">예고편 보기</span></button>
-               </div>
-               <button type="button" class="video-play-m st-border-button-Y t-hidden d-hidden">예고편 보기</button>
-
-                  <div class="video-dim-background">
-                    <div class="video-pop">
-                          <div class="rwd-iframe-container">
-                          <!--   <iframe
-                                width="640"
-                                height="360"
-                                src="https://www.youtube.com/embed/jYq1pHJYQmw?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe> -->
-                          </div>
-                          <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
-                </div>
-                 </div>
-
-               <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
-             </div>
-           </div>
-          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 1" class="t-hidden d-hidden">
-          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/t-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden d-hidden">
-          <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/d-bg.jpg" alt="팝콘 주요 영화 1" class="m-hidden t-hidden">
-      </article>
+<div data-main-carousel data-ui-view></div>
 
 
-
-
-      </div>
-
-  </section>
-
-<!-- <div data-ng-cloak data-ng-init="
-  bg_color='#5549a6';
-  is_hidden=!true;
-">
-
- <button class="toggle-palette-button" type="button" data-ng-click="is_hidden=!is_hidden">
-    <span data-ng-show="!is_hidden">컬러 팔레트 감추기</span>
-    <span data-ng-show="is_hidden">컬러 팔레트 보이기</span>
-  </button>
-
-  <div class="color-palette" data-ng-hide="is_hidden">
-    <label class="violet-red"><input type="radio" data-ng-model="bg_color" value="#ff4183"> Violet Red</label>
-    <label class="dove-gray"><input type="radio" data-ng-model="bg_color" value="#757575"> Dove Gray</label>
-    <label class="governor-bay"><input type="radio" data-ng-model="bg_color" value="#5549a6"> Govenor Bay</label>
-    <label class="mahogany"><input type="radio" data-ng-model="bg_color" value="#cf4646"> Mahogany</label>
-    <label class="navi-blue"><input type="radio" data-ng-model="bg_color" value="#0163c4"> Navi Blue</label>
-  </div>
-
-  <div class="color-place"></div>
-</div> -->
 <!-- <div id="trigger1" class="spacer s0"></div> -->
   <section class="ranking container" id="menu-ranking">
       <div class="row">
@@ -224,7 +88,7 @@
                  </a>
            </div>
             <img src="images/main-ranking/d-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-hidden t-hidden" width="525" height="580">
-            <img src="images/main-ranking/ t-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-hidden d-hidden" width="748" height="290">
+            <img src="images/main-ranking/t-minion.jpg" alt="금주 박스오피스 1위" class="m-hidden d-hidden" width="748" height="290">
             <img src="images/main-ranking/m-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-top-img t-hidden d-hidden" width="330" height="300">
           </article>
 
@@ -318,7 +182,7 @@
 
            <div class="recommend-choice-wrapper recommend-tabcontent-1" data-ng-controller="recommendSelectController">
             <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice"  data-ng-repeat="movie in filteredMovies=(recommendSelect_data.movies | filter:search )">
-             <input type="radio" id="{{movie.content}}" name="recommend-genre" value="{{movie.content}}"><label for="{{movie.content}}">{{movie.content}}<label>
+             <input type="checkbox" id="{{movie.content}}" name="recommend-genre" value="{{movie.content}}"><label for="{{movie.content}}">{{movie.content}}<label>
            </div>
             <button type="button" class="recommend-choice-tablinks-next-1 recommend-choice-button st-button-B t-push-5 d-push-1">다음단계</button>
           </div>
@@ -655,70 +519,41 @@
 </div>
 </section>
 
-<section class="magazine">
+<section class="magazine" data-ng-controller="magazineController">
     <div class="row">
       <div class="d-col-9 t-col-8 m-col-4">
         <h1>매거진</h1>
-        <div class="magazine-content-main">
+        <div class="magazine-content-main" data-ng-repeat="movie in filteredMovies=(magazine_data.movies | filter:search )" data-ng-show=$first>
           <a href="#">
         <div class="magazine-content-main-image">
-            <img src="images/main-magazine/magazine-content-main.jpg" alt="매거진 콘텐츠" width="507" height="330">
+            <img data-ng-src={{movie.img_url}} src="images/main-magazine/magazine-content-main.jpg" alt="매거진 콘텐츠" width="507" height="330">
         </div>
             <div class="magazine-content-main-info m-col-4">
-            <span>무비토크</span>
-             <time datetime="2016/09/22">2016.09.22</time>
-             <h3 class="magazine-content-main-title">끝까지 살아남아라<br>부산행 무빙 포토 예고편</h3>
-             <p class="magazine-content-main-desc">올여름 최고의 기대작 [부산행]의 행보가 심상치 않다. "역대 최고의 미드나잇 스크리닝"이라는 극찬을 받으며 칸 국제 영화제 최고의 화제작으로 포문을 연 전대미문의 재난 블록버스터 [부산행]이 7월 20일 개봉을 앞두고 네이버 무빙 포토 예고편을 독점 공개한다.
-             영화 [부산행]은 전대미문 재난이 대한민국을 뒤덮은 가운데, 서울역을 출발한 부산행 열차에  ......</p>
-                     </div></a>
+              <span>무비토크</span>
+               <h3 class="magazine-content-main-title">{{movie.title}}</h3>
+               <p class="magazine-content-main-desc">{{movie.content}}</p>
+            </div></a>
         </div>
 
-        <div class="magazine-content">
+        <div class="magazine-content" data-ng-repeat="movie in filteredMovies=(magazine_data.movies | filter:search )" data-ng-show="($index>0) && ($index<4)">
           <a href="#">
           <div class="magazine-content-image">
-            <img src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
+            <img data-ng-src={{movie.img_url}} src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
           </div>
             <div class="magazine-content-info">
-            <span>매거진</span>
-             <time datetime="2016/09/22">2016.09.22</time>
-             <h3 class="magazine-content-title">군도 민란의 시대 무비토크</h3>
-             <p class="magazine-content-desc">주역 배우들이 전해주는 현장 이야기</p>
-              </div>
-              </a>
+              <span>매거진</span>
+               <h3 class="magazine-content-title">{{movie.title}}</h3>
+            </div>
+          </a>
         </div>
 
-        <div class="magazine-content">
-          <a href="#">
-          <div class="magazine-content-image">
-            <img src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
-          </div>
-            <div class="magazine-content-info">
-            <span>매거진</span>
-             <time datetime="2016/09/22">2016.09.22</time>
-             <h3 class="magazine-content-title">군도 민란의 시대 무비토크</h3>
-             <p class="magazine-content-desc">주역 배우들이 전해주는 현장 이야기</p>
-              </div>
-              </a>
-        </div>
-
-        <div class="magazine-content">
-          <a href="#">
-          <div class="magazine-content-image">
-            <img src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
-          </div>
-            <div class="magazine-content-info">
-            <span>매거진</span>
-             <time datetime="2016/09/22">2016.09.22</time>
-             <h3 class="magazine-content-title">군도 민란의 시대 무비토크</h3>
-             <p class="magazine-content-desc">주역 배우들이 전해주는 현장 이야기</p>
-              </div>
-              </a>
-        </div>
 
 
       </div>
     </div>
 </section>
+
+
 </div>
 </div>
 

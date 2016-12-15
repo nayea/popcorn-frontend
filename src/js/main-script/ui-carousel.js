@@ -255,6 +255,7 @@ $video_pop_close.on('click',function(){
 
 var stealcuts = $('.ui-carousel-tabpanel >img');
 
+// console.log(stealcuts);
 $.each(stealcuts,function(idx){
   var stealcut_imgs = stealcuts.attr('data-ng-src');
   console.log(stealcut_imgs);
