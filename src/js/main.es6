@@ -9,8 +9,8 @@ let angular = require('angular');
 // 의존 모듈 로드
 require('angular-resource');
 // require('ng-infinite-scroll');
-require('spin');
-require('angular-spinner');
+// require('spin');
+// require('angular-spinner');
 
 // App 모듈 정의 (의존 모듈 주입)
 let popcorn = angular.module('PopcornListApp', ['ngResource']);
