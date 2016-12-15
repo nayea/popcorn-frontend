@@ -20,6 +20,15 @@ angular
         'movies' : [],
        'has_more' : true, // 다음 페이지가 있으면 true
         'is_loading' : false,
+        'selectMovie': (id) => {
+           for( let i=0, l= _service.movies.length; i<l; i++){
+            let movie = _service.movies[i];
+            if( movie.id === id){
+              // return movie;
+              _service.selected_movie =movie;
+            }
+           }
+        },
         'loadContacts' : ( ) =>{
            Contact.get((data)  =>{
              angular.forEach(data, (movie) => {

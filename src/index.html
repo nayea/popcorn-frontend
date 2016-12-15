@@ -58,27 +58,26 @@
 
 
 <!-- <div id="trigger1" class="spacer s0"></div> -->
-  <section class="ranking container" id="menu-ranking">
+ <section class="ranking container" id="menu-ranking" data-ng-cloak data-ng-controller="rankingController">
       <div class="row">
         <h1>금주 박스 오피스</h1>
         <div class="ranking-top3">
          <h2 class="readable-hidden">금주 박스 오피스 top 3</h2>
-          <article id="sm-ranking-top1" class="ranking-first t-col-8 m-col-4">
+
+          <article id="sm-ranking-top1" class="ranking-first t-col-8 m-col-4" data-ng-repeat="movie in filteredMovies=(ranking_data.movies | filter:search | orderBy:order)" data-ng-show="$first">
            <div class="ranking-movie-info">
               <a href="#">
-                 <h3>도둑들 <span>(The Thieves)</span></h3>
+                 <h3>{{movie.movie.title_kor}}<span>({{movie.movie.title_eng}})</span></h3>
                  <div class="ranking-movie-info-desc">
                    <ul>
-                     <li>예매율 1위</li>
-                     <li>2일전 개봉</li>
-                     <li>누적관객수 100만명</li>
+                     <li>예매율 {{movie.rank}}위 {{movie.ticketing_rate}}%</li>
+                     <li>{{movie.release_date}} 개봉</li>
                    </ul>
                    <ul role="presentation">
-                     <li>범죄, 액션, 드라마</li>
-                     <li>2일전 개봉</li>
-                     <li>135분</li>
-                     <li>한국</li>
-                     <li>15세 관람가</li>
+                     <li>{{movie.movie.genre[0].content}} {{movie.movie.genre[1].content}}</li>
+                     <li>{{movie.movie.run_time}}</li>
+                     <li>{{movie.movie.making_country[0].content}}</li>
+                     <li>{{movie.movie.grade.content}}</li>
                    </ul>
                  </div>
                  <div class="stars">
@@ -87,89 +86,55 @@
                  </div>
                  </a>
            </div>
-            <img src="images/main-ranking/d-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-hidden t-hidden" width="525" height="580">
-            <img src="images/main-ranking/t-minion.jpg" alt="금주 박스오피스 1위" class="m-hidden d-hidden" width="748" height="290">
-            <img src="images/main-ranking/m-harrypotter.jpg" alt="금주 박스오피스 1위" class="m-top-img t-hidden d-hidden" width="330" height="300">
+            <div class="rankingimage-wrapper-main">
+              <img data-ng-src ="{{movie.movie.image_set[1].url}}" src="images/main-ranking/d-harrypotter.jpg" alt="금주 박스오피스 1위" >
+              <img data-ng-src ="{{movie.movie.image_set[1].url}}" src="images/main-ranking/d-harrypotter.jpg" alt="금주 박스오피스 1위" class="d-hidden m-hidden">
+            </div>
           </article>
 
-          <article id="sm-ranking-top2" class="ranking-second t-col-4 m-col-4">
-            <div class="ranking-movie-info">
-              <a href="#">
-                 <h3>도둑들 <span>(The Thieves)</span></h3>
-                 <div class="ranking-movie-info-desc">
-                   <ul>
-                     <li>예매율 1위</li>
-                     <li>2일전 개봉</li>
-                     <li>누적관객수 100만명</li>
-                   </ul>
-                   <ul role="presentation">
-                     <li>범죄, 액션, 드라마</li>
-                     <li>2일전 개봉</li>
-                     <li>135분</li>
-                     <li>한국</li>
-                     <li>15세 관람가</li>
-                   </ul>
-                 </div>
-                 <div class="stars">
-                   <img src="images/main-carousel/stars.png" alt="영화 평점">
-                   <span>3.9</span>
-                 </div>
-                 </a>
-           </div>
-            <img src="images/main-ranking/d-thieves.jpg" alt="금주 박스오피스 2위" class="m-hidden t-hidden" width="420" height="290">
-            <img src="images/main-ranking/t-thieves.jpg" alt="금주 박스오피스 2위" class="m-hidden d-hidden" width="374" height="290">
-            <img src="images/main-ranking/m-thieves.jpg" alt="금주 박스오피스 2위" class="m-top-img d-hidden t-hidden" width="330" height="150">
-          </article>
-          <article id="sm-ranking-top3" class="ranking-second m-col-4">
-            <div class="ranking-movie-info">
-              <a href="#">
-                 <h3>도둑들 <span>(The Thieves)</span></h3>
-                 <div class="ranking-movie-info-desc">
-                   <ul>
-                     <li>예매율 1위</li>
-                     <li>2일전 개봉</li>
-                     <li>누적관객수 100만명</li>
-                   </ul>
-                   <ul role="presentation">
-                     <li>범죄, 액션, 드라마</li>
-                     <li>2일전 개봉</li>
-                     <li>135분</li>
-                     <li>한국</li>
-                     <li>15세 관람가</li>
-                   </ul>
-                 </div>
-                 <div class="stars">
-                   <img src="images/main-carousel/stars.png" alt="영화 평점">
-                   <span>3.9</span>
-                 </div>
-                 </a>
-           </div>
-            <img src="images/main-ranking/d-minion.jpg" alt="금주 박스오피스 3위" class="m-hidden t-hidden" width="420" height="290">
-            <img src="images/main-ranking/t-minion.jpg" alt="금주 박스오피스 3위" class="m-hidden d-hidden" width="374" height="290">
-            <img src="images/main-ranking/m-minion.jpg" alt="금주 박스오피스 3위" class="m-top-img d-hidden t-hidden" width="330" height="150">
-          </article>
+        <div class="ranking-top2-wrapper">
 
+            <article id="sm-ranking-top2" class="ranking-second m-col-4" data-ng-repeat="movie in filteredMovies=(ranking_data.movies | filter:search | orderBy:order)" data-ng-show="($index > 0) && ($index<3)"">
+              <div class="ranking-movie-info">
+                <a href="#">
+                   <h3>{{movie.movie.title_kor}}<span>({{movie.movie.title_eng}})</span></h3>
+                   <div class="ranking-movie-info-desc">
+                     <ul>
+                       <li>예매율 {{movie.rank}}위 {{movie.ticketing_rate}}%</li>
+                       <li>{{movie.release_date}} 개봉</li>
+                     </ul>
+                     <ul role="presentation">
+                       <li>{{movie.movie.genre[0].content}} {{movie.movie.genre[1].content}}</li>
+                       <li>{{movie.movie.run_time}}</li>
+                       <li>{{movie.movie.making_country[0].content}}</li>
+                       <li>{{movie.movie.grade.content}}</li>
+                     </ul>
+                   </div>
+                   <div class="stars">
+                     <img src="images/main-carousel/stars.png" alt="영화 평점">
+                     <span>3.9</span>
+                   </div>
+                   </a>
+             </div>
+              <div class="rankingimage-wrapper">
+                <img data-ng-src ="{{movie.movie.image_set[1].url}}" src="images/main-ranking/d-thieves.jpg" alt="금주 박스오피스 2위" >
+              </div>
+            </article>
+        </div>
 
         </div>
+
              <div class="ranking-boxoffice m-hidden t-hidden">
               <h2 class="readable-hidden">금주 박스 오피스 top 10</h2>
                  <ol role="presentation" class="ranking-boxoffice-ol">
-                   <li><a href="#">해리포터와 불의 잔</a></li>
-                   <li><a href="#">도둑들</a></li>
-                   <li><a href="#">미니언즈</a></li>
-                   <li><a href="#">해리포터와 불의 잔</a></li>
-                   <li><a href="#">도둑들</a></li>
-                   <li><a href="#">미니언즈</a></li>
-                   <li><a href="#">해리포터와 불의 잔</a></li>
-                   <li><a href="#">도둑들</a></li>
-                   <li><a href="#">미니언즈</a></li>
-                   <li><a href="#">미니언즈</a></li>
+                   <li data-ng-repeat="movie in filteredMovies=(ranking_data.movies | filter:search | orderBy:order)" ><a href="#"> {{movie.rank}}위<span>{{movie.movie.title_kor}}</span></a></li>
                  </ol>
              </div>
+
       </div>
   </section>
 
-       <div class="spacer s2"></div>
+   <!--     <div class="spacer s2"></div> -->
 
 
 

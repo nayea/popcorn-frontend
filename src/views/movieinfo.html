@@ -1,20 +1,20 @@
-<div>
+<div data-ng-repeat="movie in filteredMovies=(moviedetail_data.movies | filter:search )">
     <section class="movie-info">
       <div role="group" class="movie-info-group-wrapper">
 				<div class="container  h400 row">
-					<img class="movie-info-poster m-col-2 t-col-2 d-col-3" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="신비한 동물사전 포스터">
+					<img class="movie-info-poster m-col-2 t-col-2 d-col-3" data-ng-src="{{movie.img_url}}" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="신비한 동물사전 포스터">
 					<div class="dumy t-col-8"></div>
 					<div role="group" class="movie-info-group m-col-4 t-col-8 d-col-12">
       	  	<ul class="movie-info-list m-col-2 m-prefix-2 t-col-6 t-prefix-2 d-prefix-3">
-      	  	  <li class="movie-title" aria-label="제목">{{share_data.selected_movie.title_kor}}<span>
-      	  	  ({{share_data.selected_movie.eng_kor}})</span></li>
+      	  	  <li class="movie-title" aria-label="제목">{{movie.title_kor}}<span>
+      	  	  ({{movie.title_eng}})</span></li>
       	  	  <li class="movie-grade-group row" aria-label="평점">
 	      					<div class="star"></div>
 	      					<div class="star"></div>
 	      					<div class="star"></div>
 	      					<div class="star"></div>
 	      					<div class="non-star"></div>
-									<div class="movie-grade">3.9</div>
+						 <div class="movie-grade">3.9</div>
       	  	  </li>
       	  	  <li>
       	  	    <ul class="movie-info-sub">
@@ -35,9 +35,7 @@
 		<section class="movie-summary container">
 			<h1 class="movie-summary-heading t-col-1 t-prefix-2 d-col-1 d-prefix-3">줄거리</h1>
 			<p class="movie-summary-paragraph m-col-4 t-col-6 t-push-2 d-col-9 d-prefix-3">
-				<span>‘해리 포터’ 마법의 시작!</span>
-				<span>신비한 동물들 탈출, 뉴욕 최대의 위기! 새로운 마법의 시대가 열린다!</span>
-				1926년 뉴욕, ‘검은 존재’가 거리를 쑥대밭으로 만들고 미국의 마법의회 MACUSA의 대통령과 어둠의 마법사를 체포하는 오러의 수장 그레이브스가 이를 추적하는 혼돈 속에 영국의 마법사 뉴트 스캐맨더가 이 곳을 찾는다. 그의 목적은 세계 곳곳에 숨어있는 신비한 동물들을 찾기 위한 것. 여행을 하면서 다양한 크기의 신비한 동물을 구조해 안에 마법의 공간이 있는 가방에 넣어 다니며 보살핀다. 하지만 은행을 지나던 중 금은보화를 좋아하는 신비한 동물인 니플러가 가방 안에서 탈출을 하고 이 일로 전직 오러였던 티나와 노마지 제이콥과 엮이게 된다. 이 사고로 뉴트와 제이콥의 가방이 바뀌면서 신비한 동물들이 대거 탈출을 하고 그들은 동물들을 찾기 위해 뉴욕 곳곳을 누빈다. 한편, ‘검은 존재’의 횡포는 더욱 거세져 결국 인간 사회와 마법 사회를 발칵 뒤집는 사건이 발생하고, 이 모든 것이 뉴트의 소행이라는 오해를 받게 되는데…
+			{{movie.synopsis}}
 			</p>
 		</section>
 		<section class="movie-actor container">
@@ -100,22 +98,22 @@
 					<ul class="movie-still-list">
 						<li class="">
 							<button type="button">
-								<img src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
+								<img data-ng-src="{{movie.image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="">
+								<img data-ng-src="{{movie.image_set[1].url}}" src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="">
+								<img data-ng-src="{{movie.image_set[2].url}}"  src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="">
+								<img data-ng-src="{{movie.image_set[3].url}}" src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="">
 							</button>
 						</li>
 					</ul>
