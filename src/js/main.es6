@@ -2,7 +2,9 @@
 
 
 // 빌드시 아래 주석을 해제한 후 빌드
-// require('jquery');
+require('./lib/jquery');
+require('./lib/jquery.easing.min');
+
 let angular = require('angular');
 
 
@@ -28,17 +30,22 @@ popcorn.config([
 	'$stateProvider',
 	'$urlRouterProvider',
 	($httpProvider,$resourceProvider,$stateProvider,$urlRouterProvider)=>{
-       
+
       //$stateProvider
- //      $stateProvider
-	// 	.state('list',{
-	// 		'url': '/',
-	// 		'templateUrl' : 'views/mainCarousel.html',
-	// 		'controller' : 'carouselController'
-	// });
-      
+      $stateProvider
+	.state('list',{
+			'url': '/',
+			'templateUrl' : 'views/mainCarousel.html',
+			'controller' : 'carouselController'
+	})
+	.state('edit',{
+			'url': '/detail/:id',
+			'templateUrl' : 'views/movieinfo.html',
+			'controller' : 'DetailController'
+	});
+
       //$urlRouterProvider
-      // $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/');
 
       //ngResource
 	let token = 'Token ffa44753118e755c0c28070fcbcc6c9a048b99bf';
@@ -48,17 +55,11 @@ popcorn.config([
 
 
 
-// require('./lib/jquery.js');
-// require('./lib/jquery.easing.min.js');
-// require('./lib/scrollmagic/uncompressed/ScrollMagic.js');
-// require('./lib/scrollmagic/uncompressed/plugins/debug.addIndicators.js');
-// require('./lib/scrollmagic/uncompressed/plugins/animation.gsap.js');
-// require('./lib/scrollmagic/TweenMax.min.js')
 
 // Controllers
 require('./controllers/carouselController');
 // require('./controllers/rankingController');
-// require('./controllers/DetailController');
+require('./controllers/DetailController');
 require('./controllers/recommendSelectController');
 require('./controllers/recommendCountryController');
 require('./controllers/recommendGradeController');
@@ -75,20 +76,21 @@ require('./services/recommendCountryDataShareService');
 require('./services/recommendGradeDataShareService');
 
 
+//directives
+require('./directives/mainCarousel');
+// require('./directives/movieinfoDirectives');
+
 // Filters
 require('./filters/readingZeroFilter');
 
 
 
 // main-script
-require('./main-script/ui-carousel.js');
-require('./main-script/header-scroll.js');
-require('./main-script/recommend-carousel.js');
-require('./main-script/recommend-choice.js');
-require('./main-script/ranking-hover.js');
+// require('./main-script/ui-carousel');
+require('./main-script/header-scroll');
+require('./main-script/recommend-carousel');
+require('./main-script/recommend-choice');
+require('./main-script/ranking-hover');
 // require('./main-script/scroll-effect.js');
-
-
-// movie-info script
-require('./movie-info/movieinfo.js');
-
+//
+// require('../views/mainCarousel.html');
