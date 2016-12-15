@@ -3,7 +3,7 @@
       <div role="group" class="movie-info-group-wrapper">
 				<div class="container  h400 row">
 					<img class="movie-info-poster m-col-2 t-col-2 d-col-3" data-ng-src="{{movie.img_url}}" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="신비한 동물사전 포스터">
-					<div class="dumy t-col-8"></div>	
+					<div class="dumy t-col-8"></div>
 					<div role="group" class="movie-info-group m-col-4 t-col-8 d-col-12">
       	  	<ul class="movie-info-list m-col-2 m-prefix-2 t-col-6 t-prefix-2 d-prefix-3">
       	  	  <li class="movie-title" aria-label="제목">{{movie.title_kor}}<span>
@@ -98,22 +98,22 @@
 					<ul class="movie-still-list">
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="최종 예고편">
+								<img data-ng-src="{{movie.image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[1].url}}" src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="60초 예고편">
+								<img data-ng-src="{{movie.image_set[1].url}}" src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[2].url}}"  src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="30초 예고편">
+								<img data-ng-src="{{movie.image_set[2].url}}"  src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[3].url}}" src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="3차 예고편">
+								<img data-ng-src="{{movie.image_set[3].url}}" src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="">
 							</button>
 						</li>
 					</ul>
@@ -201,12 +201,12 @@
 		</section>
 		<section class="movie-comment container">
 			<div class="movie-comment-wrap">
-				<h1 class="movie-comment-heading m-col-1 row">평점</h1>
+				<h1 class="movie-comment-heading m-col-1 row">평점평점평점</h1>
 				<button class="movie-comment-add-button">평점 등록하기</button>
 				<div class="movie-comment-rating-group m-col-4 t-col-8">
 					<div class="star-rating-group">
-						<form action="#" id="star_rating">
-						 	<input
+            <form action="#" id="star_rating">
+              <input
 								value="0"
 								id="star0"
 								checked
@@ -217,6 +217,35 @@
 								<span class="">0</span>
 							</label>
 
+              <input
+                value="0.5"
+                id="star0.5"
+                type="radio"
+                name="rating"
+                class="readable-hidden">
+              <label for="star0.5">
+                <span class="">0.5</span>
+                <svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-353.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+
+              </label>
+
 							<input
 								value="1"
 								id="star1"
@@ -224,14 +253,55 @@
 								name="rating"
 								class="readable-hidden">
 							<label for="star1">
-								<span class="">1</span>
-								<svg width="22px" height="22px" viewBox="98 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-								    <desc>Created with Sketch.</desc>
-								    <defs></defs>
-								    <path d="M118.565967,9.06366258 C118.959635,8.66321114 119.0986,8.0754922 118.928798,7.52915604 C118.758596,6.98281988 118.315269,6.59281863 117.770622,6.51005309 L112.928068,5.77561343 C112.721823,5.74426284 112.543611,5.60924633 112.451501,5.4140367 L110.286529,0.834343519 C110.04344,0.319775948 109.550054,0 109.0002,0 C108.450747,0 107.957361,0.319775948 107.714272,0.834343519 L105.548899,5.41445471 C105.45679,5.60966434 105.278177,5.74468085 105.071932,5.77603143 L100.229378,6.51047109 C99.6851311,6.59281863 99.2414039,6.98323789 99.0712016,7.52957405 C98.9013998,8.07591021 99.040365,8.66362914 99.4340328,9.06408059 L102.937796,12.6288509 C103.087174,12.7810057 103.155655,13.0000418 103.120413,13.2140618 L102.293831,18.2477114 C102.220544,18.6907996 102.331876,19.1217657 102.606603,19.461606 C103.03351,19.9912218 103.778796,20.1525728 104.374704,19.8256908 L108.70545,17.4488985 C108.886465,17.3498307 109.114336,17.3506667 109.29495,17.4488985 L113.626097,19.8256908 C113.836748,19.9414789 114.061414,20 114.29329,20 C114.716593,20 115.11787,19.8035363 115.393798,19.461606 C115.668925,19.1217657 115.779857,18.6899636 115.706569,18.2477114 L114.879587,13.2140618 C114.844345,12.9996238 114.912826,12.7810057 115.062204,12.6288509 L118.565967,9.06366258 L118.565967,9.06366258 Z" id="Shape-Copy-4" stroke="#F8E81C" stroke-width="1" fill="currentColor"></path>
-								</svg>
+								<span class="">1.0</span>
+                <svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-355.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" transform="translate(54.498841, 34.995000) scale(-1, 1) translate(-54.498841, -34.995000) " xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
 							</label>
+
+              <input
+                value="1.5"
+                id="star1.5"
+                type="radio"
+                name="rating"
+                class="readable-hidden">
+              <label for="star1.5">
+                <span class="">1.5</span>
+                <svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-353.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+
+              </label>
 
 							<input
 								value="2"
@@ -240,14 +310,55 @@
 								name="rating"
 								class="readable-hidden">
 							<label for="star2">
-								<span class="">2</span>
-								<svg width="22px" height="22px" viewBox="98 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-								    <desc>Created with Sketch.</desc>
-								    <defs></defs>
-								    <path d="M118.565967,9.06366258 C118.959635,8.66321114 119.0986,8.0754922 118.928798,7.52915604 C118.758596,6.98281988 118.315269,6.59281863 117.770622,6.51005309 L112.928068,5.77561343 C112.721823,5.74426284 112.543611,5.60924633 112.451501,5.4140367 L110.286529,0.834343519 C110.04344,0.319775948 109.550054,0 109.0002,0 C108.450747,0 107.957361,0.319775948 107.714272,0.834343519 L105.548899,5.41445471 C105.45679,5.60966434 105.278177,5.74468085 105.071932,5.77603143 L100.229378,6.51047109 C99.6851311,6.59281863 99.2414039,6.98323789 99.0712016,7.52957405 C98.9013998,8.07591021 99.040365,8.66362914 99.4340328,9.06408059 L102.937796,12.6288509 C103.087174,12.7810057 103.155655,13.0000418 103.120413,13.2140618 L102.293831,18.2477114 C102.220544,18.6907996 102.331876,19.1217657 102.606603,19.461606 C103.03351,19.9912218 103.778796,20.1525728 104.374704,19.8256908 L108.70545,17.4488985 C108.886465,17.3498307 109.114336,17.3506667 109.29495,17.4488985 L113.626097,19.8256908 C113.836748,19.9414789 114.061414,20 114.29329,20 C114.716593,20 115.11787,19.8035363 115.393798,19.461606 C115.668925,19.1217657 115.779857,18.6899636 115.706569,18.2477114 L114.879587,13.2140618 C114.844345,12.9996238 114.912826,12.7810057 115.062204,12.6288509 L118.565967,9.06366258 L118.565967,9.06366258 Z" id="Shape-Copy-4" stroke="#F8E81C" stroke-width="1" fill="currentColor"></path>
-								</svg>
+								<span class="">2.0</span>
+                <svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-355.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" transform="translate(54.498841, 34.995000) scale(-1, 1) translate(-54.498841, -34.995000) " xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
 							</label>
+
+              <input
+                value="2.5"
+                id="star2.5"
+                type="radio"
+                name="rating"
+                class="readable-hidden">
+              <label for="star2.5">
+                <span class="">2.5</span>
+                <svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-353.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+
+              </label>
 
 							<input
 								value="3"
@@ -256,14 +367,55 @@
 								name="rating"
 								class="readable-hidden">
 							<label for="star3">
-								<span class="">3</span>
-								<svg width="22px" height="22px" viewBox="98 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-								    <desc>Created with Sketch.</desc>
-								    <defs></defs>
-								    <path d="M118.565967,9.06366258 C118.959635,8.66321114 119.0986,8.0754922 118.928798,7.52915604 C118.758596,6.98281988 118.315269,6.59281863 117.770622,6.51005309 L112.928068,5.77561343 C112.721823,5.74426284 112.543611,5.60924633 112.451501,5.4140367 L110.286529,0.834343519 C110.04344,0.319775948 109.550054,0 109.0002,0 C108.450747,0 107.957361,0.319775948 107.714272,0.834343519 L105.548899,5.41445471 C105.45679,5.60966434 105.278177,5.74468085 105.071932,5.77603143 L100.229378,6.51047109 C99.6851311,6.59281863 99.2414039,6.98323789 99.0712016,7.52957405 C98.9013998,8.07591021 99.040365,8.66362914 99.4340328,9.06408059 L102.937796,12.6288509 C103.087174,12.7810057 103.155655,13.0000418 103.120413,13.2140618 L102.293831,18.2477114 C102.220544,18.6907996 102.331876,19.1217657 102.606603,19.461606 C103.03351,19.9912218 103.778796,20.1525728 104.374704,19.8256908 L108.70545,17.4488985 C108.886465,17.3498307 109.114336,17.3506667 109.29495,17.4488985 L113.626097,19.8256908 C113.836748,19.9414789 114.061414,20 114.29329,20 C114.716593,20 115.11787,19.8035363 115.393798,19.461606 C115.668925,19.1217657 115.779857,18.6899636 115.706569,18.2477114 L114.879587,13.2140618 C114.844345,12.9996238 114.912826,12.7810057 115.062204,12.6288509 L118.565967,9.06366258 L118.565967,9.06366258 Z" id="Shape-Copy-4" stroke="#F8E81C" stroke-width="1" fill="currentColor"></path>
-								</svg>
+								<span class="">3.0</span>
+                <svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-355.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" transform="translate(54.498841, 34.995000) scale(-1, 1) translate(-54.498841, -34.995000) " xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
 							</label>
+
+              <input
+                value="3.5"
+                id="star3.5"
+                type="radio"
+                name="rating"
+                class="readable-hidden">
+              <label for="star3.5">
+                <span class="">3.5</span>
+                <svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-353.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+
+              </label>
 
 							<input
 								value="4"
@@ -272,14 +424,55 @@
 								name="rating"
 								class="readable-hidden">
 							<label for="star4">
-								<span class="">4</span>
-								<svg width="22px" height="22px" viewBox="98 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-								    <desc>Created with Sketch.</desc>
-								    <defs></defs>
-								    <path d="M118.565967,9.06366258 C118.959635,8.66321114 119.0986,8.0754922 118.928798,7.52915604 C118.758596,6.98281988 118.315269,6.59281863 117.770622,6.51005309 L112.928068,5.77561343 C112.721823,5.74426284 112.543611,5.60924633 112.451501,5.4140367 L110.286529,0.834343519 C110.04344,0.319775948 109.550054,0 109.0002,0 C108.450747,0 107.957361,0.319775948 107.714272,0.834343519 L105.548899,5.41445471 C105.45679,5.60966434 105.278177,5.74468085 105.071932,5.77603143 L100.229378,6.51047109 C99.6851311,6.59281863 99.2414039,6.98323789 99.0712016,7.52957405 C98.9013998,8.07591021 99.040365,8.66362914 99.4340328,9.06408059 L102.937796,12.6288509 C103.087174,12.7810057 103.155655,13.0000418 103.120413,13.2140618 L102.293831,18.2477114 C102.220544,18.6907996 102.331876,19.1217657 102.606603,19.461606 C103.03351,19.9912218 103.778796,20.1525728 104.374704,19.8256908 L108.70545,17.4488985 C108.886465,17.3498307 109.114336,17.3506667 109.29495,17.4488985 L113.626097,19.8256908 C113.836748,19.9414789 114.061414,20 114.29329,20 C114.716593,20 115.11787,19.8035363 115.393798,19.461606 C115.668925,19.1217657 115.779857,18.6899636 115.706569,18.2477114 L114.879587,13.2140618 C114.844345,12.9996238 114.912826,12.7810057 115.062204,12.6288509 L118.565967,9.06366258 L118.565967,9.06366258 Z" id="Shape-Copy-4" stroke="#F8E81C" stroke-width="1" fill="currentColor"></path>
-								</svg>
+								<span class="">4.0</span>
+                <svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-355.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" transform="translate(54.498841, 34.995000) scale(-1, 1) translate(-54.498841, -34.995000) " xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
 							</label>
+
+              <input
+                value="4.5"
+                id="star4.5"
+                type="radio"
+                name="rating"
+                class="readable-hidden">
+              <label for="star4.5">
+                <span class="">4.5</span>
+                <svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-353.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+
+              </label>
 
 							<input
 								value="5"
@@ -288,13 +481,25 @@
 								name="rating"
 								class="readable-hidden">
 							<label for="star5">
-								<span class="">5</span>
-								<svg width="22px" height="22px" viewBox="98 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-								    <desc>Created with Sketch.</desc>
-								    <defs></defs>
-								    <path d="M118.565967,9.06366258 C118.959635,8.66321114 119.0986,8.0754922 118.928798,7.52915604 C118.758596,6.98281988 118.315269,6.59281863 117.770622,6.51005309 L112.928068,5.77561343 C112.721823,5.74426284 112.543611,5.60924633 112.451501,5.4140367 L110.286529,0.834343519 C110.04344,0.319775948 109.550054,0 109.0002,0 C108.450747,0 107.957361,0.319775948 107.714272,0.834343519 L105.548899,5.41445471 C105.45679,5.60966434 105.278177,5.74468085 105.071932,5.77603143 L100.229378,6.51047109 C99.6851311,6.59281863 99.2414039,6.98323789 99.0712016,7.52957405 C98.9013998,8.07591021 99.040365,8.66362914 99.4340328,9.06408059 L102.937796,12.6288509 C103.087174,12.7810057 103.155655,13.0000418 103.120413,13.2140618 L102.293831,18.2477114 C102.220544,18.6907996 102.331876,19.1217657 102.606603,19.461606 C103.03351,19.9912218 103.778796,20.1525728 104.374704,19.8256908 L108.70545,17.4488985 C108.886465,17.3498307 109.114336,17.3506667 109.29495,17.4488985 L113.626097,19.8256908 C113.836748,19.9414789 114.061414,20 114.29329,20 C114.716593,20 115.11787,19.8035363 115.393798,19.461606 C115.668925,19.1217657 115.779857,18.6899636 115.706569,18.2477114 L114.879587,13.2140618 C114.844345,12.9996238 114.912826,12.7810057 115.062204,12.6288509 L118.565967,9.06366258 L118.565967,9.06366258 Z" id="Shape-Copy-4" stroke="#F8E81C" stroke-width="1" fill="currentColor"></path>
-								</svg>
+								<span class="">5.0</span>
+                <svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+                    <title>Combined Shape</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs>
+                        <path d="M59.9976818,25.421814 C59.7351664,25.154613 59.3801752,25 58.997882,25 C58.4485564,25 57.9552845,25.3197018 57.712252,25.8341501 L55.5473809,30.4131995 C55.7631802,30.4131995 55.2767219,30.7433491 55.0705247,30.7746924 L50.2290929,31.5089618 C49.6849723,31.5912903 49.2413479,31.981619 49.0711851,32.5278285 C48.9014227,33.074038 49.0403556,33.6616207 49.4339321,34.0619793 L52.9368834,37.6259233 C53.0862263,37.7780428 53.1546918,37.9970281 53.1194581,38.2109985 L52.2930675,43.2434812 C52.2197974,43.6864667 52.3311039,44.1173328 52.6057666,44.4570944 C53.032575,44.9865874 53.7776878,45.147901 54.3734578,44.8210947 L58.997882,42.4448533 C59.1788551,42.3458084 59.1119911,42.3466445 59.2925639,42.4448535 L59.9976818,42.8317992 L59.9976818,25.421814 Z" id="path-1"></path>
+                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="10.9976818" height="19.9899998" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                    </defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
+                        <g id="Desktop" transform="translate(-355.000000, -794.000000)" stroke="#F8E81C" stroke-width="2">
+                            <g id="stars" transform="translate(305.000000, 769.000000)">
+                                <use id="Combined-Shape" mask="url(#mask-2)" transform="translate(54.498841, 34.995000) scale(-1, 1) translate(-54.498841, -34.995000) " xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
 							</label>
 
 							<button type="submit" class="btn-small readable-hidden focusable">Submit rating</button>
@@ -309,7 +514,7 @@
 						<button class="movie-comment-submit-button">완료</button>
 					</div>
 				</div>
-				<ul class="movie-comment-lis row m-col-4">
+				<ul class="movie-comment-list row m-col-4">
 					<li>
 						<img class="movie-comment-user-image" src="images/user-1.jpg" alt="">
 						<div class="movie-comment-right-group m-col-3 t-col-7">
@@ -457,5 +662,5 @@
 				</ul>
 				<button class="movie-dialogue-show-more-button">더보기</button>
 			</div>
-	
+
 </div>

@@ -63,12 +63,14 @@ require('./controllers/rankingController');
 require('./controllers/recommendSelectController');
 require('./controllers/recommendCountryController');
 require('./controllers/recommendGradeController');
+require('./controllers/magazineController.es6')
 require('./controllers/moviedetailController');
 
 
 
 // Services
 require('./services/carouselDataShareService');
+require('./services/magazineDataShareService.es6');
 require('./services/rankingDataShareService');
 
 //recommend-select (genre, country, grade)

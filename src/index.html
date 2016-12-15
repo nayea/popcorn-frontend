@@ -54,8 +54,8 @@
 
 
 
-
 <div data-main-carousel data-ui-view></div>
+
 
 <!-- <div id="trigger1" class="spacer s0"></div> -->
  <section class="ranking container" id="menu-ranking" data-ng-cloak data-ng-controller="rankingController">
@@ -93,7 +93,7 @@
           </article>
 
         <div class="ranking-top2-wrapper">
-  
+
             <article id="sm-ranking-top2" class="ranking-second m-col-4" data-ng-repeat="movie in filteredMovies=(ranking_data.movies | filter:search | orderBy:order)" data-ng-show="($index > 0) && ($index<3)"">
               <div class="ranking-movie-info">
                 <a href="#">
@@ -130,7 +130,7 @@
                    <li data-ng-repeat="movie in filteredMovies=(ranking_data.movies | filter:search | orderBy:order)" ><a href="#"> {{movie.rank}}위<span>{{movie.movie.title_kor}}</span></a></li>
                  </ol>
              </div>
-             
+
       </div>
   </section>
 
@@ -484,41 +484,41 @@
 </div>
 </section>
 
-<section class="magazine">
+<section class="magazine" data-ng-controller="magazineController">
     <div class="row">
       <div class="d-col-9 t-col-8 m-col-4">
         <h1>매거진</h1>
-
-
-        <div class="magazine-content-main">
+        <div class="magazine-content-main" data-ng-repeat="movie in filteredMovies=(magazine_data.movies | filter:search )" data-ng-show=$first>
           <a href="#">
         <div class="magazine-content-main-image">
-            <img src="images/main-magazine/magazine-content-main.jpg" alt="매거진 콘텐츠" width="507" height="330">
+            <img data-ng-src={{movie.img_url}} src="images/main-magazine/magazine-content-main.jpg" alt="매거진 콘텐츠" width="507" height="330">
         </div>
             <div class="magazine-content-main-info m-col-4">
-            <span>무비토크</span>
-             <h3 class="magazine-content-main-title">끝까지 살아남아라<br>부산행 무빙 포토 예고편</h3>
-             <p class="magazine-content-main-desc">올여름 최고의 기대작 [부산행]의 행보가 심상치 않다. "역대 최고의 미드나잇 스크리닝"이라는 극찬을 받으며 칸 국제 영화제 최고의 화제작으로 포문을 연 전대미문의 재난 블록버스터 [부산행]이 7월 20일 개봉을 앞두고 네이버 무빙 포토 예고편을 독점 공개한다.
-             영화 [부산행]은 전대미문 재난이 대한민국을 뒤덮은 가운데, 서울역을 출발한 부산행 열차에  ......</p>
-                     </div></a>
+              <span>무비토크</span>
+               <h3 class="magazine-content-main-title">{{movie.title}}</h3>
+               <p class="magazine-content-main-desc">{{movie.content}}</p>
+            </div></a>
         </div>
 
-        <div class="magazine-content">
+        <div class="magazine-content" data-ng-repeat="movie in filteredMovies=(magazine_data.movies | filter:search )" data-ng-show="($index>0) && ($index<4)">
           <a href="#">
           <div class="magazine-content-image">
-            <img src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
+            <img data-ng-src={{movie.img_url}} src="images/main-magazine/magazine-content.jpg" alt="매거진 콘텐츠" width="295" height="264">
           </div>
             <div class="magazine-content-info">
-            <span>매거진</span>
-             <h3 class="magazine-content-title">군도 민란의 시대 무비토크</h3>
-              </div>
-              </a>
+              <span>매거진</span>
+               <h3 class="magazine-content-title">{{movie.title}}</h3>
+            </div>
+          </a>
         </div>
+
 
 
       </div>
     </div>
 </section>
+
+
 </div>
 </div>
 
@@ -530,8 +530,3 @@
 </body>
 
 </html>
-
-
-
-
-
