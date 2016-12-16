@@ -42,19 +42,38 @@ img
 // 영화 정보
 // --------------------------------------------------------
 .movie-info-group-wrapper
-  position: relative
-  background: url("http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1") no-repeat center
-  height: 400px
-  width: auto
-  background-size: cover
+  // position: relative
+  // background: url("http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1") no-repeat center
+  // height: 400px
+  // width: auto
+  // background-size: cover
   +respond-to($t-container-width)
-    padding-top: 100px
+    padding-top: 80px
   +respond-to($d-container-width)
-    padding-top: 100px
+    padding-top: 80px
 
-.container
-  position: relative
-  bottom: 0px
+// .container
+//   position: relative
+//   bottom: 0px
+
+.movie-main-background-wrap
+  position: absolute
+  height: 400px
+  // height: 100%
+  width: 100%
+  overflow: hidden
+
+.movie-main-background
+  position: absolute
+  +respond-to($m-container-width)
+    height: 100%
+    left: -5%
+  +respond-to($t-container-width)
+    top: 0
+    width: 100%
+  +respond-to($d-container-width)
+    top: -25%
+    width: 100%
 
 .h400
   height: 400px
@@ -108,10 +127,10 @@ img
     +respond-to($m-container-width)
       font-size: px2vw(12px, $m-container-width)
     +respond-to($t-container-width)
-      margin-top: 10px
+      // margin-top: 10px
       font-size: 14px
     +respond-to($d-container-width)
-      margin-top: 5px
+      // margin-top: 5px
       font-size: 16px
     display: block
     font-size: 0.75rem
@@ -123,10 +142,10 @@ img
   +respond-to($m-container-width)
     margin-top: px2vw(10px, $m-container-width)
   +respond-to($t-container-width)
-    margin-top: 10px
+    margin-top: 15px
     height: 20px
   +respond-to($d-container-width)
-    margin-top: 10px
+    margin-top: 15px
     height: 20px
   div
     float: left
@@ -177,10 +196,10 @@ img
     margin-top:  px2vw(10px, $m-container-width)
   +respond-to($t-container-width)
     font-size: 14px
-    margin-top: 10px
+    margin-top: 20px
   +respond-to($d-container-width)
     font-size: 14px
-    margin-top: 10px
+    margin-top: 15px
   font-family: $spoqa-Thin
   color: #fff
   li
@@ -401,6 +420,14 @@ img
     width: 25%
     float: left
   button
+    +respond-to($m-container-width)
+      height: px2vw(60px, $m-container-width)
+    +respond-to($t-container-width)
+      height: 100px
+    +respond-to($d-container-width)
+      height: 155px
+    width: 100%
+    overflow: hidden
     @extend %button-reset
     position: relative
     &:focus
@@ -426,7 +453,8 @@ img
   img
     position: relative
     box-sizing: border-box
-    width: 100%
+    // width: 100%
+    height: 100%
 
 .movie-still-view
   img
@@ -445,7 +473,6 @@ img
     margin-left: -1px
   +respond-to($d-container-width)
     left: 0
-
   button
     position: absolute
     top: 50%
@@ -1174,7 +1201,7 @@ figure
 .movie-dialogue-select-group
   border: 1px solid $color-blue
   position: relative
-  display: none
+  // display: none
   +respond-to($d-container-width)
     width: 525px
   input

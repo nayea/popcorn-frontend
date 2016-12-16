@@ -2,7 +2,10 @@
 <div data-ng-model="moviedetail_data.movies[0]">
     <section class="movie-info">
       <div role="group" class="movie-info-group-wrapper">
-				<div class="container  h400 row">
+        <div class="movie-main-background-wrap">
+          <img class="movie-main-background" data-ng-src={{movie.main_image_url}} src="http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1" alt="">
+        </div>
+				<div class="container h400 row">
 					<img class="movie-info-poster m-col-2 t-col-2 d-col-3" data-ng-src="{{movie.img_url}}" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="신비한 동물사전 포스터">
 					<div class="dumy t-col-8"></div>
 					<div role="group" class="movie-info-group m-col-4 t-col-8 d-col-12">
@@ -19,13 +22,11 @@
       	  	  </li>
       	  	  <li>
       	  	    <ul class="movie-info-sub">
-      	  	      <li class="run-time" aria-label="상영시간">132분</li>
-      	  	      <li class="nation" aria-label="국가">영국, 미국</li>
-      	  	      <li class="genre" aria-label="장르">판타지</li>
-      	  	      <li class="rate" aria-label="관람등급">12세 관람가</li>
-      	  	      <li class="ticketing" aria-label="예매율 순위">예매율 1위</li>
-      	  	      <li class="release" aria-label="개봉일">개봉 2일째</li>
-      	  	      <li class="audience" aria-label="누적관객">누적관객 816,169명</li>
+                  <li class="release" aria-label="상영연도">{{movie.created_year}}</li>
+                  <li class="nation" aria-label="국가">{{movie.making_country[0].content}}</li>
+                  <li class="genre" aria-label="장르">{{movie.genre[0].content}}, {{movie.genre[1].content}}</li>
+      	  	      <li class="run-time" aria-label="상영시간">{{movie.run_time}}</li>
+      	  	      <li class="rate" aria-label="관람등급">{{movie.grade.content}}</li>
       	  	    </ul>
       	  	  </li>
       	  	</ul>
@@ -45,23 +46,23 @@
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F1269480D49D0562910ECDB" alt="">
+							<img data-ng-src={{movie.director[0].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F1269480D49D0562910ECDB" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>감독</h2>
 							<div class="actor-role-info"></div>
-							<div class="actor-name-info">데이빗 예이츠</div>
+							<div class="actor-name-info">{{movie.director[0].name_kor}}</div>
 						</div>
 					</a>
 				</li>
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fc83cd578420db66f214c0b03a1231c83bef5185d" alt="">
+							<img data-ng-src={{movie.actors[0].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fc83cd578420db66f214c0b03a1231c83bef5185d" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>주연</h2>
-							<div class="actor-role-info">| 뉴트 스케맨더 역</div>
+							<div class="actor-role-info">| {{movie.actors[0].name_kor}}</div>
 							<div class="actor-name-info">에디 레드메인</div>
 						</div>
 					</a>
@@ -69,11 +70,11 @@
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F15404110ADFC2E252E5CDB" alt="">
+							<img data-ng-src={{movie.actors[1].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F15404110ADFC2E252E5CDB" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>주연</h2>
-							<div class="actor-role-info">| 퍼시벨 그레이브스 역</div>
+							<div class="actor-role-info">| {{movie.actors[1].name_kor}}</div>
 							<div class="actor-name-info">콜린 파렐</div>
 						</div>
 					</a>
@@ -81,11 +82,11 @@
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fmovie.daum-img.net%2Fmovie%2Fmovie-photo%2F40%2F93%2F389340%2Fpeople_389340.jpg" alt="">
+							<img data-ng-src={{movie.actors[2].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fmovie.daum-img.net%2Fmovie%2Fmovie-photo%2F40%2F93%2F389340%2Fpeople_389340.jpg" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>주연</h2>
-							<div class="actor-role-info">| 티나 골드스틴 역</div>
+							<div class="actor-role-info">| {{movie.actors[2].name_kor}}</div>
 							<div class="actor-name-info">캐서린 워터스턴</div>
 						</div>
 					</a>
@@ -127,7 +128,7 @@
 		<section class="movie-video container">
 			<h1 class="movie-video-heading t-col-1 d-col-1">예고편</h1>
 			<div class="movie-video-view m-col-4 t-col-8 d-col-9">
-				<iframe title="신비한 동물사전 파이널 예고편" src="http://videofarm.daum.net/controller/video/viewer/Video.html?vid=vd602rZMZZ4Zwbewrejr11r&play_loc=undefined&alert=true" frameborder="0" scrolling="no"></iframe>
+				<!-- <iframe title="신비한 동물사전 파이널 예고편" src="http://videofarm.daum.net/controller/video/viewer/Video.html?vid=vd602rZMZZ4Zwbewrejr11r&play_loc=undefined&alert=true" frameborder="0" scrolling="no"></iframe> -->
 			</div>
 		</section>
 		<section class="movie-relative container row">
@@ -202,7 +203,7 @@
 		</section>
 		<section class="movie-comment container">
 			<div class="movie-comment-wrap">
-				<h1 class="movie-comment-heading m-col-1 row">평점평점평점</h1>
+				<h1 class="movie-comment-heading m-col-1 row">평점</h1>
 				<button class="movie-comment-add-button">평점 등록하기</button>
 				<div class="movie-comment-rating-group m-col-4 t-col-8">
 					<div class="star-rating-group">
@@ -663,5 +664,4 @@
 				</ul>
 				<button class="movie-dialogue-show-more-button">더보기</button>
 			</div>
-
 </div>

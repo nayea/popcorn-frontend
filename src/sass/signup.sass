@@ -1,0 +1,50 @@
+@import modules/initialization/normalize
+@import config/vars
+@import config/placeholder
+@import config/helper
+@import theme/_button
+@import theme/commonstyle
+@import modules/grid/grid_functions
+@import modules/grid/grid_mixins
+
+
+.form
+  border: 1px solid $color-linegray
+  border-radius: 15px
+
+legend
+  border-bottom: 1px solid $color-linegray
+  text-align: center
+  font-family: $spoqa-B
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(20px, $m-container-width)
+      // bottom: px2vw(20px, $m-container-width)
+    padding-bottom: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+
+label
+  font-family: $spoqa-B
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(12px, $m-container-width)
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+
+input
+  border: 1px solid $color-linegray
+  border-radius: 15px
+  +respond-to($m-container-width)
+    height: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+
+
+
+
++respond-to($m-container-width)
++respond-to($t-container-width)
++respond-to($d-container-width)
