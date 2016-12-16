@@ -47,22 +47,18 @@ popcorn.config([
 				'mainRecommend':{
 					'templateUrl' : 'views/mainRecommend.html'
 				},
-				'mainComment':{
-					'templateUrl' : 'views/mainComment.html'
-				},
 				'mainMagazine': {
-					'templateUrl' : 'views/mainMagazine.html',
-			   		'controller' : 'magazineController'
+					'templateUrl' : 'views/mainMagazine.html'
 				}
 			}
 	})
 	.state('edit',{
 			'url': '/detail/:id',
 			'views':{
-			'mainCarousel':{
+			  'main':{
 				'templateUrl' : 'views/movieinfo.html',
 				'controller' : 'moviedetailController'
-			       }
+			    }
 			}
 	});
 
@@ -116,7 +112,8 @@ require('./services/moviedetailDataShareService');
 
 //directives
 require('./directives/mainCarousel');
-// require('./directives/movieinfoDirectives');
+// require('./directives/mainRecommend');
+// require('./directives/movieinfoDirective');
 
 // Filters
 require('./filters/readingZeroFilter');
@@ -129,6 +126,7 @@ require('./main-script/header-scroll');
 require('./main-script/recommend-carousel');
 require('./main-script/recommend-choice');
 require('./main-script/ranking-hover');
+require('./movie-info/movieinfo');
 // require('./main-script/scroll-effect.js');
 //
 // require('../views/mainCarousel.html');

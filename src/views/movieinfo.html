@@ -1,4 +1,5 @@
-<div data-ng-repeat="movie in filteredMovies=(moviedetail_data.movies | filter:search )">
+<!-- <div data-ng-repeat="movie in filteredMovies=(moviedetail_data.movies | filter:search )" data-ng-init="$last && repeatComplete()"> -->
+<div data-ng-model="moviedetail_data.movies[0]">
     <section class="movie-info">
       <div role="group" class="movie-info-group-wrapper">
 				<div class="container  h400 row">
@@ -6,8 +7,8 @@
 					<div class="dumy t-col-8"></div>
 					<div role="group" class="movie-info-group m-col-4 t-col-8 d-col-12">
       	  	<ul class="movie-info-list m-col-2 m-prefix-2 t-col-6 t-prefix-2 d-prefix-3">
-      	  	  <li class="movie-title" aria-label="제목">{{movie.title_kor}}<span>
-      	  	  ({{movie.title_eng}})</span></li>
+      	  	  <li class="movie-title" aria-label="제목">{{moviedetail_data.movies[0].title_kor}}<span>
+      	  	  ({{moviedetail_data.movies[0].title_eng}})</span></li>
       	  	  <li class="movie-grade-group row" aria-label="평점">
 	      					<div class="star"></div>
 	      					<div class="star"></div>
@@ -35,7 +36,7 @@
 		<section class="movie-summary container">
 			<h1 class="movie-summary-heading t-col-1 t-prefix-2 d-col-1 d-prefix-3">줄거리</h1>
 			<p class="movie-summary-paragraph m-col-4 t-col-6 t-push-2 d-col-9 d-prefix-3">
-			{{movie.synopsis}}
+			{{moviedetail_data.movies[0].synopsis}}
 			</p>
 		</section>
 		<section class="movie-actor container">
@@ -98,22 +99,22 @@
 					<ul class="movie-still-list">
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[1].url}}" src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[1].url}}" src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[2].url}}"  src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[2].url}}"  src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{movie.image_set[3].url}}" src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[3].url}}" src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="">
 							</button>
 						</li>
 					</ul>

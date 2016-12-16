@@ -11,6 +11,8 @@ angular
       'controller': 'carouselController',
       'link': function(scope, element, attrs) {
         scope.repeatComplete = function() {
+
+          function mainCarousel(){
           var $widget = $('#main-carousel');
           var $tabpanel = $('#main-carousel article');
 
@@ -224,6 +226,11 @@ angular
             return 10 > num ? '0' +num : num;
           }
 
+       };
+
+       mainCarousel();
+
+      
           var $dim = $('.video-dim-background');
           var $video_button_td = $('.video-play');
           var $video_button_m = $('.video-play-m');
@@ -253,8 +260,9 @@ angular
             // console.log(stealcut_imgs);
           });
 
+         
+
         } // end
       }
     }
-      // 'template': 'Name: {{person.name}} </br> Address: {{person.address}}'
 });

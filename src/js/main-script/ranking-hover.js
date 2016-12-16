@@ -1,4 +1,6 @@
 (function(window, $){
+
+	setTimeout(function(){
 'use strict';
 
  var $ranking_boxoffice_letters = $('.ranking-boxoffice a');
@@ -17,6 +19,6 @@ $.each($ranking_boxoffice_letters,function(idx){
       });
 
 });
-
+},500);
 
 })(this, jQuery);
