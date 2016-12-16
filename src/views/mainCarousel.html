@@ -1,5 +1,5 @@
   <section class="carousel" >
-      <div id="main-carousel" aria-label="주요 영화 정보" data-ng-cloak data-ng-cloak>
+      <div id="main-carousel" aria-label="주요 영화 정보" data-ng-cloak>
 
       <article data-label="팝콘 주요 영화 1" data-ng-repeat="movie in filteredMovies=(share_data.movies | filter:search )" data-ng-init="$last && repeatComplete()">
         <!-- <pre>{{ share_data.movies|json }}</pre> -->
@@ -32,17 +32,20 @@
                 <div class="video-dim-background">
                   <div class="video-pop">
                         <div class="rwd-iframe-container">
-                          <iframe
+                          <!-- <iframe
                               width="640"
                               height="360"
                               data-ng-src="{{movie.main_trailer}}">
-                              </iframe>
+                              </iframe> -->
+                              <!-- <iframe title='<판도라> 만장일치 극찬 영상 ' width='1000px' height='562px' controls="controls" data-ng-src="{{movie.main_trailer}}" frameborder='0' scrolling='no' ></iframe> -->
                         </div>
                         <button class="video-pop-close st-pop-close-button"><span class="readable-hidden">닫기</span></button>
               </div>
                </div>
 
+             <a href data-ui-sref="edit({'id': movie.id})">
              <button type="button" class="st-border-button-Y">더 많은 정보 보기</button>
+             </a>
            </div>
          </div>
         <img data-ng-src="{{movie.main_image_url}}" src="images/main-carousel/m-bg.jpg" alt="팝콘 주요 영화 1">
