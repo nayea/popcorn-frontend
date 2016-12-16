@@ -33,16 +33,49 @@ popcorn.config([
 
       //$stateProvider
       $stateProvider
-	.state('list',{
+     	.state('list',{
 			'url': '/',
-			'templateUrl' : 'views/mainCarousel.html',
-			'controller' : 'carouselController'
+			'views': {
+				'mainCarousel': {
+					'templateUrl' : 'views/mainCarousel.html',
+			   		'controller' : 'carouselController'
+				},
+				'mainRanking':{
+					'templateUrl' : 'views/mainRanking.html',
+			   		'controller' : 'rankingController'
+				},
+				'mainRecommend':{
+					'templateUrl' : 'views/mainRecommend.html'
+				},
+				'mainComment':{
+					'templateUrl' : 'views/mainComment.html'
+				},
+				'mainMagazine': {
+					'templateUrl' : 'views/mainMagazine.html',
+			   		'controller' : 'magazineController'
+				}
+			}
 	})
 	.state('edit',{
 			'url': '/detail/:id',
-			'templateUrl' : 'views/movieinfo.html',
-			'controller' : 'moviedetailController'
+			'views':{
+			'mainCarousel':{
+				'templateUrl' : 'views/movieinfo.html',
+				'controller' : 'moviedetailController'
+			       }
+			}
 	});
+
+	// .state('list',{
+	// 		'url': '/',
+	// 		'templateUrl' : 'views/mainCarousel.html',
+	// 		'controller' : 'carouselController'
+	// })
+	// .state('edit',{
+	// 		'url': '/detail/:id',
+	// 		'templateUrl' : 'views/movieinfo.html',
+	// 		'controller' : 'moviedetailController'
+	// });
 
       //$urlRouterProvider
       $urlRouterProvider.otherwise('/');
