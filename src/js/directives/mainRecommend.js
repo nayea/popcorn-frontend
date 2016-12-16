@@ -1,7 +1,49 @@
-(function(window, $){
-'use strict';
+var angular = require('angular');
 
-setTimeout(function(){
+angular
+  .module('PopcornListApp')
+  .directive('mainRecommend', function() {
+    return {
+      'restrict' : 'EA',
+      'templateUrl': '/views/mainRecommend.html',
+      'link': function(scope, element, attrs) {
+        scope.repeatComplete = function() {
+
+   (function(window){
+          var tabcontent_1 = $('.recommend-tabcontent-1');
+          var tabcontent_2 = $('.recommend-tabcontent-2');
+          var tabcontent_3 = $('.recommend-tabcontent-3');
+          
+          var $tablinks_nextbutton_1 = $('.recommend-choice-tablinks-next-1');
+          var $tablinks_nextbutton_2 = $('.recommend-choice-tablinks-next-2');
+          
+          var $tablinks_prevbutton_1 = $('.recommend-choice-tablinks-prev-1');
+          var $tablinks_prevbutton_2 = $('.recommend-choice-tablinks-prev-2');
+          
+          $tablinks_nextbutton_1.on('click',function(){
+            tabcontent_1.css('display','none');
+            tabcontent_2.css('display','block');
+          })
+          
+          $tablinks_nextbutton_2.on('click',function(){
+            tabcontent_2.css('display','none');
+            tabcontent_3.css('display','block');
+          })
+          
+          $tablinks_prevbutton_1.on('click',function(){
+            tabcontent_2.css('display','none');
+            tabcontent_1.css('display','block');
+          })
+          
+          $tablinks_prevbutton_2.on('click',function(){
+            tabcontent_3.css('display','none');
+            tabcontent_2.css('display','block');
+          })
+     
+   })(this);
+
+   function mainRecommend(){
+'use strict';
 
 var $widget = $('#recommend-movie');
 var $tabpanel = $widget.children();
@@ -28,7 +70,7 @@ $.each($tabpanel, function(idx){
       $tab.find('span').text(label||$panel.find(':header:eq(0)').text()||'슬라이드'+(idx+1));
       $tab.find('img').attr('src', img_label);
       $tab.find('img').attr('alt', img_alt);
-      $tab.attr('title', label||$panel.find(':header:eq(0)').text()||'슬라이드'+(idx+1));
+      // $tab.attr('title', label||$panel.find(':header:eq(0)').text()||'슬라이드'+(idx+1));
       $tab.appendTo($tablist);
 
       $panel.wrap('<div class="recommend-tabpanel-wrapper-small">');
@@ -49,7 +91,7 @@ $.each($tabs, function(idx){
   var $tab = $tabs.eq(idx);
   var num = readingZeroNum(idx);
 
-  var slide_id = 'ui-carousel-slide--' + num;
+  var slide_id = 'recommend-carousel-slide--' + num;
   $tab.attr({
     'id' : 'recommend-tab-' + num,
     'class' : 'recommend-tab',
@@ -82,7 +124,7 @@ var $tabpanel_wrapper = $('.recommend-tabpanel-wrapper');
 
 //버튼 생성
 $.each(['prev', 'next'], function(idx, feature){
-  $('<button type="button" class="ui-carousel-button st-arrow-blue ui-carousel-button-'+feature+'">').html('<span class="readable-hidden"></span>').appendTo($widget);
+  $('<button type="button" class="recommend-carousel-button st-arrow-blue recommend-carousel-button-'+feature+'">').html('<span class="readable-hidden"></span>').appendTo($widget);
 });
 // var $tablist_button = $tabpanel_wrapper.find(':button');
 // $tablist_button.wrapAll('<div class="tablist-button-wrapper">');
@@ -180,7 +222,7 @@ activeTab(1);
 //  arrow-button으로 carousel 작동
 //-----------------------------------------------------------------
 
-var $buttons = $('.ui-carousel-button');
+var $buttons = $('.recommend-carousel-button');
 $buttons.on('click', activeTabWidthButton);
 
 function activeTabWidthButton(id){
@@ -201,58 +243,16 @@ function activeTabWidthButton(id){
 function updateButtonText(idx){
   var $tab = $tabs.eq(idx - 1);
   var index = getIndex.call($tab);
-  var $prevBtn = $('.ui-carousel-button-prev'); 
-  var $nextBtn = $('.ui-carousel-button-next');
+  var $prevBtn = $('.recommend-carousel-button-prev'); 
+  var $nextBtn = $('.recommend-carousel-button-next');
   var prevText = $tabs.eq(index - 1).find('span').text();
   var nextText = $tabs.eq(index + 1 === 5 ? 0 : index + 1).find('span').text();
 
   $prevBtn.find('span').text(prevText);
-  $prevBtn.attr('title', prevText);
+  // $prevBtn.attr('title', prevText);
   $nextBtn.find('span').text(nextText);
-  $nextBtn.attr('title', nextText);
+  // $nextBtn.attr('title', nextText);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// $.each($tabs, function(idx){
-//     var $tab = $tabs.eq(idx);
-//     var $tab_positionX = $tab.position().left;
-//     // $tab_positionX = $tab_positionX + 100
-//     // console.log($tab_positionX );
-//     // setInterval(function(){
-    
-//     //  $tabs.animate({ 'left': '50px*-1' },'slow');
-//     //  console.log($tab_positionX);
-
-//     // },500);
-// })
-
-// // indicator가 일정한 시간에 따라서 자동으로 애니메이션
-// // setInterval(function(){
-// // $.each($tablist, function(idx){
-// //   var $panel = $tablist.children().eq(idx);
-// //   var $panel_left = $panel.css('left');
-// //       console.log($panel_left);
-// // });
-
-// // },500,'easeOutSine');
-
-// // 선택된 탭의 aria-controls 속성 값에서 인덱스 정보를 뽑아 반환
-// function getIndex(){
-  
-//   return Number(this.attr('aria-controls').split('--')[1]) - 1;
-// }
-
-
 
 
 
@@ -264,19 +264,20 @@ function readingZeroNum(idx) {
   var num=idx+1; 
   return 10 > num ? '0' +num : num;
 }
-},500);
-})(this, jQuery);
 
-(function(global, $){
-'use strict';
+ }
 
-setTimeout(function(){
-$('.recommend-tabpanel-wrapper-small').on('click',function(){
-        $(this).find('.recommend-tabpanel').addClass('flipped').mouseleave(function(){
-            $(this).removeClass('flipped');
+ mainRecommend();
+
+   
+      $('.recommend-tabpanel-wrapper-small').on('click',function(){
+              $(this).find('.recommend-tabpanel').addClass('flipped').mouseleave(function(){
+                  $(this).removeClass('flipped');
+              });
+              return false;
         });
-        return false;
-  });
-},500);
-
-})(this, jQuery);
+   
+        } // end
+      }
+    }
+});

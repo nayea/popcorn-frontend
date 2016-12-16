@@ -11,7 +11,7 @@ angular
     $scope.moviedetail_data = moviedetailDataShareService;
 
     // console.log($stateParams.id); 
-    // console.log($scope.moviedetail_data);
+    console.log($scope.moviedetail_data);
     // 컨트롤러 $scope 객체의 속성
     // $scope.search = {};
     // $scope.search = '';

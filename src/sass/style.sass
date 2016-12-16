@@ -429,8 +429,32 @@ p
         border-right: 2px solid #fff
       &:last-of-type::after
         border: 0
+  >button
+    float: left
+    margin:
+      top: 20px
+      right: px2vw(10px,$m-container-width)
+    +respond-to($m-container-width)
+      font-size: px2vw(10px,$m-container-width)
+      letter-spacing: -0.05em
+      padding: px2vw(7px,$m-container-width) px2vw(20px,$m-container-width)
+        top: px2vw(10px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 14px )
+      letter-spacing: -0.05em
+      padding: 7px 52px
+      margin:
+        top: 16px
+    +respond-to($d-container-width)
+      +font(size 18px )
+      letter-spacing: -0.05em
+      padding: 14px 92px
+      margin:
+        top: 34px
   >a
     button
+      margin:
+        top: 20px
       +respond-to($m-container-width)
         font-size: px2vw(10px,$m-container-width)
         letter-spacing: -0.05em
