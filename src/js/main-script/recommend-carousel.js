@@ -1,6 +1,8 @@
 (function(window, $){
 'use strict';
 
+setTimeout(function(){
+
 var $widget = $('#recommend-movie');
 var $tabpanel = $widget.children();
 
@@ -262,19 +264,19 @@ function readingZeroNum(idx) {
   var num=idx+1; 
   return 10 > num ? '0' +num : num;
 }
-
+},500);
 })(this, jQuery);
 
 (function(global, $){
 'use strict';
 
-
+setTimeout(function(){
 $('.recommend-tabpanel-wrapper-small').on('click',function(){
         $(this).find('.recommend-tabpanel').addClass('flipped').mouseleave(function(){
             $(this).removeClass('flipped');
         });
         return false;
   });
-
+},500);
 
 })(this, jQuery);

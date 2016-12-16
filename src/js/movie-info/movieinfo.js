@@ -1,7 +1,7 @@
-(function(global) {
-  'use strict';
 
-  var movie_info_still = document.querySelector('.movie-still');
+setTimeout(function(){
+ 
+   var movie_info_still = document.querySelector('.movie-still');
   var movie_info_stillControlButtons = movie_info_still.querySelectorAll('button');
   var movie_info_stillView = movie_info_still.querySelector('.movie-still-view');
 
@@ -21,9 +21,11 @@
   for ( var i = 0, l = movie_info_stillControlButtons.length; i < l; i++ ) {
     movie_info_stillControlButtons[i].onclick = changeStillView;
   }
-})(this);
 
-(function($) {
+
+
+
+
   $('.movie-comment-add-button').click(function() {
     if($(this).siblings('.movie-comment-rating-group').is(':hidden')) {
       $(this).siblings('.movie-comment-rating-group').slideDown('fast');
@@ -35,9 +37,9 @@
   $('.movie-comment-submit-button').click(function() {
     $(this).closest('.movie-comment-rating-group').slideUp('fast');
   });
-})(jQuery);
 
-(function($) {
+
+
   $('.movie-dialogue-add-button').click(function() {
     if($(this).siblings('.movie-dialogue-select-group').is(':hidden')) {
       $(this).siblings('.movie-dialogue-select-group').slideDown('fast');
@@ -49,7 +51,7 @@
   $('.movie-dialogue-submit-button').click(function() {
     $(this).closest('.movie-dialogue-select-group').slideUp('fast');
   });
-})(jQuery);
+},500);
 
 
 // (function(global) {
