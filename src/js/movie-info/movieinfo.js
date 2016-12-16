@@ -1,27 +1,28 @@
-(function(global) {
-  'use strict';
+// (function() {
+//   'use strict';
+//
+//   var movie_info_still = $('.movie-still');
+//   var movie_info_stillControlButtons = $(".movie-still-btn").css("width","500px");
+//   var movie_info_stillView = $('.movie-still-view');
+//
+//   $(".movie-still-btn").click(function() {
+//     console.log("aa");
+//     var movie_info_stillImg = $(this).find('img');
+//     var movie_info_view = movie_info_stillView.find('img');
+//     var movie_info_src = movie_info_stillImg.attr('src');
+//     var movie_info_alt = movie_info_stillImg.attr('alt');
+//
+//     movie_info_view.attr('src', movie_info_src);
+//     movie_info_view.attr('alt', movie_info_alt);
+//
+//
+//   });
+//   for ( var i = 0, l = movie_info_stillControlButtons.length; i < l; i++ ) {
+//     movie_info_stillControlButtons[i].onclick = changeStillView;
+//   }
+// })();
 
-  var movie_info_still = document.querySelector('.movie-still');
-  var movie_info_stillControlButtons = movie_info_still.querySelectorAll('button');
-  var movie_info_stillView = movie_info_still.querySelector('.movie-still-view');
 
-
-  var changeStillView = function(e) {
-    var movie_info_stillImg = this.querySelector('img');
-    var movie_info_view = movie_info_stillView.querySelector('img');
-    var movie_info_src = movie_info_stillImg.getAttribute('src');
-    var movie_info_alt = movie_info_stillImg.getAttribute('alt');
-
-    // e.preventDefault();
-    movie_info_view.setAttribute('src', movie_info_src);
-    movie_info_view.setAttribute('alt', movie_info_alt);
-
-  };
-
-  for ( var i = 0, l = movie_info_stillControlButtons.length; i < l; i++ ) {
-    movie_info_stillControlButtons[i].onclick = changeStillView;
-  }
-})(this);
 
 (function($) {
   $('.movie-comment-add-button').click(function() {
@@ -79,4 +80,3 @@
 //   	event.stopImmediatePropagation();
 //   });
 // })(this);
-
