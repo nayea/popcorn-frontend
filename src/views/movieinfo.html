@@ -3,10 +3,10 @@
     <section class="movie-info">
       <div role="group" class="movie-info-group-wrapper">
         <div class="movie-main-background-wrap">
-          <img class="movie-main-background" data-ng-src={{movie.main_image_url}} src="http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1" alt="">
+          <img class="movie-main-background" data-ng-src={{moviedetail_data.movies[0].main_image_url}} src="http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
         </div>
 				<div class="container h400 row">
-					<img class="movie-info-poster m-col-2 t-col-2 d-col-3" data-ng-src="{{movie.img_url}}" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="신비한 동물사전 포스터">
+					<img class="movie-info-poster m-col-2 t-col-2 d-col-3" data-ng-src="{{moviedetail_data.movies[0].img_url}}" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="{{moviedetail_data.movies[0].title_kor}} 포스터">
 					<div class="dumy t-col-8"></div>
 					<div role="group" class="movie-info-group m-col-4 t-col-8 d-col-12">
       	  	<ul class="movie-info-list m-col-2 m-prefix-2 t-col-6 t-prefix-2 d-prefix-3">
@@ -22,11 +22,11 @@
       	  	  </li>
       	  	  <li>
       	  	    <ul class="movie-info-sub">
-                  <li class="release" aria-label="상영연도">{{movie.created_year}}</li>
-                  <li class="nation" aria-label="국가">{{movie.making_country[0].content}}</li>
-                  <li class="genre" aria-label="장르">{{movie.genre[0].content}}, {{movie.genre[1].content}}</li>
-      	  	      <li class="run-time" aria-label="상영시간">{{movie.run_time}}</li>
-      	  	      <li class="rate" aria-label="관람등급">{{movie.grade.content}}</li>
+                  <li class="release" aria-label="상영연도">{{moviedetail_data.movies[0].created_year}}</li>
+                  <li class="nation" aria-label="국가">{{moviedetail_data.movies[0].making_country[0].content}}</li>
+                  <li class="genre" aria-label="장르">{{moviedetail_data.movies[0].genre[0].content}}, {{moviedetail_data.movies[0].genre[1].content}}</li>
+      	  	      <li class="run-time" aria-label="상영시간">{{moviedetail_data.movies[0].run_time}}</li>
+      	  	      <li class="rate" aria-label="관람등급">{{moviedetail_data.movies[0].grade.content}}</li>
       	  	    </ul>
       	  	  </li>
       	  	</ul>
@@ -46,23 +46,23 @@
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img data-ng-src={{movie.director[0].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F1269480D49D0562910ECDB" alt="">
+							<img data-ng-src={{moviedetail_data.movies[0].director[0].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F1269480D49D0562910ECDB" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>감독</h2>
 							<div class="actor-role-info"></div>
-							<div class="actor-name-info">{{movie.director[0].name_kor}}</div>
+							<div class="actor-name-info">{{moviedetail_data.movies[0].director[0].name_kor}}</div>
 						</div>
 					</a>
 				</li>
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img data-ng-src={{movie.actors[0].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fc83cd578420db66f214c0b03a1231c83bef5185d" alt="">
+							<img data-ng-src={{moviedetail_data.movies[0].actors[0].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fc83cd578420db66f214c0b03a1231c83bef5185d" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>배우</h2>
-							<div class="actor-role-info">| {{movie.actors[0].name_kor}}</div>
+							<div class="actor-role-info">| {{moviedetail_data.movies[0].actors[0].name_kor}}</div>
 							<div class="actor-name-info">에디 레드메인</div>
 						</div>
 					</a>
@@ -70,11 +70,11 @@
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img data-ng-src={{movie.actors[1].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F15404110ADFC2E252E5CDB" alt="">
+							<img data-ng-src={{moviedetail_data.movies[0].actors[1].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F15404110ADFC2E252E5CDB" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>배우</h2>
-							<div class="actor-role-info">| {{movie.actors[1].name_kor}}</div>
+							<div class="actor-role-info">| {{moviedetail_data.movies[0].actors[1].name_kor}}</div>
 							<div class="actor-name-info">콜린 파렐</div>
 						</div>
 					</a>
@@ -82,11 +82,11 @@
 				<li class="">
 					<a href="#">
 						<div class="actor-image-wrap">
-							<img data-ng-src={{movie.actors[2].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fmovie.daum-img.net%2Fmovie%2Fmovie-photo%2F40%2F93%2F389340%2Fpeople_389340.jpg" alt="">
+							<img data-ng-src={{moviedetail_data.movies[0].actors[2].profile_url}} src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fmovie.daum-img.net%2Fmovie%2Fmovie-photo%2F40%2F93%2F389340%2Fpeople_389340.jpg" alt="">
 						</div>
 						<div class="actor-info-wrap">
 							<h2>배우</h2>
-							<div class="actor-role-info">| {{movie.actors[2].name_kor}}</div>
+							<div class="actor-role-info">| {{moviedetail_data.movies[0].actors[2].name_kor}}</div>
 							<div class="actor-name-info">캐서린 워터스턴</div>
 						</div>
 					</a>
@@ -100,28 +100,28 @@
 					<ul class="movie-still-list">
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{moviedetail_data.movies[0].image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{moviedetail_data.movies[0].image_set[1].url}}" src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[1].url}}" src="http://t1.daumcdn.net/movie/73485117826289809850aa0d7e83273fdf407551" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{moviedetail_data.movies[0].image_set[2].url}}"  src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[2].url}}"  src="http://t1.daumcdn.net/movie/ebff864c8d894f7f224932cf8b706cc111ab2918" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
 							</button>
 						</li>
 						<li class="">
 							<button type="button">
-								<img data-ng-src="{{moviedetail_data.movies[0].image_set[3].url}}" src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="">
+								<img data-ng-src="{{moviedetail_data.movies[0].image_set[3].url}}" src="http://t1.daumcdn.net/movie/c4df9efd5f8e6a211cab951a291bef1fc5726042" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
 							</button>
 						</li>
 					</ul>
 				</div>
 				<div class="movie-still-view m-col-4">
-					<img src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="">
+					<img src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
 				</div>
 			</div>
 		</section>
@@ -131,7 +131,7 @@
 				<iframe title="신비한 동물사전 파이널 예고편" src="http://videofarm.daum.net/controller/video/viewer/Video.html?vid=vd602rZMZZ4Zwbewrejr11r&play_loc=undefined&alert=true" frameborder="0" scrolling="no"></iframe>
 			</div>
 		</section>
-</div>
+<!-- </div> -->
 		<!-- 연관영화 -->
 		<div data-ng-controller="movieinfoRelatedController">
 			<section class="movie-relative container row">
@@ -140,7 +140,7 @@
 					<li class="m-col-1 t-col-2" data-ng-repeat="movie in filteredMovies=(movieinfoRelated_data.movies | filter:search )">
 					<a href="#">
 						<figure>
-								<img data-ng-src="{{movie.img_url}}" src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F146F1B10ACE2AE7DF12090" alt="{{movie.title_kor}}">
+								<img data-ng-src="{{movie.img_url}}" src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F146F1B10ACE2AE7DF12090" alt="{{movie.title_kor}} 포스터">
 								<figcaption>
 									<div class="movie-relative-title">{{movie.title_kor}}</div>
 									<div class="movie-relative-grade-group">
@@ -626,9 +626,5 @@
 				</ul>
 				<button class="movie-dialogue-show-more-button">더보기</button>
 			</div>
-<<<<<<< HEAD
-
-
-=======
+    </section>
 </div>
->>>>>>> b2ed1163bc05936262f3caf5d2365949267a67d5
