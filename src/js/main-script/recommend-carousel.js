@@ -214,48 +214,6 @@ function updateButtonText(idx){
 
 
 
-
-
-
-
-
-
-
-
-
-// $.each($tabs, function(idx){
-//     var $tab = $tabs.eq(idx);
-//     var $tab_positionX = $tab.position().left;
-//     // $tab_positionX = $tab_positionX + 100
-//     // console.log($tab_positionX );
-//     // setInterval(function(){
-    
-//     //  $tabs.animate({ 'left': '50px*-1' },'slow');
-//     //  console.log($tab_positionX);
-
-//     // },500);
-// })
-
-// // indicator가 일정한 시간에 따라서 자동으로 애니메이션
-// // setInterval(function(){
-// // $.each($tablist, function(idx){
-// //   var $panel = $tablist.children().eq(idx);
-// //   var $panel_left = $panel.css('left');
-// //       console.log($panel_left);
-// // });
-
-// // },500,'easeOutSine');
-
-// // 선택된 탭의 aria-controls 속성 값에서 인덱스 정보를 뽑아 반환
-// function getIndex(){
-  
-//   return Number(this.attr('aria-controls').split('--')[1]) - 1;
-// }
-
-
-
-
-
 // 헬퍼 함수
 /**
 * @function readingZeroNum * @param {number} idx

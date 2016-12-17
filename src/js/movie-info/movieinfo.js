@@ -1,6 +1,10 @@
-setTimeout(function(){
 
-  var movie_info_still = document.querySelector('.movie-still');
+
+ (function(window, $){
+// $(function() {
+setTimeout(function(){
+   var movie_info_still = document.querySelector('.movie-still');
+
   var movie_info_stillControlButtons = movie_info_still.querySelectorAll('button');
   var movie_info_stillView = movie_info_still.querySelector('.movie-still-view');
 
@@ -47,9 +51,74 @@ setTimeout(function(){
   $('.movie-dialogue-submit-button').click(function() {
     $(this).closest('.movie-dialogue-select-group').slideUp('fast');
   });
+
+ 
+
 },500);
+})(this, jQuery);
 
 
+
+// var _cnt =0;
+// setInterval(_timer,1000);
+// function _timer(){
+//   if(_cnt<5){
+//     _cnt++;
+//     console.log(_cnt,'번째');
+//     location.reload();
+//     var _timeId = setTimeout(_timer,1000);
+//   }
+//   else{
+//     clearInterval(_timeId);
+//   }
+// }
+
+
+// var _cnt =0;
+// setTimeout(_timer,1000);
+// function _timer(){
+//   if(_cnt<5){
+//     _cnt++;
+//     console.log(_cnt,'번째');
+//     location.reload();
+//     var _timeId = setTimeout(_timer,1000);
+//   }
+//   else{
+//     clearTimeout(_timeId);
+//   }
+// }
+
+ // setTimeout(function() {
+ //   location.reload();
+ // }, 1000)
+// $('#movieinfo-detail').ready(function() {
+ 
+// setTimeout(function() {
+//     location.reload();
+// }, 1000); // 3000ms(3초)가 경과하면 이 함수가 실행됩니다.
+ 
+// }
+// $( window ).one( 'reload', function( ) {
+//     clearTimeout( timer );
+//     timer = setTimeout( resizeDone, 700 );
+// } );
+
+// function resizeDone( ) {
+//     // ...do
+// }
+// var cnt = 1;
+// if(cnt === 1) {
+//    location.reload(true);
+//    cnt = 0;
+// }
+// else{
+//   location.reload(false);
+// }
+// setTimeout(function(){
+//       // var movieinfo_detail = document.querySelector('#movieinfo-detail');
+//         // movieinfo_detail.reload();
+//      document.location.reload();
+//   },700);
 // (function(global) {
 //   'use strict';
 //
