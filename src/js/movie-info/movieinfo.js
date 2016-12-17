@@ -1,8 +1,10 @@
 
+
  (function(window, $){
 // $(function() {
 setTimeout(function(){
    var movie_info_still = document.querySelector('.movie-still');
+
   var movie_info_stillControlButtons = movie_info_still.querySelectorAll('button');
   var movie_info_stillView = movie_info_still.querySelector('.movie-still-view');
 
@@ -17,14 +19,11 @@ setTimeout(function(){
     movie_info_view.setAttribute('src', movie_info_src);
     movie_info_view.setAttribute('alt', movie_info_alt);
 
-  };
+};
 
   for ( var i = 0, l = movie_info_stillControlButtons.length; i < l; i++ ) {
     movie_info_stillControlButtons[i].onclick = changeStillView;
   }
-
-
-
 
 
   $('.movie-comment-add-button').click(function() {
@@ -147,4 +146,3 @@ setTimeout(function(){
 //   	event.stopImmediatePropagation();
 //   });
 // })(this);
-
