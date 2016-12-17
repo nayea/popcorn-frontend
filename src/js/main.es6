@@ -56,8 +56,7 @@ popcorn.config([
 			'url': '/detail/:id',
 			'views':{
 			  'main':{
-				'templateUrl' : 'views/movieinfo.html',
-				'controller' : 'moviedetailController'
+				'templateUrl' : 'views/movieinfo.html'
 			    }
 			}
 	});
@@ -84,36 +83,55 @@ popcorn.config([
 
 
 
-
-// Controllers
-require('./controllers/carouselController');
-require('./controllers/rankingController');
-// require('./controllers/DetailController');
-require('./controllers/recommendSelectController');
-require('./controllers/recommendCountryController');
-require('./controllers/recommendGradeController');
-require('./controllers/magazineController.es6')
-require('./controllers/moviedetailController');
-
-
-
-// Services
-require('./services/carouselDataShareService');
-require('./services/magazineDataShareService.es6');
-require('./services/rankingDataShareService');
-
-//recommend-select (genre, country, grade)
-require('./services/recommendSelectDataShareService');
-require('./services/recommendCountryDataShareService');
-require('./services/recommendGradeDataShareService');
-
-require('./services/moviedetailDataShareService');
-
-
-//directives
+// --------------------------------------------------------
+// directive
+// --------------------------------------------------------
 require('./directives/mainCarousel');
 // require('./directives/mainRecommend');
 // require('./directives/movieinfoDirective');
+
+
+
+require('./controllers/main/carouselController');
+require('./controllers/main/rankingController');
+// require('./controllers/main/DetailController');
+require('./controllers/main/recommendSelectController');
+require('./controllers/main/recommendCountryController');
+require('./controllers/main/recommendGradeController');
+require('./controllers/main/magazineController.es6')
+
+
+// --------------------------------------------------------
+// controllers: 영화 상세
+// --------------------------------------------------------
+require('./controllers/movieinfoDetail/moviedetailController');
+require('./controllers/movieinfoDetail/movieinfoRelatedController');
+
+
+
+
+// --------------------------------------------------------
+//service : main
+// --------------------------------------------------------
+require('./services/main/carouselDataShareService');
+require('./services/main/magazineDataShareService.es6');
+require('./services/main/rankingDataShareService');
+
+//recommend-select (genre, country, grade)
+require('./services/main/recommendSelectDataShareService');
+require('./services/main/recommendCountryDataShareService');
+require('./services/main/recommendGradeDataShareService');
+
+
+// --------------------------------------------------------
+// service: 영화상세
+// --------------------------------------------------------
+require('./services/movieinfodetail/moviedetailDataShareService');
+require('./services/movieinfodetail/movieinfoRelatedDataShareService');
+
+
+
+
 
 // Filters
 require('./filters/readingZeroFilter');
@@ -124,7 +142,7 @@ require('./filters/readingZeroFilter');
 // require('./main-script/ui-carousel');
 require('./main-script/header-scroll');
 require('./main-script/recommend-carousel');
-require('./main-script/recommend-choice');
+// require('./main-script/recommend-choice');
 require('./main-script/ranking-hover');
 require('./movie-info/movieinfo');
 // require('./main-script/scroll-effect.js');
