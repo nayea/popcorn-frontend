@@ -958,7 +958,7 @@ figure
   +respond-to($m-container-width)
     +size(px2vw(50px, $m-container-width))
     margin:
-      top: px2vw(10px, $m-container-width)
+      top: px2vw(20px, $m-container-width)
       left: px2vw(10px, $m-container-width)
   +respond-to($t-container-width)
     +size(50px)
@@ -1112,11 +1112,13 @@ figure
 // --------------------------------------------------------
 .movie-dialogue
   +respond-to($m-container-width)
+    position: relative
     &::after
       content: ''
       display: block
       clear: both
   +respond-to($t-container-width)
+    position: relative
     &::after
       content: ''
       display: block
@@ -1422,6 +1424,3 @@ figure
       left: 30px
       right: 30px
     margin-top: 10px
-
-
-
