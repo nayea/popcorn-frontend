@@ -96,7 +96,7 @@ img
   bottom: 0
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 70%, transparent)
   +respond-to($m-container-width)
-    height: px2vw(140, $m-container-width)
+    height: px2vw(140px, $m-container-width)
   +respond-to($t-container-width)
     height: 42.5%
   +respond-to($d-container-width)
@@ -458,13 +458,28 @@ img
     height: 100%
 
 .movie-still-view
+  position: relative
+  background-color: #000
+  overflow: hidden
+  +respond-to($m-container-width)
+    height: px2vw(220px, $m-container-width)
+  +respond-to($t-container-width)
+    height: 370px
+    width: 556px
+  +respond-to($d-container-width)
+    height: 615px
+    width: 925px
   img
-    +respond-to($m-container-width)
-      width: 100%
-    +respond-to($t-container-width)
-      width: 556px
-    +respond-to($d-container-width)
-      width: 925px
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 100%
+    // +respond-to($m-container-width)
+      // width: 100%
+    // +respond-to($t-container-width)
+      // width: 556px
+    // +respond-to($d-container-width)
+      // width: 925px
 
 .movie-still-carousel-button
   position: absolute
