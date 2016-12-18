@@ -1233,22 +1233,9 @@ p
         padding-left: 10px
         +font(size 14px)
 
-
 footer
-  position: absolute
-  bottom: 0
   width: 100vw
+  height: 50px
   margin-top: 30px
   background: $color-blue
-  +respond-to($m-container-width)
-    height: px2vw(30px, $m-container-width)
-    img
-      position: absolute
-      top: 50%
-      transform: translateY(-50%)
-      height: 70%
-  +respond-to($t-container-width)
-    height: 50px
-  +respond-to($d-container-width)
-    height: 50px
   +flexbox(center)
