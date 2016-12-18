@@ -10,6 +10,9 @@ let angular = require('angular');
 
 // 의존 모듈 로드
 require('angular-resource');
+// require('angular-auto-validate');
+require('ladda');
+require('angular-ladda');
 require('angular-ui-router');
 // require('ng-infinite-scroll');
 // require('spin');
@@ -18,6 +21,8 @@ require('angular-ui-router');
 // App 모듈 정의 (의존 모듈 주입)
 let popcorn = angular.module('PopcornListApp', [
 	'ngResource',
+	// 'jcs-autoValidate',
+	'angular-ladda',
 	'ui.router',
 	]);
 
@@ -27,9 +32,10 @@ let popcorn = angular.module('PopcornListApp', [
 popcorn.config([
 	'$httpProvider',
 	'$resourceProvider',
+	'laddaProvider',
 	'$stateProvider',
 	'$urlRouterProvider',
-	($httpProvider,$resourceProvider,$stateProvider,$urlRouterProvider)=>{
+	($httpProvider,$resourceProvider,laddaProvider,$stateProvider,$urlRouterProvider)=>{
 
       //$stateProvider
       $stateProvider
@@ -59,6 +65,24 @@ popcorn.config([
 				'templateUrl' : 'views/movieinfo.html'
 			    }
 			}
+	})
+	.state('signin',{
+			'url': '/login',
+			'views':{
+			  'main':{
+				'templateUrl' : 'views/login.html',
+				'controller' : 'loginController'
+			    }
+			}
+	})
+	.state('create',{
+		'url': '/signup',
+		'views':{
+		  'main':{
+			'templateUrl' : 'views/signup.html',
+			'controller' : 'signupController'
+		    }
+		}
 	});
 
 	// .state('list',{
@@ -79,6 +103,11 @@ popcorn.config([
 	let token = 'Token ffa44753118e755c0c28070fcbcc6c9a048b99bf';
 	$httpProvider.defaults.headers.common['Authorization'] = token;
 	$resourceProvider.defaults.stripTrailingSlashes = false;
+
+	//laddaProvider
+	laddaProvider.setOption({
+		'style' : 'expend-left'
+	})
 }]);
 
 
@@ -107,7 +136,11 @@ require('./controllers/main/magazineController.es6')
 require('./controllers/movieinfoDetail/moviedetailController');
 require('./controllers/movieinfoDetail/movieinfoRelatedController');
 
-
+// --------------------------------------------------------
+// controllers: sign up
+// --------------------------------------------------------
+require('./controllers/signup/loginController')
+require('./controllers/signup/signupController')
 
 
 // --------------------------------------------------------
@@ -128,8 +161,11 @@ require('./services/main/recommendGradeDataShareService');
 // --------------------------------------------------------
 require('./services/movieinfodetail/moviedetailDataShareService');
 require('./services/movieinfodetail/movieinfoRelatedDataShareService');
-
-
+// --------------------------------------------------------
+// service: signup
+// --------------------------------------------------------
+require('./services/signup/loginDataShareService');
+require('./services/signup/signupDataShareService');
 
 
 
