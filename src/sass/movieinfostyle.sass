@@ -1112,11 +1112,13 @@ figure
 // --------------------------------------------------------
 .movie-dialogue
   +respond-to($m-container-width)
+    position: relative
     &::after
       content: ''
       display: block
       clear: both
   +respond-to($t-container-width)
+    position: relative
     &::after
       content: ''
       display: block
