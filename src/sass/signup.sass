@@ -7,6 +7,45 @@
 @import modules/grid/grid_functions
 @import modules/grid/grid_mixins
 
+%header-isolate
+  margin-right: -100%
+  float: left
+
+.signup-header
+  +respond-to($m-container-width)
+    margin-bottom: px2vw(30px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-bottom: 60px
+  +respond-to($d-container-width)
+    margin-bottom: 90px
+
+.logo-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    width: percentage(101/$m-container-width)
+    padding: percentage(16/$m-container-width) 0 0 0
+  +respond-to($t-container-width)
+    width: 125px
+    padding: 30px 0 0 0
+  +respond-to($d-container-width)
+    width: 149px
+    padding: 38px 0 0 0
+
+.signup-header-logo
+  @extend %rwd-bg
+  display: block
+  padding-bottom: 19.46%
+  cursor: pointer
+  +respond-to($m-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($t-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($d-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
 
 .form
   border: 1px solid $color-linegray
@@ -211,6 +250,25 @@ label
       left: 30px
       right: 30px
     margin-right: 10px
+
+footer
+  position: absolute
+  bottom: 0
+  width: 100vw
+  margin-top: 30px
+  background: $color-blue
+  +respond-to($m-container-width)
+    height: px2vw(30px, $m-container-width)
+    img
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 70%
+  +respond-to($t-container-width)
+    height: 50px
+  +respond-to($d-container-width)
+    height: 50px
+  +flexbox(center)
 
 +respond-to($m-container-width)
 +respond-to($t-container-width)

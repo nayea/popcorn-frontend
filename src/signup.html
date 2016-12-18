@@ -15,47 +15,60 @@
 	 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.js"></script>
 </head>
 <body>
+<div class="container show-">
 
-	 <div class="container show-">
-	 	<div class="row">
-	 		<form name="signUpForm" class="form m-col-4 t-col-6 t-push-1 d-col-6 d-push-3" role="form">
-	 			<div class="legend-wrap">
-	 				<legend class="m-col-4">회원 가입</legend>
-	 			</div>
-				<div class="signup-wrap m-col-4 t-col-4 t-push-1 d-col-4 d-push-1">
-					<div class="signup-id-wrap">
-						<label for="sign-up-id">아이디</label>
-						<input id="sign-up-id" type="text" maxlenth="10" name="id" class="form-control" placeholder="아이디를 입력해주세요." required="">
-					</div>
-					<div class="signup-nickname-wrap">
-						<label for="sign-up-nickname">닉네임</label>
-						<input id="sign-up-nickname" type="text" name="nickname" class="form-control" placeholder="닉네임을 입력해주세요." required="">
-					</div>
-					<div class="signup-email-wrap">
-						<label for="sign-up-email">이메일</label>
-						<input id="sign-up-email" type="email" name="email" class="form-control" placeholder="이메일 입력해주세요." required="">
-					</div>
-					<div class="signup-photo-wrap">
-						<span>사진</span>
-						<input id="sign-up-photo" type="file" name="photo" class="form-control" onchange="javascript:document.getElementById('signup_file_route').value=this.value" required="">
-						<label for="sign-up-photo">찾기</label>
-						<input type="text" readonly="readonly" title="File Route" class="form-control" id="signup_file_route">
-					</div>
-					<div class="signup-password-wrap">
-						<label for="sign-up-password">비밀번호</label>
-						<input id="sign-up-password" type="password" name="password" class="form-control" placeholder="비빌번호를 입력해주세요." required="">
-					</div>
-					<div class="signup-confirm-password-wrap">
-						<label for="sign-up-confirm-password">비밀번호 확인</label>
-						<input id="sign-up-confirm-password" type="password" name="confirm-password" class="form-control" placeholder="비빌번호를 재입력해주세요." required="">
-					</div>
+	<header class="row m-col-4 t-col-8 d-col-12 signup-header">
+		<h1 class="logo-width">
+			<a href="#" class="signup-header-logo" aria-label="popcorn"></a>
+		</h1>
+	</header>
+
+	<main>
+		<div class="row">
+			<form name="signUpForm" class="form m-col-4 t-col-6 t-push-1 d-col-6 d-push-3" role="form">
+				<div class="legend-wrap">
+					<legend class="m-col-4">회원 가입</legend>
 				</div>
-				<div class="signup-submit-button-wrap m-col-4 t-col-4 t-push-1 d-col-4 d-push-1">
-					<button class="signup-submit-button" type="submit">가입하기</button>
+			<div class="signup-wrap m-col-4 t-col-4 t-push-1 d-col-4 d-push-1">
+				<div class="signup-id-wrap">
+					<label for="sign-up-id">아이디</label>
+					<input id="sign-up-id" type="text" maxlenth="10" name="id" class="form-control" placeholder="아이디를 입력해주세요." required="">
 				</div>
-	 		</form>
-	 	</div>
-	 </div>
+				<div class="signup-nickname-wrap">
+					<label for="sign-up-nickname">닉네임</label>
+					<input id="sign-up-nickname" type="text" name="nickname" class="form-control" placeholder="닉네임을 입력해주세요." required="">
+				</div>
+				<div class="signup-email-wrap">
+					<label for="sign-up-email">이메일</label>
+					<input id="sign-up-email" type="email" name="email" class="form-control" placeholder="이메일 입력해주세요." required="">
+				</div>
+				<div class="signup-photo-wrap">
+					<span>사진</span>
+					<input id="sign-up-photo" type="file" name="photo" class="form-control" onchange="javascript:document.getElementById('signup_file_route').value=this.value" required="">
+					<label for="sign-up-photo">찾기</label>
+					<input type="text" readonly="readonly" title="File Route" class="form-control" id="signup_file_route">
+				</div>
+				<div class="signup-password-wrap">
+					<label for="sign-up-password">비밀번호</label>
+					<input id="sign-up-password" type="password" name="password" class="form-control" placeholder="비빌번호를 입력해주세요." required="">
+				</div>
+				<div class="signup-confirm-password-wrap">
+					<label for="sign-up-confirm-password">비밀번호 확인</label>
+					<input id="sign-up-confirm-password" type="password" name="confirm-password" class="form-control" placeholder="비빌번호를 재입력해주세요." required="">
+				</div>
+			</div>
+			<div class="signup-submit-button-wrap m-col-4 t-col-4 t-push-1 d-col-4 d-push-1">
+				<button class="signup-submit-button" type="submit">가입하기</button>
+			</div>
+			</form>
+		</div>
+	</main>
+
+</div>
+
+<footer>
+	<img src="images/icon/icon-github.svg" alt="github">
+</footer>
 
 </body>
 
