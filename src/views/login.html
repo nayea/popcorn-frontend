@@ -1,0 +1,25 @@
+ <div class="container show-">
+	 	<div class="row">
+	 		<form name="signUpForm" class="form m-col-4 t-col-6 t-push-1 d-col-6 d-push-3" role="form">
+	 			<div class="legend-wrap">
+	 				<legend class="m-col-4">로그인</legend>
+	 			</div>
+				<div class="signup-wrap m-col-4 t-col-4 t-push-1 d-col-4 d-push-1">
+					<div class="signup-id-wrap">
+						<label for="sign-up-id">아이디</label>
+						<input id="sign-up-id" type="text" maxlenth="10" name="id" class="fm-control" placeholder="아이디를 입력해주세요." required="" data-ng-model="login_data.login_person.username">
+					</div>
+					<div class="signup-password-wrap">
+						<label for="sign-up-password">비밀번호</label>
+						<input id="sign-up-password" type="password" name="password" class="" placeholder="비빌번호를 입력해주세요." required="" data-ng-model="login_data.login_person.password1">
+					</div>
+				</div>
+				<div class="signup-submit-button-wrap m-col-4 t-col-4 t-push-1 d-col-4 d-push-1">
+					<button class="signup-submit-button" type="submit" data-ladda="login_data.is_creating" data-ng-click="create()">로그인</button>
+				</div>
+	 		</form>
+	 		<div class="signup-submit-button-wrap">
+					<a href data-ui-sref="create"><button class="signup-submit-button">회원가입</button></a>
+			</div>
+	 	</div>
+</div>

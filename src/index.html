@@ -12,10 +12,11 @@
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/movieinfostyle.css">
+  <link rel="stylesheet" href="css/signup.css">
 </head>
 
 <body data-ng-cloak>
-
+<div data-ui-view="main">
   <header class="header">
     <div class="container">
       <h1 class="logo-width">
@@ -47,14 +48,16 @@
         </div> -->
 
         <div class="header-in t-prefix-7 d-prefix-11">
-           <button class="header-in-button st-in-button">로그인</button>
+           <a href data-ui-sref="signin">
+            <button class="header-in-button st-in-button">로그인</button>
+            </a>
         </div>
      </div>
   </header>
 
 
 
-<div data-ui-view="main">
+
   <div data-ui-view="mainCarousel" data-main-carousel></div>
 
   <!-- <div id="trigger1" class="spacer s0"></div> -->
