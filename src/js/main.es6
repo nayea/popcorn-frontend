@@ -171,7 +171,7 @@ require('./services/signup/signupDataShareService');
 
 // Filters
 require('./filters/readingZeroFilter');
-
+require('./filters/defaultimageFilter')
 
 
 // main-script

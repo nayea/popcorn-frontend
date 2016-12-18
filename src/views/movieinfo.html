@@ -121,7 +121,7 @@
 					</ul>
 				</div>
 				<div class="movie-still-view m-col-4">
-					<img src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
+					<img data-ng-src="{{moviedetail_data.movies[0].image_set[0].url}}" src="http://t1.daumcdn.net/movie/af4830bf515df78a4e21462c1386248d2eae969d" alt="{{moviedetail_data.movies[0].title_kor}}의 스틸컷">
 				</div>
 			</div>
 		</section>
@@ -141,7 +141,7 @@
 		        <li class="m-col-1 t-col-2" data-ng-repeat="movie in filteredMovies=(movieinfoRelated_data.movies | filter:search )">
 		        <a href="#">
 		          <figure>
-		              <img data-ng-src="{{movie.img_url}}" src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F146F1B10ACE2AE7DF12090" alt="{{movie.title_kor}} 포스터">
+		              <img data-ng-src="{{movie.img_url | defaultImage}}" src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F146F1B10ACE2AE7DF12090" alt="{{movie.title_kor}} 포스터">
 		              <figcaption>
 		                <div class="movie-relative-title">{{movie.title_kor}}</div>
 		                <div class="movie-relative-grade-group">

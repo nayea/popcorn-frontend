@@ -1,0 +1,306 @@
+@import modules/initialization/normalize
+@import config/vars
+@import config/placeholder
+@import config/helper
+@import theme/_button
+@import theme/commonstyle
+@import modules/grid/grid_functions
+@import modules/grid/grid_mixins
+
+// --------------------------------------------------------
+// 헤 더
+// --------------------------------------------------------
+
+%header-isolate
+  margin-right: -100%
+  float: left
+
+.signup-header
+  +respond-to($m-container-width)
+    margin-bottom: px2vw(30px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-bottom: 60px
+  +respond-to($d-container-width)
+    margin-bottom: 90px
+
+.left-zero-logo-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    width: percentage(101/$m-container-width)
+    padding: percentage(16/$m-container-width) 0 0 0
+  +respond-to($t-container-width)
+    width: 125px
+    padding: 30px 0 0 0
+  +respond-to($d-container-width)
+    width: 149px
+    padding: 38px 0 0 0
+
+.pixed-header-logo
+  @extend %rwd-bg
+  display: block
+  padding-bottom: 19.46%
+  cursor: pointer
+  +respond-to($m-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($t-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($d-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+
+.movie-search-header-userinfo
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(12/$m-container-width) 0 0 percentage(295/$m-container-width)
+  +respond-to($t-container-width)
+    padding: 25px 0 0 652px
+  +respond-to($d-container-width)
+    padding-top: 26px
+  img
+    float: left
+    +respond-to($m-container-width)
+      width: px2vw(20px,$m-container-width)
+      height: px2vw(20px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(30px)
+    +respond-to($d-container-width)
+      +size(40px)
+  a
+    @extend %reset-a
+    display: block
+    float: left
+    cursor: pointer
+    +respond-to($m-container-width)
+      padding-left: px2vw(4px,$m-container-width)
+      color: $color-black
+    +respond-to($t-container-width)
+      padding: 6px 0 0 10px
+      +font(size 12px)
+      color: $color-black
+    +respond-to($d-container-width)
+      padding: 8px 0 0 15px
+      +font(size 14px)
+      color: $color-black
+  & .header-user-selection
+    @extend %button-reset
+    display: inline-block
+    background: url("../images/icon/icon-down.svg") no-repeat
+    background-size: contain
+    +respond-to($m-container-width)
+      width: px2vw(8px,$m-container-width)
+      height: px2vw(4px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(15px 8px)
+      padding-left: 2px
+    +respond-to($d-container-width)
+      +size(15px 8px)
+      padding-left: 11px
+
+// --------------------------------------------------------
+// 검색 바
+// --------------------------------------------------------
+
+.movie-search-form
+  position: relative
+  +respond-to($m-container-width)
+    margin:
+      top: px2vw(10px, $m-container-width)
+      bottom: px2vw(30px, $m-container-width)
+  +respond-to($t-container-width)
+    margin:
+      top: 15px
+      bottom: 50px
+  +respond-to($d-container-width)
+    margin:
+      top: 15px
+      bottom: 40px
+  input
+    border: 1px solid $color-linegray
+    border-radius: 50px
+    font-family: $spoqa-R
+    padding-left: 1em
+    width: 100%
+    +respond-to($m-container-width)
+      height: px2vw(30px, $m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+    +respond-to($t-container-width)
+      height: 40px
+    +respond-to($d-container-width)
+      height: 40px
+
+.movie-search-submit-button
+  @extend %button-reset
+  position: absolute
+  background: url(../images/icon/icon-search.svg) no-repeat
+  background-size: contain
+  +respond-to($m-container-width)
+    top: 25%
+    right: 5%
+    width: px2vw(13px, $m-container-width)
+    height: px2vw(13px, $m-container-width)
+  +respond-to($t-container-width)
+    top: 11px
+    right: 25px
+    width: 17px
+    height: 17px
+  +respond-to($d-container-width)
+    top: 11px
+    right: 25px
+    width: 17px
+    height: 17px
+  &:hover
+    cursor: pointer
+
+// --------------------------------------------------------
+// 검색 결과
+// --------------------------------------------------------
+
+.movie-search-result
+  display: inline-block
+  +respond-to($m-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+    margin-bottom: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    &::after
+      content: ''
+      display: block
+      clear: both
+    margin-bottom: 20px
+  +respond-to($d-container-width)
+    margin-top: 20px
+
+.movie-search-result-poster
+  border-radius: 10px
+  box-shadow: 3px 3px 10px $color-black
+
+.movie-search-info
+  position: relative
+
+.movie-search-title
+  font-family: $spoqa-B
+  color: $color-black
+  border-bottom: 1px solid $color-linegray
+  +respond-to($m-container-width)
+    font-size: px2vw(14px, $m-container-width)
+    margin:
+      top: px2vw(10px, $m-container-width)
+    padding:
+      bottom: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 20px
+    margin-top: 20px
+    padding:
+      bottom: 10px
+  +respond-to($d-container-width)
+    font-size: 20px
+    margin-top: 30px
+    padding:
+      bottom: 10px
+  span
+    display: block
+    +respond-to($m-container-width)
+      font-size: px2vw(10px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 14px
+    +respond-to($d-container-width)
+      font-size: 14px
+
+.movie-search-info-table
+  +respond-to($m-container-width)
+    margin-top: px2vw(5px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-top: 10px
+  +respond-to($d-container-width)
+    margin-top: 10px
+  color: $color-black
+  tr
+    +respond-to($m-container-width)
+      line-height: px2vw(15px, $m-container-width)
+    +respond-to($t-container-width)
+      line-height: 35px
+    +respond-to($d-container-width)
+      line-height: 40px
+  th
+    display: inline-block
+    font-family: $spoqa-B
+    +respond-to($m-container-width)
+      font-size: px2vw(10px, $m-container-width)
+      margin:
+        right: px2vw(5px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 14px
+      margin-right: 20px
+    +respond-to($d-container-width)
+      font-size: 15px
+      margin-right: 20px
+  td
+    font-family: $spoqa-R
+    +respond-to($m-container-width)
+      font-size: px2vw(10px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 14px
+    +respond-to($d-container-width)
+      font-size: 15px
+    span
+      display: inline-block
+      padding:
+        left: 0.2em
+        right: 0.2em
+
+.movie-search-show-more-button
+  position: absolute
+  letter-spacing: -0.3px
+  right: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    padding:
+      top: px2vw(5px, $m-container-width)
+      bottom: px2vw(4px, $m-container-width)
+      right: px2vw(10px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    margin:
+      top: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 12px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 15px
+      right: 15px
+    margin-top: 50px
+  +respond-to($d-container-width)
+    font-size: 14px
+    padding:
+      top: 9px
+      bottom: 7px
+      left: 15px
+      right: 15px
+    margin-top: 50px
+
+// --------------------------------------------------------
+// 푸 터
+// --------------------------------------------------------
+
+.serach-footer
+  position: relative
+  width: 100vw
+  margin-top: 30px
+  background: $color-blue
+  +respond-to($m-container-width)
+    height: px2vw(30px, $m-container-width)
+    img
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 70%
+  +respond-to($t-container-width)
+    height: 50px
+  +respond-to($d-container-width)
+    height: 50px
+  +flexbox(center)
