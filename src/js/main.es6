@@ -135,7 +135,7 @@ require('./services/movieinfodetail/movieinfoRelatedDataShareService');
 
 // Filters
 require('./filters/readingZeroFilter');
-
+require('./filters/defaultimageFilter')
 
 
 // main-script
