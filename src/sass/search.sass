@@ -1,0 +1,166 @@
+@import modules/initialization/normalize
+@import config/vars
+@import config/placeholder
+@import config/helper
+@import theme/_button
+@import theme/commonstyle
+@import modules/grid/grid_functions
+@import modules/grid/grid_mixins
+
+.movie-search-form
+  position: relative
+  +respond-to($m-container-width)
+    margin:
+      top: px2vw(10px, $m-container-width)
+      bottom: px2vw(50px, $m-container-width)
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+  input
+    border: 1px solid $color-linegray
+    border-radius: 50px
+    font-family: $spoqa-R
+    padding-left: 1em
+    +respond-to($m-container-width)
+      height: px2vw(30px, $m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+      width: 100%
+    +respond-to($t-container-width)
+    +respond-to($d-container-width)
+
+.movie-search-submit-button
+  @extend %button-reset
+  position: absolute
+  background: url(../images/icon/icon-search.svg) no-repeat
+  background-size: contain
+  +respond-to($m-container-width)
+    top: 25%
+    right: 5%
+    width: px2vw(13px, $m-container-width)
+    height: px2vw(13px, $m-container-width)
+  +respond-to($t-container-width)
+    width: 12px
+    height: 12px
+  +respond-to($d-container-width)
+    width: 12px
+    height: 12px
+  &:hover
+    cursor: pointer
+
+.movie-search-result
+
+.movie-search-result-poster
+  border-radius: 10px
+  box-shadow: 3px 3px 10px $color-black
+
+.movie-search-info
+  position: relative
+
+.movie-search-title
+  font-family: $spoqa-B
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(14px, $m-container-width)
+    margin:
+      top: px2vw(10px, $m-container-width)
+    padding:
+      bottom: px2vw(10px, $m-container-width)
+    border-bottom: 1px solid $color-linegray
+  +respond-to($t-container-width)
+    font-size: 20px
+    margin-top: 10px
+    border-bottom: 2px solid $color-blue
+  +respond-to($d-container-width)
+    font-size: 20px
+    margin-top: 10px
+    border-bottom: 2px solid $color-blue
+  span
+    display: block
+
+.movie-search-info-table
+  +respond-to($m-container-width)
+    margin-top: px2vw(5px, $m-container-width)
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+  color: $color-black
+  tr
+    +respond-to($m-container-width)
+      line-height: px2vw(15px, $m-container-width)
+    +respond-to($t-container-width)
+    +respond-to($d-container-width)
+  th
+    display: inline-block
+    font-family: $spoqa-B
+    +respond-to($m-container-width)
+      font-size: px2vw(10px, $m-container-width)
+      margin:
+        right: px2vw(5px, $m-container-width)
+    +respond-to($t-container-width)
+    +respond-to($d-container-width)
+  td
+    font-family: $spoqa-R
+    +respond-to($m-container-width)
+      font-size: px2vw(10px, $m-container-width)
+    +respond-to($t-container-width)
+    +respond-to($d-container-width)
+    span
+      display: inline-block
+      padding:
+        left: 0.2em
+        right: 0.2em
+
+.movie-search-show-more-button
+  position: absolute
+  letter-spacing: -0.3px
+  right: 0
+  +respond-to($m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    padding:
+      top: px2vw(5px, $m-container-width)
+      bottom: px2vw(4px, $m-container-width)
+      right: px2vw(10px, $m-container-width)
+      left: px2vw(10px, $m-container-width)
+    margin:
+      top: px2vw(20px, $m-container-width)
+
+  +respond-to($t-container-width)
+  +respond-to($d-container-width)
+
+// .recommend-movie-info
+//   position: absolute
+//   overflow: hidden
+//   +size(330px 462px)
+//   border-radius: 10px
+//   background: #fff
+//   box-shadow: 3px 3px 5px $color-black
+//   // +transform(rotatey(-180deg))
+//   color: $color-black
+//   +font(size 14px)
+//   h2
+//     @extend %reset-box-model
+//     +font(size 20px)
+//     padding: 30px
+//     span
+//       display: block
+//       +font(size 14px)
+//   table
+//     @extend %reset-box-model
+//     th
+//       padding: 10px 30px
+//   .recommend-stars
+//     padding-left: 30px
+//     img
+//       +size(98px 15px)
+//       box-shadow: none
+//     span
+//       position: relative
+//       top: -4px
+//       left: 120px
+//   button
+//     +font(size 12px )
+//     padding: 7px 14px
+//     margin: 20px 0 0 170px
+//     color: #fff
+//     border: 0
+//     &:active
+//       position: relative
+//       top: 2px
