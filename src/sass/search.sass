@@ -7,6 +7,102 @@
 @import modules/grid/grid_functions
 @import modules/grid/grid_mixins
 
+// --------------------------------------------------------
+// 헤 더
+// --------------------------------------------------------
+
+%header-isolate
+  margin-right: -100%
+  float: left
+
+.signup-header
+  +respond-to($m-container-width)
+    margin-bottom: px2vw(30px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-bottom: 60px
+  +respond-to($d-container-width)
+    margin-bottom: 90px
+
+.left-zero-logo-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    width: percentage(101/$m-container-width)
+    padding: percentage(16/$m-container-width) 0 0 0
+  +respond-to($t-container-width)
+    width: 125px
+    padding: 30px 0 0 0
+  +respond-to($d-container-width)
+    width: 149px
+    padding: 38px 0 0 0
+
+.pixed-header-logo
+  @extend %rwd-bg
+  display: block
+  padding-bottom: 19.46%
+  cursor: pointer
+  +respond-to($m-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($t-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($d-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+
+.movie-search-header-userinfo
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(12/$m-container-width) 0 0 percentage(295/$m-container-width)
+  +respond-to($t-container-width)
+    padding: 25px 0 0 652px
+  +respond-to($d-container-width)
+    padding-top: 26px
+  img
+    float: left
+    +respond-to($m-container-width)
+      width: px2vw(20px,$m-container-width)
+      height: px2vw(20px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(30px)
+    +respond-to($d-container-width)
+      +size(40px)
+  a
+    @extend %reset-a
+    display: block
+    float: left
+    cursor: pointer
+    +respond-to($m-container-width)
+      padding-left: px2vw(4px,$m-container-width)
+      color: $color-black
+    +respond-to($t-container-width)
+      padding: 6px 0 0 10px
+      +font(size 12px)
+      color: $color-black
+    +respond-to($d-container-width)
+      padding: 8px 0 0 15px
+      +font(size 14px)
+      color: $color-black
+  & .header-user-selection
+    @extend %button-reset
+    display: inline-block
+    background: url("../images/icon/icon-down.svg") no-repeat
+    background-size: contain
+    +respond-to($m-container-width)
+      width: px2vw(8px,$m-container-width)
+      height: px2vw(4px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(15px 8px)
+      padding-left: 2px
+    +respond-to($d-container-width)
+      +size(15px 8px)
+      padding-left: 11px
+
+// --------------------------------------------------------
+// 검색 바
+// --------------------------------------------------------
+
 .movie-search-form
   position: relative
   +respond-to($m-container-width)
@@ -57,6 +153,10 @@
     height: 17px
   &:hover
     cursor: pointer
+
+// --------------------------------------------------------
+// 검색 결과
+// --------------------------------------------------------
 
 .movie-search-result
   display: inline-block
@@ -183,42 +283,24 @@
       right: 15px
     margin-top: 50px
 
-// .recommend-movie-info
-//   position: absolute
-//   overflow: hidden
-//   +size(330px 462px)
-//   border-radius: 10px
-//   background: #fff
-//   box-shadow: 3px 3px 5px $color-black
-//   // +transform(rotatey(-180deg))
-//   color: $color-black
-//   +font(size 14px)
-//   h2
-//     @extend %reset-box-model
-//     +font(size 20px)
-//     padding: 30px
-//     span
-//       display: block
-//       +font(size 14px)
-//   table
-//     @extend %reset-box-model
-//     th
-//       padding: 10px 30px
-//   .recommend-stars
-//     padding-left: 30px
-//     img
-//       +size(98px 15px)
-//       box-shadow: none
-//     span
-//       position: relative
-//       top: -4px
-//       left: 120px
-//   button
-//     +font(size 12px )
-//     padding: 7px 14px
-//     margin: 20px 0 0 170px
-//     color: #fff
-//     border: 0
-//     &:active
-//       position: relative
-//       top: 2px
+// --------------------------------------------------------
+// 푸 터
+// --------------------------------------------------------
+
+.serach-footer
+  position: relative
+  width: 100vw
+  margin-top: 30px
+  background: $color-blue
+  +respond-to($m-container-width)
+    height: px2vw(30px, $m-container-width)
+    img
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 70%
+  +respond-to($t-container-width)
+    height: 50px
+  +respond-to($d-container-width)
+    height: 50px
+  +flexbox(center)
