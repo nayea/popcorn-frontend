@@ -1,4 +1,4 @@
- <div class="container show-">
+ <div class="container">
 	 	<div class="row">
 	 		<form name="signUpForm" class="form m-col-4 t-col-6 t-push-1 d-col-6 d-push-3" role="form">
 	 			<div class="legend-wrap">
@@ -18,8 +18,15 @@
 					<button class="signup-submit-button" type="submit" data-ladda="login_data.is_creating" data-ng-click="create()">로그인</button>
 				</div>
 	 		</form>
-	 		<div class="signup-submit-button-wrap">
-					<a href data-ui-sref="create"><button class="signup-submit-button">회원가입</button></a>
-			</div>
+			
 	 	</div>
+
+		 <div class="row">
+		 	     <div class="signup-tranfer-button-wrap">
+		 	  <!--    <p>요즘 무슨 영화가 재밌지?? PORCORN!!</p> -->
+		 	     	<a href data-ui-sref="create" class="loginin-signup-button m-push-2 t-push-5 d-push-7"><button class="signup-submit-button">회원가입</button></a>
+		 	     </div>
+		 </div>
 </div>
+
+<div data-ng-include=" 'views/login-footer.html' "></div>

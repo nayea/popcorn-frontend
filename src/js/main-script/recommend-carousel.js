@@ -222,7 +222,7 @@ function readingZeroNum(idx) {
   var num=idx+1; 
   return 10 > num ? '0' +num : num;
 }
-},500);
+},800);
 })(this, jQuery);
 
 (function(global, $){
@@ -235,6 +235,8 @@ $('.recommend-tabpanel-wrapper-small').on('click',function(){
         });
         return false;
   });
-},500);
+
+
+},800);
 
 })(this, jQuery);

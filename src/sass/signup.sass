@@ -230,6 +230,20 @@ label
       top: 30px
       bottom: 30px
 
+.signup-tranfer-button-wrap
+  +respond-to($m-container-width)
+    margin:
+      top: px2vw(20px, $m-container-width)
+      bottom: px2vw(15px, $m-container-width)
+  +respond-to($t-container-width)
+    margin:
+      top: 30px
+      bottom: 30px
+  +respond-to($d-container-width)
+    margin:
+      top: 30px
+      bottom: 30px
+
 
 .signup-submit-button
   @extend .st-button-B
@@ -244,14 +258,14 @@ label
       left: px2vw(30px, $m-container-width)
       right: px2vw(30px, $m-container-width)
   +respond-to($t-container-width)
-    font-size: 12px
+    font-size: 14px
     padding:
       top: 5px
       bottom: 3px
       left: 30px
       right: 30px
   +respond-to($d-container-width)
-    font-size: 12px
+    font-size: 14px
     padding:
       top: 5px
       bottom: 3px
@@ -264,11 +278,12 @@ label
 // --------------------------------------------------------
 
 .signup-footer
-  position: absolute
+  position: relative
   bottom: 0
   width: 100vw
-  margin-top: 30px
+  margin-top: 50px
   background: $color-blue
+  +flexbox(center)
   +respond-to($m-container-width)
     height: px2vw(30px, $m-container-width)
     img
@@ -280,7 +295,24 @@ label
     height: 50px
   +respond-to($d-container-width)
     height: 50px
+
+.login-footer
+  position: absolute
+  bottom: 0
+  width: 100vw
+  background: $color-blue
   +flexbox(center)
+  +respond-to($m-container-width)
+    height: px2vw(30px, $m-container-width)
+    img
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 70%
+  +respond-to($t-container-width)
+    height: 50px
+  +respond-to($d-container-width)
+    height: 50px
 
 +respond-to($m-container-width)
 +respond-to($t-container-width)

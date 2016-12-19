@@ -1,5 +1,7 @@
 (function(window, $){
 'use strict';
+setTimeout(function(){
+
 
 var $didScroll = false;
 var $header = $('header');
@@ -85,7 +87,7 @@ function hasScrolled(){
      }
 
 }
-
+},800);
 })(this, jQuery);
 
 
@@ -96,7 +98,7 @@ function hasScrolled(){
 
 (function(window,$){
 'use strict';
-
+setTimeout(function(){
   var $doc = $('html, body');
   var $scroll_menu = $('header');
 
@@ -111,5 +113,7 @@ function hasScrolled(){
     }, 300, 'easeInOutCirc');
   });
 
+
+},800);
 
 })(this, jQuery);
