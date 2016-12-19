@@ -47,10 +47,10 @@ img
   // height: 400px
   // width: auto
   // background-size: cover
-  +respond-to($t-container-width)
-    padding-top: 80px
-  +respond-to($d-container-width)
-    padding-top: 80px
+  // +respond-to($t-container-width)
+  //   padding-top: 80px
+  // +respond-to($d-container-width)
+  //   padding-top: 80px
 
 // .container
 //   position: relative
@@ -345,27 +345,35 @@ img
       font-size: 14px
   div
   .actor-role-info
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
     +respond-to($m-container-width)
       font-size: px2vw(10px, $m-container-width)
       height: px2vw(10px, $m-container-width)
       margin-bottom: px2vw(2px, $m-container-width)
     +respond-to($t-container-width)
+      width: 95px
       height: 10px
       font-size: 10px
       margin-bottom: 2px
     +respond-to($d-container-width)
       position: absolute
       font-size: 12px
-      top: 15px
-      left: 140px
+      top: 17px
+      left: 135px
       width: 150px
       // margin:
       //   top: 10px
       //   bottom: 2px
   .actor-name-info
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
     +respond-to($m-container-width)
       font-size: px2vw(12px, $m-container-width)
     +respond-to($t-container-width)
+      width: 95px
       font-size: 14px
     +respond-to($d-container-width)
       font-size: 14px
@@ -638,12 +646,17 @@ figure
   font-family: $spoqa-R
   color: $color-blue
   margin-bottom: 0
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
   +respond-to($m-container-width)
     font-size: px2vw(10px, $m-container-width)
     width: 90%
   +respond-to($t-container-width)
     font-size: 14px
+    width: 170px
   +respond-to($d-container-width)
+    width: 175px
     font-size: 14px
     margin:
       top: 80px
@@ -931,8 +944,9 @@ figure
       // font-size: px2vw(12px, $m-container-width)
       top: px2vw(-1px, $m-container-width)
     +respond-to($t-container-width)
-      top: -1px
+      top: 1px
     +respond-to($d-container-width)
+      top: 5px
     position: absolute
     right: -10%
     opacity: 0
