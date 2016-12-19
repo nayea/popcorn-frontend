@@ -479,92 +479,27 @@
 		          <button class="movie-comment-submit-button">완료</button>
 		        </div>
 		      </div>
-		      <ul class="movie-comment-list row m-col-4">
-		        <li>
-		          <img class="movie-comment-user-image" src="images/user-1.jpg" alt="">
+
+                   <!-- comment get start -->
+		      <ul class="movie-comment-list row m-col-4" data-ng-controller="movieinfoCommentController">
+		        <li data-ng-repeat="movie in filteredMovies=(movieinfoComment_data.movies | filter:search )">
+		          <img class="movie-comment-user-image" data-ng-src="{{movie.author.profile_img}}" src="images/user-1.jpg" alt="">
 		          <div class="movie-comment-right-group m-col-3 t-col-7">
-		            <p class="movie-comment-paragraph ">아 진짜 이 세기에 안태어났었으면 이 시리즈들을 못봤을텐데.. 정말 행운인 것 같다.</p>
+		            <p class="movie-comment-paragraph ">{{movie.content}}</p>
 		            <div class="movie-comment-star-group row">
 		              <div class="medium-star"></div>
 		              <div class="medium-star"></div>
 		              <div class="medium-star"></div>
 		              <div class="medium-star"></div>
 		              <div class="medium-non-star"></div>
-		              <div class="medium-movie-grade">4</div>
+		              <div class="medium-movie-grade">{{movie.star}}</div>
 		            </div>
 		            <div class="write-info-group">
-		              <span>2016.11.03 | 이나영</span>
+		              <span>{{movie.created}} | {{movie.author.nickname}}</span>
 		            </div>
 		          </div>
 		        </li>
-		        <li>
-		          <img class="movie-comment-user-image" src="images/user-1.jpg" alt="">
-		          <div class="movie-comment-right-group m-col-3 t-col-7">
-		            <p class="movie-comment-paragraph ">아 진짜 이 세기에 안태어났었으면 이 시리즈들을 못봤을텐데.. 정말 행운인 것 같다.</p>
-		            <div class="movie-comment-star-group row">
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-non-star"></div>
-		              <div class="medium-movie-grade">4</div>
-		            </div>
-		            <div class="write-info-group">
-		              <span>2016.11.03 | 이나영</span>
-		            </div>
-		          </div>
-		        </li>
-		        <li>
-		          <img class="movie-comment-user-image" src="images/user-1.jpg" alt="">
-		          <div class="movie-comment-right-group m-col-3 t-col-7">
-		            <p class="movie-comment-paragraph ">아 진짜 이 세기에 안태어났었으면 이 시리즈들을 못봤을텐데.. 정말 행운인 것 같다.</p>
-		            <div class="movie-comment-star-group row">
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-non-star"></div>
-		              <div class="medium-movie-grade">4</div>
-		            </div>
-		            <div class="write-info-group">
-		              <span>2016.11.03 | 이나영</span>
-		            </div>
-		          </div>
-		        </li>
-		        <li>
-		          <img class="movie-comment-user-image" src="images/user-1.jpg" alt="">
-		          <div class="movie-comment-right-group m-col-3 t-col-7">
-		            <p class="movie-comment-paragraph ">아 진짜 이 세기에 안태어났었으면 이 시리즈들을 못봤을텐데.. 정말 행운인 것 같다.</p>
-		            <div class="movie-comment-star-group row">
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-non-star"></div>
-		              <div class="medium-movie-grade">4</div>
-		            </div>
-		            <div class="write-info-group">
-		              <span>2016.11.03 | 이나영</span>
-		            </div>
-		          </div>
-		        </li>
-		        <li>
-		          <img class="movie-comment-user-image" src="images/user-1.jpg" alt="">
-		          <div class="movie-comment-right-group m-col-3 t-col-7">
-		            <p class="movie-comment-paragraph ">아 진짜 이 세기에 안태어났었으면 이 시리즈들을 못봤을텐데.. 정말 행운인 것 같다.</p>
-		            <div class="movie-comment-star-group row">
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-non-star"></div>
-		              <div class="medium-movie-grade">4</div>
-		            </div>
-		            <div class="write-info-group">
-		              <span>2016.11.03 | 이나영</span>
-		            </div>
-		          </div>
-		        </li>
+		      
 		      </ul>
 		      <button class="movie-comment-show-more-button">더보기</button>
 		    </div>
@@ -575,57 +510,32 @@
 		    <div class="movie-dialogue-wrap">
 		      <h1 class="movie-dialogue-heading m-col-1 row">명대사</h1>
 		      <button class="movie-dialogue-add-button">명대사 등록하기</button>
-		      <div class="movie-dialogue-select-group m-col-4 t-col-8">
+		      <div class="movie-dialogue-select-group m-col-4 t-col-8" data-ng-controller="moviedetailController" data-ng-model="moviedetail_data.movies[0]">
 		        <select class="movie-dialogue-actor-select" name="">
-		          <option value="1"><span class="actor-role-select">뉴트 스캐맨더</span> | 에디 레드메인</option>
-		          <option value="1"><span class="actor-role-select">퍼시벨 그레이브스</span> | 콜린 파렐</option>
-		          <option value="1"><span class="actor-role-select">티나 골드스틴</span> | 캐서린 워터스틴</option>
+		          <option value="1"  data-ng-repeat="movie in filteredMovies=(moviedetail_data.movies[0].actors | filter:search )"><span class="actor-role-select" >{{movie.character_name}}</span> | <span>{{movie.actor.name_kor}}</span></option>
 		        </select>
-		        <input class="movie-dialogue-write-speech" placeholder="명대사" type="text">
+		       <div data-ng-controller="movieinfoFamousLineController">
+		       	 <input class="movie-dialogue-write-speech" placeholder="명대사" type="text" data-ng-model="FamousLine_data.FamousLine_person.content">
+		       </div>
 		        <div class="movie-dialogue-submit-button-group">
 		          <button class="movie-dialogue-submit-button">완료</button>
 		        </div>
 		      </div>
-		      <ul class="movie-dialogue-list m-col-4 d-col-5">
-		        <li class="row">
+		      <ul class="movie-dialogue-list m-col-4 d-col-5" data-ng-controller="movieinfoFamousLineController">
+		        <li class="row" data-ng-repeat="movie in filteredMovies=(movieinfoFamousLine_data.movies | filter:search )">
 		          <div class="dialogue-actor-image-wrap">
-		            <img src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F11182E10AE298D72EF8499" alt="">
+		            <img data-ng-src="{{movie.actor_img_url}}" src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F11182E10AE298D72EF8499" alt="{{movie.actor_kor_name}}">
 		          </div>
 		          <div class="dialogue-content-wrap m-col-3 t-col-7">
-		            <p>이거 꿈은 아니죠? 전 이런걸 상상할 두뇌가 없거든요.</p>
+		            <p>{{movie.content}}</p>
 		            <div class="dialogue-actor-info-group d-col-4">
-		              <span class="dialogue-actor-role">제이콥 코왈스키 역</span>
-		              <span class="dialogue-actor-name">| 댄 포글러</span>
+		              <span class="dialogue-actor-role">{{movie.actor_character_name}}</span>
+		              <span class="dialogue-actor-name">| {{movie.actor_kor_name}}</span>
 		            </div>
-		            <span class="dialogue-writer-name">이나영</span>
+		           <!--  <span class="dialogue-writer-name">이나영</span> -->
 		          </div>
 		        </li>
-		        <li class="row">
-		          <div class="dialogue-actor-image-wrap">
-		            <img src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F11182E10AE298D72EF8499" alt="">
-		          </div>
-		          <div class="dialogue-content-wrap m-col-3 t-col-7">
-		            <p>이거 꿈은 아니죠? 전 이런걸 상상할 두뇌가 없거든요.</p>
-		            <div class="dialogue-actor-info-group d-col-4">
-		              <span class="dialogue-actor-role">제이콥 코왈스키 역</span>
-		              <span class="dialogue-actor-name">| 댄 포글러</span>
-		            </div>
-		            <span class="dialogue-writer-name">이나영</span>
-		          </div>
-		        </li>
-		        <li class="row">
-		          <div class="dialogue-actor-image-wrap">
-		            <img src="http://img1.daumcdn.net/thumb/C74x107/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F11182E10AE298D72EF8499" alt="">
-		          </div>
-		          <div class="dialogue-content-wrap m-col-3 t-col-7">
-		            <p>이거 꿈은 아니죠? 전 이런걸 상상할 두뇌가 없거든요.</p>
-		            <div class="dialogue-actor-info-group d-col-4">
-		              <span class="dialogue-actor-role">제이콥 코왈스키 역</span>
-		              <span class="dialogue-actor-name">| 댄 포글러</span>
-		            </div>
-		            <span class="dialogue-writer-name">이나영</span>
-		          </div>
-		        </li>
+		        
 		      </ul>
 		      <button class="movie-dialogue-show-more-button">더보기</button>
 		    </div>

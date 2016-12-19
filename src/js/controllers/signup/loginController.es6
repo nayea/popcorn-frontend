@@ -5,25 +5,25 @@ let angular = require('angular');
 angular
   .module('PopcornListApp')
   .controller('loginController',
-    ['$scope', 'loginDataShareService',  ($scope,loginDataShareService)=>{
+    ['$scope', 'loginDataShareService', '$state', ($scope,loginDataShareService,$state)=>{
 
      $scope.login_data = loginDataShareService; 
      
 
 
-     $scope.selectMovie=function(movie) {
-      $scope.login_data.login_person= movie;
-       console.log($scope.login_data,login_person);
+     $scope.selectMovie=function(person) {
+      $scope.login_data.login_person= person;
+       
     };
 
      function gotoListPage(){
     	$state.go('list');
-    	$scope.signup_data.signup_person = null;
+    	$scope.login_data.login_person = null;
     }
 
     $scope.create = ()=> {
-    	$scope.login_data.createContact($scope.login_data.login_person, gotoListPage);
+    	$scope.login_data.createContact($scope.login_data.login_person,  gotoListPage);
 
-    }
+    };
 
   }]);
