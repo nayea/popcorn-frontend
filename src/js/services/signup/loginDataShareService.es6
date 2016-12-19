@@ -6,7 +6,6 @@ let angular = require('angular');
 angular
   .module('PopcornListApp')
   .factory('login', ['$resource', function($resource){
-
     return $resource(
       'https://django-test.com/member/login/',{},
        {'create': { method:'post' }}
@@ -25,24 +24,32 @@ angular
         'people' : [],
         'is_loading' : false,
         'is_creating' : false,
-        // 'loadContacts' : ( ) =>{
+        'loadContacts' : ( ) =>{
 
-        //    _service.is_loading = true;
-        //    login.get((data)=>{
-     
-        //       _service.people.push( new login(data));
-    
-        //   });
-        // },
+           _service.is_loading = true;
+          //  login.get((data)=>{
+          //   angular.forEach(data, (person)=>{
+          //     _service.people.push( new login(person) );
+          //   });
+          // });
+        },
         'createContact' : (person,gotoListPage) => {
-            // console.log('create');
-            // console.log(person);
            
             _service.is_creating = true;
             (new login(person)).$create().then(()=> {
+               // window.localStorage.clear();
+               // window.localStorage[key] = login.token;
+                initServiceSetting();
+                _service.loadContacts();
                 _service.is_creating = false;
+                console.log('created person');
                 gotoListPage();
             });
+            // _service.is_creating = true;
+            // login.save(person).$promise.then(( )=>{
+            //   console.log('created person');
+            //   _service.is_creating = false;
+            // });
         },
 
      };
