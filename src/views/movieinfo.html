@@ -10,15 +10,14 @@
 					<div class="dumy t-col-8"></div>
 					<div role="group" class="movie-info-group m-col-4 t-col-8 d-col-12">
       	  	<ul class="movie-info-list m-col-2 m-prefix-2 t-col-6 t-prefix-2 d-prefix-3">
-      	  	  <li class="movie-title" aria-label="제목">{{moviedetail_data.movies[0].title_kor}}<span>
-      	  	  ({{moviedetail_data.movies[0].title_eng}})</span></li>
+      	  	  <li class="movie-title" aria-label="제목">
+                {{moviedetail_data.movies[0].title_kor}}<span>({{moviedetail_data.movies[0].title_eng}})</span>
+              </li>
       	  	  <li class="movie-grade-group row" aria-label="평점">
-	      					<div class="star"></div>
-	      					<div class="star"></div>
-	      					<div class="star"></div>
-	      					<div class="star"></div>
-	      					<div class="non-star"></div>
-						 <div class="movie-grade">3.9</div>
+                <div class="stars-wrap">
+                  <div class="stars-4-0"></div>
+                </div>
+						    <div class="movie-grade movie-grade-style">3.9</div>
       	  	  </li>
       	  	  <li>
       	  	    <ul class="movie-info-sub">

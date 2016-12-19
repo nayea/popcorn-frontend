@@ -6,7 +6,7 @@
 @import theme/commonstyle
 @import modules/grid/grid_functions
 @import modules/grid/grid_mixins
-
+@import theme/_stars.sass
 
 // 초기화 ---------------------
 html
@@ -41,7 +41,7 @@ img
 // --------------------------------------------------------
 // 영화 정보
 // --------------------------------------------------------
-.movie-info-group-wrapper
+// .movie-info-group-wrapper
   // position: relative
   // background: url("http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1") no-repeat center
   // height: 400px
@@ -150,30 +150,34 @@ img
   div
     float: left
 
-.star
-  +respond-to($m-container-width)
-    +size(px2vw(15px, $m-container-width))
-    margin-right: px2vw(3px, $m-container-width)
-  +respond-to($t-container-width)
-    +size(20px)
-    margin-right: 5px
-  +respond-to($d-container-width)
-    +size(20px)
-    margin-right: 5px
-  background: url(../images/icon/icon-star.svg)
-  background-size: contain
+// .stars-4-0
+//   width: 120px
+//   height: 22px
 
-.non-star
-  +respond-to($m-container-width)
-    +size(px2vw(15px, $m-container-width))
-  +respond-to($t-container-width)
-    +size(20px)
-  +respond-to($d-container-width)
-    +size(20px)
-  background: url(../images/icon/icon-star-border.svg)
-  background-size: contain
+// .star
+//   +respond-to($m-container-width)
+//     +size(px2vw(15px, $m-container-width))
+//     margin-right: px2vw(3px, $m-container-width)
+//   +respond-to($t-container-width)
+//     +size(20px)
+//     margin-right: 5px
+//   +respond-to($d-container-width)
+//     +size(20px)
+//     margin-right: 5px
+//   background: url(../images/icon/icon-star.svg)
+//   background-size: contain
+//
+// .non-star
+//   +respond-to($m-container-width)
+//     +size(px2vw(15px, $m-container-width))
+//   +respond-to($t-container-width)
+//     +size(20px)
+//   +respond-to($d-container-width)
+//     +size(20px)
+//   background: url(../images/icon/icon-star-border.svg)
+//   background-size: contain
 
-.movie-grade
+.movie-grade-style
   +respond-to($m-container-width)
     font-size: px2vw(14px, $m-container-width)
     padding-left: px2vw(10px, $m-container-width)
@@ -946,7 +950,7 @@ figure
     +respond-to($t-container-width)
       top: 1px
     +respond-to($d-container-width)
-      top: 5px
+      top: 1px
     position: absolute
     right: -10%
     opacity: 0
