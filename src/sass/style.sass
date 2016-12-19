@@ -863,7 +863,7 @@ p
 
 .recommend-choice
   +respond-to($m-container-width)
-    height: px2vw(280px,$m-container-width)
+    height: px2vw(250px,$m-container-width)
   +respond-to($t-container-width)
     height: 230px
   +respond-to($d-container-width)
@@ -901,7 +901,7 @@ p
     +font(size 14px)
   input
     label
-      padding-right: 5px
+      margin-right: 10px
 
 
 
@@ -1037,7 +1037,8 @@ p
      border-radius: 50px
      +size(60px)
 .review-user-comment
-  padding-left: 15px
+  // padding-left: 15px
+  height: 100px
   time
     +font(size 9px)
   .review-user-name
@@ -1053,9 +1054,22 @@ p
       +font(size 12px)
       position: relative
       top: -8px
-  p
+  .review-desc
     @extend %reset-box-model
-    +font(size 12px)
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    word-wrap: break-word
+    +respond-to($m-container-width)
+      -webkit-line-clamp: 1
+      +font(size 12px line-height 18px)
+    +respond-to($t-container-width)
+      -webkit-line-clamp: 1
+      +font(size 12px line-height 18px)
+    +respond-to($d-container-width)
+      -webkit-line-clamp: 1
+      +font(size 12px line-height 21px)
 
 //magazine
 .magazine
@@ -1233,9 +1247,9 @@ p
         padding-left: 10px
         +font(size 14px)
 
-footer
-  width: 100vw
-  height: 50px
-  margin-top: 30px
-  background: $color-blue
-  +flexbox(center)
+// footer
+//   width: 100vw
+//   height: 50px
+//   margin-top: 30px
+//   background: $color-blue
+//   +flexbox(center)

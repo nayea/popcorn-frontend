@@ -1,8 +1,9 @@
 
 
  (function(window, $){
-// $(function() {
+
 setTimeout(function(){
+  // $(function() {
    var movie_info_still = document.querySelector('.movie-still');
 
   var movie_info_stillControlButtons = movie_info_still.querySelectorAll('button');
@@ -54,7 +55,7 @@ setTimeout(function(){
 
  
 
-},500);
+},800);
 })(this, jQuery);
 
 

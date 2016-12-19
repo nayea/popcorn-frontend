@@ -6,26 +6,26 @@
         <div class="recommend-choice row" data-ng-show="accordian_tabs.switch_on">
 
            <div class="recommend-choice-wrapper recommend-tabcontent-1" data-ng-controller="recommendSelectController">
-            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice"  data-ng-repeat="movie in filteredMovies=(recommendSelect_data.movies | filter:search )" data-ng-init="$last && repeatComplete()">
+            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice"  data-ng-repeat="movie in filteredMovies=(recommendSelect_data.movies | filter:search )" data-ng-init="$last && repeatComplete()" data-ng-show="($index<15)">
              <input type="checkbox" id="{{movie.content}}" name="recommend-genre" value="{{movie.content}}"><label for="{{movie.content}}">{{movie.content}}<label>
            </div>
-            <button type="button" class="recommend-choice-tablinks-next-1 recommend-choice-button st-button-B t-push-5 d-push-1">다음단계</button>
+            <button type="button" class="recommend-choice-tablinks-next-1 recommend-choice-button st-button-B t-push-1 d-push-5">다음단계</button>
           </div>
 
             <div class="recommend-choice-wrapper recommend-tabcontent-2" data-ng-controller="recommendCountryController">
-            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendCountry_data.movies | filter:search )" data-ng-init="$last && repeatComplete()">
+            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendCountry_data.movies | filter:search )" data-ng-init="$last && repeatComplete()" data-ng-show="($index<15)">
              <input type="radio" id="{{person.name}}" name="recommend-genre" value="{{person.name}}"><label for="{{person.name}}">{{movie.content}}<label>
            </div>
-            <button type="button" class="recommend-choice-tablinks-prev-1 recommend-choice-button st-button-B t-push-4">이전단계</button>
-            <button type="button" class="recommend-choice-tablinks-next-2 recommend-choice-button st-button-B t-push-4">다음단계</button>
+            <button type="button" class="recommend-choice-tablinks-prev-1 recommend-choice-button st-button-B d-push-4">이전단계</button>
+            <button type="button" class="recommend-choice-tablinks-next-2 recommend-choice-button st-button-B d-push-4">다음단계</button>
           </div>
 
           <div class="recommend-choice-wrapper recommend-tabcontent-3" data-ng-controller="recommendGradeController">
-            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendGrade_data.movies | filter:search )" data-ng-init="$last && repeatComplete()">
+            <div class="d-col-2 t-col-2 m-col-2 recommend-radio-choice" data-ng-repeat="movie in filteredMovies=(recommendGrade_data.movies | filter:search )" data-ng-init="$last && repeatComplete()" data-ng-show="($index<4)">
              <input type="radio" id="{{person.name}}" name="recommend-genre" value="{{person.name}}"><label for="{{person.name}}">{{movie.content}}<label>
            </div>
-             <button type="button" class="recommend-choice-tablinks-prev-2 recommend-choice-button st-button-B t-push-4">이전단계</button>
-             <button type="button" class="recommend-choice-tablinks-finish recommend-choice-button st-button-B t-push-4">완료</button>
+             <button type="button" class="recommend-choice-tablinks-prev-2 recommend-choice-button st-button-B m-push-2 t-push-6 d-push-2">이전단계</button>
+             <button type="button" class="recommend-choice-tablinks-finish recommend-choice-button st-button-B m-push-2 t-push-6 d-push-2">완료</button>
           </div>
   </div>
 

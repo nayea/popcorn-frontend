@@ -42,6 +42,9 @@ popcorn.config([
      	.state('list',{
 			'url': '/',
 			'views': {
+				'header':{
+					'templateUrl': 'views/header.html'
+				},
 				'mainCarousel': {
 					'templateUrl' : 'views/mainCarousel.html',
 			   		'controller' : 'carouselController'
@@ -61,6 +64,9 @@ popcorn.config([
 	.state('edit',{
 			'url': '/detail/:id',
 			'views':{
+			 'header':{
+					'templateUrl': 'views/header.html'
+			  },
 			  'main':{
 				'templateUrl' : 'views/movieinfo.html'
 			    }
@@ -69,6 +75,9 @@ popcorn.config([
 	.state('signin',{
 			'url': '/login',
 			'views':{
+			 'header':{
+					'templateUrl': 'views/header-login.html'
+			  },
 			  'main':{
 				'templateUrl' : 'views/login.html',
 				'controller' : 'loginController'
@@ -78,6 +87,9 @@ popcorn.config([
 	.state('create',{
 		'url': '/signup',
 		'views':{
+		  'header':{
+			'templateUrl': 'views/header-login.html'
+	        },
 		  'main':{
 			'templateUrl' : 'views/signup.html',
 			'controller' : 'signupController'
@@ -116,7 +128,8 @@ popcorn.config([
 // directive
 // --------------------------------------------------------
 require('./directives/mainCarousel');
-// require('./directives/mainRecommend');
+require('./directives/mainRecommend');
+
 // require('./directives/movieinfoDirective');
 
 
@@ -127,7 +140,8 @@ require('./controllers/main/rankingController');
 require('./controllers/main/recommendSelectController');
 require('./controllers/main/recommendCountryController');
 require('./controllers/main/recommendGradeController');
-require('./controllers/main/magazineController.es6')
+require('./controllers/main/magazineController');
+require('./controllers/main/commentController');
 
 
 // --------------------------------------------------------
@@ -149,6 +163,7 @@ require('./controllers/signup/signupController')
 require('./services/main/carouselDataShareService');
 require('./services/main/magazineDataShareService.es6');
 require('./services/main/rankingDataShareService');
+require('./services/main/commentDataShareService');
 
 //recommend-select (genre, country, grade)
 require('./services/main/recommendSelectDataShareService');
@@ -167,7 +182,7 @@ require('./services/movieinfodetail/movieinfoRelatedDataShareService');
 require('./services/signup/loginDataShareService');
 require('./services/signup/signupDataShareService');
 
-
+// require('./directives/header');
 
 // Filters
 require('./filters/readingZeroFilter');
