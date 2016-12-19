@@ -196,6 +196,7 @@ require('./main-script/recommend-carousel');
 // require('./main-script/recommend-choice');
 require('./main-script/ranking-hover');
 require('./movie-info/movieinfo');
+require('./ratingStars.js');
 // require('./main-script/scroll-effect.js');
 //
 // require('../views/mainCarousel.html');
