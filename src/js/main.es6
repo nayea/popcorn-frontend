@@ -36,7 +36,7 @@ let popcorn = angular.module('PopcornListApp', [
 //         return $sce.trustAsResourceUrl(val);
 //     };
 // }]);
-// 
+//
 
 
 
@@ -222,15 +222,17 @@ require('./services/search/searchDataShareService');
 
 // Filters
 require('./filters/readingZeroFilter');
-require('./filters/defaultimageFilter')
-
+require('./filters/defaultimageFilter');
 
 // main-script
+
 
 require('./main-script/header-scroll');
 require('./main-script/recommend-carousel');
 require('./main-script/ranking-hover');
 require('./movie-info/movieinfo');
+require('./movie-info/showGrade.js');
+require('./ratingStars.js');
 // require('./main-script/scroll-effect.js');
 
 // require('./main-script/ui-carousel');

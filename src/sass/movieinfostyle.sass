@@ -6,7 +6,7 @@
 @import theme/commonstyle
 @import modules/grid/grid_functions
 @import modules/grid/grid_mixins
-
+@import theme/_stars.sass
 
 // 초기화 ---------------------
 html
@@ -41,16 +41,16 @@ img
 // --------------------------------------------------------
 // 영화 정보
 // --------------------------------------------------------
-.movie-info-group-wrapper
+// .movie-info-group-wrapper
   // position: relative
   // background: url("http://t1.daumcdn.net/movie/863a75eb90beca48c4ad1a1af30d62a30ca7bfb1") no-repeat center
   // height: 400px
   // width: auto
   // background-size: cover
-  +respond-to($t-container-width)
-    padding-top: 80px
-  +respond-to($d-container-width)
-    padding-top: 80px
+  // +respond-to($t-container-width)
+  //   padding-top: 80px
+  // +respond-to($d-container-width)
+  //   padding-top: 80px
 
 // .container
 //   position: relative
@@ -150,30 +150,34 @@ img
   div
     float: left
 
-.star
-  +respond-to($m-container-width)
-    +size(px2vw(15px, $m-container-width))
-    margin-right: px2vw(3px, $m-container-width)
-  +respond-to($t-container-width)
-    +size(20px)
-    margin-right: 5px
-  +respond-to($d-container-width)
-    +size(20px)
-    margin-right: 5px
-  background: url(../images/icon/icon-star.svg)
-  background-size: contain
+// .stars-4-0
+//   width: 120px
+//   height: 22px
 
-.non-star
-  +respond-to($m-container-width)
-    +size(px2vw(15px, $m-container-width))
-  +respond-to($t-container-width)
-    +size(20px)
-  +respond-to($d-container-width)
-    +size(20px)
-  background: url(../images/icon/icon-star-border.svg)
-  background-size: contain
+// .star
+//   +respond-to($m-container-width)
+//     +size(px2vw(15px, $m-container-width))
+//     margin-right: px2vw(3px, $m-container-width)
+//   +respond-to($t-container-width)
+//     +size(20px)
+//     margin-right: 5px
+//   +respond-to($d-container-width)
+//     +size(20px)
+//     margin-right: 5px
+//   background: url(../images/icon/icon-star.svg)
+//   background-size: contain
+//
+// .non-star
+//   +respond-to($m-container-width)
+//     +size(px2vw(15px, $m-container-width))
+//   +respond-to($t-container-width)
+//     +size(20px)
+//   +respond-to($d-container-width)
+//     +size(20px)
+//   background: url(../images/icon/icon-star-border.svg)
+//   background-size: contain
 
-.movie-grade
+.movie-grade-style
   +respond-to($m-container-width)
     font-size: px2vw(14px, $m-container-width)
     padding-left: px2vw(10px, $m-container-width)
@@ -345,27 +349,35 @@ img
       font-size: 14px
   div
   .actor-role-info
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
     +respond-to($m-container-width)
       font-size: px2vw(10px, $m-container-width)
       height: px2vw(10px, $m-container-width)
       margin-bottom: px2vw(2px, $m-container-width)
     +respond-to($t-container-width)
+      width: 95px
       height: 10px
       font-size: 10px
       margin-bottom: 2px
     +respond-to($d-container-width)
       position: absolute
       font-size: 12px
-      top: 15px
-      left: 140px
+      top: 17px
+      left: 135px
       width: 150px
       // margin:
       //   top: 10px
       //   bottom: 2px
   .actor-name-info
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
     +respond-to($m-container-width)
       font-size: px2vw(12px, $m-container-width)
     +respond-to($t-container-width)
+      width: 95px
       font-size: 14px
     +respond-to($d-container-width)
       font-size: 14px
@@ -638,12 +650,17 @@ figure
   font-family: $spoqa-R
   color: $color-blue
   margin-bottom: 0
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
   +respond-to($m-container-width)
     font-size: px2vw(10px, $m-container-width)
     width: 90%
   +respond-to($t-container-width)
     font-size: 14px
+    width: 170px
   +respond-to($d-container-width)
+    width: 175px
     font-size: 14px
     margin:
       top: 80px
@@ -931,8 +948,9 @@ figure
       // font-size: px2vw(12px, $m-container-width)
       top: px2vw(-1px, $m-container-width)
     +respond-to($t-container-width)
-      top: -1px
+      top: 1px
     +respond-to($d-container-width)
+      top: 1px
     position: absolute
     right: -10%
     opacity: 0
