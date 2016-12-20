@@ -163,7 +163,7 @@
 
 		<!-- 평점 -->
 		<div class="container">
-		  <section class="movie-comment">
+		  <section class="movie-comment" data-ng-controller="movieinfoCommentController">
 		    <div class="movie-comment-wrap">
 		      <h1 class="movie-comment-heading m-col-1 row">평점</h1>
 		      <button class="movie-comment-add-button">평점 등록하기</button>
@@ -463,11 +463,11 @@
 
 		            <button type="submit" class="btn-small readable-hidden focusable">Submit rating</button>
 
-		            <output></output>
+		           <output  data-ng-model="{{movie.star}}"></output>
 		          </form>
 		        </div>
 		        <div class="comment-writing-group">
-		          <textarea placeholder="감상평"></textarea>
+		          <textarea placeholder="감상평" data-ng-model="{{movie.content}}"></textarea>
 		        </div>
 		        <div class="movie-comment-submit-button-group">
 		          <button class="movie-comment-submit-button">완료</button>
@@ -475,7 +475,7 @@
 		      </div>
 
                    <!-- comment get start -->
-		      <ul class="movie-comment-list row m-col-4" data-ng-controller="movieinfoCommentController">
+		      <ul class="movie-comment-list row m-col-4">
 		        <li data-ng-repeat="movie in filteredMovies=(movieinfoComment_data.movies | filter:search )">
 		          <img class="movie-comment-user-image" data-ng-src="{{movie.author.profile_img}}" src="images/user-1.jpg" alt="">
 		          <div class="movie-comment-right-group m-col-3 t-col-7">
