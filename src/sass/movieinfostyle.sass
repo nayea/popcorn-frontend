@@ -322,6 +322,8 @@ img
     +respond-to($d-container-width)
       margin-top: 15px
       position: relative
+      display: block
+      width: 100%
 
 .actor-info-wrap
   overflow: hidden
@@ -862,6 +864,14 @@ figure
     vertical-align: top
     +respond-to($m-container-width)
       width: 100%
+  output
+    position: absolute
+    +respond-to($m-container-width)
+      right: -30%
+    +respond-to($t-container-width)
+      right: -5%
+    +respond-to($d-container-width)
+      right: -5%
 
 .comment-writing-group
   textarea
@@ -935,7 +945,7 @@ figure
 #star_rating
   +respond-to($m-container-width)
     top: 0
-    width: px2vw(100px, $m-container-width)
+    // width: px2vw(100px, $m-container-width)
     height: px2vw(15px, $m-container-width)
   +respond-to($t-container-width)
     width: 130px
@@ -962,7 +972,7 @@ figure
       // height: px2vw(20px, $m-container-width)
   label:hover
     span
-      opacity: 1
+      // opacity: 1
 
 #star_rating input:checked ~ label
   color: #fff
@@ -1024,6 +1034,7 @@ figure
       left: 60px
       right: -20px
   +respond-to($d-container-width)
+    width: 475px
     margin:
       top: 10px
       left: -25px
@@ -1328,6 +1339,10 @@ figure
     +respond-to($t-container-width)
       margin-top: 10px
       margin-bottom: 10px
+    +respond-to($d-container-width)
+      margin:
+        top: 10px
+        bottom: 10px
 
 .dialogue-actor-image-wrap
   float: left
@@ -1370,6 +1385,7 @@ figure
     margin-bottom: px2vw(30px, $m-container-width)
   +respond-to($t-container-width)
   +respond-to($d-container-width)
+    padding-top: 5px
   p
     +respond-to($m-container-width)
       font-size: px2vw(12px, $m-container-width)
@@ -1381,13 +1397,15 @@ figure
       margin:
         top: 10px
         left: 10px
+        bottom: 0
       height: 45px
     +respond-to($d-container-width)
       font-size: 14px
       margin:
         top: 10px
         left: 20px
-      height: 45px
+        bottom: 0
+      height: 50px
 
 .dialogue-actor-role
   color: $color-blue
