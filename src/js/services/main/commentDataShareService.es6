@@ -7,7 +7,7 @@ angular
   .module('PopcornListApp')
   .factory('comment', ['$resource', function($resource){
     return $resource(
-      'https://django-test.com/main/comments/',{},
+      'https://django-api.com/main/comments/',{},
       { 'get' : {method: 'GET', isArray: true}}
       );
   }])

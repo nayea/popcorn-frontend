@@ -7,13 +7,12 @@
 
     <article class="review-comment d-col-3 t-col-4 m-col-4" data-ng-repeat="movie in filteredMovies=(comment_data.movies | filter:search )">
       <a href="">
-        <img class="review-user-image" src="images/user-1.jpg" alt="회원" width="128" height="128">
+        <img class="review-user-image" data-ng-src="{{movie.author.profile_img}}" src="images/user-1.jpg" alt="회원" width="128" height="128">
         <div class="review-user-comment d-col-2 t-col-3 m-col-3">
-          <!--  <time datetime="2016/09/22">{{movie.created}}</time> -->
-           <span class="review-user-name">{{movie.author.nickname}}</span>
+           <span class="review-user-name">{{movie.created | date:'yyyy-MM-dd'}} |{{movie.author.nickname}}</span>
            <h3 class="review-user-title">{{movie.movie_title}}</h3>
             <div class="review-stars">
-                     <img data-ng-src="{{movie.author.profile_img}}" src="images/main-carousel/stars.png" alt="영화 평점">
+                     <img src="images/main-carousel/stars.png" alt="영화 평점">
                      <span>{{movie.star}}</span>
           </div>
          <p class="review-desc">{{movie.content}}</p>

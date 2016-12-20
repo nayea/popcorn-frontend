@@ -7,7 +7,7 @@ angular
   .module('PopcornListApp')
   .factory('login', ['$resource', function($resource){
     return $resource(
-      'https://django-test.com/member/login/',{},
+      'https://django-api.com/member/login/',{},
        {'create': { method:'post' }}
       );
   }])
