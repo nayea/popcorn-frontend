@@ -11,7 +11,7 @@ angular
 
       // popcorn 모델 데이터
     $scope.magazine_data = magazineDataShareService;
-    console.log($scope.magazine_data);
+    // console.log($scope.magazine_data);
     // 컨트롤러 $scope 객체의 속성
     // $scope.search = {};
     $scope.search = '';

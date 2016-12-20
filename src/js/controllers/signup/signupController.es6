@@ -18,10 +18,10 @@ angular
     function gotoLoginPage(){
     	$state.go('signin');
     	$scope.signup_data.signup_person = null;
-    }
+    };
 
     $scope.create = ()=> {
     	$scope.signup_data.createContact($scope.signup_data.signup_person, gotoLoginPage);
-    }
+    };
 
   }]);

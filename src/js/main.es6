@@ -2,11 +2,12 @@
 
 
 // 빌드시 아래 주석을 해제한 후 빌드
-require('./lib/jquery');
-require('./lib/jquery.easing.min');
+
 
 let angular = require('angular');
 
+require('./lib/jquery');
+require('./lib/jquery.easing.min');
 
 // 의존 모듈 로드
 require('angular-resource');
@@ -149,12 +150,14 @@ require('./controllers/main/commentController');
 // --------------------------------------------------------
 require('./controllers/movieinfoDetail/moviedetailController');
 require('./controllers/movieinfoDetail/movieinfoRelatedController');
-
+require('./controllers/movieinfoDetail/movieinfoCommentController');
+require('./controllers/movieinfoDetail/movieinfoFamousLineController');
 // --------------------------------------------------------
 // controllers: sign up
 // --------------------------------------------------------
-require('./controllers/signup/loginController')
-require('./controllers/signup/signupController')
+require('./controllers/signup/loginController');
+require('./controllers/signup/signupController');
+require('./controllers/signup/userinfoController');
 
 
 // --------------------------------------------------------
@@ -176,27 +179,30 @@ require('./services/main/recommendGradeDataShareService');
 // --------------------------------------------------------
 require('./services/movieinfodetail/moviedetailDataShareService');
 require('./services/movieinfodetail/movieinfoRelatedDataShareService');
+require('./services/movieinfodetail/movieinfoCommentController');
+require('./services/movieinfodetail/movieinfoFamousLineDataShareService');
 // --------------------------------------------------------
 // service: signup
 // --------------------------------------------------------
 require('./services/signup/loginDataShareService');
 require('./services/signup/signupDataShareService');
+require('./services/signup/userinfoDataShareService');
 
 // require('./directives/header');
 
 // Filters
 require('./filters/readingZeroFilter');
-require('./filters/defaultimageFilter')
-
+require('./filters/defaultimageFilter');
 
 // main-script
-// require('./main-script/ui-carousel');
-require('./main-script/header-scroll');
-require('./main-script/recommend-carousel');
-// require('./main-script/recommend-choice');
-require('./main-script/ranking-hover');
-require('./movie-info/movieinfo');
+
+// require('./main-script/header-scroll');
+// require('./main-script/recommend-carousel');
+// require('./main-script/ranking-hover');
+// require('./movie-info/movieinfo');
 require('./ratingStars.js');
 // require('./main-script/scroll-effect.js');
-//
-// require('../views/mainCarousel.html');
+
+// require('./main-script/ui-carousel');
+
+// require('./main-script/recommend-choice');
