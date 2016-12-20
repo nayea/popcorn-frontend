@@ -10,23 +10,26 @@ angular
       'https://django-api.com/member/my-info/',{},
       { 'get' : {
             method: 'get', 
-            header: {'Authorization' : 'window.localStorage[‘key1’]'}
+            headers: {'Authorization' : 'Token '+window.localStorage['key']}
           }
       });
   }])
  
   .service('userinfoDataShareService', ['userinfo' , (userinfo)=>{  
      var _service = {
-        'userinfo_movie' : null,
-        'movies' : [],
+        'userinfo_person' : null,
+        'people' : [],
         'is_loading' : false,
         'loadContacts' : ( ) =>{
            userinfo.get((data)  =>{
            
-                    _service.movies.push(new userinfo(data));
-                    // _service.userinfo(data);
-           
-        });
+                    // _service.people.push(new userinfo(data));
+                    // _service.userinfo(data);z
+            _service.people.push(new userinfo(data));
+            // angular.forEach(data, (movie)=>{
+            //   _service.movies.push( new userinfo(movie));
+            // });
+             });
         }
      };
 

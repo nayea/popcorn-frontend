@@ -7,7 +7,8 @@ angular
   .module('PopcornListApp')
   .factory('Search', ['$resource', function($resource){
     return $resource(
-      'https://django-api.com/movie/search/'
+      'https://django-api.com/movie/search/',{},
+      { 'get' : {method: 'get', isArray: true}}
       );
   }])
 
@@ -55,7 +56,7 @@ angular
       }
      };
    
-    // _service.loadContacts();
+    _service.loadContacts();
 
      return _service;
   }]);
