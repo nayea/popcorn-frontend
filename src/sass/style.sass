@@ -1,0 +1,1255 @@
+
+@import "modules/initialization/normalize"
+@import "config/vars"
+@import "config/placeholder"
+@import "config/helper"
+@import "theme/_button"
+@import "theme/commonstyle"
+@import "modules/grid/grid_functions"
+@import "modules/grid/grid_mixins"
+
+
+
+html
+  font-family: $spoqa-R
+  font-size: $basic-font-size
+
+img
+  vertical-align: top
+
+p
+  overflow: hidden
+  box-sizing: border-box
+
+.container
+  position: relative
+
+%header-isolate
+  margin-right: -100%
+  float: left
+
+.h1-position
+  +respond-to($m-container-width)
+    font-size: px2vw(16px,$m-container-width)
+    line-height: px2vw(80px,$m-container-width)
+    height: px2vw(80px,$m-container-width)
+  +respond-to($t-container-width)
+    +font(size 20px line-height 140px)
+    height: 150px
+  +respond-to($d-container-width)
+    +font(size 30px line-height 190px)
+    height: 200px
+
+.button-size
+  +respond-to($m-container-width)
+    font-size: px2vw(11px,$m-container-width)
+    padding: px2vw(5px,$m-container-width) px2vw(10px,$m-container-width)
+  +respond-to($t-container-width)
+    +font(size 12px)
+    padding: 5px 20px
+  +respond-to($d-container-width)
+    +font(size 14px)
+    padding: 5px 20px
+
+
+// header
+
+
+.logo-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    width: percentage(101/$m-container-width)
+    padding: percentage(16/$m-container-width) 0 0 percentage(36/$m-container-width)
+  +respond-to($t-container-width)
+    width: 125px
+    padding: 30px 0 0 46px
+  +respond-to($d-container-width)
+    width: 149px
+    padding: 38px 0 0 10px
+
+.header-logo
+  @extend %rwd-bg
+  display: block
+  padding-bottom: 19.46%
+  cursor: pointer
+  +respond-to($m-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($t-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($d-container-width)
+    background: url(../images/logo-white.svg) no-repeat
+    background-size: contain
+
+
+
+.header-menu-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(18/$m-container-width) 0 0 px2vw(10px,$m-container-width)
+    width: percentage(12/$m-container-width)
+  +respond-to($t-container-width)
+    position: absolute
+    top: 30px
+    left: 10px
+    width: 20px
+
+.header-menu-button
+  @extend %rwd-bg
+  @extend %button-reset
+  background: url(../images/icon/icon-hamburger.svg) no-repeat
+  background-size: contain
+  height: 20px
+  // padding-bottom: 100%
+
+.header-bg-white
+  background: rgba(#fff,0.9)
+
+.header-bg-transparent
+  backgroud: transparent
+
+.header
+  position: fixed
+  z-index: 10000
+  width: 100vw
+  +respond-to($m-container-width)
+    height: px2vw(50px,$m-container-width)
+    background: #fff
+    box-shadow: 2px 1px 3px #d7d7d7
+  +respond-to($t-container-width)
+    height: 80px
+    background: #fff
+    box-shadow: 2px 1px 3px #d7d7d7
+  +respond-to($d-container-width)
+    height: 80px
+  nav
+    position: absolute
+    top: 36px
+    left: 189px
+    ul
+      @extend %reset-list
+      @extend %reset-box-model
+      li
+        +font(size 16px)
+        float: left
+        padding-bottom: 15px
+        margin-right: 20px
+      a
+        @extend %reset-a
+        display: block
+        color: #fff
+        &:hover
+          color: $color-yellow
+  form
+    @extend %header-isolate
+    position: relative
+    +respond-to($m-container-width)
+      padding: percentage(15/$m-container-width) 0 0 percentage(250/$m-container-width)
+    +respond-to($t-container-width)
+      margin-top: 25px
+    +respond-to($d-container-width)
+      margin-top: 30px
+    input
+      +respond-to($m-container-width)
+        +font(size 12px)
+        padding: 8px 19px
+      +respond-to($t-container-width)
+        +size(295px 30px)
+        +font(size 12px)
+        padding: 8px 19px
+      +respond-to($d-container-width)
+        +size(295px 40px)
+        +font(size 14px)
+        padding: 9px 21px 14px 21px
+    button
+      @extend %button-reset
+      background: url(../images/icon/icon-search.svg) no-repeat
+      background-size: contain
+      +respond-to($m-container-width)
+        width: px2vw(12px,$m-container-width)
+        height: px2vw(12px,$m-container-width)
+      +respond-to($t-container-width)
+        +size(13px)
+        position: absolute
+        top: 7px
+        left: 260px
+      +respond-to($d-container-width)
+        +size(15px)
+        position: absolute
+        top: 12px
+        left: 260px
+
+
+.header-userinfo
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(12/$m-container-width) 0 0 percentage(295/$m-container-width)
+  +respond-to($t-container-width)
+    padding: 25px 0 0 652px
+  +respond-to($d-container-width)
+    padding-top: 26px
+  img
+    float: left
+    +respond-to($m-container-width)
+      width: px2vw(20px,$m-container-width)
+      height: px2vw(20px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(30px)
+    +respond-to($d-container-width)
+      +size(40px)
+  a
+    @extend %reset-a
+    display: block
+    float: left
+    cursor: pointer
+    +respond-to($m-container-width)
+      padding-left: px2vw(4px,$m-container-width)
+      color: $color-black
+    +respond-to($t-container-width)
+      padding: 6px 0 0 10px
+      +font(size 12px)
+      color: $color-black
+    +respond-to($d-container-width)
+      padding: 8px 0 0 15px
+      +font(size 14px)
+      color: #fff
+  & .header-user-selection
+    @extend %button-reset
+    display: inline-block
+    background: url("../images/icon/icon-down.svg") no-repeat
+    background-size: contain
+    +respond-to($m-container-width)
+      width: px2vw(8px,$m-container-width)
+      height: px2vw(4px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(15px 8px)
+      padding-left: 2px
+    +respond-to($d-container-width)
+      +size(15px 8px)
+      padding-left: 11px
+
+.header-in
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    padding: percentage(12/$m-container-width) 0 0 percentage(275/$m-container-width)
+  +respond-to($t-container-width)
+    padding-top: 30px
+  +respond-to($d-container-width)
+    padding-top: 30px
+  .header-in-button
+    color: $color-blue
+    +respond-to($t-container-width)
+      font-size: px2vw(9px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 12px)
+    +respond-to($d-container-width)
+      +font(size 14px)
+
+// carousel
+// .carousel
+//  overflow: hidden
+.ui-carousel
+  position: relative
+  overflow: hidden
+  background: #fff
+  margin:
+    left: auto
+    right: auto
+  +respond-to($m-container-width)
+    height: px2vw(230px,$m-container-width)
+    padding-top: px2vw(50px,$m-container-width)
+  +respond-to($t-container-width)
+    height: 390px
+    padding-top: 80px
+  +respond-to($d-container-width)
+    height: 740px
+
+
+.ui-carousel-tabpanel-wrapper
+  position: absolute
+  top: 0
+  left: 0
+  .ui-carousel-tabpanel
+    float: left
+    width: 100vw
+    &>img
+      vertical-align: top
+      width: 100%
+      // height: auto
+      +respond-to($m-container-width)
+        height: px2vw(310px,$m-container-width)
+        padding-top: px2vw(50px,$m-container-width)
+      +respond-to($t-container-width)
+        height: px2vw(390px,$t-container-width)
+        padding-top: 80px
+      +respond-to($d-container-width)
+        height: px2vw(740px,$d-container-width)
+
+.ui-carousel-indicators
+  @extend %reset-list
+  @extend %reset-box-model
+  position: absolute
+  z-index: 100
+  bottom: 30px
+  left: 50%
+  +transform( translateX(-50%) )
+  cursor: pointer
+  li
+    float: left
+    margin:
+      left: 8px
+      right: 8px
+
+.ui-carousel-tab
+  display: block
+  box-sizing: border-box
+  +respond-to($m-container-width)
+    width: px2vw(10px,$m-container-width)
+    height: px2vw(10px,$m-container-width)
+  +respond-to($t-container-width)
+    +size(13px)
+  +respond-to($d-container-width)
+    +size(15px)
+  &:hover
+    border: 1px solid $color-blue
+    box-shadow: inset 0 0 5px rgba($color-blue, 1)
+  &:active
+    position: relative
+    top: 2px
+
+.ui-carousel-button
+  @extend %button-reset
+  cursor: pointer
+  position: absolute
+  z-index: 1000
+  top: 50%
+  +size(49px)
+  &::after
+    +size(20px 15px)
+    background-size: 20px 15px
+.ui-carousel-button-prev
+  +respond-to($m-container-width)
+    left: px2vw(20px,$m-container-width)
+  +respond-to($t-container-width)
+    left: 30px
+  +respond-to($d-container-width)
+    left: 40px
+.ui-carousel-button-next
+  transform: rotate(180deg)
+  +respond-to($m-container-width)
+    right: px2vw(20px,$m-container-width)
+  +respond-to($t-container-width)
+    right: 30px
+  +respond-to($d-container-width)
+    right: 40px
+
+//carousel - content
+.ui-carousel-panels
+  position: relative
+.ui-carousel-movie-info
+  position: absolute
+  color: #fff
+  +respond-to($m-container-width)
+    top: px2vw(87px,$m-container-width)
+    left: px2vw(10px,$m-container-width)
+  +respond-to($t-container-width)
+    width: 640px
+    top: 156px
+    left: 82px
+  +respond-to($d-container-width)
+    top: 168px
+    left: 95px
+  a
+    @extend %reset-a
+    display: block
+    cursor: pointer
+    >span
+      color: #fff
+      +respond-to($m-container-width)
+        font-size: px2vw(12px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 16px)
+      +respond-to($d-container-width)
+        +font(size 16px)
+  h2
+    @extend %reset-box-model
+    color: $color-yellow
+    +respond-to($m-container-width)
+      font-size: px2vw(20px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 32px)
+    +respond-to($d-container-width)
+      +font(size 40px)
+    span
+      color: $color-yellow
+      +respond-to($m-container-width)
+        font-size: px2vw(10px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 16px)
+      +respond-to($d-container-width)
+        +font(size 20px)
+  .stars
+    @extend %reset-box-model
+    +respond-to($t-container-width)
+      +size(190px 25px)
+      margin-top: 10px
+    +respond-to($d-container-width)
+      +size(210px 40px)
+    img
+      margin-right: 25px
+    span
+      color: $color-yellow
+      +respond-to($m-container-width)
+        font-size: px2vw(16px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 20px line-height 20px)
+      +respond-to($d-container-width)
+        +font(size 28px line-height 18px)
+  ul
+    @extend %reset-list
+    @extend %reset-box-model
+    li
+      color: #fff
+      display: inline-block
+      padding-right: 6px
+      +respond-to($m-container-width)
+        font-size: px2vw(10px,$m-container-width)
+      +respond-to($t-container-width)
+        padding-top: 17px
+        +font(size 14px)
+      +respond-to($d-container-width)
+        +font(size 20px)
+      &::after
+        content: ""
+        position: relative
+        left: 4px
+        border-right: 2px solid #fff
+      &:last-of-type::after
+        border: 0
+  >button
+    float: left
+    margin:
+      top: 20px
+      right: px2vw(10px,$m-container-width)
+    +respond-to($m-container-width)
+      font-size: px2vw(10px,$m-container-width)
+      letter-spacing: -0.05em
+      padding: px2vw(7px,$m-container-width) px2vw(20px,$m-container-width)
+        top: px2vw(10px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 14px )
+      letter-spacing: -0.05em
+      padding: 7px 52px
+      margin:
+        top: 16px
+    +respond-to($d-container-width)
+      +font(size 18px )
+      letter-spacing: -0.05em
+      padding: 14px 92px
+      margin:
+        top: 34px
+  >a
+    button
+      margin:
+        top: 20px
+      +respond-to($m-container-width)
+        font-size: px2vw(10px,$m-container-width)
+        letter-spacing: -0.05em
+        padding: px2vw(7px,$m-container-width) px2vw(20px,$m-container-width)
+          top: px2vw(10px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 14px )
+        letter-spacing: -0.05em
+        padding: 7px 52px
+        margin:
+          top: 16px
+      +respond-to($d-container-width)
+        +font(size 18px )
+        letter-spacing: -0.05em
+        padding: 14px 92px
+        margin:
+          top: 34px
+  .video-thumbnail
+    position: relative
+    +respond-to($t-container-width)
+      position: absolute
+      top: 33px
+      right: 0
+      +size(234px 152px)
+    +respond-to($d-container-width)
+      margin-top: 34px
+      +size(315px 200px)
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: rgba(#000,0.6)
+    // >a
+    //   display: block
+    //   cursor: pointer
+    .video-play
+      @extend %content-center
+      z-index: 10
+      +respond-to($t-container-width)
+        +size(30px)
+        &::after
+          +size(30px)
+          background-size: 30px 30px
+      +respond-to($d-container-width)
+        +size(50px)
+        &::after
+          +size(50px)
+          background-size: 50px 50px
+      &:active
+        transform: translate(-50%, -47%)
+
+// video-dim style
+.video-dim-background
+  display: none
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  z-index: 10000
+  background: rgba(#000, 0.2)
+
+.video-pop
+  @extend %content-center
+  +respond-to($m-container-width)
+    width: px2vw(300px,$m-container-width)
+  +respond-to($t-container-width)
+    width: 520px
+  +respond-to($d-container-width)
+    width: 640px
+  .rwd-iframe-container
+    overflow: hidden
+    position: relative
+    width: 100%
+    height: 0
+    padding-bottom: 56.25%
+    background: #000
+    & iframe
+      border: 0
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+  .video-pop-close
+    position: absolute
+    top: 10px
+    right: 10px
+
+.video-pop-close
+ +respond-to($m-container-width)
+   +size(12px)
+   &::after
+     +size(12px)
+     background-size: 12px 12px
+ +respond-to($t-container-width)
+   +size(15px)
+   &::after
+     +size(15px)
+     background-size: 15px 15px
+ +respond-to($d-container-width)
+   +size(20px)
+   &::after
+     +size(20px)
+     background-size: 20px 20px
+
+// ranking
+.ranking
+  position: relative
+  h1
+    @extend %reset-box-model
+    @extend .h1-style
+    @extend .h1-position
+.m-top-img
+  width: 100%
+  height: auto
+
+.ranking-boxoffice
+  position: absolute
+  top: 200px
+  right: 10px
+  width: 295px
+  height: 580px
+  background: $color-blue
+  // margin-right: -10px
+  // opacity: 0
+  ol
+    @extend %reset-box-model
+    @extend %reset-list
+    padding: 20px 0 0 50px
+  li
+    color: #fff
+    a
+      @extend %reset-a
+      position: relative
+      display: block
+      color: #fff
+      padding: 15px 0
+      z-index: 0
+      &:hover
+        color: $color-yellow
+      &::after
+        content: ''
+        z-index: -1
+        position: absolute
+        top: 0
+        left: -50px
+        width: 0
+        height: 0
+        background: #076fd4
+      &:hover::after
+        width: 295px
+        height: 54px
+      > span
+        padding-left: 15px
+
+// .ranking-top3
+
+//   position: relative
+//   margin-top: -20px
+
+.ranking-first
+  position: relative
+  overflow: hidden
+  +respond-to($d-container-width)
+    width: 525px
+    height: 580px
+    padding-left: 10px
+  +respond-to($t-container-width)
+    height: 290px
+  +respond-to($m-container-width)
+    height: px2vw(300px,$m-container-width)
+  .rankingimage-wrapper-main
+    +respond-to($m-container-width)
+      width: px2vw(330px,$m-container-width)
+      height: px2vw(300px,$m-container-width)
+    +respond-to($t-container-width)
+      width: 748px
+      height: 290px
+    +respond-to($d-container-width)
+      width: 525px
+      height: 580px
+    > img
+      +respond-to($m-container-width)
+        height: 100%
+      +respond-to($d-container-width)
+        height: 100%
+      +respond-to($t-container-width)
+        width: 100%
+    &:hover
+      +transform(scale(1.1))
+      +transition(transform 0.3s)
+  .ranking-movie-info
+    position: absolute
+    z-index: 100
+    +respond-to($m-container-width)
+      top: px2vw(148px,$m-container-width)
+      left: px2vw(10px,$m-container-width)
+    +respond-to($t-container-width)
+      top: 135px
+      left: 17px
+    +respond-to($d-container-width)
+      top: 417px
+      left: 27px
+  a
+    @extend %reset-a
+    display: block
+    cursor: pointer
+  h3
+    @extend %reset-box-model
+    color: $color-yellow
+    +font(weight 400)
+    +respond-to($m-container-width)
+      font-size: px2vw(20px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 24px)
+    +respond-to($d-container-width)
+      +font(size 24px)
+    span
+      +respond-to($m-container-width)
+        font-size: px2vw(12px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 14px)
+      +respond-to($d-container-width)
+        +font(size 14px)
+  .ranking-movie-info-desc
+    +respond-to($m-container-width)
+      padding-top: px2vw(15px,$m-container-width)
+  ul
+    @extend %reset-list
+    @extend %reset-box-model
+    li
+      color: #fff
+      display: inline-block
+      padding-right: 6px
+      +respond-to($m-container-width)
+        font-size: px2vw(10px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 14px)
+      +respond-to($d-container-width)
+        +font(size 16px)
+      &::after
+        content: ""
+        position: relative
+        left: 4px
+        border-right: 2px solid #fff
+      &:last-of-type::after
+        border: 0
+  .stars
+    @extend %reset-box-model
+    +respond-to($m-container-width)
+      margin-top: px2vw(16px,$m-container-width)
+    +respond-to($t-container-width)
+      +size(190px 25px)
+      margin-top: 10px
+    +respond-to($d-container-width)
+      +size(210px 40px)
+      margin-top: 10px
+    img
+      margin-right: 25px
+    span
+      color: $color-yellow
+      +respond-to($m-container-width)
+        font-size: px2vw(14px,$m-container-width)
+        line-height: px2vw(14px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 16px line-height 15px)
+      +respond-to($d-container-width)
+        +font(size 16px line-height 15px)
+
+.ranking-top2-wrapper
+   +respond-to($t-container-width)
+     padding-left: 10px
+
+.ranking-second
+  position: relative
+  +respond-to($d-container-width)
+    height: 290px
+  +respond-to($t-container-width)
+    height: 290px
+    width: 374px
+  +respond-to($m-container-width)
+    height: px2vw(150px,$m-container-width)
+  .rankingimage-wrapper
+    +respond-to($m-container-width)
+      width: px2vw(330px,$m-container-width)
+      height: px2vw(150px,$m-container-width)
+    +respond-to($t-container-width)
+      width: 374px
+      height: 290px
+    +respond-to($d-container-width)
+      width: 420px
+      height: 290px
+    > img
+      width: 100%
+      height: 100%
+  .ranking-movie-info
+    position: absolute
+    +respond-to($m-container-width)
+      top: px2vw(40px,$m-container-width)
+      left: px2vw(10px,$m-container-width)
+    +respond-to($t-container-width)
+      top: 135px
+      left: 17px
+    +respond-to($d-container-width)
+      top: 150px
+      left: 17px
+  a
+    @extend %reset-a
+    display: block
+    cursor: pointer
+  h3
+    @extend %reset-box-model
+    color: #fff
+    +font(weight 400)
+    +respond-to($m-container-width)
+      font-size: px2vw(16px,$m-container-width)
+    +respond-to($t-container-width)
+      +font(size 16px)
+    +respond-to($d-container-width)
+      +font(size 20px)
+    span
+      +respond-to($m-container-width)
+        font-size: px2vw(12px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 12px)
+      +respond-to($d-container-width)
+        +font(size 14px)
+  .ranking-movie-info-desc
+    +respond-to($m-container-width)
+      padding-top: px2vw(15px,$m-container-width)
+  ul
+    @extend %reset-list
+    @extend %reset-box-model
+    li
+      color: #fff
+      display: inline-block
+      padding-right: 6px
+      +respond-to($m-container-width)
+        font-size: px2vw(10px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 12px)
+      +respond-to($d-container-width)
+        +font(size 14px)
+      &::after
+        content: ""
+        position: relative
+        left: 4px
+        border-right: 2px solid #fff
+      &:last-of-type::after
+        border: 0
+  .stars
+    @extend %reset-box-model
+    +respond-to($t-container-width)
+      +size(190px 25px)
+      margin-top: 10px
+    +respond-to($d-container-width)
+      +size(210px 40px)
+      margin-top: 10px
+    img
+      margin-right: 25px
+    span
+      color: $color-yellow
+      +respond-to($m-container-width)
+        font-size: px2vw(14px,$m-container-width)
+        line-height: px2vw(14px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 16px line-height 15px)
+      +respond-to($d-container-width)
+        +font(size 16px line-height 15px)
+
+//recommend
+
+.recommend
+  width: 100vw
+  overflow: hidden
+  position: relative
+  h1
+    @extend %reset-box-model
+    @extend .h1-style
+    @extend .h1-position
+
+
+.recommend-tabcontent-1
+  display: block
+.recommend-tabcontent-2
+  display: none
+.recommend-tabcontent-3
+  display: none
+
+.recommend-button
+  @extend .button-size
+  position: absolute
+  +respond-to($m-container-width)
+    top: px2vw(-50px,$m-container-width)
+    right: px2vw(20px,$m-container-width)
+  +respond-to($t-container-width)
+    top: -80px
+    right: 62px
+  +respond-to($d-container-width)
+    top: -110px
+    right: 68px
+
+.recommend-choice
+  +respond-to($m-container-width)
+    height: px2vw(250px,$m-container-width)
+  +respond-to($t-container-width)
+    height: 230px
+  +respond-to($d-container-width)
+    height: 200px
+
+
+.recommend-choice-wrapper
+  @extend .clearfix
+  padding-top: 20px
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  border-bottom: 1px solid $color-blue
+  border-top: 1px solid $color-blue
+
+
+
+.recommend-choice-button
+  @extend .button-size
+  margin: 20px 0
+  +respond-to($m-container-width)
+    margin-left: px2vw(10px,$m-container-width)
+
+
+
+.recommend-radio-choice
+  padding-top: 5px
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(11px,$m-container-width)
+  +respond-to($t-container-width)
+    +font(size 13px)
+  +respond-to($d-container-width)
+    +font(size 14px)
+  input
+    label
+      margin-right: 10px
+
+
+
+
+.recommend-carousel
+  position: relative
+  top: 0
+  left: 0
+.recommend-tabpanel-wrapper
+  position: absolute
+  top: 20px
+  left: 0
+  background: rgba(#fff, 0.7)
+.tablist-button-wrapper
+  position: relative
+  width: 100vw
+  height: 500px
+.recommend-tabpanel-wrapper-small
+  position: relative
+  float: left
+  top: 0
+  left: 0
+  width: 100vw
+  height: 500px
+  perspective: 800
+  +flexbox(center)
+  .recommend-tabpanel
+    width: 330px
+    height: 462px
+    +transform-style(preserve-3d )
+    +transition(0.8s)
+    img
+      position: absolute
+      z-index: 1
+      +size(330px 462px)
+      border-radius: 10px
+      box-shadow: 3px 3px 5px $color-black
+    .recommend-movie-info
+      position: absolute
+      overflow: hidden
+      +size(330px 462px)
+      border-radius: 10px
+      background: #fff
+      box-shadow: 3px 3px 5px $color-black
+      +transform(rotatey(-180deg))
+      color: $color-black
+      +font(size 14px)
+      h2
+        @extend %reset-box-model
+        +font(size 20px)
+        padding: 30px
+        span
+          display: block
+          +font(size 14px)
+      table
+        @extend %reset-box-model
+        th
+          padding: 10px 30px
+      .recommend-stars
+        padding-left: 30px
+        img
+          +size(98px 15px)
+          box-shadow: none
+        span
+          position: relative
+          top: -4px
+          left: 120px
+      button
+        +font(size 12px )
+        padding: 7px 14px
+        margin: 20px 0 0 170px
+        color: #fff
+        border: 0
+        &:active
+          position: relative
+          top: 2px
+
+
+// card-animation effect
+.flipped
+  +transform(rotatey(-180deg))
+.face
+  +backface-visibility(hidden)
+  width: 100%
+  height: 100%
+  position: absolute
+  z-index: 2
+
+
+.recommend-tablist-wrapper
+  overflow: hidden
+  width: 100vw
+  height: 500px
+  .recommend-indicators
+    @extend %reset-list
+    @extend %reset-box-model
+    @extend .clearfix
+    width: 1890px
+    height: 413px
+    position: relative
+    top: 50%
+    left: 50%
+    +transform( translate(-50%,-50%))
+    cursor: pointer
+    li
+      float: left
+      margin:
+        left: 10px
+        right: 10px
+      a
+        display: block
+
+//review
+
+.review-magazine-bg
+  background: $color-lightgray
+  width: 100vw
+  @extend .clearfix
+  // height: 820px
+.review
+  float: left
+  padding-bottom: 28px
+  h1
+   @extend %reset-box-model
+   @extend .h1-style
+   @extend .h1-position
+  a
+   @extend %reset-a
+   color: $color-black
+   display: block
+   .review-user-image
+     float: left
+     border-radius: 50px
+     +size(60px)
+.review-user-comment
+  // padding-left: 15px
+  height: 100px
+  time
+    +font(size 9px)
+  .review-user-name
+    +font(size 9px)
+  h3
+    @extend %reset-box-model
+    +font(size 14px)
+    color: $color-blue
+  .review-stars
+    img
+      +size(66px 10px)
+    span
+      +font(size 12px)
+      position: relative
+      top: -8px
+  .review-desc
+    @extend %reset-box-model
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    word-wrap: break-word
+    +respond-to($m-container-width)
+      -webkit-line-clamp: 1
+      +font(size 12px line-height 18px)
+    +respond-to($t-container-width)
+      -webkit-line-clamp: 1
+      +font(size 12px line-height 18px)
+    +respond-to($d-container-width)
+      -webkit-line-clamp: 1
+      +font(size 12px line-height 21px)
+
+//magazine
+.magazine
+  float: left
+  @extend .clearfix
+  padding-bottom: 30px
+  h1
+   @extend %reset-box-model
+   @extend .h1-style
+   @extend .h1-position
+  .magazine-content-main
+    background: #fff
+    border-radius: 10px
+    overflow: hidden
+    +respond-to($m-container-width)
+      height: px2vw(510px,$m-container-width)
+    +respond-to($t-container-width)
+      width: 748px
+      height: 330px
+    +respond-to($d-container-width)
+      width: 925px
+      height: 330px
+    .magazine-content-main-image
+      float: left
+      +respond-to($m-container-width)
+        width: px2vw(330px,$m-container-width)
+        height:  px2vw(270px,$m-container-width)
+      +respond-to($t-container-width)
+        width: 460px
+        height: 330px
+      +respond-to($d-container-width)
+        width: 507px
+        height: 330px
+      img
+        width: 100%
+        height: 100%
+  .magazine-content-main-info
+    float: left
+    +respond-to($m-container-width)
+      width: px2vw(310px,$m-container-width)
+      padding: 10px 0
+    +respond-to($t-container-width)
+      width: 250px
+      padding: 10px 0 0 15px
+    +respond-to($d-container-width)
+      width: 390px
+      padding: 10px 0 0 15px
+    span
+     +font(size 12px)
+     color: $color-linegray
+    time
+      +font(size 12px)
+      color: $color-linegray
+    .magazine-content-main-title
+      @extend %reset-box-model
+      color: $color-blue
+      +respond-to($m-container-width)
+        +font(size 16px)
+      +respond-to($t-container-width)
+        +font(size 20px)
+      +respond-to($d-container-width)
+        +font(size 24px)
+    .magazine-content-main-desc
+      overflow: hidden
+      text-overflow: ellipsis
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      word-wrap: break-word
+      +respond-to($m-container-width)
+        -webkit-line-clamp: 10
+        +font(size 12px line-height 18px)
+      +respond-to($t-container-width)
+        -webkit-line-clamp: 8
+        +font(size 12px line-height 18px)
+      +respond-to($d-container-width)
+        -webkit-line-clamp: 7
+        +font(size 14px line-height 21px)
+      // text-align: justify
+      color: $color-black
+
+  .magazine-content
+    float: left
+    position : relative
+    overflow: hidden
+    background: #fff
+    border-radius: 10px
+    +respond-to($m-container-width)
+      width: px2vw(330px,$m-container-width)
+      height: 100px
+      margin-top: px2vw(10px,$m-container-width)
+    +respond-to($t-container-width)
+      width: 236px
+      height: 260px
+      margin: 20px 19px 0 0
+    +respond-to($d-container-width)
+      width: 295px
+      height: 330px
+      margin: 20px 20px 0 0
+    &:last-of-type
+      margin-right: 0
+    .magazine-content-image
+      float: left
+      +respond-to($m-container-width)
+        width: px2vw(155px,$m-container-width)
+        height: px2vw(100px,$m-container-width)
+      +respond-to($t-container-width)
+        width: 236px
+        height: 170px
+      +respond-to($d-container-width)
+        width: 295px
+        height: 210px
+      img
+        width: 100%
+        height: 100%
+  .magazine-content-info
+    background: #fff
+    position: absolute
+    bottom: 0
+    +respond-to($m-container-width)
+      width: px2vw(175px,$m-container-width)
+      height: 100px
+      left: px2vw(155px,$m-container-width)
+    +respond-to($t-container-width)
+      width: 236px
+      height: 90px
+      left: 0
+    +respond-to($d-container-width)
+      width: 295px
+      height: 120px
+      left: 0
+    span
+      color: $color-linegray
+      +respond-to($m-container-width)
+        padding-left: px2vw(10px,$m-container-width)
+        +font(size 9px)
+      +respond-to($t-container-width)
+        +font(size 12px)
+        padding-left: 10px
+      +respond-to($d-container-width)
+        +font(size 12px)
+        padding-left: 10px
+    time
+      +respond-to($m-container-width)
+        +font(size 9px)
+        padding-left: px2vw(10px,$m-container-width)
+      +respond-to($t-container-width)
+        +font(size 12px)
+        padding-left: 10px
+      +respond-to($d-container-width)
+        +font(size 12px)
+        padding-left: 10px
+      color: $color-linegray
+    .magazine-content-title
+      @extend %reset-box-model
+      color: $color-blue
+      +respond-to($m-container-width)
+        padding-left: px2vw(10px,$m-container-width)
+        +font(size 14px)
+      +respond-to($t-container-width)
+        padding-left: 10px
+        +font(size 14px)
+      +respond-to($d-container-width)
+        padding-left: 10px
+        +font(size 16px)
+    .magazine-content-desc
+      @extend %reset-box-model
+      color: $color-black
+      +respond-to($m-container-width)
+        padding-left: px2vw(10px,$m-container-width)
+        +font(size 12px)
+      +respond-to($t-container-width)
+        padding-left: 10px
+        +font(size 12px)
+      +respond-to($d-container-width)
+        padding-left: 10px
+        +font(size 14px)
+
+// footer
+//   width: 100vw
+//   height: 50px
+//   margin-top: 30px
+//   background: $color-blue
+//   +flexbox(center)

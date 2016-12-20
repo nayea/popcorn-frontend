@@ -1,0 +1,319 @@
+@import modules/initialization/normalize
+@import config/vars
+@import config/placeholder
+@import config/helper
+@import theme/_button
+@import theme/commonstyle
+@import modules/grid/grid_functions
+@import modules/grid/grid_mixins
+
+// --------------------------------------------------------
+// 헤 더
+// --------------------------------------------------------
+
+%header-isolate
+  margin-right: -100%
+  float: left
+
+.signup-header
+  +respond-to($m-container-width)
+    margin-bottom: px2vw(30px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-bottom: 60px
+  +respond-to($d-container-width)
+    margin-bottom: 90px
+
+.left-zero-logo-width
+  @extend %reset-box-model
+  @extend %header-isolate
+  +respond-to($m-container-width)
+    width: percentage(101/$m-container-width)
+    padding: percentage(16/$m-container-width) 0 0 0
+  +respond-to($t-container-width)
+    width: 125px
+    padding: 30px 0 0 0
+  +respond-to($d-container-width)
+    width: 149px
+    padding: 38px 0 0 0
+
+.pixed-header-logo
+  @extend %rwd-bg
+  display: block
+  padding-bottom: 19.46%
+  cursor: pointer
+  +respond-to($m-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($t-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+  +respond-to($d-container-width)
+    background: url(../images/logo.svg) no-repeat
+    background-size: contain
+
+// --------------------------------------------------------
+// 입력 정보 섹션
+// --------------------------------------------------------
+
+.form
+  border: 1px solid $color-linegray
+  border-radius: 15px
+
+// .legend-wrap
+//   width: 100%
+//   height: 90px
+//   text-align: center
+
+.signup-legend
+  display: block
+  position: relative
+  border-bottom: 1px solid $color-linegray
+  text-align: center
+  font-family: $spoqa-B
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(16px, $m-container-width)
+    margin:
+      top: px2vw(20px, $m-container-width)
+      bottom: px2vw(20px, $m-container-width)
+    padding:
+      bottom: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    width: 490px
+    font-size: 24px
+    margin:
+      top: 30px
+      bottom: 30px
+      left: 35px
+      right: 35px
+    padding:
+      bottom: 30px
+  +respond-to($d-container-width)
+    width: 560px
+    font-size: 30px
+    margin:
+      top: 25px
+      bottom: 25px
+      left: 25px
+      right: 25px
+    padding:
+      bottom: 25px
+
+.signup-id-wrap,
+.signup-nickname-wrap,
+.signup-email-wrap,
+.signup-photo-wrap,
+.signup-password-wrap,
+.signup-confirm-password-wrap
+  position: relative
+  +respond-to($m-container-width)
+    margin-left: px2vw(30px, $m-container-width)
+    margin-bottom: px2vw(10px, $m-container-width)
+    height: px2vw(20px, $m-container-width)
+    line-height: px2vw(20px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-bottom: 10px
+  +respond-to($d-container-width)
+    margin-bottom: 15px
+
+
+.signup-label
+  font-family: $spoqa-B
+  color: $color-black
+  +respond-to($m-container-width)
+    font-size: px2vw(12px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 14px
+    margin-left: -20px
+  +respond-to($d-container-width)
+    font-size: 16px
+    margin-left: -10px
+
+.form-control
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  border: 1px solid $color-linegray
+  border-radius: 15px
+  padding-left: 0.7em
+  outline: none
+  right: 0
+  +respond-to($m-container-width)
+    width: px2vw(150px, $m-container-width)
+    margin-right: px2vw(30px, $m-container-width)
+    font-size: px2vw(8px, $m-container-width)
+    line-height: px2vw(15px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 14px
+    width: 265px
+    line-height: 20px
+    padding-top: 3px
+  +respond-to($d-container-width)
+    font-size: 16px
+    width: 275px
+    margin-right: 10px
+    line-height: 22px
+    padding-top: 5px
+  &:focus
+    border: 1px solid $color-blue
+
+.signup-photo-wrap
+  span
+    font-family: $spoqa-B
+    color: $color-black
+    +respond-to($m-container-width)
+      font-size: px2vw(12px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 14px
+      margin-left: -20px
+    +respond-to($d-container-width)
+      margin-left: -10px
+      font-size: 16px
+  label
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    display: inline-block
+    border: 1px solid $color-lightgray
+    background-color: $color-lightgray
+    border-radius: 50px
+    font-family: $spoqa-R
+    z-index: 1
+    right: 0
+    padding:
+      top: 0
+      bottom: 0
+    +respond-to($m-container-width)
+      font-size: px2vw(6px, $m-container-width)
+      height: px2vw(10px, $m-container-width)
+      line-height: px2vw(10px, $m-container-width)
+      padding:
+        left: px2vw(10px, $m-container-width)
+        right: px2vw(10px, $m-container-width)
+      margin-right: px2vw(35px, $m-container-width)
+    +respond-to($t-container-width)
+      font-size: 8px
+      line-height: 14px
+      margin-right: 5px
+      padding:
+        left: 10px
+        right: 10px
+    +respond-to($d-container-width)
+      font-size: 10px
+      margin-right: 15px
+      padding:
+        left: 10px
+        right: 10px
+    &:hover
+      background-color: $color-linegray
+      border-color: $color-linegray
+      cursor: pointer
+
+#sign-up-photo
+  opacity: 0
+  &:focus + label
+    border-color: $color-blue
+
+.signup-submit-button-wrap
+  text-align: right
+  // border-top: 1px solid $color-linegray
+  +respond-to($m-container-width)
+    margin:
+      top: px2vw(20px, $m-container-width)
+      bottom: px2vw(15px, $m-container-width)
+  +respond-to($t-container-width)
+    margin:
+      top: 30px
+      bottom: 30px
+  +respond-to($d-container-width)
+    margin:
+      top: 30px
+      bottom: 30px
+
+.signup-tranfer-button-wrap
+  +respond-to($m-container-width)
+    margin:
+      top: px2vw(20px, $m-container-width)
+      bottom: px2vw(15px, $m-container-width)
+  +respond-to($t-container-width)
+    margin:
+      top: 30px
+      bottom: 30px
+  +respond-to($d-container-width)
+    margin:
+      top: 30px
+      bottom: 30px
+
+
+.signup-submit-button
+  @extend .st-button-B
+  border: 1px solid $color-blue
+  +respond-to($m-container-width)
+    font-size: px2vw(10px, $m-container-width)
+    margin:
+      right: px2vw(30px, $m-container-width)
+    padding:
+      top: px2vw(4px, $m-container-width)
+      bottom: px2vw(2px, $m-container-width)
+      left: px2vw(30px, $m-container-width)
+      right: px2vw(30px, $m-container-width)
+  +respond-to($t-container-width)
+    font-size: 14px
+    padding:
+      top: 5px
+      bottom: 3px
+      left: 30px
+      right: 30px
+  +respond-to($d-container-width)
+    font-size: 14px
+    padding:
+      top: 5px
+      bottom: 3px
+      left: 30px
+      right: 30px
+    margin-right: 10px
+
+// --------------------------------------------------------
+// 푸 터
+// --------------------------------------------------------
+
+.signup-footer
+  position: relative
+  bottom: 0
+  width: 100vw
+  margin-top: 50px
+  background: $color-blue
+  +flexbox(center)
+  +respond-to($m-container-width)
+    height: px2vw(30px, $m-container-width)
+    img
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 70%
+  +respond-to($t-container-width)
+    height: 50px
+  +respond-to($d-container-width)
+    height: 50px
+
+.login-footer
+  position: absolute
+  bottom: 0
+  width: 100vw
+  background: $color-blue
+  +flexbox(center)
+  +respond-to($m-container-width)
+    height: px2vw(30px, $m-container-width)
+    img
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      height: 70%
+  +respond-to($t-container-width)
+    height: 50px
+  +respond-to($d-container-width)
+    height: 50px
+
++respond-to($m-container-width)
++respond-to($t-container-width)
++respond-to($d-container-width)
