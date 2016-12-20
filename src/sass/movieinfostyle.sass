@@ -1331,6 +1331,10 @@ figure
     +respond-to($t-container-width)
       margin-top: 10px
       margin-bottom: 10px
+    +respond-to($d-container-width)
+      margin:
+        top: 10px
+        bottom: 10px
 
 .dialogue-actor-image-wrap
   float: left
@@ -1373,6 +1377,7 @@ figure
     margin-bottom: px2vw(30px, $m-container-width)
   +respond-to($t-container-width)
   +respond-to($d-container-width)
+    padding-top: 5px
   p
     +respond-to($m-container-width)
       font-size: px2vw(12px, $m-container-width)
@@ -1384,13 +1389,15 @@ figure
       margin:
         top: 10px
         left: 10px
+        bottom: 0
       height: 45px
     +respond-to($d-container-width)
       font-size: 14px
       margin:
         top: 10px
         left: 20px
-      height: 45px
+        bottom: 0
+      height: 50px
 
 .dialogue-actor-role
   color: $color-blue
