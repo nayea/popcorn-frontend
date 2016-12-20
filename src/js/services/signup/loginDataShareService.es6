@@ -36,20 +36,15 @@ angular
         'createContact' : (person,gotoListPage) => {
            
             _service.is_creating = true;
+
             (new login(person)).$create().then(()=> {
-               // window.localStorage.clear();
-               // window.localStorage[key] = login.token;
                 initServiceSetting();
                 _service.loadContacts();
                 _service.is_creating = false;
-                console.log('created person');
+                 window.localStorage.clear();
+                 window.localStorage['key'] = (new login(person)).token;
                 gotoListPage();
             });
-            // _service.is_creating = true;
-            // login.save(person).$promise.then(( )=>{
-            //   console.log('created person');
-            //   _service.is_creating = false;
-            // });
         },
 
      };

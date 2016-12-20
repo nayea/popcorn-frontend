@@ -17,30 +17,30 @@
       </form>
 
       <article data-label="검색된 영화" class="movie-search-result" data-ng-repeat="movie in search_data.movies">
-        <img class="m-col-2 t-col-3 d-col-3 movie-search-result-poster" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="">
+        <img class="m-col-2 t-col-3 d-col-3 movie-search-result-poster" data-ng-src="{{movie.img_url}}" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="{{movie.title_kor}}">
         <div class="movie-search-info m-col-2 t-col-5 d-col-3">
-          <h2 class="movie-search-title">{{movie.title_kor}}<span>(Fantastic Beats)</span></h2>
+          <h2 class="movie-search-title">{{movie.title_kor}}<span>({{movie.title_eng}})</span></h2>
             <div class="recommend-stars">
               <img src="images/main-carousel/stars.png" alt="영화 평점">
-              <span>3.9</span>
+              <span>{{movie.star_average}}</span>
             </div>
             <table class="movie-search-info-table">
               <caption class="readable-hidden">영화 정보</caption>
               <tr>
                 <th scope="row">개요</th>
-                <td>132분<span>|</span>영국,미국<span>|</span>판타지</td>
+                <td>{{movie.run_time}}<span>|</span>{{movie.making_country[0].content}} {{movie.making_country[1].content}}</td>
               </tr>
               <tr>
                 <th scope="row">감독</th>
-                <td>데이빗 예이츠</td>
+                <td>{{movie.director[0].name_kor}}</td>
               </tr>
               <tr>
                 <th scope="row">출연</th>
-                <td>에디 레드메인, 콜린 파렐</td>
+                <td>{{movie.actors[0].name_kor}},{{movie.actors[1].name_kor}}</td>
               </tr>
               <tr>
                 <th scope="row">등급</th>
-                <td>12세 관람가</td>
+                <td>{{movie.grade.content}}</td>
               </tr>
             </table>
             <button type="button" class="movie-search-show-more-button st-button-B">더 많은 정보 보기</button>
