@@ -15,7 +15,7 @@
               </li>
       	  	  <li class="movie-grade-group row" aria-label="평점">
                 <div class="stars-wrap">
-                  <div class="stars-4-0"></div>
+                  <div class="stars-rating"></div>
                 </div>
 						    <div class="movie-grade movie-grade-style">3.9</div>
       	  	  </li>
@@ -128,7 +128,7 @@
 		  <section class="movie-video">
 		    <h1 class="movie-video-heading t-col-1 d-col-1">예고편</h1>
 		    <div class="movie-video-view m-col-4 t-col-8 d-col-9">
-		      <iframe title="신비한 동물사전 파이널 예고편" src="http://videofarm.daum.net/controller/video/viewer/Video.html?vid=vd602rZMZZ4Zwbewrejr11r&play_loc=undefined&alert=true" frameborder="0" scrolling="no"></iframe>
+		      <iframe title="신비한 동물사전 파이널 예고편" data-ng-src="{{moviedetail_data.movies[0].main_trailer}}" src="http://videofarm.daum.net/controller/video/viewer/Video.html?vid=vd602rZMZZ4Zwbewrejr11r&play_loc=undefined&alert=true" frameborder="0" scrolling="no"></iframe>
 		    </div>
 		  </section>
 		  <!-- </div> -->
@@ -498,7 +498,7 @@
 		            </div>
 		          </div>
 		        </li>
-		      
+
 		      </ul>
 		      <button class="movie-comment-show-more-button">더보기</button>
 		    </div>
@@ -534,7 +534,7 @@
 		           <!--  <span class="dialogue-writer-name">이나영</span> -->
 		          </div>
 		        </li>
-		        
+
 		      </ul>
 		      <button class="movie-dialogue-show-more-button">더보기</button>
 		    </div>
