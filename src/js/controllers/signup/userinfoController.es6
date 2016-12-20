@@ -14,10 +14,10 @@ angular
   console.log($scope.userinfo_data);
 
 
-    // $scope.selectMovie=function(movie) {
-    //   $scope.userinfo_data.userinfo_movie = movie;
+    $scope.selectMovie=function(movie) {
+      $scope.userinfo_data.userinfo_movie = movie;
       
-    // };
+    };
 
 
   }]);

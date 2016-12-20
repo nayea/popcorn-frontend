@@ -8,7 +8,7 @@ angular
   .factory('signup', ['$resource', function($resource){
     // console.log($stateParams.id); 
     return $resource(
-      'https://django-test.com/member/registration/',{},
+      'https://django-api.com/member/registration/',{},
        {'create': { method:'post' }}
       );
   }])
