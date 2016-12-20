@@ -17,7 +17,7 @@
                 <div class="stars-wrap">
                   <div class="stars-rating"></div>
                 </div>
-						    <div class="movie-grade movie-grade-style">3</div>
+						    <div class="movie-grade movie-grade-style">{{moviedetail_data.movies[0].star_average | number:1}}</div>
       	  	  </li>
       	  	  <li>
       	  	    <ul class="movie-info-sub">
@@ -144,12 +144,8 @@
 		              <figcaption>
 		                <div class="movie-relative-title">{{movie.title_kor}}</div>
 		                <div class="movie-relative-grade-group">
-		                  <div class="small-star"></div>
-		                      <div class="small-star"></div>
-		                      <div class="small-star"></div>
-		                      <div class="small-star"></div>
-		                      <div class="small-non-star"></div>
-		                  <div class="small-movie-grade">{{movie.star_average}}</div>
+		                  <div class="stars-rating"></div>
+		                  <div class="movie_grade small-movie-grade">{{movie.star_average}}</div>
 		                </div>
 		              </figcaption>
 		            </figure>
@@ -481,12 +477,8 @@
 		          <div class="movie-comment-right-group m-col-3 t-col-7">
 		            <p class="movie-comment-paragraph ">{{movie.content}}</p>
 		            <div class="movie-comment-star-group row">
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-star"></div>
-		              <div class="medium-non-star"></div>
-		              <div class="medium-movie-grade">{{movie.star}}</div>
+		              <div class="stars-rating"></div>
+		              <div class="movie-grade medium-movie-grade">{{movie.star}}</div>
 		            </div>
 		            <div class="write-info-group">
 		              <span>{{movie.created | date:'yyyy-MM-dd'}} | {{movie.author.nickname}}</span>
