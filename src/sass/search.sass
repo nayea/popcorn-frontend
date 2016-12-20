@@ -178,9 +178,20 @@
   +respond-to($d-container-width)
     margin-top: 20px
 
-.movie-search-result-poster
+.movie-search-result-poster-wrap
   border-radius: 10px
   box-shadow: 3px 3px 10px $color-black
+  overflow: hidden
+  +respond-to($m-container-width)
+    height: px2vw(220px, $m-container-width)
+  +respond-to($t-container-width)
+    height: 382px
+  +respond-to($d-container-width)
+    height: 422px
+
+
+.movie-search-result-poster
+  width: 100%
 
 .movie-search-info
   position: relative
