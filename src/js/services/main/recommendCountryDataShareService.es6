@@ -8,7 +8,7 @@ angular
   .factory('RankingCountry', ['$resource', function($resource){
     // let url = 'https://codecraftpro.com/api/samples/v1/contact/:id/'; // 서버단에서 주는  api 를 받아서 반환
     return $resource(
-      'https://django-test.com/favorite/making-country/',{},
+      'https://django-api.com/favorite/making-country/',{},
       { 'get' : {method: 'GET', isArray: true}}
       );
   }])

@@ -7,7 +7,7 @@ angular
   .module('PopcornListApp')
   .factory('movieinfoFamousLine', ['$resource','$stateParams', function($resource,$stateParams){
     return $resource(
-      'https://django-test.com/movie/:id/famous/',{id: $stateParams.id},
+      'https://django-api.com/movie/:id/famous/',{id: $stateParams.id},
       { 'get' : {method: 'GET'}}
       );
   }])

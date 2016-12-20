@@ -8,7 +8,7 @@ angular
   .factory('moviedetail', ['$resource','$stateParams', function($resource,$stateParams){
     // console.log($stateParams.id); 
     return $resource(
-      'https://django-test.com/movie/:id/',{id: $stateParams.id}
+      'https://django-api.com/movie/:id/',{id: $stateParams.id}
       // { 'get' : {method: 'GET', isArray: true}}
       );
   }])

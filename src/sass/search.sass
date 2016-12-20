@@ -7,21 +7,24 @@
 @import modules/grid/grid_functions
 @import modules/grid/grid_mixins
 
-// --------------------------------------------------------
-// 헤 더
-// --------------------------------------------------------
+
 
 %header-isolate
   margin-right: -100%
   float: left
 
-.signup-header
+.h1-position
   +respond-to($m-container-width)
-    margin-bottom: px2vw(30px, $m-container-width)
+    font-size: px2vw(16px,$m-container-width)
+    line-height: px2vw(80px,$m-container-width)
+    height: px2vw(80px,$m-container-width)
   +respond-to($t-container-width)
-    margin-bottom: 60px
+    +font(size 20px line-height 140px)
+    height: 150px
   +respond-to($d-container-width)
-    margin-bottom: 90px
+    +font(size 30px line-height 190px)
+    height: 200px
+
 
 .left-zero-logo-width
   @extend %reset-box-model
@@ -283,24 +286,4 @@
       right: 15px
     margin-top: 50px
 
-// --------------------------------------------------------
-// 푸 터
-// --------------------------------------------------------
-
-.serach-footer
-  position: relative
-  width: 100vw
-  margin-top: 30px
-  background: $color-blue
-  +respond-to($m-container-width)
-    height: px2vw(30px, $m-container-width)
-    img
-      position: absolute
-      top: 50%
-      transform: translateY(-50%)
-      height: 70%
-  +respond-to($t-container-width)
-    height: 50px
-  +respond-to($d-container-width)
-    height: 50px
-  +flexbox(center)
+s

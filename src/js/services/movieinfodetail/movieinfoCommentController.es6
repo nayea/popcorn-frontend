@@ -8,7 +8,7 @@ angular
   .module('PopcornListApp')
   .factory('movieinfoComment', ['$resource','$stateParams', function($resource,$stateParams){
     return $resource(
-      'https://django-test.com/movie/:id/comment/',{id: $stateParams.id},
+      'https://django-api.com/movie/:id/comment/',{id: $stateParams.id},
       { 'get' : {method: 'GET'}}
       );
   }])

@@ -7,7 +7,7 @@ angular
   .module('PopcornListApp')
   .factory('userinfo', ['$resource', function($resource){
     return $resource(
-      'https://django-test.com/member/my-info/',{},
+      'https://django-api.com/member/my-info/',{},
       { 'get' : {
             method: 'get', 
             header: {'Authorization' : 'window.localStorage[‘key1’]'}

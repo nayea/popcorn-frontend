@@ -26,6 +26,17 @@ let popcorn = angular.module('PopcornListApp', [
 	'angular-ladda',
 	'ui.router',
 	]);
+ // angular.module('filters', []).filter('trustThisUrl', ['$sce', function($sce) {
+ //    return function(val) {
+ //        return $sce.trustAsResourceUrl(val);
+ //    };
+// angular.module('filters-module', [])
+// .filter('trustAsResourceUrl', ['$sce', function($sce) {
+//     return function(val) {
+//         return $sce.trustAsResourceUrl(val);
+//     };
+// }]);
+//
 
 
 
@@ -96,6 +107,17 @@ popcorn.config([
 			'controller' : 'signupController'
 		    }
 		}
+	})
+	.state('search',{
+		'url': '/search',
+		'views':{
+		  'header':{
+			'templateUrl': 'views/header-login.html'
+	        },
+		  'main':{
+			'templateUrl' : 'views/search.html'
+		    }
+		}
 	});
 
 	// .state('list',{
@@ -158,6 +180,10 @@ require('./controllers/movieinfoDetail/movieinfoFamousLineController');
 require('./controllers/signup/loginController');
 require('./controllers/signup/signupController');
 require('./controllers/signup/userinfoController');
+// --------------------------------------------------------
+// controllers: search
+// --------------------------------------------------------
+require('./controllers/search/searchController');
 
 
 // --------------------------------------------------------
@@ -187,6 +213,10 @@ require('./services/movieinfodetail/movieinfoFamousLineDataShareService');
 require('./services/signup/loginDataShareService');
 require('./services/signup/signupDataShareService');
 require('./services/signup/userinfoDataShareService');
+// --------------------------------------------------------
+// service: search
+// --------------------------------------------------------
+require('./services/search/searchDataShareService');
 
 // require('./directives/header');
 
@@ -196,10 +226,11 @@ require('./filters/defaultimageFilter');
 
 // main-script
 
-// require('./main-script/header-scroll');
-// require('./main-script/recommend-carousel');
-// require('./main-script/ranking-hover');
-// require('./movie-info/movieinfo');
+
+require('./main-script/header-scroll');
+require('./main-script/recommend-carousel');
+require('./main-script/ranking-hover');
+require('./movie-info/movieinfo');
 require('./movie-info/showGrade.js');
 require('./ratingStars.js');
 // require('./main-script/scroll-effect.js');
