@@ -864,6 +864,14 @@ figure
     vertical-align: top
     +respond-to($m-container-width)
       width: 100%
+  output
+    position: absolute
+    +respond-to($m-container-width)
+      right: -30%
+    +respond-to($t-container-width)
+      right: -5%
+    +respond-to($d-container-width)
+      right: -5%
 
 .comment-writing-group
   textarea
@@ -937,7 +945,7 @@ figure
 #star_rating
   +respond-to($m-container-width)
     top: 0
-    width: px2vw(100px, $m-container-width)
+    // width: px2vw(100px, $m-container-width)
     height: px2vw(15px, $m-container-width)
   +respond-to($t-container-width)
     width: 130px
@@ -964,7 +972,7 @@ figure
       // height: px2vw(20px, $m-container-width)
   label:hover
     span
-      opacity: 1
+      // opacity: 1
 
 #star_rating input:checked ~ label
   color: #fff
