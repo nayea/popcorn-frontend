@@ -200,6 +200,7 @@ require('./filters/defaultimageFilter');
 // require('./main-script/recommend-carousel');
 // require('./main-script/ranking-hover');
 // require('./movie-info/movieinfo');
+require('./movie-info/showGrade.js');
 require('./ratingStars.js');
 // require('./main-script/scroll-effect.js');
 
