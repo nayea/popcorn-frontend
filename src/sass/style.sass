@@ -1126,12 +1126,21 @@ p
     .magazine-content-main-title
       @extend %reset-box-model
       color: $color-blue
+      overflow: hidden
+      text-overflow: ellipsis
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      word-wrap: break-word
       +respond-to($m-container-width)
         +font(size 16px)
+        width: 100%
+        -webkit-line-clamp: 2
       +respond-to($t-container-width)
         +font(size 20px)
+        -webkit-line-clamp: 2
       +respond-to($d-container-width)
         +font(size 24px)
+        -webkit-line-clamp: 2
     .magazine-content-main-desc
       overflow: hidden
       text-overflow: ellipsis
@@ -1225,15 +1234,27 @@ p
     .magazine-content-title
       @extend %reset-box-model
       color: $color-blue
+      overflow: hidden
+      text-overflow: ellipsis
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      word-wrap: break-word
       +respond-to($m-container-width)
         padding-left: px2vw(10px,$m-container-width)
         +font(size 14px)
+        -webkit-line-clamp: 2
       +respond-to($t-container-width)
-        padding-left: 10px
+        padding:
+          left: 10px
+          right: 5px
         +font(size 14px)
+        -webkit-line-clamp: 2
       +respond-to($d-container-width)
-        padding-left: 10px
+        padding:
+          left: 10px
+          right: 5px
         +font(size 16px)
+        -webkit-line-clamp: 2
     .magazine-content-desc
       @extend %reset-box-model
       color: $color-black
