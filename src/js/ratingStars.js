@@ -4,9 +4,9 @@
 
     var movie_grade = ($('.movie-grade').text()) * 1;
     var stars_rating = $('.stars-rating');
-    console.log(movie_grade);
-    console.log(stars_rating);
-    console.log(typeof(movie_grade));
+    // console.log(movie_grade);
+    // console.log(stars_rating);
+    // console.log(typeof(movie_grade));
 
     if ( 0 <= movie_grade && movie_grade < 0.5 ) {
       stars_rating.addClass('stars-0-0');
