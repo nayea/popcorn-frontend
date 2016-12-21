@@ -9,11 +9,25 @@ angular
   .factory('movieinfoComment', ['$resource','$stateParams', function($resource,$stateParams){
     return $resource(
       'https://django-api.com/movie/:id/comment/',{id: $stateParams.id},
-      { 'get' : {method: 'GET'}}
+      { 'get' : {
+            method: 'GET'
+          },
+        'create': { 
+             method:'post',
+             headers: {'Authorization' : 'Token '+window.localStorage['key']}
+           }
+        }
       );
   }])
 
    .service('movieinfoCommentDataShareService', ['movieinfoComment' , (movieinfoComment)=>{  
+
+    let initServiceSetting = ()=> {
+      _service.people   = [];
+      _service.page     = 1;
+      _service.has_more = true;
+    };
+
      var _service = {
         'movieinfoComment_movie' : null,
         'movies' : [],
@@ -25,6 +39,16 @@ angular
                     _service.movies.push(new movieinfoComment(movie));
              });
         });
+        },
+      'createContact' : (movie) => {
+           
+            _service.is_creating = true;
+
+            (new movieinfoComment(movie)).$create().then(()=> {
+                initServiceSetting();
+                _service.loadContacts();
+                _service.is_creating = false;
+            });
         }
      };
    
