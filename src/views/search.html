@@ -16,7 +16,7 @@
         <button type="submit" aria-labeledby="검색" class="movie-search-submit-button"></button>
       </form>
 
-      <article data-label="검색된 영화" class="movie-search-result" data-ng-repeat="movie in search_data.movies">
+      <article data-label="검색된 영화" class="movie-search-result" data-ng-repeat="movie in filteredMovies=(search_data.movies | filter:search)">
         <div class="movie-search-result-poster-wrap m-col-2 t-col-3 d-col-3">
           <img class="movie-search-result-poster" data-ng-src="{{movie.img_url}}" src="http://t1.daumcdn.net/movie/3f5df00f56b2a4c2c7baebea12b456320cf47c63" alt="{{movie.title_kor}}">
         </div>
@@ -45,7 +45,8 @@
                 <td>{{movie.grade.content}}</td>
               </tr>
             </table>
-            <button type="button" class="movie-search-show-more-button st-button-B">더 많은 정보 보기</button>
+           <a href data-ui-sref="edit({'id': movie.id})"> 
+              <button type="button" class="movie-search-show-more-button st-button-B">더 많은 정보 보기</button></a>
         </div>
       </article>
 
