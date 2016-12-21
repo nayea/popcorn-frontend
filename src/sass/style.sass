@@ -395,6 +395,8 @@ p
   .stars
     position: relative
     @extend %reset-box-model
+    +respond-to($m-container-width)
+      margin-bottom: px2vw(10px,$m-container-width)
     +respond-to($t-container-width)
       // +size(190px 25px)
       width: 190px
@@ -402,21 +404,24 @@ p
     +respond-to($d-container-width)
       // +size(210px 40px)
       width: 220px
+      margin-bottom: 20px
     img
       margin-right: 25px
     span
       color: $color-yellow
       position: absolute
-      top: 50%
       +respond-to($m-container-width)
+        top: 0
         font-size: px2vw(16px,$m-container-width)
-        right: 0
-        transform: translateY(-45%)
+        left: px2vw(100px,$m-container-width)
+        line-height: px2vw(20px,$m-container-width)
       +respond-to($t-container-width)
+        top: 50%
         +font(size 20px line-height 20px)
         left: 160px
         transform: translateY(-41%)
       +respond-to($d-container-width)
+        top: 50%
         +font(size 24px line-height 24px)
         left: 200px
         transform: translateY(-41%)
@@ -1089,20 +1094,33 @@ p
   float: left
   padding-bottom: 28px
   h1
-   @extend %reset-box-model
-   @extend .h1-style
-   @extend .h1-position
+    @extend %reset-box-model
+    @extend .h1-style
+    @extend .h1-position
   a
-   @extend %reset-a
-   color: $color-black
-   display: block
-   .review-user-image
-     float: left
-     border-radius: 50px
-     +size(60px)
+    @extend %reset-a
+    color: $color-black
+    display: block
+    .review-user-image
+      float: left
+      border-radius: 50px
+      +respond-to($m-container-width)
+        margin-top: px2vw(10px, $m-container-width)
+      +respond-to($t-container-width)
+        margin-top: 10px
+      +respond-to($d-container-width)
+        margin-top: 10px
+      +size(60px)
+
 .review-user-comment
   // padding-left: 15px
   height: 100px
+  +respond-to($m-container-width)
+    margin-bottom: px2vw(10px, $m-container-width)
+  +respond-to($t-container-width)
+    margin-bottom: 10px
+  +respond-to($d-container-width)
+    margin-bottom: 10px
   time
     +font(size 9px)
   .review-user-name
@@ -1112,12 +1130,27 @@ p
     +font(size 14px)
     color: $color-blue
   .review-stars
-    img
-      +size(66px 10px)
+    position: relative
+    // img
+    //   +size(66px 10px)
     span
-      +font(size 12px)
-      position: relative
-      top: -8px
+      position: absolute
+      top: 0
+      +respond-to($m-container-width)
+        left: px2vw(75px, $m-container-width)
+        line-height: px2vw(16px, $m-container-width)
+        font-size: px2vw(12px, $m-container-width)
+      +respond-to($t-container-width)
+        left: 80px
+        font-size: 12px
+        line-height: 16px
+      +respond-to($d-container-width)
+        left: 85px
+        font-size: 12px
+        // line-height: 16px
+      // +font(size 12px)
+      // position: relative
+      // top: -8px
   .review-desc
     @extend %reset-box-model
     overflow: hidden
@@ -1134,6 +1167,14 @@ p
     +respond-to($d-container-width)
       -webkit-line-clamp: 1
       +font(size 12px line-height 21px)
+
+.movie-review-stars-wrap
+  +respond-to($m-container-width)
+    width: px2vw(65px, $m-container-width)
+  +respond-to($t-container-width)
+    width: 70px
+  +respond-to($d-container-width)
+    width: 75px
 
 //magazine
 .magazine
