@@ -15,7 +15,7 @@
               </li>
       	  	  <li class="movie-grade-group row" aria-label="평점">
                 <div class="stars-wrap">
-                  <div class="stars-rating"></div>
+                  <img class="stars-rating" src="../images/stars/stars0-0.svg" alt="">
                 </div>
 						    <div class="movie-grade movie-grade-style">{{moviedetail_data.movies[0].star_average | number:1}}</div>
       	  	  </li>
@@ -140,14 +140,16 @@
 		        <li class="m-col-1 t-col-2" data-ng-repeat="movie in filteredMovies=(movieinfoRelated_data.movies | filter:search )">
 		        <a href="#">
 		          <figure>
-		              <img data-ng-src="{{movie.img_url | defaultImage}}" src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F146F1B10ACE2AE7DF12090" alt="{{movie.title_kor}} 포스터">
-		              <figcaption>
-		                <div class="movie-relative-title">{{movie.title_kor}}</div>
-		                <div class="movie-relative-grade-group">
-		                  <div class="stars-rating"></div>
-		                  <div class="movie_grade small-movie-grade">{{movie.star_average}}</div>
-		                </div>
-		              </figcaption>
+	              <img class="movie-relative-poster" data-ng-src="{{movie.img_url | defaultImage}}" src="http://img1.daumcdn.net/thumb/C155x225/?fname=http%3A%2F%2Fcfile189.uf.daum.net%2Fimage%2F146F1B10ACE2AE7DF12090" alt="{{movie.title_kor}} 포스터">
+	              <figcaption>
+	                <div class="movie-relative-title">{{movie.title_kor}}</div>
+	                <div class="movie-relative-grade-group">
+                    <div class="movie-relative-stars-wrap">
+                      <img class="stars-rating" src="../images/stars/stars0-0.svg" alt="">
+                    </div>
+	                  <div class="movie-grade small-movie-grade">{{movie.star_average}}</div>
+	                </div>
+	              </figcaption>
 		            </figure>
 		          </a>
 		        </li>
@@ -477,7 +479,9 @@
 		          <div class="movie-comment-right-group m-col-3 t-col-7">
 		            <p class="movie-comment-paragraph ">{{movie.content}}</p>
 		            <div class="movie-comment-star-group row">
-		              <div class="stars-rating"></div>
+		              <div class="movie-comment-stars-wrap">
+		                <img class="stars-rating" src="../images/stars/stars0-0.svg" alt="">
+		              </div>
 		              <div class="movie-grade medium-movie-grade">{{movie.star}}</div>
 		            </div>
 		            <div class="write-info-group">
