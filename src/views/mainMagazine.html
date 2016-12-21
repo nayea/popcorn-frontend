@@ -5,12 +5,12 @@
     <div class="review-comment-wraper d-col-3">
     <h1>코멘트</h1>
 
-      <article class="review-comment d-col-3 t-col-4 m-col-4" data-ng-repeat="movie in filteredMovies=(comment_data.movies | filter:search )">
-        <a href="">
-          <img class="review-user-image" data-ng-src="{{movie.author.profile_img}}" src="images/user-1.jpg" alt="회원" width="128" height="128">
-          <div class="review-user-comment d-col-2 t-col-3 m-col-3">
-            <span class="review-user-name">{{movie.created | date:'yyyy-MM-dd'}} |{{movie.author.nickname}}</span>
-            <h3 class="review-user-title">{{movie.movie_title}}</h3>
+    <article class="review-comment d-col-3 t-col-4 m-col-4" data-ng-repeat="movie in filteredMovies=(comment_data.movies | filter:search )">
+      <a href="">
+        <img class="review-user-image" data-ng-src="{{movie.author.profile_img}}" src="images/icon/icon-nouser.svg" alt="회원" width="128" height="128">
+        <div class="review-user-comment d-col-2 t-col-3 m-col-3">
+           <span class="review-user-name">{{movie.created | date:'yyyy-MM-dd'}} |{{movie.author.nickname}}</span>
+           <h3 class="review-user-title">{{movie.movie_title}}</h3>
             <div class="review-stars">
               <div class="movie-review-stars-wrap">
                 <img class="stars-rating" src="../images/stars/stars0-0.svg" alt="">
