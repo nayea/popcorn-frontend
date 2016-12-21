@@ -8,7 +8,8 @@
 @import "modules/grid/grid_functions"
 @import "modules/grid/grid_mixins"
 
-
+.stars-rating
+  width: 100%
 
 html
   font-family: $spoqa-R
@@ -392,22 +393,33 @@ p
       +respond-to($d-container-width)
         +font(size 20px)
   .stars
+    position: relative
     @extend %reset-box-model
     +respond-to($t-container-width)
-      +size(190px 25px)
+      // +size(190px 25px)
+      width: 190px
       margin-top: 10px
     +respond-to($d-container-width)
-      +size(210px 40px)
+      // +size(210px 40px)
+      width: 220px
     img
       margin-right: 25px
     span
       color: $color-yellow
+      position: absolute
+      top: 50%
       +respond-to($m-container-width)
         font-size: px2vw(16px,$m-container-width)
+        right: 0
+        transform: translateY(-45%)
       +respond-to($t-container-width)
         +font(size 20px line-height 20px)
+        left: 160px
+        transform: translateY(-41%)
       +respond-to($d-container-width)
-        +font(size 28px line-height 18px)
+        +font(size 24px line-height 24px)
+        left: 200px
+        transform: translateY(-41%)
   ul
     @extend %reset-list
     @extend %reset-box-model
@@ -508,6 +520,14 @@ p
           background-size: 50px 50px
       &:active
         transform: translate(-50%, -47%)
+
+.movie-carousel-stars-wrap
+  +respond-to($m-container-width)
+    width: px2vw(90px,$m-container-width)
+  +respond-to($t-container-width)
+    width: 150px
+  +respond-to($d-container-width)
+    width: 180px
 
 // video-dim style
 .video-dim-background
@@ -707,26 +727,47 @@ p
       &:last-of-type::after
         border: 0
   .stars
+    position: relative
     @extend %reset-box-model
     +respond-to($m-container-width)
       margin-top: px2vw(16px,$m-container-width)
     +respond-to($t-container-width)
-      +size(190px 25px)
+      // +size(190px 25px)
+      width: 190px
       margin-top: 10px
     +respond-to($d-container-width)
-      +size(210px 40px)
+      // +size(210px 40px)
+      width: 210px
       margin-top: 10px
     img
       margin-right: 25px
     span
+      display: inline-block
       color: $color-yellow
+      // top: 50%
       +respond-to($m-container-width)
+        position: absolute
+        left: px2vw(110px,$m-container-width)
         font-size: px2vw(14px,$m-container-width)
-        line-height: px2vw(14px,$m-container-width)
+        line-height: px2vw(21px,$m-container-width)
       +respond-to($t-container-width)
         +font(size 16px line-height 15px)
+        left: 10px
+        // transform: translateY(-50%)
       +respond-to($d-container-width)
         +font(size 16px line-height 15px)
+        left: 10px
+        // transform: translateY(-55%)
+
+.movie-top1-stars-wrap
+  display: inline-block
+  +respond-to($m-container-width)
+    width: px2vw(100px, $m-container-width)
+  +respond-to($t-container-width)
+    width: 110px
+  +respond-to($d-container-width)
+    width: 110px
+
 
 .ranking-top2-wrapper
    +respond-to($t-container-width)
@@ -810,24 +851,46 @@ p
       &:last-of-type::after
         border: 0
   .stars
+    position: relative
     @extend %reset-box-model
     +respond-to($t-container-width)
-      +size(190px 25px)
+      // +size(190px 25px)
+      width: 190px
       margin-top: 10px
     +respond-to($d-container-width)
-      +size(210px 40px)
+      // +size(210px 40px)
+      width: 210px
       margin-top: 10px
     img
       margin-right: 25px
     span
+      position: absolute
       color: $color-yellow
       +respond-to($m-container-width)
-        font-size: px2vw(14px,$m-container-width)
-        line-height: px2vw(14px,$m-container-width)
+        font-size: px2vw(10px,$m-container-width)
+        line-height: px2vw(16px,$m-container-width)
+        top: 0
+        left: px2vw(80px,$m-container-width)
       +respond-to($t-container-width)
-        +font(size 16px line-height 15px)
+        +font(size 14px line-height 15px)
+        top: 50%
+        transform: translateY(-55%)
+        left: 110px
       +respond-to($d-container-width)
-        +font(size 16px line-height 15px)
+        +font(size 14px line-height 15px)
+        top: 50%
+        transform: translateY(-55%)
+        left: 110px
+
+.movie-top2-stars-wrap
+  display: inline-block
+  +respond-to($m-container-width)
+    width: px2vw(75px, $m-container-width)
+  +respond-to($t-container-width)
+    width: 100px
+  +respond-to($d-container-width)
+    width: 100px
+
 
 //recommend
 
