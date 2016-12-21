@@ -23,8 +23,10 @@
         <div class="movie-search-info m-col-2 t-col-5 d-col-3">
           <h2 class="movie-search-title">{{movie.title_kor}}<span>({{movie.title_eng}})</span></h2>
             <div class="recommend-stars">
-              <img src="images/main-carousel/stars.png" alt="영화 평점">
-              <span>{{movie.star_average}}</span>
+              <div class="movie-search-stars-wrap">
+                <img class="stars-rating" src="../images/stars/stars0-0.svg" alt="">
+              </div>
+              <span class="movie-grade">{{movie.star_average}}</span>
             </div>
             <table class="movie-search-info-table">
               <caption class="readable-hidden">영화 정보</caption>

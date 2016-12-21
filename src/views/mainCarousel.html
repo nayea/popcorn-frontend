@@ -2,7 +2,7 @@
       <div id="main-carousel" aria-label="주요 영화 정보" data-ng-cloak>
 
       <article data-label="팝콘 주요 영화 1" data-ng-repeat="movie in filteredMovies=(share_data.movies | filter:search )" data-ng-init="$last && repeatComplete()">
-  
+
          <div class="container ui-carousel-panels">
            <div class="row ui-carousel-movie-info">
              <a href data-ui-sref="edit({'id': movie.id})">
@@ -10,8 +10,10 @@
                <span class="popcorn-label">[Popcorn 추천영화]</span>
                <h2>{{movie.title_kor}}<span>({{movie.title_eng}})</span></h2>
                <div class="stars">
-                 <img src="images/main-carousel/stars.png" alt="">
-                 <span>{{movie.star_average}}</span>
+                 <div class="movie-carousel-stars-wrap">
+                   <img class="stars-rating" src="../images/stars/stars0-0.svg" alt="">
+                 </div>
+                 <span class="movie-grade">{{movie.star_average}}</span>
                </div>
                <ul role="presentation">
                  <li>{{movie.genre[0].content}}{{movie.genre[1].content}}</li>
