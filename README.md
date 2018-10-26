@@ -1,5 +1,8 @@
 # popcorn-frontend
 
+> Project
+
+
 - video link : https://drive.google.com/open?id=0B77WDcKsD3Ywa2tueS0zaUtBTHc   
 - github link : https://github.com/We-Lab/popcorn-frontend
 
